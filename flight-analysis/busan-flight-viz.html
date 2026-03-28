@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>01. 釜山 PUS — Flight Intelligence</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#FFFFFF;--fg:#000000;--muted:#F2F2F2;--accent:#FF3000;
+  --border:#000000;--grid:24px;
+  --font:'Inter',Helvetica,'Noto Sans TC',sans-serif;
+}
+body{
+  background:var(--bg);color:var(--fg);font-family:var(--font);line-height:1.5;
+  background-image:repeating-linear-gradient(0deg,rgba(0,0,0,.03) 0 1px,transparent 1px 24px),
+                   repeating-linear-gradient(90deg,rgba(0,0,0,.03) 0 1px,transparent 1px 24px);
+}
+.container{max-width:1200px;margin:0 auto;padding:48px 48px}
+
+/* ===== TYPOGRAPHY ===== */
+h1{font-size:6rem;font-weight:900;letter-spacing:-3px;line-height:.9;text-transform:uppercase}
+h2{font-size:1.6rem;font-weight:900;letter-spacing:-0.5px;text-transform:uppercase}
+.section-num{color:var(--accent);font-size:.85rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:4px}
+.subtitle{font-size:1rem;color:#666;font-weight:400;margin-top:8px;margin-bottom:48px}
+.label{font-size:.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent)}
+.small{font-size:.75rem;color:#999;font-weight:500}
+
+/* ===== DIVIDERS ===== */
+.divider{border:none;border-top:4px solid var(--fg);margin:48px 0}
+.divider-thin{border:none;border-top:1px solid #ddd;margin:24px 0}
+
+/* ===== CONFIG BAR ===== */
+.config{display:flex;gap:24px;flex-wrap:wrap;margin-bottom:48px;padding:24px;border:2px solid var(--fg)}
+.config-group{display:flex;flex-direction:column;gap:4px}
+.config-group label{font-size:.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent)}
+.config-group select,.config-group input{
+  background:var(--bg);border:2px solid var(--fg);border-radius:0;
+  color:var(--fg);padding:8px 12px;font-size:.85rem;font-family:var(--font);font-weight:500;
+}
+.config-group select:focus,.config-group input:focus{outline:none;border-color:var(--accent)}
+
+/* ===== SECTION ===== */
+.section{margin-bottom:48px}
+
+/* ===== STATS BAR ===== */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);border:2px solid var(--fg);margin-bottom:48px}
+.stat{padding:20px 24px;border-right:2px solid var(--fg);transition:background .15s,color .15s}
+.stat:last-child{border-right:none}
+.stat:hover{background:var(--fg);color:var(--bg)}
+.stat:hover .label{color:var(--bg)}
+.stat:hover .stat-val{color:var(--bg)}
+.stat-val{font-size:2rem;font-weight:900;letter-spacing:-1px;margin-top:4px}
+.stat-note{font-size:.75rem;color:#666;margin-top:2px}
+.stat:hover .stat-note{color:#999}
+
+/* ===== CHART ===== */
+.chart-wrap{position:relative;height:300px;border:2px solid var(--fg);border-bottom:4px solid var(--fg);padding:0;overflow:hidden}
+canvas{width:100%!important;height:100%!important;display:block}
+.chart-legend{display:flex;gap:24px;margin-top:12px;font-size:.7rem;font-weight:500;color:#666}
+.legend-line{display:inline-block;width:16px;height:3px;vertical-align:middle;margin-right:6px}
+
+/* ===== HEATMAP ===== */
+.heatmap-grid{display:grid;grid-template-columns:60px repeat(12,1fr);gap:0;border:2px solid var(--fg)}
+.hm-label{font-size:.65rem;font-weight:700;padding:6px 8px;border-right:1px solid #ddd;border-bottom:1px solid #ddd;display:flex;align-items:center;justify-content:flex-end;letter-spacing:1px;text-transform:uppercase}
+.hm-cell{
+  border-right:1px solid #eee;border-bottom:1px solid #eee;
+  padding:4px;display:flex;align-items:center;justify-content:center;
+  font-size:.65rem;font-weight:700;cursor:pointer;transition:background .1s,color .1s;
+  min-height:32px;position:relative;
+}
+.hm-cell:hover{outline:2px solid var(--accent);outline-offset:-2px;z-index:5}
+.hm-month{font-size:.7rem;font-weight:900;text-align:center;padding:8px 4px;border-right:1px solid #ddd;letter-spacing:1px;text-transform:uppercase}
+.hm-corner{border-right:1px solid #ddd}
+
+/* ===== TIMELINE ===== */
+.timeline-grid{display:grid;grid-template-columns:repeat(12,1fr);border:2px solid var(--fg);min-height:80px}
+.tl-month{border-right:1px solid #ddd;padding:4px 2px;min-height:80px}
+.tl-month:last-child{border-right:none}
+.tl-event{
+  padding:3px 6px;font-size:.6rem;font-weight:700;letter-spacing:.5px;
+  margin:2px 0;cursor:pointer;transition:background .1s;border-left:3px solid var(--fg);
+}
+.tl-event:hover{background:var(--fg);color:var(--bg)}
+.tl-event.nature{border-left-color:var(--accent);background:rgba(255,48,0,.06)}
+.tl-event.festival{border-left-color:var(--fg);background:rgba(0,0,0,.04)}
+.tl-event.culture{border-left-color:#666;background:rgba(0,0,0,.03)}
+.tl-event.food{border-left-color:var(--accent);background:rgba(255,48,0,.04)}
+.tl-event.holiday{border-left-color:var(--accent);background:rgba(255,48,0,.08);color:var(--accent)}
+.tl-labels{display:grid;grid-template-columns:repeat(12,1fr);margin-bottom:4px}
+.tl-labels span{font-size:.65rem;font-weight:900;text-align:center;letter-spacing:1px;text-transform:uppercase}
+
+/* ===== RECOMMENDATIONS ===== */
+.rec-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:0;border:2px solid var(--fg)}
+.rec-card{padding:24px;border-right:2px solid var(--fg);border-bottom:2px solid var(--fg);transition:background .15s,color .15s;cursor:pointer}
+.rec-card:hover{background:var(--fg);color:var(--bg)}
+.rec-card:hover .label{color:var(--bg)}
+.rec-card:hover .small{color:#999}
+.rec-card:hover .score-track{background:#333}
+.rec-rank{font-size:3rem;font-weight:900;letter-spacing:-2px;line-height:1}
+.rec-month{font-size:1.4rem;font-weight:900;letter-spacing:-0.5px;text-transform:uppercase;margin-top:4px}
+.rec-meta{font-size:.8rem;color:#666;margin:4px 0 12px}
+.rec-card:hover .rec-meta{color:#aaa}
+.score-row{display:flex;align-items:center;gap:8px;margin:4px 0}
+.score-label{font-size:.6rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;width:40px;color:#999}
+.rec-card:hover .score-label{color:#888}
+.score-track{flex:1;height:4px;background:var(--muted)}
+.score-fill{height:100%;background:var(--fg);transition:width .5s}
+.rec-card:hover .score-fill{background:var(--bg)}
+.score-val{font-size:.7rem;font-weight:900;width:24px;text-align:right}
+.rec-tags{display:flex;gap:4px;flex-wrap:wrap;margin-top:12px}
+.rec-tag{font-size:.6rem;font-weight:700;letter-spacing:.5px;padding:2px 8px;border:1px solid currentColor}
+.rec-tag.price{color:var(--accent)}
+.rec-tag.event{color:var(--fg)}
+.rec-tag.weather{color:#666}
+
+/* ===== SEASON ===== */
+.season-strip{display:grid;grid-template-columns:repeat(12,1fr);height:12px;border:2px solid var(--fg)}
+.season-cell{border-right:1px solid #ddd}
+.season-cell:last-child{border-right:none}
+
+/* ===== TOOLTIP ===== */
+.tooltip{
+  position:fixed;background:var(--fg);color:var(--bg);border:none;
+  padding:12px 16px;font-size:.78rem;pointer-events:none;z-index:1000;
+  max-width:260px;display:none;
+}
+.tooltip .tt-title{font-weight:900;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
+.tooltip .tt-price{color:var(--accent);font-weight:900;font-size:1rem}
+.tooltip .tt-note{color:#999;font-size:.7rem;margin-top:4px}
+
+@media(max-width:768px){
+  .container{padding:24px 16px}
+  h1{font-size:3rem;letter-spacing:-1px}
+  .stats{grid-template-columns:1fr 1fr}
+  .stat{border-bottom:2px solid var(--fg)}
+  .config{flex-direction:column;gap:12px}
+  .rec-grid{grid-template-columns:1fr}
+  .heatmap-grid{grid-template-columns:40px repeat(12,1fr)}
+}
+</style>
+</head>
+<body>
+<div class="tooltip" id="tooltip"></div>
+<div class="container">
+
+<!-- HEADER -->
+<div class="label" style="margin-bottom:12px">Flight Intelligence / 2026</div>
+<h1>釜山<br>BUSAN</h1>
+<p class="subtitle">全年機票走勢 — 當地節慶 — 最佳出行推薦</p>
+
+<!-- CONFIG -->
+<div class="config">
+  <div class="config-group">
+    <label>01. 出發地</label>
+    <select id="origin">
+      <option value="TPE" selected>台北 TPE</option>
+      <option value="NRT">東京 NRT</option>
+      <option value="KIX">大阪 KIX</option>
+      <option value="HKG">香港 HKG</option>
+      <option value="PVG">上海 PVG</option>
+    </select>
+  </div>
+  <div class="config-group">
+    <label>02. 護照國籍</label>
+    <select id="nationality">
+      <option value="TW" selected>台灣</option>
+      <option value="JP">日本</option>
+      <option value="CN">中國</option>
+      <option value="HK">香港</option>
+      <option value="US">美國</option>
+    </select>
+  </div>
+  <div class="config-group">
+    <label>03. 工作地點</label>
+    <select id="workCountry">
+      <option value="TW" selected>台灣</option>
+      <option value="JP">日本</option>
+      <option value="KR">韓國</option>
+      <option value="CN">中國</option>
+      <option value="HK">香港</option>
+      <option value="US">美國</option>
+    </select>
+  </div>
+  <div class="config-group">
+    <label>04. 年假天數</label>
+    <input type="number" id="ptoDays" value="14" min="0" max="30" style="width:60px">
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats" id="statsBar"></div>
+
+<hr class="divider">
+
+<!-- 01. PRICE CHART -->
+<div class="section">
+  <div class="section-num">01. Price Trend</div>
+  <h2 id="routeLabel">TPE ↔ PUS 全年票價</h2>
+  <div style="margin-top:24px">
+    <div class="chart-wrap"><canvas id="priceChart"></canvas></div>
+    <div class="chart-legend">
+      <span><span class="legend-line" style="background:var(--fg)"></span>月均價</span>
+      <span><span class="legend-line" style="background:var(--accent)"></span>你的購買價</span>
+      <span><span class="legend-line" style="background:#ddd;height:8px"></span>價格區間</span>
+    </div>
+  </div>
+</div>
+
+<!-- 02. HEATMAP -->
+<div class="section">
+  <div class="section-num">02. Price Density</div>
+  <h2>價格分佈 Heatmap</h2>
+  <div style="margin-top:16px" id="heatmap"></div>
+</div>
+
+<hr class="divider">
+
+<!-- 03. SEASON -->
+<div class="section">
+  <div class="section-num">03. Season</div>
+  <h2>氣候 + 旅遊季節</h2>
+  <div style="margin-top:16px">
+    <div class="tl-labels" id="seasonLabels"></div>
+    <div class="season-strip" id="seasonStrip"></div>
+    <div id="weatherRow" style="display:grid;grid-template-columns:repeat(12,1fr);margin-top:4px"></div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- 04. FESTIVALS -->
+<div class="section">
+  <div class="section-num">04. Local Events</div>
+  <h2>釜山節慶 + 活動</h2>
+  <div style="margin-top:16px">
+    <div class="tl-labels" id="festLabels"></div>
+    <div class="timeline-grid" id="festivalTimeline"></div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- 05. HOLIDAYS -->
+<div class="section">
+  <div class="section-num">05. Your Holidays</div>
+  <h2 id="holidayTitle">你的假日</h2>
+  <div style="margin-top:16px">
+    <div class="tl-labels" id="holLabels"></div>
+    <div class="timeline-grid" id="holidayTimeline"></div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- 06. RECOMMENDATIONS -->
+<div class="section">
+  <div class="section-num">06. Recommendation</div>
+  <h2>最佳出行月份</h2>
+  <p class="small" style="margin:8px 0 16px">綜合票價 × 氣候 × 活動 × 假期計算</p>
+  <div class="rec-grid" id="recommendations"></div>
+</div>
+
+<hr class="divider-thin">
+<p class="small" style="text-align:left;padding:24px 0">Data sources: Google Flights, Skyscanner, lillian.tw, trip.json — Prices are estimates. Last updated 2026-03.</p>
+
+</div>
+
+<script>
+const MONTHS=["1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"];
+const MEN=["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"];
+const WEATHER=["3–8°C","3–10°C","8–14°C","12–18°C","16–22°C","20–25°C","24–29°C","25–30°C","22–27°C","16–22°C","10–16°C","5–10°C"];
+const SEASON_SCORE=[7,6,9,9,8,6,4,3,7,9,8,6];
+const SEASON_NAME=["冬","冬","春","春","春","夏","夏","夏","秋","秋","秋","冬"];
+
+const FD={
+  TPE:{p:[6200,7800,6500,5800,6800,6000,7500,8200,7000,8500,6500,6000],lo:[4700,5500,4800,4200,5000,4400,5500,6000,5200,6200,4800,4400],hi:[9900,12000,9800,8500,10000,9000,11000,12500,10500,12000,9800,9000],n:["淡季","春節漲","櫻花需求起","確認最便宜(KAYAK)","黃金週外溢","雨季低需求","暑假旺季","暑假最高峰","秋夕假期","確認最貴(BIFF+紅葉)","淡季","確認便宜(Skyscanner)"]},
+  NRT:{p:[45000,38000,35000,30000,33000,28000,25000,32000,29000,38000,32000,40000],lo:[30000,25000,23000,20000,22000,18000,16000,21000,19000,25000,21000,26000],hi:[60000,50000,47000,40000,44000,37000,33000,42000,38000,50000,42000,53000],n:["最貴","農曆影響","","春季適中","黃金週","雨季最低需求","確認最便宜","お盆","","秋季BIFF","","年末"]},
+  KIX:{p:[38000,32000,30000,25000,28000,23000,21000,27000,24000,32000,27000,34000],lo:[25000,21000,20000,17000,18000,15000,14000,18000,16000,21000,18000,22000],hi:[50000,42000,40000,33000,37000,30000,28000,35000,32000,42000,35000,45000],n:["","","","","","","","","","","",""]},
+  HKG:{p:[5500,6800,5800,5200,6000,5300,6600,7200,6200,7500,5800,5300],lo:[4000,4800,4200,3800,4300,3800,4800,5200,4500,5500,4200,3800],hi:[8000,10000,8500,7500,8800,7800,9500,10500,9000,11000,8500,7800],n:["","","","","","","","","","","",""]},
+  PVG:{p:[4800,6000,5000,4500,5200,4600,5800,6300,5400,6500,5000,4600],lo:[3500,4200,3600,3200,3800,3300,4200,4500,3900,4700,3600,3300],hi:[7000,8800,7300,6500,7600,6700,8400,9200,7800,9500,7300,6700],n:["","春節","","","五一","","","","","十一","",""]},
+};
+
+const FESTS=[
+  {name:"北極熊冬泳祭",m:0,cat:"festival",d:"海雲台冬泳祈福 1/17-18"},
+  {name:"冬季燈飾",m:0,cat:"culture",d:"海雲台+光復路 11月-1月"},
+  {name:"설날慶典",m:0,cat:"culture",d:"農曆新年傳統活動 1/28-30"},
+  {name:"鎮海軍港祭",m:2,cat:"nature",d:"韓國最大櫻花祭 36萬株 3月底"},
+  {name:"釜山櫻花季",m:2,cat:"nature",d:"3/23開花 3/29-4/5滿開"},
+  {name:"廣安里無人機秀",m:2,cat:"culture",d:"每晚20:00+22:00 3-9月"},
+  {name:"釜山市民祭",m:3,cat:"festival",d:"全城表演市集 4/3-5/31"},
+  {name:"沙雕節",m:4,cat:"festival",d:"海雲台沙雕+K-culture 5/16-19"},
+  {name:"港口煙火祭",m:4,cat:"festival",d:"20分鐘大型煙火開幕"},
+  {name:"佛誕花燈遊行",m:4,cat:"culture",d:"梵魚寺+海東龍宮寺 5/24"},
+  {name:"BOF K-POP",m:5,cat:"festival",d:"10週年 亞運主場館 6/27-28"},
+  {name:"搖滾音樂節",m:5,cat:"culture",d:"三樂生態公園多日搖滾"},
+  {name:"海洋祭",m:6,cat:"festival",d:"海灘音樂會+Night Pool+煙火"},
+  {name:"海雲台開海",m:6,cat:"nature",d:"正式海灘季開始"},
+  {name:"喜劇節BICF",m:7,cat:"culture",d:"亞洲首個國際喜劇節"},
+  {name:"秋夕慶典",m:8,cat:"culture",d:"韓國感恩節 傳統活動 9/24-26"},
+  {name:"BIFF電影節",m:9,cat:"culture",d:"亞洲最大 200+部 10/6-15"},
+  {name:"札嘎其魚祭",m:9,cat:"food",d:"生魚片大賽+魚拍賣 10/23-26"},
+  {name:"甘川文化村祭",m:9,cat:"culture",d:"彩色村藝術嘉年華"},
+  {name:"紅葉季",m:9,cat:"nature",d:"金井山+梵魚寺+太宗台"},
+  {name:"釜山煙火節",m:10,cat:"festival",d:"廣安里超大規模音樂煙火秀"},
+  {name:"聖誕燈飾",m:11,cat:"culture",d:"光復路+海雲台 12月-2月"},
+];
+
+const HL={
+  TW:{n:"台灣",h:[{n:"元旦",d:"1/1-1/3",t:"請0天放3天",l:3,m:0},{n:"農曆春節",d:"2/6-2/14",t:"請0天放9天",l:9,m:1},{n:"和平紀念日",d:"2/28",t:"請1天放3天",l:3,m:1},{n:"清明節",d:"4/2-4/5",t:"請0天放4天",l:4,m:3},{n:"勞動節",d:"5/1(五)",t:"請0天放3天",l:3,m:4},{n:"端午節",d:"5/31",t:"5/29請1天放4天",l:4,m:4},{n:"中秋節",d:"9/25(五)",t:"請0天放3天",l:3,m:8},{n:"雙十國慶",d:"10/9-10/11",t:"請0天放3天",l:3,m:9}]},
+  JP:{n:"日本",h:[{n:"年末年始",d:"12/29-1/3",t:"6連休",l:6,m:0},{n:"成人の日",d:"1/10-1/12",t:"3連休",l:3,m:0},{n:"春分",d:"3/20-3/22",t:"3連休",l:3,m:2},{n:"GW黃金週",d:"4/29-5/6",t:"大型連休",l:8,m:3},{n:"海の日",d:"7/18-7/20",t:"3連休",l:3,m:6},{n:"お盆",d:"8/11-8/16",t:"盆休み",l:6,m:7},{n:"SW銀色週",d:"9/19-9/23",t:"5連休",l:5,m:8},{n:"勤勞感謝",d:"11/21-11/23",t:"3連休",l:3,m:10}]},
+  KR:{n:"韓國",h:[{n:"新正",d:"1/1(四)",t:"",l:1,m:0},{n:"설날",d:"1/28-1/30",t:"3天(三-五)+週末=5天",l:5,m:0},{n:"三一節+補假",d:"3/1-3/2",t:"日+一",l:3,m:2},{n:"兒童節",d:"5/5(二)",t:"請5/4放4天",l:1,m:4},{n:"佛誕+補假",d:"5/24-5/25",t:"日+一",l:3,m:4},{n:"地方選舉",d:"6/3(三)",t:"2026特別假",l:1,m:5},{n:"光復節+補假",d:"8/15-8/17",t:"六-一",l:3,m:7},{n:"추석",d:"9/24-9/27",t:"四-日=4天",l:4,m:8},{n:"開天節+補假",d:"10/3-10/5",t:"六-一",l:3,m:9},{n:"韓文日",d:"10/9(五)",t:"請10/6-8放5天",l:3,m:9},{n:"聖誕節",d:"12/25(五)",t:"3天週末",l:3,m:11}]},
+  US:{n:"美國",h:[{n:"New Year",d:"1/1",t:"",l:1,m:0},{n:"MLK Day",d:"1/17-1/19",t:"3-day",l:3,m:0},{n:"Memorial",d:"5/23-5/25",t:"3-day",l:3,m:4},{n:"July 4th",d:"7/3-7/5",t:"3-day",l:3,m:6},{n:"Labor Day",d:"9/5-9/7",t:"3-day",l:3,m:8},{n:"Thanksgiving",d:"11/26-11/29",t:"4-day",l:4,m:10},{n:"Christmas",d:"12/24-12/26",t:"",l:3,m:11}]},
+  CN:{n:"中國",h:[{n:"元旦",d:"1/1-1/3",t:"3天",l:3,m:0},{n:"春節",d:"2/17-2/23",t:"7天",l:7,m:1},{n:"清明",d:"4/4-4/6",t:"3天",l:3,m:3},{n:"勞動節",d:"5/1-5/5",t:"5天",l:5,m:4},{n:"端午",d:"6/19-6/21",t:"3天",l:3,m:5},{n:"國慶黃金週",d:"10/1-10/7",t:"7天",l:7,m:9}]},
+  HK:{n:"香港",h:[{n:"元旦",d:"1/1",t:"",l:1,m:0},{n:"農曆新年",d:"2/17-2/19",t:"3天",l:3,m:1},{n:"復活節",d:"4/3-4/6",t:"4天",l:4,m:3},{n:"勞動節",d:"5/1",t:"",l:1,m:4},{n:"回歸日",d:"7/1",t:"",l:1,m:6},{n:"國慶",d:"10/1",t:"",l:1,m:9},{n:"中秋翌日",d:"10/6",t:"",l:1,m:9},{n:"聖誕",d:"12/25-12/26",t:"2天",l:2,m:11}]},
+};
+
+const tooltip=document.getElementById('tooltip');
+function showTT(e,html){tooltip.innerHTML=html;tooltip.style.display='block';const x=Math.min(e.clientX+12,innerWidth-280);const y=e.clientY-tooltip.offsetHeight-8;tooltip.style.left=x+'px';tooltip.style.top=(y<0?e.clientY+12:y)+'px'}
+function hideTT(){tooltip.style.display='none'}
+
+function tlLabels(id){document.getElementById(id).innerHTML=MEN.map(m=>`<span>${m}</span>`).join('')}
+
+function renderStats(){
+  const o=document.getElementById('origin').value;const d=FD[o];
+  const min=Math.min(...d.p),max=Math.max(...d.p),avg=Math.round(d.p.reduce((a,b)=>a+b)/12);
+  const minM=MONTHS[d.p.indexOf(min)],maxM=MONTHS[d.p.indexOf(max)];
+  document.getElementById('statsBar').innerHTML=`
+    <div class="stat"><div class="label">最低月均</div><div class="stat-val">$${(min/1000).toFixed(1)}K</div><div class="stat-note">${minM}</div></div>
+    <div class="stat"><div class="label">最高月均</div><div class="stat-val">$${(max/1000).toFixed(1)}K</div><div class="stat-note">${maxM}</div></div>
+    <div class="stat"><div class="label">年平均</div><div class="stat-val">$${(avg/1000).toFixed(1)}K</div><div class="stat-note">TWD</div></div>`;
+}
+
+function renderChart(){
+  const o=document.getElementById('origin').value;const d=FD[o];
+  document.getElementById('routeLabel').textContent=`${o} ↔ PUS 全年票價`;
+  const canvas=document.getElementById('priceChart');const ctx=canvas.getContext('2d');
+  const dpr=devicePixelRatio||1;const rect=canvas.parentElement.getBoundingClientRect();
+  canvas.width=rect.width*dpr;canvas.height=rect.height*dpr;ctx.scale(dpr,dpr);
+  const W=rect.width,H=rect.height;const pad={t:24,r:50,b:28,l:48};
+  const cW=W-pad.l-pad.r,cH=H-pad.t-pad.b;
+  const allP=[...d.lo,...d.hi];const minY=Math.floor(Math.min(...allP)/5000)*5000;const maxY=Math.ceil(Math.max(...allP)/5000)*5000;
+  const xP=i=>pad.l+(i/11)*cW;const yP=v=>pad.t+(1-(v-minY)/(maxY-minY))*cH;
+  ctx.clearRect(0,0,W,H);
+
+  // Grid
+  ctx.strokeStyle='#eee';ctx.lineWidth=1;
+  for(let v=minY;v<=maxY;v+=5000){const y=yP(v);ctx.beginPath();ctx.moveTo(pad.l,y);ctx.lineTo(W-pad.r,y);ctx.stroke();ctx.fillStyle='#999';ctx.font='600 10px Inter,sans-serif';ctx.textAlign='right';ctx.fillText(`${v/1000}K`,pad.l-8,y+3)}
+
+  // Range fill
+  ctx.beginPath();for(let i=0;i<12;i++)ctx.lineTo(xP(i),yP(d.hi[i]));for(let i=11;i>=0;i--)ctx.lineTo(xP(i),yP(d.lo[i]));ctx.closePath();ctx.fillStyle='rgba(0,0,0,.04)';ctx.fill();
+
+  // Main line
+  ctx.beginPath();ctx.strokeStyle='#000';ctx.lineWidth=2.5;ctx.lineJoin='round';
+  for(let i=0;i<12;i++){if(i===0)ctx.moveTo(xP(i),yP(d.p[i]));else ctx.lineTo(xP(i),yP(d.p[i]))}ctx.stroke();
+
+  // User price
+  const up=18600;ctx.setLineDash([6,4]);ctx.strokeStyle='#FF3000';ctx.lineWidth=1.5;ctx.beginPath();ctx.moveTo(pad.l,yP(up));ctx.lineTo(W-pad.r,yP(up));ctx.stroke();ctx.setLineDash([]);ctx.fillStyle='#FF3000';ctx.font='bold 10px Inter,sans-serif';ctx.textAlign='left';ctx.fillText(`$${up.toLocaleString()}`,W-pad.r+4,yP(up)+3);
+
+  // Dots
+  for(let i=0;i<12;i++){const x=xP(i),y=yP(d.p[i]);
+    ctx.beginPath();ctx.arc(x,y,4,0,Math.PI*2);
+    const isMin=d.p[i]===Math.min(...d.p),isMax=d.p[i]===Math.max(...d.p);
+    ctx.fillStyle=isMin?'#FF3000':isMax?'#FF3000':'#000';ctx.fill();ctx.strokeStyle='#fff';ctx.lineWidth=2;ctx.stroke();
+    ctx.fillStyle='#666';ctx.font='bold 9px Inter,sans-serif';ctx.textAlign='center';ctx.fillText(MEN[i],x,H-pad.b+14);
+    if(isMin||isMax){ctx.fillStyle='#FF3000';ctx.font='bold 11px Inter,sans-serif';ctx.fillText(`$${(d.p[i]/1000).toFixed(1)}K`,x,y-12)}
+  }
+}
+
+function renderHeatmap(){
+  const o=document.getElementById('origin').value;const d=FD[o];
+  const maxP=Math.max(...d.hi),minP=Math.min(...d.lo);
+  const levels=["最貴","偏貴","中間","偏便宜","最便宜"];
+  const factors=[.85,.65,.5,.35,.15];
+  let h='<div class="heatmap-grid"><div class="hm-corner hm-label"></div>';
+  MEN.forEach(m=>{h+=`<div class="hm-month">${m}</div>`});
+  levels.forEach((lbl,li)=>{
+    h+=`<div class="hm-label">${lbl}</div>`;
+    for(let m=0;m<12;m++){
+      const thresh=minP+(maxP-minP)*factors[li];
+      const dist=Math.abs(d.p[m]-thresh)/(maxP-minP);
+      const intensity=Math.max(0,1-dist*2.5);
+      const isExpensive=d.p[m]>(maxP+minP)/2;
+      const bg=isExpensive?`rgba(255,48,0,${(intensity*.4).toFixed(2)})`:`rgba(0,0,0,${(intensity*.15).toFixed(2)})`;
+      h+=`<div class="hm-cell" style="background:${bg}" onmouseenter="showTT(event,'<div class=tt-title>${MONTHS[m]}</div><div class=tt-price>NT$ ${d.p[m].toLocaleString()}</div><div class=tt-note>${d.lo[m].toLocaleString()} – ${d.hi[m].toLocaleString()}</div>${d.n[m]?'<div class=tt-note>'+d.n[m]+'</div>':''}')" onmouseleave="hideTT()">${intensity>.3?(d.p[m]/1000|0)+'K':''}</div>`;
+    }
+  });
+  h+='</div>';
+  document.getElementById('heatmap').innerHTML=h;
+}
+
+function renderSeason(){
+  const colors={冬:'#000',春:'#FF3000',夏:'#999',秋:'#333'};
+  document.getElementById('seasonStrip').innerHTML=SEASON_NAME.map((s,i)=>`<div class="season-cell" style="background:${colors[s]};opacity:${.15+SEASON_SCORE[i]*.07}" title="${MONTHS[i]} ${WEATHER[i]} ${s}"></div>`).join('');
+  document.getElementById('weatherRow').innerHTML=WEATHER.map(w=>`<div style="font-size:.6rem;text-align:center;color:#999;font-weight:500">${w}</div>`).join('');
+}
+
+function renderFestivals(){
+  let h='';for(let m=0;m<12;m++){h+=`<div class="tl-month">`;FESTS.forEach(f=>{if(f.m===m)h+=`<div class="tl-event ${f.cat}" onmouseenter="showTT(event,'<div class=tt-title>${f.name}</div><div class=tt-note>${f.d}</div>')" onmouseleave="hideTT()">${f.name}</div>`});h+='</div>'}
+  document.getElementById('festivalTimeline').innerHTML=h;
+}
+
+function renderHolidays(){
+  const nat=document.getElementById('nationality').value;
+  const work=document.getElementById('workCountry').value;
+  const nD=HL[nat],wD=HL[work];
+  document.getElementById('holidayTitle').textContent=nat===work?`${nD.n}假日`:`${nD.n}國籍 + ${wD.n}工作地假日`;
+  const all=[...nD.h.map(h=>({...h,src:nD.n}))];
+  if(nat!==work)wD.h.forEach(wh=>{if(!all.find(h=>h.d===wh.d))all.push({...wh,src:wD.n})});
+  let h='';for(let m=0;m<12;m++){h+=`<div class="tl-month">`;all.forEach(ho=>{if(ho.m===m){const len=ho.l>1?` ${ho.l}天`:'';h+=`<div class="tl-event holiday" onmouseenter="showTT(event,'<div class=tt-title>${ho.n}${len}</div><div class=tt-note>${ho.d}</div>${ho.t?'<div class=tt-note>💡 '+ho.t+'</div>':''}<div class=tt-note>📍 ${ho.src}</div>')" onmouseleave="hideTT()">${ho.n}${len}</div>`}});h+='</div>'}
+  document.getElementById('holidayTimeline').innerHTML=h;
+}
+
+function renderRecs(){
+  const o=document.getElementById('origin').value;const d=FD[o];
+  const nat=document.getElementById('nationality').value;const work=document.getElementById('workCountry').value;
+  const nH=HL[nat],wH=HL[work];
+  const allH=[...nH.h];if(nat!==work)wH.h.forEach(wh=>{if(!allH.find(h=>h.d===wh.d))allH.push(wh)});
+  const recs=[];
+  for(let m=0;m<12;m++){
+    const ps=1-(d.p[m]-Math.min(...d.p))/(Math.max(...d.p)-Math.min(...d.p));
+    const ss=SEASON_SCORE[m]/10;
+    let hb=0,hn=[];allH.forEach(h=>{if(h.m===m&&h.l>=3){hb=.3;hn.push(h.n+' '+h.l+'天')}});
+    let fb=0,fn=[];FESTS.forEach(f=>{if(f.m===m){fb=.15;fn.push(f.name)}});
+    recs.push({m,price:d.p[m],ps,ss,hb,fb,ts:ps*.35+ss*.3+hb*.2+fb*.15,hn,fn,w:WEATHER[m]});
+  }
+  recs.sort((a,b)=>b.ts-a.ts);
+  document.getElementById('recommendations').innerHTML=recs.slice(0,6).map((r,i)=>{
+    const tags=[];
+    if(r.ps>.7)tags.push('<span class="rec-tag price">低價</span>');
+    if(r.fn.length)tags.push(`<span class="rec-tag event">${r.fn[0]}</span>`);
+    if(r.ss>.7)tags.push('<span class="rec-tag weather">好天氣</span>');
+    if(r.hn.length)tags.push(`<span class="rec-tag price">${r.hn[0]}</span>`);
+    return `<div class="rec-card">
+      <div class="rec-rank">${String(i+1).padStart(2,'0')}</div>
+      <div class="rec-month">${MONTHS[r.m]} ${MEN[r.m]}</div>
+      <div class="rec-meta">${r.w} · NT$${r.price.toLocaleString()}</div>
+      <div class="score-row"><span class="score-label">票價</span><div class="score-track"><div class="score-fill" style="width:${r.ps*100}%"></div></div><span class="score-val">${Math.round(r.ps*100)}</span></div>
+      <div class="score-row"><span class="score-label">氣候</span><div class="score-track"><div class="score-fill" style="width:${r.ss*100}%"></div></div><span class="score-val">${Math.round(r.ss*100)}</span></div>
+      <div class="score-row"><span class="score-label">活動</span><div class="score-track"><div class="score-fill" style="width:${r.fb/.15*100}%"></div></div><span class="score-val">${r.fn.length?'✓':'—'}</span></div>
+      <div class="score-row"><span class="score-label">假期</span><div class="score-track"><div class="score-fill" style="width:${r.hb/.3*100}%"></div></div><span class="score-val">${r.hn.length?'✓':'—'}</span></div>
+      <div class="rec-tags">${tags.join('')}</div></div>`;
+  }).join('');
+}
+
+function init(){
+  tlLabels('seasonLabels');tlLabels('festLabels');tlLabels('holLabels');
+  renderStats();renderChart();renderHeatmap();renderSeason();renderFestivals();renderHolidays();renderRecs();
+}
+['origin','nationality','workCountry','ptoDays'].forEach(id=>document.getElementById(id).addEventListener('change',()=>{renderStats();renderChart();renderHeatmap();renderHolidays();renderRecs()}));
+addEventListener('resize',renderChart);
+init();
+</script>
+</body>
+</html>

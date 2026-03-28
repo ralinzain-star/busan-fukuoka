@@ -1,0 +1,361 @@
+{
+  "metadata": {
+    "destination": "Fukuoka (福岡), Japan",
+    "origin": "Taipei (TPE), Taiwan",
+    "destination_airport": "FUK",
+    "research_date": "2026-03-28",
+    "currency": "TWD"
+  },
+
+  "flight_prices_twd": {
+    "description": "Estimated monthly average round-trip flight prices TPE-FUK in TWD. Based on Skyscanner, Expedia, KAYAK data: cheapest month is September (~NT$7,000 RT), most expensive is April (~NT$14,000 RT during cherry blossom). Budget carriers (Peach, Tiger) start ~NT$3,400 one-way; full-service (EVA, JAL, STARLUX) ~NT$6,700-8,400 one-way.",
+    "note": "Prices are estimated averages combining LCC and full-service carriers for round-trip bookings. Actual prices vary by booking lead time and availability.",
+    "monthly_averages_round_trip": [
+      { "month": 1,  "month_name": "January",   "avg_twd": 8500,  "price_tier": "low",    "notes": "Post-New Year lull, good deals available" },
+      { "month": 2,  "month_name": "February",   "avg_twd": 9000,  "price_tier": "medium", "notes": "Lunar New Year spike mid-month, otherwise moderate" },
+      { "month": 3,  "month_name": "March",      "avg_twd": 11000, "price_tier": "high",   "notes": "Cherry blossom demand drives prices up late March" },
+      { "month": 4,  "month_name": "April",      "avg_twd": 14000, "price_tier": "peak",   "notes": "Peak cherry blossom + spring break; most expensive month" },
+      { "month": 5,  "month_name": "May",         "avg_twd": 12000, "price_tier": "high",   "notes": "Golden Week (Apr 29-May 6) inflates early May prices" },
+      { "month": 6,  "month_name": "June",        "avg_twd": 8000,  "price_tier": "low",    "notes": "Rainy season (tsuyu) suppresses demand" },
+      { "month": 7,  "month_name": "July",        "avg_twd": 10500, "price_tier": "medium", "notes": "Summer holidays begin; Yamakasa festival draws visitors" },
+      { "month": 8,  "month_name": "August",      "avg_twd": 11500, "price_tier": "high",   "notes": "Obon holiday period (mid-Aug) drives prices up" },
+      { "month": 9,  "month_name": "September",   "avg_twd": 7000,  "price_tier": "lowest", "notes": "Typhoon season + post-summer; cheapest month overall" },
+      { "month": 10, "month_name": "October",     "avg_twd": 10000, "price_tier": "medium", "notes": "Pleasant autumn weather increases demand" },
+      { "month": 11, "month_name": "November",    "avg_twd": 11000, "price_tier": "high",   "notes": "Autumn foliage peak + Sumo tournament" },
+      { "month": 12, "month_name": "December",    "avg_twd": 9500,  "price_tier": "medium", "notes": "Moderate; spikes around Christmas/New Year" }
+    ],
+    "price_tier_legend": {
+      "lowest": "Under NT$7,500",
+      "low": "NT$7,500-9,000",
+      "medium": "NT$9,000-10,500",
+      "high": "NT$10,500-13,000",
+      "peak": "Above NT$13,000"
+    }
+  },
+
+  "festivals_and_events": [
+    {
+      "name": "Tamaseseri (玉取祭 / Ball-Catching Festival)",
+      "name_jp": "玉せせり",
+      "month": 1,
+      "date_range": "January 3",
+      "description": "Men compete to seize a sacred wooden ball at Hakozaki Shrine; one of Kyushu's three great festivals",
+      "category": "festival"
+    },
+    {
+      "name": "Toka Ebisu (十日恵比須祭)",
+      "name_jp": "十日恵比須神社正月大祭",
+      "month": 1,
+      "date_range": "January 8-11",
+      "description": "Four-day festival at Toka Ebisu Shrine praying for business prosperity and good fortune",
+      "category": "festival"
+    },
+    {
+      "name": "Setsubun Festivals",
+      "name_jp": "節分祭",
+      "month": 2,
+      "date_range": "February 2-3",
+      "description": "Bean-throwing ceremonies at temples and shrines to drive away evil spirits and welcome spring",
+      "category": "culture"
+    },
+    {
+      "name": "Yanagawa Sagemon Festival",
+      "name_jp": "柳川さげもんまつり",
+      "month": 2,
+      "date_range": "February 11 - April 3",
+      "description": "Colorful hanging ornaments displayed throughout Yanagawa city for Girls' Day (Hina Matsuri)",
+      "category": "culture"
+    },
+    {
+      "name": "Ume (Plum Blossom) Viewing",
+      "name_jp": "梅花見",
+      "month": 2,
+      "date_range": "Mid-February to mid-March",
+      "description": "Plum blossoms at Dazaifu Tenmangu Shrine and Maizuru Park; 6,000 trees at Dazaifu",
+      "category": "nature"
+    },
+    {
+      "name": "Cherry Blossom Season (Hanami)",
+      "name_jp": "花見・桜",
+      "month": 3,
+      "date_range": "Late March to early April",
+      "description": "Fukuoka blooms among Japan's earliest; top spots: Maizuru Park (1,000 trees), Nishi Park, Atago Shrine",
+      "category": "nature"
+    },
+    {
+      "name": "Fukuoka Castle Sakura Festival",
+      "name_jp": "福岡城さくらまつり",
+      "month": 3,
+      "date_range": "Late March - early April (approx. Mar 25 - Apr 6)",
+      "description": "Night illumination of cherry blossoms at Maizuru Park/Fukuoka Castle ruins with food stalls",
+      "category": "festival"
+    },
+    {
+      "name": "National Umeshu Festival",
+      "name_jp": "全国梅酒まつり",
+      "month": 4,
+      "date_range": "Early April (Apr 2-5 in 2026)",
+      "description": "Taste and buy plum wines from across Japan at JR Hakata Station Square",
+      "category": "food"
+    },
+    {
+      "name": "Wisteria Viewing at Nakayama Kumano Shrine",
+      "name_jp": "中山大藤まつり",
+      "month": 4,
+      "date_range": "Mid to late April",
+      "description": "300-year-old giant wisteria trellis in Yame City; one of Fukuoka's top spring sights",
+      "category": "nature"
+    },
+    {
+      "name": "Hakata Dontaku Port Festival",
+      "name_jp": "博多どんたく港まつり",
+      "month": 5,
+      "date_range": "May 3-4",
+      "description": "Japan's largest festival by attendance (~2.1 million visitors); parades, street performances, shamoji dancing",
+      "category": "festival"
+    },
+    {
+      "name": "Hakata Gion Yamakasa",
+      "name_jp": "博多祇園山笠",
+      "month": 7,
+      "date_range": "July 1-15",
+      "description": "UNESCO-listed festival; men race carrying 1-ton decorated floats (kakiyama); climax Oiyama on July 15 at dawn",
+      "category": "festival"
+    },
+    {
+      "name": "Fireworks Festivals",
+      "name_jp": "花火大会",
+      "month": 7,
+      "date_range": "Late July - August",
+      "description": "Multiple fireworks displays along rivers and coastline including Ohori Park fireworks",
+      "category": "festival"
+    },
+    {
+      "name": "Kokura Gion Daiko",
+      "name_jp": "小倉祇園太鼓",
+      "month": 7,
+      "date_range": "Third weekend of July",
+      "description": "400-year-old drum festival in Kitakyushu with unique two-sided drumming style",
+      "category": "festival"
+    },
+    {
+      "name": "Tobata Gion Oyamagasa",
+      "name_jp": "戸畑祇園大山笠",
+      "month": 7,
+      "date_range": "Fourth weekend of July",
+      "description": "Pyramid-shaped floats lit with hundreds of lanterns paraded through Tobata at night",
+      "category": "festival"
+    },
+    {
+      "name": "Hojoya Festival",
+      "name_jp": "放生会",
+      "month": 9,
+      "date_range": "September 12-18",
+      "description": "Autumn festival at Hakozaki Shrine with ~500 food/game stalls lining the approach; 1,000+ year history",
+      "category": "festival"
+    },
+    {
+      "name": "Asian Month / Hakata Akihaku",
+      "name_jp": "アジアマンス・博多秋博",
+      "month": 9,
+      "date_range": "September - November",
+      "description": "City-wide cultural events celebrating Fukuoka's connections to Asia; food, art, performances",
+      "category": "culture"
+    },
+    {
+      "name": "Autumn Foliage Season",
+      "name_jp": "紅葉",
+      "month": 11,
+      "date_range": "Mid-November to early December",
+      "description": "Peak koyo at Nishi Park (Momiji Valley), Raizan Sennyoji, Kamado Shrine, Dazaifu Tenmangu",
+      "category": "nature"
+    },
+    {
+      "name": "Grand Sumo Tournament (Kyushu Basho)",
+      "name_jp": "大相撲九州場所",
+      "month": 11,
+      "date_range": "15 days from mid-November",
+      "description": "Annual sumo tournament at Fukuoka Kokusai Center; only Kyushu-based Grand Sumo event",
+      "category": "culture"
+    },
+    {
+      "name": "Christmas Illuminations",
+      "name_jp": "クリスマスイルミネーション",
+      "month": 11,
+      "date_range": "Late November - December 25",
+      "description": "Light displays at Hakata Station, Tenjin, Canal City; holiday markets and seasonal food",
+      "category": "culture"
+    },
+    {
+      "name": "Hakata Ramen Festival / Yatai Culture",
+      "name_jp": "博多ラーメン・屋台文化",
+      "month": 0,
+      "date_range": "Year-round",
+      "description": "Fukuoka's iconic outdoor food stalls (yatai) along Nakasu River serve tonkotsu ramen and more nightly",
+      "category": "food"
+    }
+  ],
+
+  "japan_public_holidays_2026": [
+    { "date": "2026-01-01", "name": "New Year's Day", "name_jp": "元日", "day_of_week": "Thursday" },
+    { "date": "2026-01-12", "name": "Coming of Age Day", "name_jp": "成人の日", "day_of_week": "Monday" },
+    { "date": "2026-02-11", "name": "National Foundation Day", "name_jp": "建国記念の日", "day_of_week": "Wednesday" },
+    { "date": "2026-02-23", "name": "Emperor's Birthday", "name_jp": "天皇誕生日", "day_of_week": "Monday" },
+    { "date": "2026-03-20", "name": "Spring Equinox Day", "name_jp": "春分の日", "day_of_week": "Friday" },
+    { "date": "2026-04-29", "name": "Showa Day", "name_jp": "昭和の日", "day_of_week": "Wednesday" },
+    { "date": "2026-05-03", "name": "Constitution Memorial Day", "name_jp": "憲法記念日", "day_of_week": "Sunday" },
+    { "date": "2026-05-04", "name": "Greenery Day", "name_jp": "みどりの日", "day_of_week": "Monday" },
+    { "date": "2026-05-05", "name": "Children's Day", "name_jp": "こどもの日", "day_of_week": "Tuesday" },
+    { "date": "2026-05-06", "name": "Observed Holiday (Constitution Memorial Day)", "name_jp": "振替休日", "day_of_week": "Wednesday" },
+    { "date": "2026-07-20", "name": "Marine Day", "name_jp": "海の日", "day_of_week": "Monday" },
+    { "date": "2026-08-11", "name": "Mountain Day", "name_jp": "山の日", "day_of_week": "Tuesday" },
+    { "date": "2026-09-21", "name": "Respect for the Aged Day", "name_jp": "敬老の日", "day_of_week": "Monday" },
+    { "date": "2026-09-22", "name": "Citizens' Holiday (Bridge Day)", "name_jp": "国民の休日", "day_of_week": "Tuesday" },
+    { "date": "2026-09-23", "name": "Autumn Equinox Day", "name_jp": "秋分の日", "day_of_week": "Wednesday" },
+    { "date": "2026-10-12", "name": "Sports Day", "name_jp": "スポーツの日", "day_of_week": "Monday" },
+    { "date": "2026-11-03", "name": "Culture Day", "name_jp": "文化の日", "day_of_week": "Tuesday" },
+    { "date": "2026-11-23", "name": "Labor Thanksgiving Day", "name_jp": "勤労感謝の日", "day_of_week": "Monday" }
+  ],
+
+  "special_holiday_periods_2026": [
+    {
+      "name": "New Year (Oshogatsu)",
+      "dates": "Dec 29, 2025 - Jan 3, 2026",
+      "note": "Many businesses closed; temples crowded for hatsumode. Avoid unless you want the cultural experience."
+    },
+    {
+      "name": "Golden Week",
+      "dates": "Apr 29 - May 6, 2026",
+      "note": "Showa Day (Wed Apr 29) + Constitution Memorial Day (Sun May 3) through observed holiday (Wed May 6). Extremely crowded; flights and hotels spike 30-50%."
+    },
+    {
+      "name": "Obon",
+      "dates": "Aug 13-16, 2026",
+      "note": "Not an official holiday but most workers take leave. Domestic travel surge; Fukuoka less affected than rural areas."
+    },
+    {
+      "name": "Silver Week",
+      "dates": "Sep 19-23, 2026",
+      "note": "RARE 5-day holiday (first since 2015, next not until 2032). Sat 19 + Sun 20 + Respect for Aged Day Mon 21 + Citizens' Holiday Tue 22 + Autumn Equinox Wed 23. Expect significant crowds."
+    }
+  ],
+
+  "seasonal_guide": {
+    "seasons": [
+      {
+        "season": "Spring",
+        "months": [3, 4, 5],
+        "temp_range_c": "10-22",
+        "rating": "peak",
+        "highlights": [
+          "Cherry blossoms late March - early April (Fukuoka blooms among Japan's earliest)",
+          "Wisteria mid-late April",
+          "Hakata Dontaku (May 3-4) - Japan's biggest festival by attendance",
+          "Mild, pleasant weather"
+        ],
+        "drawbacks": ["Highest flight prices (especially April)", "Hotels book up for hanami season"],
+        "cherry_blossom": {
+          "typical_first_bloom": "March 19-22",
+          "typical_full_bloom": "March 27-31",
+          "best_viewing_window": "March 25 - April 5",
+          "top_spots": ["Maizuru Park (1,000 trees)", "Nishi Park (Japan Top 100)", "Atago Shrine", "Uminonakamichi Park"]
+        }
+      },
+      {
+        "season": "Early Summer / Rainy Season",
+        "months": [6],
+        "temp_range_c": "20-27",
+        "rating": "off_season",
+        "highlights": [
+          "Cheapest flights after September",
+          "Hydrangea blooms at temples",
+          "Fewer tourists; authentic local experience"
+        ],
+        "drawbacks": ["Tsuyu (rainy season) typically June 5 - July 18", "High humidity (76%)", "272mm average rainfall"]
+      },
+      {
+        "season": "Summer",
+        "months": [7, 8],
+        "temp_range_c": "25-33",
+        "rating": "shoulder",
+        "highlights": [
+          "Hakata Gion Yamakasa (Jul 1-15) - UNESCO Intangible Cultural Heritage",
+          "Fireworks festivals",
+          "Beach activities at nearby Itoshima"
+        ],
+        "drawbacks": ["Hot and very humid (avg high 31-33C)", "Typhoon risk Aug-Sep", "Obon crowds mid-August"]
+      },
+      {
+        "season": "Autumn",
+        "months": [9, 10, 11],
+        "temp_range_c": "12-27",
+        "rating": "peak",
+        "highlights": [
+          "September: cheapest flights + Hojoya Festival",
+          "October: perfect weather (18-23C), lowest rainfall",
+          "November: autumn foliage peaks mid-Nov to early Dec",
+          "Grand Sumo Kyushu Basho (mid-November, 15 days)",
+          "Silver Week 2026 (Sep 19-23) - rare 5-day holiday"
+        ],
+        "drawbacks": ["Typhoon tail-risk in September", "Silver Week 2026 will be unusually crowded"],
+        "autumn_foliage": {
+          "typical_start": "Early November",
+          "typical_peak": "Mid-November to early December",
+          "top_spots": ["Nishi Park Momiji Valley", "Raizan Sennyoji", "Kamado Shrine", "Dazaifu Tenmangu", "Akizuki Castle Town"]
+        }
+      },
+      {
+        "season": "Winter",
+        "months": [12, 1, 2],
+        "temp_range_c": "3-12",
+        "rating": "off_season",
+        "highlights": [
+          "Christmas illuminations (late Nov - Dec 25)",
+          "Lower flight prices (Jan especially)",
+          "Hot springs (onsen) season; easy access to Beppu/Yufuin",
+          "Toka Ebisu Festival (Jan 8-11)",
+          "Fewer crowds; great for food-focused trips",
+          "Fukuoka winters are mild compared to Tokyo/Osaka"
+        ],
+        "drawbacks": ["Short daylight hours", "Some outdoor attractions less appealing", "New Year period closures"]
+      }
+    ],
+
+    "best_value_months": [1, 6, 9],
+    "best_weather_months": [4, 5, 10, 11],
+    "best_overall_recommendation": "Late October to mid-November: perfect weather, autumn colors beginning, Sumo tournament, reasonable flight prices, manageable crowds",
+    "avoid_if_budget_conscious": ["April (cherry blossom markup)", "Golden Week (Apr 29-May 6)", "Obon (Aug 13-16)", "Silver Week 2026 (Sep 19-23)"]
+  },
+
+  "weather_by_month": [
+    { "month": 1,  "avg_high_c": 9.8,  "avg_low_c": 3.2,  "rainfall_mm": 72,  "rainy_days": 8.9,  "humidity_pct": 64 },
+    { "month": 2,  "avg_high_c": 11.0, "avg_low_c": 3.8,  "rainfall_mm": 79,  "rainy_days": 8.7,  "humidity_pct": 64 },
+    { "month": 3,  "avg_high_c": 14.5, "avg_low_c": 6.8,  "rainfall_mm": 110, "rainy_days": 10.3, "humidity_pct": 65 },
+    { "month": 4,  "avg_high_c": 19.7, "avg_low_c": 11.4, "rainfall_mm": 121, "rainy_days": 9.8,  "humidity_pct": 67 },
+    { "month": 5,  "avg_high_c": 24.1, "avg_low_c": 15.9, "rainfall_mm": 139, "rainy_days": 9.5,  "humidity_pct": 70 },
+    { "month": 6,  "avg_high_c": 27.1, "avg_low_c": 20.3, "rainfall_mm": 272, "rainy_days": 12.4, "humidity_pct": 76 },
+    { "month": 7,  "avg_high_c": 31.0, "avg_low_c": 24.1, "rainfall_mm": 260, "rainy_days": 10.8, "humidity_pct": 75 },
+    { "month": 8,  "avg_high_c": 31.6, "avg_low_c": 24.5, "rainfall_mm": 168, "rainy_days": 9.4,  "humidity_pct": 73 },
+    { "month": 9,  "avg_high_c": 27.8, "avg_low_c": 20.9, "rainfall_mm": 178, "rainy_days": 9.5,  "humidity_pct": 72 },
+    { "month": 10, "avg_high_c": 22.8, "avg_low_c": 14.9, "rainfall_mm": 79,  "rainy_days": 6.5,  "humidity_pct": 68 },
+    { "month": 11, "avg_high_c": 17.0, "avg_low_c": 9.3,  "rainfall_mm": 89,  "rainy_days": 8.0,  "humidity_pct": 67 },
+    { "month": 12, "avg_high_c": 11.6, "avg_low_c": 4.8,  "rainfall_mm": 68,  "rainy_days": 8.5,  "humidity_pct": 65 }
+  ],
+
+  "sources": [
+    "https://www.skyscanner.com/routes/tpet/fuk/taipei-to-fukuoka.html",
+    "https://www.kayak.com/flight-routes/Taipei-Taiwan-Taoyuan-Intl-TPE/Fukuoka-FUK",
+    "https://www.expedia.com.tw/en/lp/flights/tpe/fuk/taipei-to-fukuoka",
+    "https://gofukuoka.jp/calendar.html",
+    "https://gofukuoka.jp/f-festival.html",
+    "https://www.crossroadfukuoka.jp/en/event",
+    "https://www.japan-talk.com/jt/new/fukuoka-calendar",
+    "https://www.nippon.com/en/japan-data/h02302/",
+    "https://www.timeanddate.com/holidays/japan/2026",
+    "https://blog.tokyoroomfinder.com/living-in-japan/silver-week-japan-2026/",
+    "https://www.japan-guide.com/e/e4807.html",
+    "https://www.fukuoka-now.com/en/fukuoka-autumn-leaves-guide/",
+    "https://www.climatestotravel.com/climate/japan/fukuoka",
+    "https://weather-and-climate.com/average-monthly-Rainfall-Temperature-Sunshine,fukuoka,Japan"
+  ]
+}

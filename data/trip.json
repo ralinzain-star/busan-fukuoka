@@ -1,0 +1,286 @@
+{
+  "destination":"釜山→阿蘇→福岡",
+  "entryRequirements":[
+    {"country":"KR","name":{"zh":"🇰🇷 韓國","en":"🇰🇷 Korea","ko":"🇰🇷 한국","ja":"🇰🇷 韓国"},"items":[
+      {"task":{"zh":"電子入境卡 e-Arrival Card","en":"e-Arrival Card","ko":"전자입국카드 e-Arrival Card","ja":"電子入国カード e-Arrival Card"},"url":"https://www.e-arrivalcard.go.kr/","deadline":{"zh":"3/27 起可填（抵達前3天）","en":"From 3/27 (3 days before arrival)","ko":"3/27부터 (도착 3일 전)","ja":"3/27から（到着3日前）"},"status":"pending"}
+    ]},
+    {"country":"JP","name":{"zh":"🇯🇵 日本","en":"🇯🇵 Japan","ko":"🇯🇵 일본","ja":"🇯🇵 日本"},"items":[
+      {"task":{"zh":"Visit Japan Web","en":"Visit Japan Web","ko":"Visit Japan Web","ja":"Visit Japan Web"},"url":"https://www.vjw.digital.go.jp/","deadline":{"zh":"出發前隨時可填","en":"Fill anytime before departure","ko":"출발 전 언제든 작성","ja":"出発前いつでも記入可"},"status":"pending"}
+    ]}
+  ],
+  "tagline":{
+    "zh":"在櫻花盛開的季節，從海邊城市走進火山秘境",
+    "en":"From coastal city to volcanic wonders, under cherry blossoms",
+    "ko":"벚꽃이 만개하는 계절, 해변 도시에서 화산 비경으로",
+    "ja":"桜満開の季節、海辺の街から火山の秘境へ"
+  },
+  "startDate":"2026-03-30","endDate":"2026-04-12",
+  "currency":{"home":"TWD","rates":{"KRW":42,"JPY":5,"USD":0.031}},
+  "flightIntel":{
+    "route":"TPE ↔ PUS/FUK","userPrice":18600,"booked":true,
+    "monthlyPrices":[
+      {"month":"4月","label":"Apr","avg":14500,"note":"淡季尾"},
+      {"month":"5月","label":"May","avg":15200,"note":""},
+      {"month":"6月","label":"Jun","avg":16800,"note":""},
+      {"month":"7月","label":"Jul","avg":24000,"note":"暑假旺季"},
+      {"month":"8月","label":"Aug","avg":28000,"note":"最貴"},
+      {"month":"9月","label":"Sep","avg":17500,"note":""},
+      {"month":"10月","label":"Oct","avg":16000,"note":""},
+      {"month":"11月","label":"Nov","avg":14000,"note":"秋季淡季"},
+      {"month":"12月","label":"Dec","avg":18500,"note":"聖誕旺"},
+      {"month":"1月","label":"Jan","avg":12000,"note":"最便宜"},
+      {"month":"2月","label":"Feb","avg":13500,"note":"春節後"},
+      {"month":"3月","label":"Mar","avg":21500,"note":"櫻花季"}
+    ],
+    "range":{"low":12000,"high":28000,"avg":21750}
+  },
+  "holidays":{
+    "country":"TW","countryName":"台灣",
+    "items":[
+      {"date":"2026-04-03","name":"清明節","days":"4/2–4/5 四天連假","tip":"請0天放4天","active":true},
+      {"date":"2026-05-01","name":"勞動節","days":"5/1（五）","tip":"請0天放3天（週五）"},
+      {"date":"2026-05-31","name":"端午節","days":"5/31（日）","tip":"5/29請1天放4天"},
+      {"date":"2026-06-14","name":"Dragon Boat 補班","days":"","tip":""},
+      {"date":"2026-09-25","name":"中秋節","days":"9/25（五）","tip":"請0天放3天"},
+      {"date":"2026-10-10","name":"雙十國慶","days":"10/9–10/11","tip":"請0天放3天"},
+      {"date":"2027-01-01","name":"元旦","days":"1/1–1/3","tip":"請0天放3天"},
+      {"date":"2027-02-06","name":"農曆春節","days":"2/6–2/14 九天","tip":"請0天放9天"}
+    ]
+  },
+  "pois":[
+    {"id":"b1","name":"龍頭山公園+釜山塔","nameLocal":"용두산공원/부산타워","city":"busan","cat":"attraction","lat":35.1008,"lng":129.0325,"price_krw":7200,"price_twd":173,"hours":"09:00–22:00","desc":"⭐必去 · 4/1 09:30-11:00","addr":"南浦洞"},
+    {"id":"b2","name":"BIFF廣場+國際市場","nameLocal":"비프광장/국제시장","city":"busan","cat":"food","lat":35.0974,"lng":129.0272,"price_krw":0,"price_twd":0,"hours":"全天","desc":"⭐必去 · 3/30 21:30 壅餅+魚板","addr":"南浦洞"},
+    {"id":"b3","name":"札嘉其魚市場","nameLocal":"자갈치시장","city":"busan","cat":"food","lat":35.0967,"lng":129.0306,"price_krw":30000,"price_twd":714,"hours":"05:00–22:00","desc":"⭐必去 · 4/1 11:00-12:30 生魚片午餐","addr":"南浦洞"},
+    {"id":"b4","name":"南川洞櫻花街","nameLocal":"남천동벚꽃길","city":"busan","cat":"attraction","lat":35.1425,"lng":129.1136,"price_krw":0,"price_twd":0,"hours":"全天","desc":"⭐必去 · 4/1 19:30 夜間最美","addr":"廣安里"},
+    {"id":"b5","name":"廣安里海灘+大橋夜景","nameLocal":"광안리해수욕장","city":"busan","cat":"attraction","lat":35.1531,"lng":129.1186,"price_krw":0,"price_twd":0,"hours":"全天","desc":"⭐必去 · 3/31 18:30-20:30","addr":"廣安里"},
+    {"id":"b6","name":"青沙浦+雙胞胎日落橋","nameLocal":"청사포","city":"busan","cat":"attraction","lat":35.1620,"lng":129.1870,"price_krw":0,"price_twd":0,"hours":"全天","desc":"⭐必去 · 3/31 15:00-17:30 日落最佳","addr":"海雲台"},
+    {"id":"b7","name":"Busan X the Sky","nameLocal":"부산엑스더스카이","city":"busan","cat":"attraction","lat":35.1625,"lng":129.1635,"price_krw":27000,"price_twd":643,"hours":"10:00–21:00","desc":"⭐必去 · 4/1 17:00-18:30 日落時去","addr":"海雲台"},
+    {"id":"b8","name":"海雲台海灘","nameLocal":"해운대해수욕장","city":"busan","cat":"attraction","lat":35.1587,"lng":129.1604,"price_krw":0,"price_twd":0,"hours":"全天","desc":"🔄有時間就去 · 3/31 10:15","addr":"海雲台"},
+    {"id":"b9","name":"The Bay 101","nameLocal":"더베이101","city":"busan","cat":"attraction","lat":35.1619,"lng":129.1417,"price_krw":0,"price_twd":0,"hours":"全天","desc":"🔄有時間就去","addr":"海雲台"},
+    {"id":"b10","name":"釜山精華一日遊（已訂）","nameLocal":"부산투어","city":"busan","cat":"attraction","lat":35.1141,"lng":129.0410,"price_krw":0,"price_twd":1694,"hours":"08:20–18:00","desc":"📌已訂 · 4/2 藍線公園+櫻花+海東龍宮寺+甘川文化村","addr":"全區"},
+    {"id":"k1","name":"熊本城夜間櫻花照明","nameLocal":"熊本城夜桜","city":"aso","cat":"attraction","lat":32.8064,"lng":130.7060,"price_jpy":800,"price_twd":160,"hours":"19:00–22:00","desc":"⭐必去 · 4/4 19:00-21:00 春季限定到4/5","addr":"熊本市"},
+    {"id":"k2","name":"阿蘇中岳火山口","nameLocal":"阿蘇中岳火口","city":"aso","cat":"attraction","lat":32.8842,"lng":131.0843,"price_jpy":1030,"price_twd":206,"hours":"08:30–17:00","desc":"⭐必去 · 4/4 11:00-13:00","addr":"阿蘇山"},
+    {"id":"k3","name":"草千里濱+米塚","nameLocal":"草千里ヶ浜/米塚","city":"aso","cat":"attraction","lat":32.8898,"lng":131.0645,"price_jpy":0,"price_twd":0,"hours":"全天","desc":"⭐必去 · 4/4 13:30-15:00","addr":"阿蘇山"},
+    {"id":"k4","name":"大觀峰","nameLocal":"大観峰","city":"aso","cat":"attraction","lat":32.9530,"lng":131.0495,"price_jpy":0,"price_twd":0,"hours":"全天","desc":"⭐必去 · 4/4 10:00-10:45 早上最佳","addr":"阿蘇山"},
+    {"id":"k5","name":"阿蘇神社","nameLocal":"阿蘇神社","city":"aso","cat":"attraction","lat":32.9475,"lng":131.1163,"price_jpy":0,"price_twd":0,"hours":"06:00–18:00","desc":"⭐必去 · 4/4 15:30-16:30 樓門2024修復","addr":"一之宮"},
+    {"id":"k6","name":"阿蘇內牧溫泉","nameLocal":"阿蘇内牧温泉","city":"aso","cat":"attraction","lat":32.9522,"lng":131.0652,"price_jpy":500,"price_twd":100,"hours":"依各旅館","desc":"⭐必去 · 4/4 17:00-18:00","addr":"阿蘇町"},
+    {"id":"f1","name":"太宰府天滿宮","nameLocal":"太宰府天満宮","city":"fukuoka","cat":"attraction","lat":33.5214,"lng":130.5354,"price_jpy":0,"price_twd":0,"hours":"06:00–19:00","desc":"⭐必去 · 4/5 10:00-12:00 隈研吾Starbucks+光明禪寺","addr":"太宰府"},
+    {"id":"f2","name":"柳川遊船","nameLocal":"柳川川下り","city":"fukuoka","cat":"attraction","lat":33.1631,"lng":130.4105,"price_jpy":3340,"price_twd":668,"hours":"09:00–16:30","desc":"⭐必去 · 4/5 13:30-16:30 西鐵套票","addr":"柳川"},
+    {"id":"f3","name":"高千穗峽 Klook一日遊","nameLocal":"高千穂峡","city":"fukuoka","cat":"attraction","lat":32.7224,"lng":131.3058,"price_jpy":0,"price_twd":1877,"hours":"07:50–18:00","desc":"⭐必去 · 4/11 上色見熊野+天岩戶神社+天安河原","addr":"宮崎"},
+    {"id":"f4","name":"中洲屋台","nameLocal":"中洲屋台","city":"fukuoka","cat":"food","lat":33.5916,"lng":130.4056,"price_jpy":1500,"price_twd":300,"hours":"18:00–02:00","desc":"⭐必去 · 4/6 19:00 現金限定","addr":"中洲"},
+    {"id":"f5","name":"西公園夜櫻","nameLocal":"西公園夜桜","city":"fukuoka","cat":"attraction","lat":33.5960,"lng":130.3765,"price_jpy":0,"price_twd":0,"hours":"全天","desc":"⭐必去 · 4/7 19:00-20:30 百大櫻花名所到4/10","addr":"西區"},
+    {"id":"f6","name":"大名/親不孝通居酒屋","nameLocal":"大名・親不孝通り","city":"fukuoka","cat":"food","lat":33.5893,"lng":130.3932,"price_jpy":2000,"price_twd":400,"hours":"18:00–","desc":"⭐必去 · 4/8 19:00","addr":"天神"},
+    {"id":"f7","name":"屋台烒然拉麵+牧鍋","nameLocal":"焼きラーメン/もつ鍋","city":"fukuoka","cat":"food","lat":33.5910,"lng":130.4020,"price_jpy":3500,"price_twd":700,"hours":"18:00–","desc":"⭐必去 · 4/9 19:00 需預約","addr":"中洲/天神"},
+    {"id":"fw1","name":"Engineer Cafe（工作空間）","nameLocal":"エンジニアカフェ","city":"fukuoka","cat":"cafe","lat":33.5902,"lng":130.3995,"price_jpy":0,"price_twd":0,"hours":"09:00–21:00","desc":"✅免費 · 覆蓋10:00-18:00 · 插座WiFi完備","addr":"天神"},
+    {"id":"fw2","name":"Startup Cafe（工作空間）","nameLocal":"スタートアップカフェ","city":"fukuoka","cat":"cafe","lat":33.5890,"lng":130.3930,"price_jpy":0,"price_twd":0,"hours":"10:00–22:00","desc":"✅免費 · 覆蓋10:00-18:00 · 剛好10:00開","addr":"大名"}
+  ],
+  "schedule":[
+    {"date":"2026-03-30","city":"釜山","events":[
+      {"sh":19.5,"eh":20,"name":"抵達金海機場","name_en":"Arrive Gimhae Airport","name_ko":"김해공항 도착","name_ja":"金海空港到着","cat":"transport","note":"19:55 降落","note_en":"19:55 Landing","note_ko":"19:55 착륙","note_ja":"19:55 着陸"},
+      {"sh":20,"eh":21.25,"name":"BGL+地鐵→Onjeong Stay","name_en":"BGL+Subway→Onjeong Stay","name_ko":"BGL+지하철→온정스테이","name_ja":"BGL+地下鉄→Onjeong Stay","cat":"transport","note":"~55min ₩1,500","note_en":"~55min ₩1,500","note_ko":"~55분 ₩1,500","note_ja":"~55分 ₩1,500"},
+      {"sh":21.25,"eh":22,"name":"BIFF廣場 壅餅+魚板","name_en":"BIFF Square: Hotteok+Fish Cake","name_ko":"BIFF광장 호떡+어묵","name_ja":"BIFF広場 ホットク+おでん","cat":"food","note":"21:30 南浦洞小吃","note_en":"21:30 Nampo-dong snacks","note_ko":"21:30 남포동 간식","note_ja":"21:30 南浦洞おやつ","restaurant":"BIFF광장 먹거리","map":"https://www.google.com/maps/search/?api=1&query=BIFF광장+부산","reservation":false}
+    ]},
+    {"date":"2026-03-31","city":"釜山","events":[
+      {"sh":10,"eh":11.5,"name":"海雲台海灘散步","name_en":"Haeundae Beach Walk","name_ko":"해운대 해변 산책","name_ja":"海雲台ビーチ散歩","cat":"attraction","note":"10:15 出發","note_en":"10:15 Depart","note_ko":"10:15 출발","note_ja":"10:15 出発"},
+      {"sh":11.5,"eh":13,"name":"海雲台午餐","name_en":"Haeundae Lunch","name_ko":"해운대 점심","name_ja":"海雲台ランチ","cat":"food","note":"未定餐廳","note_en":"Restaurant TBD","note_ko":"식당 미정","note_ja":"レストラン未定","restaurant":"해운대 맛집（未定）","map":"https://www.google.com/maps/search/?api=1&query=해운대+맛집","reservation":false},
+      {"sh":13,"eh":14,"name":"🔄 Crashop迷你可頌","name_en":"🔄 Crashop Mini Croissant","name_ko":"🔄 크래숍 미니크루아상","name_ja":"🔄 Crashopミニクロワッサン","cat":"cafe","note":"西面轉車沿途","note_en":"On the way via Seomyeon","note_ko":"서면 환승 중 경유","note_ja":"西面乗換途中"},
+      {"sh":15,"eh":17.5,"name":"青沙浦+雙胞胎日落橋","name_en":"Cheongsapo+Twin Sunset Bridge","name_ko":"청사포+쌍둥이 일몰다리","name_ja":"青沙浦+双子夕日橋","cat":"attraction","note":"日落最佳","note_en":"Best at sunset","note_ko":"일몰 시 최적","note_ja":"日没がベスト"},
+      {"sh":17,"eh":18,"name":"🔄 Edge 993海景咖啡","name_en":"🔄 Edge 993 Sea View Cafe","name_ko":"🔄 Edge 993 오션뷰 카페","name_ja":"🔄 Edge 993 オーシャンビューカフェ","cat":"cafe","note":"沿途","note_en":"On the way","note_ko":"경유","note_ja":"途中"},
+      {"sh":18.5,"eh":20.5,"name":"廣安里海灘+大橋夜景","name_en":"Gwangalli Beach+Bridge Night View","name_ko":"광안리 해변+광안대교 야경","name_ja":"広安里ビーチ+大橋夜景","cat":"attraction","note":""},
+      {"sh":20,"eh":21,"name":"廣安里海邊小吃","name_en":"Gwangalli Beach Snacks","name_ko":"광안리 해변 간식","name_ja":"広安里ビーチ屋台","cat":"food","note":"海灘周邊攤販","note_en":"Beach area stalls","note_ko":"해변 주변 포장마차","note_ja":"ビーチ周辺屋台","restaurant":"광안리 포장마차","map":"https://www.google.com/maps/search/?api=1&query=광안리해수욕장+먹거리","reservation":false}
+    ]},
+    {"date":"2026-04-01","city":"釜山","events":[
+      {"sh":9.5,"eh":11,"name":"龍頭山公園+釜山塔","name_en":"Yongdusan Park+Busan Tower","name_ko":"용두산공원+부산타워","name_ja":"龍頭山公園+釜山タワー","cat":"attraction","note":""},
+      {"sh":11,"eh":12.5,"name":"札嘉其魚市場（午餐生魚片）","name_en":"Jagalchi Fish Market (Sashimi Lunch)","name_ko":"자갈치시장 (점심 회)","name_ja":"チャガルチ市場（刺身ランチ）","cat":"food","note":"2F刺身餐廳","note_en":"2F sashimi restaurant","note_ko":"2층 횟집","note_ja":"2F刺身レストラン","restaurant":"자갈치시장 2층 횟집","map":"https://www.google.com/maps/search/?api=1&query=자갈치시장+부산","reservation":false},
+      {"sh":13,"eh":14.5,"name":"國際市場+豬肉湯飯","name_en":"Gukje Market+Pork Soup Rice","name_ko":"국제시장+돼지국밥","name_ja":"国際市場+テジクッパ","cat":"food","note":"或冷麵","note_en":"Or cold noodles","note_ko":"또는 냉면","note_ja":"または冷麺","restaurant":"국제시장 돼지국밥","map":"https://www.google.com/maps/search/?api=1&query=국제시장+돼지국밥+부산","reservation":false},
+      {"sh":14.5,"eh":16,"name":"回飯店休息","name_en":"Rest at Hotel","name_ko":"호텔 휴식","name_ja":"ホテルで休憩","cat":"hotel","note":""},
+      {"sh":17,"eh":18.5,"name":"Busan X the Sky","name_en":"Busan X the Sky","name_ko":"부산 엑스더스카이","name_ja":"Busan X the Sky","cat":"attraction","note":"日落18:30","note_en":"Sunset 18:30","note_ko":"일몰 18:30","note_ja":"日没18:30"},
+      {"sh":19.5,"eh":21,"name":"南川洞櫻花街（夜間）","name_en":"Namcheon Cherry Blossom St. (Night)","name_ko":"남천동 벚꽃길 (야간)","name_ja":"南川洞桜並木（夜間）","cat":"attraction","note":"夜間最美","note_en":"Most beautiful at night","note_ko":"야간이 가장 아름다움","note_ja":"夜が最も美しい"}
+    ]},
+    {"date":"2026-04-02","city":"釜山","events":[
+      {"sh":8,"eh":18,"name":"📌一日遊：藍線+龍宮寺+甘川","name_en":"📌Day Tour: Blue Line+Yonggungsa+Gamcheon","name_ko":"📌일일투어: 블루라인+용궁사+감천","name_ja":"📌日帰りツアー：ブルーライン+龍宮寺+甘川","cat":"attraction","note":"釜山站2號出口集合08:20","note_en":"Meet at Busan Stn. Exit 2 at 08:20","note_ko":"부산역 2번 출구 08:20 집합","note_ja":"釜山駅2番出口 08:20集合"},
+      {"sh":18.5,"eh":20,"name":"西面站冷麵(밀면)","name_en":"Seomyeon Milmyeon Noodles","name_ko":"서면역 밀면","name_ja":"西面駅ミルミョン","cat":"food","note":"서면 밀면거리","note_en":"Seomyeon milmyeon street","note_ko":"서면 밀면거리","note_ja":"西面ミルミョン通り","restaurant":"개금밀면 or 할매가야밀면","map":"https://www.google.com/maps/search/?api=1&query=서면+밀면+부산","reservation":false}
+    ]},
+    {"date":"2026-04-03","city":"釜山→渡輪","events":[
+      {"sh":9.5,"eh":12,"name":"🔄 草梁故事路+168階梯","name_en":"🔄 Choryang Story Road+168 Steps","name_ko":"🔄 초량 이바구길+168계단","name_ja":"🔄 草梁ストーリーロード+168階段","cat":"attraction","note":"이바구플랫폼","note_en":"Ibagu Platform","note_ko":"이바구플랫폼","note_ja":"イバグプラットフォーム"},
+      {"sh":12,"eh":13.5,"name":"BIFF廣場最後韓國小吃","name_en":"BIFF Square Last Korean Snacks","name_ko":"BIFF광장 마지막 한국 간식","name_ja":"BIFF広場 最後の韓国おやつ","cat":"food","note":"最後韓食","note_en":"Last Korean food","note_ko":"마지막 한식","note_ja":"最後の韓国料理","restaurant":"BIFF광장 먹거리","map":"https://www.google.com/maps/search/?api=1&query=BIFF광장+부산","reservation":false},
+      {"sh":14,"eh":15,"name":"Check-out","name_en":"Check-out","name_ko":"체크아웃","name_ja":"チェックアウト","cat":"hotel","note":""},
+      {"sh":16.5,"eh":17,"name":"抵達渡輪碼頭","name_en":"Arrive at Ferry Terminal","name_ko":"페리 터미널 도착","name_ja":"フェリーターミナル到着","cat":"transport","note":"步行15-20min","note_en":"15-20min walk","note_ko":"도보 15-20분","note_ja":"徒歩15-20分"},
+      {"sh":20,"eh":22,"name":"🚢新山茶花號出發→福岡","name_en":"🚢Camellia Ferry Departs→Fukuoka","name_ko":"🚢뉴카멜리아호 출발→후쿠오카","name_ja":"🚢ニューかめりあ出発→福岡","cat":"transport","note":"夜間渡輪","note_en":"Overnight ferry","note_ko":"야간 페리","note_ja":"夜行フェリー"}
+    ]},
+    {"date":"2026-04-04","city":"阿蘇/熊本","events":[
+      {"sh":7.5,"eh":8,"name":"抵達博多港","name_en":"Arrive Hakata Port","name_ko":"하카타항 도착","name_ja":"博多港到着","cat":"transport","note":""},
+      {"sh":8,"eh":10,"name":"🚗朋友從熊本來接","name_en":"🚗Friend drives from Kumamoto to pick up","name_ko":"🚗친구가 구마모토에서 픽업","name_ja":"🚗友人が熊本から迎え","cat":"transport","note":"博多港→阿蘇 · 朋友住熊本","note_en":"Hakata Port→Aso · Friend lives in Kumamoto","note_ko":"하카타항→아소 · 친구 구마모토 거주","note_ja":"博多港→阿蘇・友人は熊本在住"},
+      {"sh":10,"eh":10.75,"name":"大觀峰","name_en":"Daikanbo Viewpoint","name_ko":"다이칸보","name_ja":"大観峰","cat":"attraction","note":"早上最佳 · 阿蘇五岳全景","note_en":"Best in morning · Aso 5 peaks panorama","note_ko":"오전 최적 · 아소 5봉 전경","note_ja":"朝がベスト・阿蘇五岳パノラマ"},
+      {"sh":11,"eh":13,"name":"阿蘇中岳火山口","name_en":"Aso Nakadake Crater","name_ko":"아소 나카다케 분화구","name_ja":"阿蘇中岳火口","cat":"attraction","note":"¥1,030 · 活火山口","note_en":"¥1,030 · Active volcano crater","note_ko":"¥1,030 · 활화산 분화구","note_ja":"¥1,030・活火山火口"},
+      {"sh":13.5,"eh":15,"name":"草千里濱+米塚","name_en":"Kusasenri+Komezuka","name_ko":"쿠사센리+코메즈카","name_ja":"草千里ヶ浜+米塚","cat":"attraction","note":"大草原","note_en":"Vast grassland","note_ko":"대초원","note_ja":"大草原"},
+      {"sh":15.5,"eh":16.5,"name":"阿蘇神社","name_en":"Aso Shrine","name_ko":"아소신사","name_ja":"阿蘇神社","cat":"attraction","note":"樓門2024修復","note_en":"Gate restored 2024","note_ko":"누문 2024 복원","note_ja":"楼門2024修復"},
+      {"sh":17,"eh":18,"name":"內牧溫泉","name_en":"Uchinomaki Onsen","name_ko":"우치노마키 온천","name_ja":"内牧温泉","cat":"attraction","note":"¥500 · 泡完溫泉再出發","note_en":"¥500 · Relax before heading out","note_ko":"¥500 · 온천 후 출발","note_ja":"¥500・温泉後出発"},
+      {"sh":19,"eh":21,"name":"🏯熊本城夜間櫻花照明","name_en":"🏯Kumamoto Castle Night Cherry Blossom","name_ko":"🏯구마모토성 야간 벚꽃 조명","name_ja":"🏯熊本城夜桜ライトアップ","cat":"attraction","note":"春季限定最後一天 · 回熊本順路","note_en":"Last day of spring event · On the way to Kumamoto","note_ko":"봄 한정 마지막 날 · 구마모토 가는 길","note_ja":"春季限定最終日・熊本への帰路"}
+    ]},
+    {"date":"2026-04-05","city":"太宰府+柳川","events":[
+      {"sh":8,"eh":9.5,"name":"朋友從熊本送到福岡","name_en":"Friend drives from Kumamoto to Fukuoka","name_ko":"친구가 구마모토에서 후쿠오카로","name_ja":"友人が熊本から福岡まで送迎","cat":"transport","note":"熊本→福岡 約1.5hr","note_en":"Kumamoto→Fukuoka ~1.5hr","note_ko":"구마모토→후쿠오카 약 1.5시간","note_ja":"熊本→福岡 約1.5時間"},
+      {"sh":10,"eh":12,"name":"太宰府天滿宮+參道","name_en":"Dazaifu Tenmangu+Approach","name_ko":"다자이후 텐만구+참배길","name_ja":"太宰府天満宮+参道","cat":"attraction","note":"🔄隈研吾Starbucks+光明禪寺","note_en":"🔄Kengo Kuma Starbucks+Komyozenji","note_ko":"🔄쿠마 켄고 스타벅스+고묘젠지","note_ja":"🔄隈研吾スタバ+光明禅寺"},
+      {"sh":13.5,"eh":16.5,"name":"柳川遊船","name_en":"Yanagawa River Cruise","name_ko":"야나가와 뱃놀이","name_ja":"柳川川下り","cat":"attraction","note":"西鐵套票¥3,340 · ~70min","note_en":"Nishitetsu pass ¥3,340 · ~70min","note_ko":"니시테츠 패스 ¥3,340 · ~70분","note_ja":"西鉄きっぷ¥3,340 · ~70分"},
+      {"sh":16.5,"eh":17.5,"name":"🔄鰻魚飯","name_en":"🔄Unagi Rice","name_ko":"🔄장어덮밥","name_ja":"🔄うなぎ丼","cat":"food","note":"六久/皿屋福龍","note_en":"Rokkyu/Saraya Fukuryu","note_ko":"로쿠/사라야 후쿠류","note_ja":"六久/皿屋福龍","restaurant":"六久（ろっきゅう）or 皿屋福龍","map":"https://www.google.com/maps/search/?api=1&query=柳川+うなぎ+六久","reservation":false},
+      {"sh":18.5,"eh":19.5,"name":"回福岡","name_en":"Return to Fukuoka","name_ko":"후쿠오카 복귀","name_ja":"福岡へ戻る","cat":"transport","note":""},
+      {"sh":20,"eh":21,"name":"福岡住宿check-in","name_en":"Fukuoka Hotel Check-in","name_ko":"후쿠오카 숙소 체크인","name_ja":"福岡ホテルチェックイン","cat":"hotel","note":""}
+    ]},
+    {"date":"2026-04-06","city":"糸島","events":[
+      {"sh":9,"eh":10,"name":"JR筑前前原站→糸島","name_en":"JR to Maebaru Stn→Itoshima","name_ko":"JR 치쿠젠마에바루역→이토시마","name_ja":"JR筑前前原駅→糸島","cat":"transport","note":"天神→筑前前原 JR ~35min ¥580","note_en":"Tenjin→Maebaru JR ~35min ¥580","note_ko":"텐진→마에바루 JR ~35분 ¥580","note_ja":"天神→筑前前原 JR ~35分 ¥580"},
+      {"sh":10,"eh":11.5,"name":"櫻井二見浦 夫婦岩","name_en":"Sakurai Futamigaura Meoto-Iwa","name_ko":"사쿠라이 후타미가우라 부부바위","name_ja":"桜井二見ヶ浦 夫婦岩","cat":"attraction","note":"白色鳥居+海上夫婦岩 · IG打卡聖地","note_en":"White torii+seaside twin rocks · IG famous","note_ko":"흰색 도리이+바다 부부바위 · 인스타 명소","note_ja":"白い鳥居+海上夫婦岩・インスタ映え"},
+      {"sh":11.5,"eh":13,"name":"糸島海岸咖啡 PALM BEACH","name_en":"Itoshima Coast Cafe PALM BEACH","name_ko":"이토시마 해안 카페 PALM BEACH","name_ja":"糸島海岸カフェ PALM BEACH","cat":"cafe","note":"海景露台座位 · 鬆餅+咖啡","note_en":"Ocean view terrace · Pancakes+coffee","note_ko":"오션뷰 테라스 · 팬케이크+커피","note_ja":"海のテラス席・パンケーキ+コーヒー"},
+      {"sh":13,"eh":14.5,"name":"糸島午餐：牡蠣小屋","name_en":"Itoshima Lunch: Oyster Hut","name_ko":"이토시마 점심: 굴 오두막","name_ja":"糸島ランチ：牡蠣小屋","cat":"food","note":"冬春限定 · 炭烤牡蠣吃到飽","note_en":"Winter-spring only · Grilled oyster buffet","note_ko":"겨울-봄 한정 · 숯불 굴 무한리필","note_ja":"冬春限定・炭火焼き牡蠣食べ放題","restaurant":"糸島 牡蠣小屋","map":"https://www.google.com/maps/search/?api=1&query=糸島+牡蠣小屋","reservation":false},
+      {"sh":15,"eh":16.5,"name":"#ジハングン+天使の羽","name_en":"#Jihangun+Angel Wings","name_ko":"#지항군+천사의 날개","name_ja":"#ジハングン+天使の羽","cat":"attraction","note":"海邊藝術裝置 · 拍照景點","note_en":"Seaside art installations · Photo spots","note_ko":"해변 예술 조형물 · 사진 명소","note_ja":"海辺アートオブジェ・撮影スポット"},
+      {"sh":16.5,"eh":17.5,"name":"糸島夕陽+回程","name_en":"Itoshima Sunset+Return","name_ko":"이토시마 석양+귀환","name_ja":"糸島夕日+帰路","cat":"attraction","note":"海岸線夕陽 → JR回天神","note_en":"Coastline sunset → JR back to Tenjin","note_ko":"해안선 석양 → JR로 텐진 복귀","note_ja":"海岸線の夕日→JRで天神へ"},
+      {"sh":19,"eh":21,"name":"中洲屋台（博多拉麵）","name_en":"Nakasu Yatai (Hakata Ramen)","name_ko":"나카스 야타이 (하카타 라멘)","name_ja":"中洲屋台（博多ラーメン）","cat":"food","note":"現金限定","note_en":"Cash only","note_ko":"현금만 가능","note_ja":"現金のみ","restaurant":"中洲屋台（なかす屋台）","map":"https://www.google.com/maps/search/?api=1&query=中洲屋台+福岡","reservation":false}
+    ]},
+    {"date":"2026-04-07","city":"福岡","events":[
+      {"sh":10,"eh":18,"name":"💼 Engineer/Startup Cafe工作","name_en":"💼 Work at Engineer/Startup Cafe","name_ko":"💼 엔지니어/스타트업 카페 근무","name_ja":"💼 エンジニア/スタートアップカフェで仕事","cat":"work","note":"台灣09:00-17:00","note_en":"Taiwan 09:00-17:00","note_ko":"대만 09:00-17:00","note_ja":"台湾 09:00-17:00"},
+      {"sh":19,"eh":20.5,"name":"西公園夜櫻","name_en":"Nishi Park Night Cherry Blossom","name_ko":"니시공원 야간 벚꽃","name_ja":"西公園夜桜","cat":"attraction","note":"免費 百大櫻花名所","note_en":"Free, Top 100 Cherry Blossom Spot","note_ko":"무료 100대 벚꽃 명소","note_ja":"無料 桜百選"}
+    ]},
+    {"date":"2026-04-08","city":"福岡","events":[
+      {"sh":10,"eh":18,"name":"💼 工作","name_en":"💼 Work","name_ko":"💼 근무","name_ja":"💼 仕事","cat":"work","note":""},
+      {"sh":19,"eh":21,"name":"大名/親不孝通居酒屋","name_en":"Daimyo/Oyafuko-dori Izakaya","name_ko":"다이묘/오야후코도리 이자카야","name_ja":"大名/親不孝通り居酒屋","cat":"food","note":"未定餐廳","note_en":"Restaurant TBD","note_ko":"식당 미정","note_ja":"レストラン未定","restaurant":"大名・親不孝通り居酒屋（未定）","map":"https://www.google.com/maps/search/?api=1&query=大名+親不孝通り+居酒屋+福岡","reservation":"needed"}
+    ]},
+    {"date":"2026-04-09","city":"福岡","events":[
+      {"sh":10,"eh":18,"name":"💼 工作","name_en":"💼 Work","name_ko":"💼 근무","name_ja":"💼 仕事","cat":"work","note":""},
+      {"sh":19,"eh":21,"name":"屋台烒然拉麵+牧鍋","name_en":"Yatai Yakimen+Motsu Nabe","name_ko":"야타이 야키라멘+모츠나베","name_ja":"屋台焼きラーメン+もつ鍋","cat":"food","note":"需預約⚠️","note_en":"Reservation needed ⚠️","note_ko":"예약 필요 ⚠️","note_ja":"予約必要 ⚠️","restaurant":"焼きラーメン屋台 + もつ鍋店","map":"https://www.google.com/maps/search/?api=1&query=もつ鍋+中洲+福岡","reservation":"needed"}
+    ]},
+    {"date":"2026-04-10","city":"福岡","events":[
+      {"sh":10,"eh":18,"name":"💼 工作","name_en":"💼 Work","name_ko":"💼 근무","name_ja":"💼 仕事","cat":"work","note":""},
+      {"sh":19,"eh":20.5,"name":"舞鶴公園夜櫻 or 自由活動","name_en":"Maizuru Park Night Cherry Blossom or Free Time","name_ko":"마이즈루공원 야간 벚꽃 or 자유시간","name_ja":"舞鶴公園夜桜 or フリータイム","cat":"attraction","note":""}
+    ]},
+    {"date":"2026-04-11","city":"福岡","events":[
+      {"sh":7.75,"eh":18,"name":"📷 Klook高千穗峽tour","name_en":"📷 Klook Takachiho Gorge Tour","name_ko":"📷 클룩 다카치호 협곡 투어","name_ja":"📷 Klook高千穂峡ツアー","cat":"attraction","note":"上色見熊野→高千穗峽→天岩戶神社→天安河原","note_en":"Kamishikimi Kumanoimasu→Takachiho Gorge→Amanoiwato Shrine→Amanoyasukawara","note_ko":"카미시키미 쿠마노→다카치호 협곡→아마노이와토 신사→아마노야스카와라","note_ja":"上色見熊野→高千穂峡→天岩戸神社→天安河原","booking_url":"https://www.klook.com/zh-TW/activity/141664"},
+      {"sh":19,"eh":20.5,"name":"Shin-Shin拉麵","name_en":"Shin-Shin Ramen","name_ko":"신신라멘","name_ja":"ShinShinラーメン","cat":"food","note":"天神或博多站","note_en":"Tenjin or Hakata Stn.","note_ko":"텐진 또는 하카타역","note_ja":"天神または博多駅","restaurant":"博多らーめん ShinShin 天神本店","map":"https://www.google.com/maps/search/?api=1&query=ShinShin+ラーメン+天神+福岡","reservation":false}
+    ]},
+    {"date":"2026-04-12","city":"福岡","events":[
+      {"sh":7.5,"eh":8,"name":"Check-out","name_en":"Check-out","name_ko":"체크아웃","name_ja":"チェックアウト","cat":"hotel","note":""},
+      {"sh":8,"eh":8.5,"name":"地鐵→福岡空港","name_en":"Subway→Fukuoka Airport","name_ko":"지하철→후쿠오카 공항","name_ja":"地下鉄→福岡空港","cat":"transport","note":"5min ¥260"},
+      {"sh":8.5,"eh":9,"name":"轉接駁巴士到國際線","name_en":"Shuttle Bus to Int'l Terminal","name_ko":"국제선 셔틀버스 환승","name_ja":"国際線シャトルバスに乗換","cat":"transport","note":""},
+      {"sh":10,"eh":12,"name":"✈️ IT241 FUK→TPE","name_en":"✈️ IT241 FUK→TPE","name_ko":"✈️ IT241 FUK→TPE","name_ja":"✈️ IT241 FUK→TPE","cat":"transport","note":"11:55 抵達桃園","note_en":"11:55 Arrive Taoyuan","note_ko":"11:55 타오위안 도착","note_ja":"11:55 桃園到着"}
+    ]}
+  ],
+  "budget":{
+    "items":[
+      {"name":"✈️ 機票來回 IT606+IT241","name_en":"✈️ Round-trip Flights IT606+IT241","name_ko":"✈️ 왕복 항공권 IT606+IT241","name_ja":"✈️ 往復航空券 IT606+IT241","city":"busan","cat":"transport","cost_twd":18600,"checked":false},
+      {"name":"🏨 Onjeong Stay 釜山4晚","name_en":"🏨 Onjeong Stay Busan 4 nights","name_ko":"🏨 온정스테이 부산 4박","name_ja":"🏨 Onjeong Stay 釜山4泊","city":"busan","cat":"hotel","cost_twd":2822,"checked":false},
+      {"name":"🚢 新山茶花號渡輪","name_en":"🚢 New Camellia Ferry","name_ko":"🚢 뉴카멜리아호 페리","name_ja":"🚢 ニューかめりあフェリー","city":"busan","cat":"transport","cost_twd":2755,"checked":false},
+      {"name":"🎫 4/2 釜山一日遊 Klook","name_en":"🎫 4/2 Busan Day Tour Klook","name_ko":"🎫 4/2 부산 일일투어 Klook","name_ja":"🎫 4/2 釜山デイツアー Klook","city":"busan","cat":"attraction","cost_twd":1694,"checked":false},
+      {"name":"釜山交通（T-money地鐵等）","name_en":"Busan Transport (T-money subway etc.)","name_ko":"부산 교통 (T-money 지하철 등)","name_ja":"釜山交通（T-money地下鉄等）","city":"busan","cat":"transport","cost_twd":400,"checked":false},
+      {"name":"釜山餐飲（4天）","name_en":"Busan Dining (4 days)","name_ko":"부산 식비 (4일)","name_ja":"釜山食費（4日間）","city":"busan","cat":"food","cost_twd":2000,"checked":false},
+      {"name":"釜山塔（KKday ₩7,200）","name_en":"Busan Tower (KKday ₩7,200)","name_ko":"부산타워 (KKday ₩7,200)","name_ja":"釜山タワー（KKday ₩7,200）","city":"busan","cat":"attraction","cost_twd":173,"checked":false},
+      {"name":"Busan X the Sky（₩27,000）","name_en":"Busan X the Sky (₩27,000)","name_ko":"부산 엑스더스카이 (₩27,000)","name_ja":"Busan X the Sky（₩27,000）","city":"busan","cat":"attraction","cost_twd":643,"checked":false},
+      {"name":"阿蘇中岳火山口（¥1,030）","name_en":"Aso Nakadake Crater (¥1,030)","name_ko":"아소 나카다케 분화구 (¥1,030)","name_ja":"阿蘇中岳火口（¥1,030）","city":"aso","cat":"attraction","cost_twd":206,"checked":false},
+      {"name":"熊本城夜櫻（¥800）","name_en":"Kumamoto Castle Night Cherry Blossom (¥800)","name_ko":"구마모토성 야간 벚꽃 (¥800)","name_ja":"熊本城夜桜（¥800）","city":"aso","cat":"attraction","cost_twd":160,"checked":false},
+      {"name":"阿蘇內牧溫泉（¥500）","name_en":"Uchinomaki Onsen (¥500)","name_ko":"우치노마키 온천 (¥500)","name_ja":"内牧温泉（¥500）","city":"aso","cat":"attraction","cost_twd":100,"checked":false},
+      {"name":"阿蘇/熊本餐飲（朋友開車免交通）","name_en":"Aso/Kumamoto Dining (friend drives, no transport)","name_ko":"아소/구마모토 식비 (친구 운전, 교통비 없음)","name_ja":"阿蘇/熊本食費（友人運転、交通費なし）","city":"aso","cat":"food","cost_twd":800,"checked":false},
+      {"name":"🏨 福岡住宿 ~7晚","name_en":"🏨 Fukuoka Hotel ~7 nights","name_ko":"🏨 후쿠오카 숙소 ~7박","name_ja":"🏨 福岡宿泊 ~7泊","city":"fukuoka","cat":"hotel","cost_twd":8490,"checked":false},
+      {"name":"太宰府+柳川西鐵套票（¥3,340）","name_en":"Dazaifu+Yanagawa Nishitetsu Pass (¥3,340)","name_ko":"다자이후+야나가와 니시테츠 패스 (¥3,340)","name_ja":"太宰府+柳川西鉄きっぷ（¥3,340）","city":"fukuoka","cat":"attraction","cost_twd":668,"checked":false},
+      {"name":"高千穗峽 Klook tour","name_en":"Takachiho Gorge Klook Tour","name_ko":"다카치호 협곡 클룩 투어","name_ja":"高千穂峡 Klookツアー","city":"fukuoka","cat":"attraction","cost_twd":1877,"checked":false},
+      {"name":"福岡交通（IC卡等）","name_en":"Fukuoka Transport (IC card etc.)","name_ko":"후쿠오카 교통 (IC카드 등)","name_ja":"福岡交通（ICカード等）","city":"fukuoka","cat":"transport","cost_twd":1500,"checked":false},
+      {"name":"福岡餐飲（8天 屋台+居酒屋等）","name_en":"Fukuoka Dining (8 days, yatai+izakaya)","name_ko":"후쿠오카 식비 (8일, 야타이+이자카야)","name_ja":"福岡食費（8日間 屋台+居酒屋等）","city":"fukuoka","cat":"food","cost_twd":5000,"checked":false},
+      {"name":"eSIM 韓國（₩474）","name_en":"eSIM Korea (₩474)","name_ko":"eSIM 한국 (₩474)","name_ja":"eSIM 韓国（₩474）","city":"busan","cat":"other","cost_twd":474,"checked":false},
+      {"name":"eSIM 日本（¥183）","name_en":"eSIM Japan (¥183)","name_ko":"eSIM 일본 (¥183)","name_ja":"eSIM 日本（¥183）","city":"fukuoka","cat":"other","cost_twd":183,"checked":false}
+    ]
+  },
+  "checklist":[
+    {
+      "title":{"zh":"證件 & 簽證","en":"Documents & Visa","ko":"서류 & 비자","ja":"書類 & ビザ"},
+      "items":[
+        {"zh":"護照有效期 6個月以上（需有身分證字號）","en":"Passport valid 6+ months (with ID number)","ko":"여권 유효기간 6개월 이상 (주민번호 필요)","ja":"パスポート有効期限6ヶ月以上（身分証番号必要）"},
+        {"zh":"韓國免簽90天（K-ETA豁免到2026底）","en":"Korea visa-free 90 days (K-ETA waived until end of 2026)","ko":"한국 무비자 90일 (K-ETA 면제 2026년 말까지)","ja":"韓国ノービザ90日（K-ETA免除2026年末まで）"},
+        {"zh":"日本免簽90天（需護照有身分證字號）","en":"Japan visa-free 90 days (passport with ID number required)","ko":"일본 무비자 90일 (여권에 주민번호 필요)","ja":"日本ノービザ90日（パスポートに身分証番号必要）"},
+        {"zh":"Visit Japan Web 提前註冊","en":"Register Visit Japan Web in advance","ko":"Visit Japan Web 사전 등록","ja":"Visit Japan Web 事前登録"},
+        {"zh":"購買旅遊保險 ~NT$500-800","en":"Buy travel insurance ~NT$500-800","ko":"여행 보험 구매 ~NT$500-800","ja":"旅行保険購入 ~NT$500-800"},
+        {"zh":"電子機票備份（IT606+IT241）","en":"Save e-tickets (IT606+IT241)","ko":"전자 항공권 백업 (IT606+IT241)","ja":"eチケット保存（IT606+IT241）"},
+        {"zh":"渡輪船票備份（新山茶花號）","en":"Save ferry ticket (New Camellia)","ko":"페리 티켓 백업 (뉴카멜리아)","ja":"フェリーチケット保存（ニューかめりあ）"},
+        {"zh":"Klook 一日遊訂單截圖","en":"Screenshot Klook day tour booking","ko":"클룩 일일투어 예약 캡처","ja":"Klookデイツアー予約スクショ"}
+      ]
+    },
+    {
+      "title":{"zh":"金融 & 換匯","en":"Finance & Currency","ko":"금융 & 환전","ja":"金融 & 両替"},
+      "items":[
+        {"zh":"韓國幾乎全刷卡（信用卡為主）","en":"Korea is mostly card payment (credit card)","ko":"한국은 거의 카드 결제 (신용카드 위주)","ja":"韓国はほぼカード決済（クレジットカード主）"},
+        {"zh":"日本屋台只收現金，帶¥10,000–20,000","en":"Japan yatai cash only, bring ¥10,000–20,000","ko":"일본 야타이는 현금만, ¥10,000–20,000 준비","ja":"日本の屋台は現金のみ、¥10,000〜20,000持参"},
+        {"zh":"確認信用卡海外免手續費","en":"Confirm credit card has no foreign transaction fee","ko":"신용카드 해외 수수료 면제 확인","ja":"クレジットカード海外手数料無料確認"},
+        {"zh":"T-money 交通卡（機場便利商店 ₩3,000-5,000）","en":"T-money transit card (airport convenience store ₩3,000-5,000)","ko":"T-money 교통카드 (공항 편의점 ₩3,000-5,000)","ja":"T-money交通カード（空港コンビニ ₩3,000-5,000）"},
+        {"zh":"ICOCA / Suica（Apple Pay加入）","en":"ICOCA / Suica (add to Apple Pay)","ko":"ICOCA / Suica (Apple Pay 등록)","ja":"ICOCA / Suica（Apple Pay登録）"}
+      ]
+    },
+    {
+      "title":{"zh":"必裝 App（韓國）","en":"Essential Apps (Korea)","ko":"필수 앱 (한국)","ja":"必須アプリ（韓国）"},
+      "items":[
+        {"zh":"Naver Maps（韓國導航必備）","en":"Naver Maps (essential for Korea navigation)","ko":"네이버 지도 (한국 내비 필수)","ja":"Naver Maps（韓国ナビ必須）"},
+        {"zh":"Kakao T（計程車）","en":"Kakao T (taxi)","ko":"카카오 T (택시)","ja":"Kakao T（タクシー）"},
+        {"zh":"Papago（翻譯）","en":"Papago (translation)","ko":"파파고 (번역)","ja":"Papago（翻訳）"},
+        {"zh":"T-money App（儲值查餘額）","en":"T-money App (top up & check balance)","ko":"T-money 앱 (충전 및 잔액 확인)","ja":"T-moneyアプリ（チャージ＆残高確認）"}
+      ]
+    },
+    {
+      "title":{"zh":"必裝 App（日本）","en":"Essential Apps (Japan)","ko":"필수 앱 (일본)","ja":"必須アプリ（日本）"},
+      "items":[
+        {"zh":"Google Maps（日本導航）","en":"Google Maps (Japan navigation)","ko":"Google Maps (일본 내비)","ja":"Google Maps（日本ナビ）"},
+        {"zh":"Yahoo! 乗換案内（電車換乘）","en":"Yahoo! Transit (train transfers)","ko":"Yahoo! 乗換案内 (전철 환승)","ja":"Yahoo!乗換案内（電車乗り換え）"},
+        {"zh":"食べログ / Google Maps（餐廳）","en":"Tabelog / Google Maps (restaurants)","ko":"타베로그 / Google Maps (맛집)","ja":"食べログ / Google Maps（レストラン）"},
+        {"zh":"PayPay（部分店家可用）","en":"PayPay (accepted at some shops)","ko":"PayPay (일부 매장 사용 가능)","ja":"PayPay（一部店舗で利用可）"}
+      ]
+    },
+    {
+      "title":{"zh":"網路 & 電力","en":"Internet & Power","ko":"인터넷 & 전원","ja":"ネット & 電源"},
+      "items":[
+        {"zh":"韓日 eSIM（Holafly ~NT$1,500/14天無限 or KKday combo）","en":"Korea/Japan eSIM (Holafly ~NT$1,500/14 days unlimited or KKday combo)","ko":"한일 eSIM (Holafly ~NT$1,500/14일 무제한 or KKday 콤보)","ja":"韓日eSIM（Holafly ~NT$1,500/14日間無制限 or KKdayコンボ）"},
+        {"zh":"韓國插頭（C型 / 220V）","en":"Korea plug adapter (Type C / 220V)","ko":"한국 플러그 (C타입 / 220V)","ja":"韓国プラグ（Cタイプ / 220V）"},
+        {"zh":"日本插頭（A型 / 110V，台灣可直插）","en":"Japan plug (Type A / 110V, same as Taiwan)","ko":"일본 플러그 (A타입 / 110V, 대만과 동일)","ja":"日本プラグ（Aタイプ / 110V、台湾と同じ）"},
+        {"zh":"行動電源","en":"Portable charger / power bank","ko":"보조 배터리","ja":"モバイルバッテリー"},
+        {"zh":"多孔 USB 充電器","en":"Multi-port USB charger","ko":"멀티포트 USB 충전기","ja":"マルチポートUSB充電器"}
+      ]
+    },
+    {
+      "title":{"zh":"行李 & 穿搭","en":"Luggage & Clothing","ko":"짐 & 옷차림","ja":"荷物 & 服装"},
+      "items":[
+        {"zh":"白天18-20°C，帶輕薄外套","en":"Daytime 18-20°C, bring a light jacket","ko":"낮 18-20°C, 가벼운 겉옷 준비","ja":"日中18-20°C、薄手のジャケット持参"},
+        {"zh":"晚上9-11°C，帶保暖層","en":"Evening 9-11°C, bring warm layers","ko":"저녁 9-11°C, 보온 레이어 준비","ja":"夜間9-11°C、防寒レイヤー持参"},
+        {"zh":"阿蘇山頂再冷5-8°C，帶防風外套","en":"Aso summit 5-8°C colder, bring windbreaker","ko":"아소산 정상 5-8°C 더 추움, 방풍 재킷 준비","ja":"阿蘇山頂はさらに5-8°C低い、ウインドブレーカー持参"},
+        {"zh":"舒適步行鞋","en":"Comfortable walking shoes","ko":"편안한 워킹화","ja":"歩きやすい靴"},
+        {"zh":"折疊傘（春雨期）","en":"Folding umbrella (spring rain season)","ko":"접이식 우산 (봄 장마기)","ja":"折りたたみ傘（春の雨季）"},
+        {"zh":"防曬乳","en":"Sunscreen","ko":"선크림","ja":"日焼け止め"}
+      ]
+    }
+  ],
+  "entryForms": [
+    {
+      "id": "kr-earrival",
+      "title": {"zh":"🇰🇷 e-Arrival Card 填寫資料", "en":"🇰🇷 e-Arrival Card Fill-in Data", "ko":"🇰🇷 e-Arrival Card 작성 정보", "ja":"🇰🇷 e-Arrival Card 記入データ"},
+      "url": "https://www.e-arrivalcard.go.kr/",
+      "fields": [
+        {"label":{"zh":"航空公司","en":"Airline","ko":"항공사","ja":"航空会社"}, "value":"TIGERAIR TAIWAN (IT)"},
+        {"label":{"zh":"航班號碼","en":"Flight No.","ko":"편명","ja":"便名"}, "value":"IT606"},
+        {"label":{"zh":"出發地","en":"Departure From","ko":"출발지","ja":"出発地"}, "value":"TAIWAN (TPE)"},
+        {"label":{"zh":"抵達日期","en":"Date of Arrival","ko":"도착일","ja":"到着日"}, "value":"2026-03-30"},
+        {"label":{"zh":"入境目的","en":"Purpose","ko":"입국 목적","ja":"入国目的"}, "value":"TOURISM"},
+        {"label":{"zh":"韓國住宿地址","en":"Address in Korea","ko":"한국 숙소 주소","ja":"韓国宿泊先住所"}, "value":"16-12, Jungang-daero 196beon-gil, Dong-gu, Busan"},
+        {"label":{"zh":"郵遞區號","en":"Zip Code","ko":"우편번호","ja":"郵便番号"}, "value":"48821"},
+        {"label":{"zh":"停留天數","en":"Length of Stay","ko":"체류 기간","ja":"滞在日数"}, "value":"4 days"},
+        {"label":{"zh":"下一目的地","en":"Next Destination","ko":"다음 목적지","ja":"次の目的地"}, "value":"JAPAN"},
+        {"label":{"zh":"離境方式","en":"Means of Departure","ko":"출국 수단","ja":"出国手段"}, "value":"SEA"},
+        {"label":{"zh":"離境日期","en":"Date of Departure","ko":"출국일","ja":"出国日"}, "value":"2026-04-03"},
+        {"label":{"zh":"船名","en":"Ship Name","ko":"선박명","ja":"船名"}, "value":"NEW CAMELLIA"}
+      ]
+    },
+    {
+      "id": "jp-vjw",
+      "title": {"zh":"🇯🇵 Visit Japan Web 填寫資料", "en":"🇯🇵 Visit Japan Web Fill-in Data", "ko":"🇯🇵 Visit Japan Web 작성 정보", "ja":"🇯🇵 Visit Japan Web 記入データ"},
+      "url": "https://www.vjw.digital.go.jp/",
+      "fields": [
+        {"label":{"zh":"入境方式","en":"Means of Entry","ko":"입국 수단","ja":"入国手段"}, "value":"SEA (NEW CAMELLIA)"},
+        {"label":{"zh":"抵達日期","en":"Arrival Date","ko":"도착일","ja":"到着日"}, "value":"2026-04-04"},
+        {"label":{"zh":"入境港口","en":"Port of Entry","ko":"입국 항구","ja":"入国港"}, "value":"HAKATA (Fukuoka)"},
+        {"label":{"zh":"停留天數","en":"Length of Stay","ko":"체류 기간","ja":"滞在日数"}, "value":"9 days"},
+        {"label":{"zh":"離境日期","en":"Departure Date","ko":"출국일","ja":"出国日"}, "value":"2026-04-12"},
+        {"label":{"zh":"離境航班","en":"Departure Flight","ko":"출국 편명","ja":"出国便"}, "value":"IT241 (FUK→TPE)"}
+      ]
+    }
+  ]
+}
