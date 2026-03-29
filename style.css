@@ -436,8 +436,9 @@ a{color:inherit;text-decoration:none}
 }
 
 /* ===== TODAY OVERLAY ===== */
-.today-overlay{position:fixed;inset:0;z-index:200;overflow-y:auto;transition:transform .4s ease;background:#111 url('https://cdn.jeepe.jp/uploads/public_image/image/2331/normal_e81fe41d-a2d6-49ac-84f8-cc29fd492209.jpg') center/cover no-repeat}
+.today-overlay{position:fixed;inset:0;z-index:200;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;transition:transform .4s ease;background:#111 url('https://cdn.jeepe.jp/uploads/public_image/image/2331/normal_e81fe41d-a2d6-49ac-84f8-cc29fd492209.jpg') center/cover no-repeat}
 .today-overlay.hidden{transform:translateY(-100%);pointer-events:none}
+body.overlay-open{overflow:hidden;position:fixed;width:100%;height:100%}
 .today-hero{padding:40px 24px 24px}
 .today-date{font-size:.85rem;color:var(--text-3);font-weight:500}
 .today-city{font-size:2.8rem;font-weight:700;letter-spacing:-1px;margin:4px 0 8px}

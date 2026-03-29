@@ -1318,6 +1318,8 @@ function initLangToggle() {
 function renderToday() {
   const overlay = document.getElementById('today-overlay');
   if (!overlay || !TRIP) return;
+  // Lock body scroll while overlay is visible
+  document.body.classList.add('overlay-open');
 
   const now = new Date();
   const today = now.getFullYear() + '-' + String(now.getMonth()+1).padStart(2,'0') + '-' + String(now.getDate()).padStart(2,'0');
@@ -1579,6 +1581,7 @@ function renderToday() {
 function dismissToday() {
   var overlay = document.getElementById('today-overlay');
   if (overlay) overlay.classList.add('hidden');
+  document.body.classList.remove('overlay-open');
 }
 
 function uploadTodayPhoto(input) {
