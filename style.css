@@ -226,6 +226,29 @@ a{color:inherit;text-decoration:none}
 .booked-flight-label{font-weight:700;font-size:.8rem;margin-bottom:4px}
 .booked-flight-divider{width:1px;background:var(--border);margin:0 16px;flex-shrink:0;align-self:stretch;min-height:40px}
 @media(max-width:640px){.booked-flight-pair{flex-direction:column}.booked-flight-divider{width:100%;height:1px;min-height:0;margin:10px 0}}
+
+/* Flight card */
+.flight-segments{display:flex;flex-direction:column;gap:12px;margin:10px 0}
+.flight-seg{display:flex;gap:10px;align-items:flex-start}
+.flight-seg-badge{font-size:.65rem;font-weight:700;padding:3px 8px;border-radius:6px;background:var(--accent-bg);color:var(--accent);white-space:nowrap;margin-top:4px}
+.flight-seg-badge.return{background:#e8f4fd;color:#2a6cb0}
+.flight-seg-body{flex:1;min-width:0}
+.flight-seg-route{display:flex;align-items:center;gap:8px}
+.flight-seg-point{text-align:center;min-width:48px}
+.flight-seg-time{font-size:1.1rem;font-weight:700;letter-spacing:-.5px}
+.flight-seg-city{font-size:.68rem;color:var(--text-3);margin-top:1px}
+.flight-seg-arrow{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;padding:0 4px}
+.flight-seg-line{width:100%;height:1px;background:var(--border);position:relative}
+.flight-seg-line::after{content:'';position:absolute;right:-1px;top:-3px;border:4px solid transparent;border-left:5px solid var(--text-3)}
+.flight-seg-code{font-size:.62rem;color:var(--text-3);white-space:nowrap}
+.flight-seg-detail{font-size:.72rem;color:var(--text-2);margin-top:4px}
+.flight-seg-detail a{color:var(--cat-attraction);text-decoration:none}
+.flight-seg-detail a:hover{text-decoration:underline}
+.flight-footer{display:flex;justify-content:space-between;align-items:center;margin-top:12px;padding-top:10px;border-top:1px solid var(--border)}
+.flight-checkin-note{font-size:.72rem;color:var(--text-3);margin-top:6px}
+.flight-checkin-note a{color:var(--cat-attraction);text-decoration:none;font-weight:500}
+.flight-checkin-note a:hover{text-decoration:underline}
+
 .booking-table-wrap{background:var(--surface);border-radius:var(--r);border:1px solid var(--border);overflow:hidden}
 .booking-table{width:100%;border-collapse:collapse;font-size:.8rem}
 .booking-table th{padding:10px 14px;text-align:left;font-size:.72rem;text-transform:uppercase;letter-spacing:.5px;color:var(--text-3);border-bottom:1px solid var(--border)}
