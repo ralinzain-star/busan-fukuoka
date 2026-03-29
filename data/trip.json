@@ -17,7 +17,7 @@
   "startDate":"2026-03-30","endDate":"2026-04-12",
   "currency":{"home":"TWD","rates":{"KRW":42,"JPY":5,"USD":0.031}},
   "flightIntel":{
-    "route":"TPE ↔ PUS/FUK","userPrice":18600,"booked":true,
+    "route":"TPE ↔ PUS/FUK","userPrice":19600,"booked":true,
     "monthlyPrices":[
       {"month":"4月","label":"Apr","avg":14500,"note":"淡季尾"},
       {"month":"5月","label":"May","avg":15200,"note":""},
@@ -164,7 +164,7 @@
   ],
   "budget":{
     "items":[
-      {"name":"✈️ 機票來回 IT606+IT241","name_en":"✈️ Round-trip Flights IT606+IT241","name_ko":"✈️ 왕복 항공권 IT606+IT241","name_ja":"✈️ 往復航空券 IT606+IT241","city":"busan","cat":"transport","cost_twd":18600,"checked":false},
+      {"name":"✈️ 機票來回 IT606+IT241","name_en":"✈️ Round-trip Flights IT606+IT241","name_ko":"✈️ 왕복 항공권 IT606+IT241","name_ja":"✈️ 往復航空券 IT606+IT241","city":"busan","cat":"transport","cost_twd":19600,"checked":false},
       {"name":"🏨 Onjeong Stay 釜山4晚","name_en":"🏨 Onjeong Stay Busan 4 nights","name_ko":"🏨 온정스테이 부산 4박","name_ja":"🏨 Onjeong Stay 釜山4泊","city":"busan","cat":"hotel","cost_twd":2822,"checked":false},
       {"name":"🚢 新山茶花號渡輪","name_en":"🚢 New Camellia Ferry","name_ko":"🚢 뉴카멜리아호 페리","name_ja":"🚢 ニューかめりあフェリー","city":"busan","cat":"transport","cost_twd":2755,"checked":false},
       {"name":"🎫 4/2 釜山一日遊 Klook","name_en":"🎫 4/2 Busan Day Tour Klook","name_ko":"🎫 4/2 부산 일일투어 Klook","name_ja":"🎫 4/2 釜山デイツアー Klook","city":"busan","cat":"attraction","cost_twd":1694,"checked":false},
@@ -193,7 +193,6 @@
         {"zh":"韓國免簽90天（K-ETA豁免到2026底）","en":"Korea visa-free 90 days (K-ETA waived until end of 2026)","ko":"한국 무비자 90일 (K-ETA 면제 2026년 말까지)","ja":"韓国ノービザ90日（K-ETA免除2026年末まで）"},
         {"zh":"日本免簽90天（需護照有身分證字號）","en":"Japan visa-free 90 days (passport with ID number required)","ko":"일본 무비자 90일 (여권에 주민번호 필요)","ja":"日本ノービザ90日（パスポートに身分証番号必要）"},
         {"zh":"Visit Japan Web 提前註冊","en":"Register Visit Japan Web in advance","ko":"Visit Japan Web 사전 등록","ja":"Visit Japan Web 事前登録"},
-        {"zh":"購買旅遊保險 ~NT$500-800","en":"Buy travel insurance ~NT$500-800","ko":"여행 보험 구매 ~NT$500-800","ja":"旅行保険購入 ~NT$500-800"},
         {"zh":"電子機票備份（IT606+IT241）","en":"Save e-tickets (IT606+IT241)","ko":"전자 항공권 백업 (IT606+IT241)","ja":"eチケット保存（IT606+IT241）"},
         {"zh":"渡輪船票備份（新山茶花號）","en":"Save ferry ticket (New Camellia)","ko":"페리 티켓 백업 (뉴카멜리아)","ja":"フェリーチケット保存（ニューかめりあ）"},
         {"zh":"Klook 一日遊訂單截圖","en":"Screenshot Klook day tour booking","ko":"클룩 일일투어 예약 캡처","ja":"Klookデイツアー予約スクショ"}

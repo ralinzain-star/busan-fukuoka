@@ -169,6 +169,11 @@ function focusPOI(id) {
       layer.openPopup();
     }
   });
+  // On mobile, scroll to map so user can see the pin location
+  if (window.innerWidth <= 900) {
+    var mapEl = document.getElementById('map');
+    if (mapEl) mapEl.scrollIntoView({behavior:'smooth', block:'start'});
+  }
 }
 
 // ── Google Maps import ──
@@ -675,7 +680,8 @@ function renderNowLine() {
   document.querySelectorAll('.cal-now-line,.cal-m-now').forEach(e => e.remove());
   const todayStr = getDateInTZ(DEST_TZ);
   const nowH = getHourDecimalInTZ(DEST_TZ);
-  const label = getTimeInTZ(DEST_TZ);
+  var tzAbbr = new Date().toLocaleString('en-US', { timeZone: DEST_TZ, timeZoneName: 'short' }).split(' ').pop();
+  const label = getTimeInTZ(DEST_TZ) + ' ' + tzAbbr;
 
   // Desktop
   const days = TRIP.schedule.slice((currentWeek - 1) * 7, currentWeek * 7);
@@ -763,8 +769,8 @@ function renderTimeAllocation() {
   // ── Countdown timer ──
   const countdownEl = document.getElementById('time-countdown');
   if (countdownEl) {
-    // Countdown to flight departure IT606 16:20 TPE (UTC+8)
-    const start = new Date(TRIP.startDate + 'T16:20:00+08:00');
+    // Countdown to flight departure IT606 16:40 TPE (UTC+8)
+    const start = new Date(TRIP.startDate + 'T16:40:00+08:00');
     const end = new Date(TRIP.endDate + 'T23:59:59+09:00');
     const now = new Date();
     let label, diffMs;
@@ -1146,10 +1152,13 @@ const I18N = {
   today_days_left: { zh:'天後出發', en:'days until departure', ko:'일 후 출발', ja:'日後に出発' },
   today_enter:     { zh:'進入行程規劃 →', en:'Enter Trip Planner →', ko:'여행 플래너 열기 →', ja:'旅行プランナーへ →' },
   today_start:     { zh:'開始旅行 →', en:'Start Journey →', ko:'여행 시작 →', ja:'旅を始める →' },
-  today_now:       { zh:'NOW · 現在', en:'NOW', ko:'NOW · 지금', ja:'NOW · 現在' },
-  today_next:      { zh:'NEXT · 接下來', en:'NEXT', ko:'NEXT · 다음', ja:'NEXT · 次' },
+  today_now:       { zh:'現在', en:'Now', ko:'지금', ja:'現在' },
+  today_next:      { zh:'接下來', en:'Next', ko:'다음', ja:'次' },
   today_free:      { zh:'自由時間 ☕', en:'Free Time ☕', ko:'자유시간 ☕', ja:'フリータイム ☕' },
   today_events:    { zh:'個行程', en:'events today', ko:'개 일정', ja:'件の予定' },
+  today_morning:   { zh:'上午', en:'Morning', ko:'오전', ja:'午前' },
+  today_afternoon: { zh:'下午', en:'Afternoon', ko:'오후', ja:'午後' },
+  today_evening:   { zh:'晚上', en:'Evening', ko:'저녁', ja:'夜' },
   today_ended:     { zh:'旅程已結束', en:'Trip Completed', ko:'여행 완료', ja:'旅行終了' },
 
   // Pre-trip todos
@@ -1159,8 +1168,8 @@ const I18N = {
   todo_passport:    { zh:'確認護照 · 放在隨身包', en:'Check passport · keep in carry-on', ko:'여권 확인 · 기내용 가방에', ja:'パスポート確認 · 手荷物に' },
   todo_esim:        { zh:'安裝 eSIM 並測試', en:'Install & test eSIM', ko:'eSIM 설치 및 테스트', ja:'eSIMインストール＆テスト' },
   todo_cash:        { zh:'換外幣 / 準備現金', en:'Exchange currency / prepare cash', ko:'환전 / 현금 준비', ja:'外貨両替 / 現金準備' },
-  todo_charger:     { zh:'充電器 · 行動電源 · 轉接頭', en:'Charger · power bank · adapter', ko:'충전기 · 보조배터리 · 어댑터', ja:'充電器・モバイルバッテリー・変換プラグ' },
-  todo_checkin:     { zh:'線上 Check-in 開放了嗎？', en:'Online check-in available?', ko:'온라인 체크인 가능한지 확인', ja:'オンラインチェックイン可能？' },
+  todo_charger:     { zh:'充電器 · 行動電源 · 韓國需圓頭轉接頭（Type C/F）', en:'Charger · power bank · Korea needs round adapter (Type C/F)', ko:'충전기 · 보조배터리 · 한국 어댑터 (Type C/F)', ja:'充電器・モバイルバッテリー・韓国は丸型変換プラグ必要（Type C/F）' },
+  todo_checkin:     { zh:'線上報到 Web Check-in（起飛前48hr開放）', en:'Web Check-in (opens 48hr before)', ko:'온라인 체크인 (출발 48시간 전 오픈)', ja:'Webチェックイン（出発48時間前オープン）' },
   todo_tickets:     { zh:'確認所有票券 · 列印 QR code', en:'Confirm all tickets · print QR codes', ko:'모든 티켓 확인 · QR코드 출력', ja:'全チケット確認・QRコード印刷' },
   todo_hotel:       { zh:'確認住宿預訂', en:'Confirm hotel bookings', ko:'숙소 예약 확인', ja:'宿泊予約確認' },
   todo_weather:     { zh:'查看目的地天氣預報', en:'Check destination weather forecast', ko:'목적지 날씨 확인', ja:'目的地の天気予報確認' },
@@ -1311,7 +1320,7 @@ function renderToday() {
   if (!overlay || !TRIP) return;
 
   const now = new Date();
-  const today = now.toISOString().slice(0,10);
+  const today = now.getFullYear() + '-' + String(now.getMonth()+1).padStart(2,'0') + '-' + String(now.getDate()).padStart(2,'0');
   const tripStart = new Date(TRIP.startDate + 'T00:00:00');
   const tripEnd = new Date(TRIP.endDate + 'T23:59:59');
   const nowHour = now.getHours() + now.getMinutes() / 60;
@@ -1319,7 +1328,11 @@ function renderToday() {
   // Find today's schedule
   const todaySchedule = TRIP.schedule.find(d => d.date === today);
 
-  if (now < tripStart) {
+  // On start date, show BEFORE trip until first event begins (e.g., still at airport)
+  var firstEvStart = todaySchedule ? todaySchedule.events[0] : null;
+  var showBeforeTrip = now < tripStart || (today === TRIP.startDate && firstEvStart && nowHour < firstEvStart.sh);
+
+  if (showBeforeTrip) {
     // BEFORE TRIP — countdown + pre-trip todos
     const startDay = new Date(TRIP.startDate + 'T00:00:00');
     const todayMidnight = new Date(now.getFullYear(), now.getMonth(), now.getDate());
@@ -1335,7 +1348,7 @@ function renderToday() {
         {icon:mi('sim_card'), text:t('todo_esim')},
         {icon:mi('currency_exchange'), text:t('todo_cash')},
         {icon:mi('power'), text:t('todo_charger')},
-        {icon:mi('flight_takeoff'), text:t('todo_checkin')}
+        {icon:mi('flight_takeoff'), text:t('todo_checkin'), url:'https://booking.tigerairtw.com/CheckIn/CheckIn'}
       ];
     } else if (daysLeft <= 3) {
       todos = [
@@ -1366,7 +1379,11 @@ function renderToday() {
     var todoHtml = '<div class="today-todos">' +
       '<div class="today-todos-label">' + t('today_todo_title') + '</div>';
     todos.forEach(function(item) {
-      todoHtml += '<div class="today-todo-item"><span class="today-todo-icon">' + item.icon + '</span>' + item.text + '</div>';
+      if (item.url) {
+        todoHtml += '<div class="today-todo-item"><a href="' + item.url + '" target="_blank" style="display:flex;align-items:center;gap:10px;color:white;text-decoration:none;width:100%"><span class="today-todo-icon">' + item.icon + '</span>' + item.text + '</a></div>';
+      } else {
+        todoHtml += '<div class="today-todo-item"><span class="today-todo-icon">' + item.icon + '</span>' + item.text + '</div>';
+      }
     });
     todoHtml += '</div>';
 
@@ -1423,12 +1440,36 @@ function renderToday() {
       '</div>';
 
   } else if (todaySchedule) {
-    // DURING TRIP — today's schedule
+    // DURING TRIP — left-aligned glassmorphism style, matching BEFORE trip aesthetic
     const d = new Date(today + 'T00:00:00');
     const dayNames = getDayNames();
     const cityName = translateCity(todaySchedule.city);
     const tripStartDate = new Date(TRIP.startDate + 'T00:00:00');
     const dayNum = Math.ceil((d - tripStartDate) / 86400000) + 1;
+
+    var formatTime = function(h) {
+      var hh = Math.floor(h);
+      var mm = Math.round((h - hh) * 60);
+      return (hh < 10 ? '0' : '') + hh + ':' + (mm < 10 ? '0' : '') + mm;
+    };
+
+    var mi = function(name) { return '<span class="mi material-symbols-outlined" style="font-size:20px">' + name + '</span>'; };
+
+    // Smart icon: flight-related events get flight icon, others use category icon
+    var getEvIcon = function(ev) {
+      var name = (ev.name || '').toLowerCase() + ' ' + (ev.name_en || '').toLowerCase();
+      if (name.match(/機場|airport|飛機|flight|降落|起飛|空港|공항/)) return 'flight';
+      var CAT_ICONS = {attraction:'attractions',food:'restaurant',cafe:'coffee',transport:'directions_transit',work:'laptop_mac',hotel:'hotel',shopping:'shopping_bag'};
+      return CAT_ICONS[ev.cat] || 'event';
+    };
+
+    // Split events into time periods
+    var morningEvs = [], afternoonEvs = [], eveningEvs = [];
+    todaySchedule.events.forEach(function(ev) {
+      if (ev.sh < 12) morningEvs.push(ev);
+      else if (ev.sh < 18) afternoonEvs.push(ev);
+      else eveningEvs.push(ev);
+    });
 
     // Find current and next events
     var currentEv = null, nextEv = null;
@@ -1438,60 +1479,78 @@ function renderToday() {
       if (!nextEv && ev.sh > nowHour) nextEv = ev;
     }
 
-    var formatTime = function(h) {
-      var hh = Math.floor(h);
-      var mm = Math.round((h - hh) * 60);
-      return (hh < 10 ? '0' : '') + hh + ':' + (mm < 10 ? '0' : '') + mm;
+    // Build event item HTML (glassmorphism card style)
+    var buildEvItem = function(ev) {
+      var icon = getEvIcon(ev);
+      var timeStr = formatTime(ev.sh) + ' – ' + formatTime(ev.eh);
+      var isActive = (nowHour >= ev.sh && nowHour < ev.eh);
+      var activeStyle = isActive ? 'background:rgba(255,255,255,.22);border-color:rgba(255,255,255,.25)' : '';
+      var html = '<div class="today-todo-item"' + (activeStyle ? ' style="' + activeStyle + '"' : '') + '>' +
+        '<span class="today-todo-icon">' + mi(icon) + '</span>' +
+        '<div style="flex:1">' +
+          '<div>' + getEventName(ev) + '</div>' +
+          '<div style="font-size:.7rem;opacity:.6;margin-top:2px">' + timeStr +
+            (getEventNote(ev) ? ' · ' + getEventNote(ev) : '') +
+          '</div>' +
+          (ev.restaurant ? '<div style="font-size:.7rem;opacity:.6;margin-top:2px">' + ev.restaurant +
+            (ev.map ? ' <a href="' + ev.map + '" target="_blank" style="color:rgba(255,255,255,.8)">📍</a>' : '') +
+          '</div>' : '') +
+        '</div>' +
+      '</div>';
+      return html;
     };
 
-    var CAT_DOT_COLORS = {attraction:'#e8664a',food:'#4aad5b',cafe:'#9b6ad4',transport:'#4ab8c9',work:'#6a6ad4',hotel:'#4a7ce8',shopping:'#e8964a'};
+    // Build section HTML
+    var buildSection = function(label, icon, events) {
+      if (events.length === 0) return '';
+      var html = '<div class="today-todos">' +
+        '<div class="today-todos-label">' + mi(icon) + ' ' + label + '</div>';
+      events.forEach(function(ev) { html += buildEvItem(ev); });
+      html += '</div>';
+      return html;
+    };
 
-    var html = '<div class="today-hero">' +
-      '<div class="today-date">' + (d.getMonth()+1) + '/' + d.getDate() + ' ' + dayNames[d.getDay()] + ' · Day ' + dayNum + '</div>' +
-      '<div class="today-city">' + cityName + '</div>' +
-      '<div class="today-status">' + todaySchedule.events.length + ' ' + t('today_events') + '</div>' +
-      '</div>';
-
+    // Now/Next section — uses same today-todos wrapper as time period sections
+    var nowSection = '';
     if (currentEv) {
-      html += '<div class="today-now">' +
-        '<div class="today-now-label">' + t('today_now') + '</div>' +
-        '<div class="today-now-name">' + getEventName(currentEv) + '</div>' +
-        '<div class="today-now-time">' + formatTime(currentEv.sh) + ' – ' + formatTime(currentEv.eh) + '</div>' +
-        (currentEv.note ? '<div class="today-now-note">' + getEventNote(currentEv) + '</div>' : '') +
-        '</div>';
+      var nowIcon = getEvIcon(currentEv);
+      nowSection = '<div class="today-todos">' +
+        '<div class="today-todos-label">NOW · ' + t('today_now') + '</div>' +
+        '<div class="today-todo-item" style="background:rgba(255,255,255,.2);border-color:rgba(255,255,255,.3)">' +
+          '<span class="today-todo-icon">' + mi(nowIcon) + '</span>' +
+          '<div style="flex:1"><div style="font-weight:600">' + getEventName(currentEv) + '</div>' +
+          '<div style="font-size:.7rem;opacity:.6;margin-top:2px">' + formatTime(currentEv.sh) + ' – ' + formatTime(currentEv.eh) +
+            (getEventNote(currentEv) ? ' · ' + getEventNote(currentEv) : '') + '</div></div>' +
+        '</div></div>';
+    } else if (nextEv) {
+      var nextIcon = getEvIcon(nextEv);
+      nowSection = '<div class="today-todos">' +
+        '<div class="today-todos-label">NEXT · ' + t('today_next') + '</div>' +
+        '<div class="today-todo-item">' +
+          '<span class="today-todo-icon">' + mi(nextIcon) + '</span>' +
+          '<div style="flex:1"><div style="font-weight:600">' + getEventName(nextEv) + '</div>' +
+          '<div style="font-size:.7rem;opacity:.6;margin-top:2px">' + formatTime(nextEv.sh) + ' – ' + formatTime(nextEv.eh) + '</div></div>' +
+        '</div></div>';
     } else {
-      html += '<div class="today-now" style="background:var(--text-3)">' +
-        '<div class="today-now-label">' + t('today_now') + '</div>' +
-        '<div class="today-now-name">' + t('today_free') + '</div>' +
-        '</div>';
+      nowSection = '<div class="today-todos">' +
+        '<div class="today-todos-label">NOW · ' + t('today_now') + '</div>' +
+        '<div class="today-todo-item">' +
+          '<span class="today-todo-icon">' + mi('coffee') + '</span>' +
+          '<div style="flex:1"><div style="font-weight:600">' + t('today_free') + '</div></div>' +
+        '</div></div>';
     }
 
-    if (nextEv) {
-      html += '<div class="today-next">' +
-        '<div class="today-next-label">' + t('today_next') + '</div>' +
-        '<div class="today-ev-name">' + getEventName(nextEv) + '</div>' +
-        '<div class="today-ev-note">' + formatTime(nextEv.sh) + ' – ' + formatTime(nextEv.eh) + '</div>' +
-        '</div>';
-    }
-
-    // Full timeline
-    html += '<div class="today-timeline">';
-    todaySchedule.events.forEach(function(ev) {
-      var isActive = (nowHour >= ev.sh && nowHour < ev.eh);
-      var dotColor = CAT_DOT_COLORS[ev.cat] || '#888';
-      html += '<div class="today-ev' + (isActive ? ' active' : '') + '">' +
-        '<div class="today-ev-time">' + formatTime(ev.sh) + '</div>' +
-        '<div class="today-ev-dot" style="background:' + dotColor + '"></div>' +
-        '<div class="today-ev-info">' +
-          '<div class="today-ev-name">' + getEventName(ev) + '</div>' +
-          (ev.note ? '<div class="today-ev-note">' + getEventNote(ev) + '</div>' : '') +
-          (ev.restaurant ? '<div class="today-ev-note">' + ev.restaurant + (ev.map ? ' <a href="' + ev.map + '" target="_blank" style="color:var(--cat-food)">📍</a>' : '') + '</div>' : '') +
-        '</div>' +
-        '</div>';
-    });
-    html += '</div>';
-
-    html += '<div class="today-enter"><button class="today-enter-btn" onclick="dismissToday()">' + t('today_enter') + '</button></div>';
+    // Centered layout matching BEFORE trip, card content is left-aligned via flexbox
+    var html = '<div class="today-countdown" style="padding-top:60px;min-height:auto">' +
+      '<div class="today-countdown-label" style="font-size:.85rem;margin-bottom:4px">' + (d.getMonth()+1) + '/' + d.getDate() + ' ' + dayNames[d.getDay()] + ' · Day ' + dayNum + '</div>' +
+      '<div class="today-dest">' + cityName + '</div>' +
+      '<div class="today-status">' + todaySchedule.events.length + ' ' + t('today_events') + '</div>' +
+      nowSection +
+      buildSection(t('today_morning'), 'wb_sunny', morningEvs) +
+      buildSection(t('today_afternoon'), 'wb_twilight', afternoonEvs) +
+      buildSection(t('today_evening'), 'dark_mode', eveningEvs) +
+      '<div class="today-enter"><button class="today-enter-btn" onclick="dismissToday()">' + t('today_enter') + '</button></div>' +
+    '</div>';
     overlay.innerHTML = html;
 
   } else if (now > tripEnd) {
