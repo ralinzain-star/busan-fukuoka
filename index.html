@@ -2,7 +2,7 @@
 <html lang="zh-TW">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>釜山 → 阿蘇 → 福岡 旅遊計畫 2026</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
@@ -33,9 +33,12 @@
     <button class="bb" data-tab="calendar"><span class="mi material-symbols-outlined">calendar_month</span><span data-i18n="nav_calendar">行程</span></button>
     <button class="bb" data-tab="booking"><span class="mi material-symbols-outlined">sell</span><span data-i18n="nav_booking">票券</span></button>
     <button class="bb" data-tab="budget"><span class="mi material-symbols-outlined">wallet</span><span data-i18n="nav_budget">預算</span></button>
-    <button class="bb" data-tab="time"><span class="mi material-symbols-outlined">schedule</span><span data-i18n="nav_time">時間</span></button>
-    <button class="bb" data-tab="checklist"><span class="mi material-symbols-outlined">checklist</span><span data-i18n="nav_checklist">清單</span></button>
-    <button class="bb btn-icon" id="lang-toggle-bb"><span class="mi material-symbols-outlined">translate</span><span class="bb-label" data-i18n="nav_lang">語言</span></button>
+    <button class="bb" id="bb-more-btn"><span class="mi material-symbols-outlined">more_horiz</span><span data-i18n="nav_more">More</span></button>
+  </div>
+  <div class="bb-more-menu" id="bb-more-menu">
+    <button class="bb-more-item" data-tab="time"><span class="mi material-symbols-outlined">schedule</span><span data-i18n="nav_time">時間</span></button>
+    <button class="bb-more-item" data-tab="checklist"><span class="mi material-symbols-outlined">checklist</span><span data-i18n="nav_checklist">清單</span></button>
+    <button class="bb-more-item" id="lang-toggle-bb"><span class="mi material-symbols-outlined">translate</span><span class="bb-label" data-i18n="nav_lang">語言</span></button>
   </div>
 </div>
 
@@ -147,7 +150,7 @@
                 </div>
                 <div class="flight-seg-arrow">
                   <div class="flight-seg-line"></div>
-                  <div class="flight-seg-code">IT606 · 3h15m</div>
+                  <div class="flight-seg-code">IT606 · 2h15m</div>
                 </div>
                 <div class="flight-seg-point">
                   <div class="flight-seg-time">19:55</div>
@@ -167,7 +170,7 @@
                 </div>
                 <div class="flight-seg-arrow">
                   <div class="flight-seg-line"></div>
-                  <div class="flight-seg-code">IT241 · 1h30m</div>
+                  <div class="flight-seg-code">IT241 · 2h30m</div>
                 </div>
                 <div class="flight-seg-point">
                   <div class="flight-seg-time">11:55</div>

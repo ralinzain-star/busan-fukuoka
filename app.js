@@ -98,6 +98,15 @@ function showTab(id) {
   document.querySelectorAll('.bb[data-tab]').forEach(b =>
     b.classList.toggle('active', b.dataset.tab === id));
 
+  // Update More menu items active state
+  document.querySelectorAll('.bb-more-item[data-tab]').forEach(b =>
+    b.classList.toggle('active', b.dataset.tab === id));
+
+  // Highlight More button if a More-menu tab is active
+  var moreBtn = document.getElementById('bb-more-btn');
+  var moreTabIds = ['time', 'checklist'];
+  if (moreBtn) moreBtn.classList.toggle('has-active', moreTabIds.indexOf(id) !== -1);
+
   if (id === 'budget') renderBudget();
   if (id === 'attractions' && leafletMap) leafletMap.invalidateSize();
 }
@@ -105,6 +114,26 @@ function showTab(id) {
 function initTabs() {
   document.querySelectorAll('.sb[data-tab], .bb[data-tab]').forEach(btn =>
     btn.addEventListener('click', () => showTab(btn.dataset.tab)));
+
+  // More button toggle
+  var moreBtn = document.getElementById('bb-more-btn');
+  var moreMenu = document.getElementById('bb-more-menu');
+  if (moreBtn && moreMenu) {
+    moreBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      // Close lang menus when toggling More
+      document.querySelectorAll('.lang-menu').forEach(function(m) { m.classList.remove('show'); });
+      moreMenu.classList.toggle('open');
+    });
+    // More menu item clicks (tab switches)
+    moreMenu.querySelectorAll('.bb-more-item[data-tab]').forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        showTab(btn.dataset.tab);
+        moreMenu.classList.remove('open');
+      });
+    });
+  }
 }
 
 // ── Leaflet Map ──
@@ -990,6 +1019,7 @@ const I18N = {
   nav_time:        { zh:'時間', en:'Time', ko:'시간', ja:'時間' },
   nav_checklist:   { zh:'清單', en:'List', ko:'목록', ja:'リスト' },
   nav_lang:        { zh:'語言', en:'Lang', ko:'언어', ja:'言語' },
+  nav_more:        { zh:'更多', en:'More', ko:'더보기', ja:'その他' },
 
   // ── Main header ──
   main_title: { zh:'🇰🇷 釜山 → 🇯🇵 阿蘇 → 🇯🇵 福岡', en:'🇰🇷 Busan → 🇯🇵 Aso → 🇯🇵 Fukuoka', ko:'🇰🇷 부산 → 🇯🇵 아소 → 🇯🇵 후쿠오카', ja:'🇰🇷 釜山 → 🇯🇵 阿蘇 → 🇯🇵 福岡' },
@@ -1309,8 +1339,10 @@ function initLangToggle() {
   const bbBtn = document.getElementById('lang-toggle-bb');
   if (sbBtn) createLangMenu(sbBtn, 'pos-right');
   if (bbBtn) createLangMenu(bbBtn, 'pos-top');
-  document.addEventListener('click', () => {
+  document.addEventListener('click', function() {
     document.querySelectorAll('.lang-menu').forEach(m => m.classList.remove('show'));
+    var moreMenu = document.getElementById('bb-more-menu');
+    if (moreMenu) moreMenu.classList.remove('open');
   });
 }
 
