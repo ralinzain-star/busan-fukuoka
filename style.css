@@ -95,13 +95,13 @@ a{color:inherit;text-decoration:none}
 .chip.on{background:var(--text);color:var(--surface);border-color:var(--text)}
 
 /* ===== ATTRACTION LAYOUT ===== */
-.attr-layout{display:grid;grid-template-columns:1fr 1fr;gap:20px;min-height:calc(100vh - 340px)}
+.attr-layout{display:grid;grid-template-columns:1fr 1fr;gap:20px;height:calc(100vh - 120px)}
 .map-wrap{position:relative;display:flex;flex-direction:column}
-#map{width:100%;flex:1;min-height:400px;border-radius:var(--r);border:1px solid var(--border);overflow:hidden;z-index:1}
+#map{width:100%;flex:1;min-height:0;border-radius:var(--r);border:1px solid var(--border);overflow:hidden;z-index:1}
 .map-import-btn{position:absolute;top:12px;right:12px;z-index:10;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-sm);padding:8px 14px;font-size:.78rem;font-weight:600;cursor:pointer;font-family:var(--font);display:flex;align-items:center;gap:6px;box-shadow:var(--shadow-lg);transition:all var(--ease)}
 .map-import-btn:hover{background:var(--text);color:#fff}
 .map-import-btn svg{width:16px;height:16px}
-.poi-list{display:flex;flex-direction:column;gap:0;max-height:calc(100vh - 340px);min-height:400px;overflow-y:auto;background:var(--surface);border-radius:var(--r);border:1px solid var(--border)}
+.poi-list{display:flex;flex-direction:column;gap:0;max-height:100%;min-height:0;overflow-y:auto;background:var(--surface);border-radius:var(--r);border:1px solid var(--border)}
 .poi{padding:12px 14px;display:flex;gap:10px;align-items:flex-start;cursor:pointer;border-bottom:1px solid var(--border);transition:all var(--ease)}
 .poi:last-child{border-bottom:none}
 .poi:hover{background:var(--accent-bg)}
@@ -217,12 +217,12 @@ a{color:inherit;text-decoration:none}
 /* ===== BOOKING TAB ===== */
 .booking-section{margin-bottom:24px}
 .booking-section-title{font-weight:700;font-size:.95rem;margin-bottom:12px;display:flex;align-items:center;gap:8px}
-.booked-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
-.booked-card{background:var(--surface);border-radius:var(--r-sm);border:1px solid var(--border);padding:14px;transition:all var(--ease)}
+.booked-grid{display:grid;grid-template-columns:1fr;gap:12px}
+.booked-card{background:var(--surface);border-radius:var(--r);border:1px solid var(--border);padding:16px;transition:all var(--ease)}
 .booked-card:hover{box-shadow:var(--shadow)}
-.booked-card-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px}
-.booked-card-name{font-weight:600;font-size:.85rem}
-.booked-badge{font-size:.65rem;padding:2px 8px;border-radius:99px;font-weight:600}
+.booked-card-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;gap:8px}
+.booked-card-name{font-weight:600;font-size:.88rem;min-width:0}
+.booked-badge{font-size:.65rem;padding:2px 8px;border-radius:99px;font-weight:600;flex-shrink:0;white-space:nowrap;display:inline-flex;align-items:center;gap:3px}
 .booked-badge.done{background:#e3f5e6;color:#2a7a36}
 .booked-badge.pending{background:#fef3e0;color:#9a6a1a}
 .booked-card-meta{font-size:.75rem;color:var(--text-2)}
@@ -230,7 +230,7 @@ a{color:inherit;text-decoration:none}
 .booked-card-links{display:flex;gap:6px;margin-top:6px;flex-wrap:wrap}
 .booked-card-link{display:inline-flex;align-items:center;gap:3px;font-size:.7rem;color:var(--cat-attraction);text-decoration:none;padding:2px 6px;border-radius:4px;border:1px solid var(--border);transition:all var(--ease)}
 .booked-card-link:hover{background:var(--accent-bg);border-color:var(--text-3)}
-.booked-card-wide{grid-column:1/-1}
+.booked-card-wide{}
 .booked-flight-pair{display:flex;gap:0;margin:8px 0}
 .booked-flight{flex:1;min-width:0}
 .booked-flight-label{font-weight:700;font-size:.8rem;margin-bottom:4px}
@@ -239,7 +239,7 @@ a{color:inherit;text-decoration:none}
 
 /* Flight card */
 .flight-segments{display:flex;flex-direction:column;gap:12px;margin:10px 0}
-.flight-seg{display:flex;gap:10px;align-items:flex-start}
+.flight-seg{display:flex;gap:10px;align-items:flex-start;flex-wrap:wrap}
 .flight-seg-badge{font-size:.65rem;font-weight:700;padding:3px 8px;border-radius:6px;background:var(--accent-bg);color:var(--accent);white-space:nowrap;margin-top:4px}
 .flight-seg-badge.return{background:#e8f4fd;color:#2a6cb0}
 .flight-seg-body{flex:1;min-width:0}
@@ -384,6 +384,12 @@ a{color:inherit;text-decoration:none}
 .leaflet-popup-content .popup-meta{color:var(--text-2);font-size:.72rem}
 .leaflet-popup-content .popup-link{color:var(--cat-attraction);font-size:.72rem;margin-top:4px;display:inline-block}
 
+/* ===== BOOKED GRID: 2-col on wide screens ===== */
+@media(min-width:769px){
+  .booked-grid{grid-template-columns:1fr 1fr}
+  .booked-card-wide{grid-column:1/-1}
+}
+
 /* ===== RESPONSIVE 1024 ===== */
 @media(max-width:1024px){
   .main{padding:24px 20px;max-width:100%}
@@ -439,7 +445,6 @@ a{color:inherit;text-decoration:none}
   .cal-wrap{border-radius:16px}
   .cal-m-day{padding:12px}
   .booking-section-title{font-size:.88rem}
-  .booked-grid{grid-template-columns:1fr}
   .recommend-grid{grid-template-columns:1fr}
   .booking-table-wrap{border-radius:16px}
   .budget-top{grid-template-columns:1fr}
@@ -528,6 +533,63 @@ details[open] .entry-form-summary::before{transform:rotate(90deg)}
 .entry-form-value{font-size:.85rem;font-weight:500;text-align:right;cursor:pointer;padding:4px 8px;border-radius:6px;transition:background .2s;display:flex;align-items:center}
 .entry-form-value:hover{background:var(--accent-bg)}
 .entry-form-value.copied{background:#e3f5e6;color:#2a7a36}
+
+/* ===== TODAY CARD ===== */
+.today-card{margin:0 0 20px}
+.today-card-inner{background:var(--surface);border-radius:var(--r);padding:20px;border:1px solid var(--border);position:relative;overflow:hidden}
+.today-card-header{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.today-city-emoji{font-size:1.2rem;color:var(--text-2);display:flex;align-items:center}
+.today-card-title{font-size:.95rem;font-weight:600;color:var(--text)}
+.today-card-msg{font-size:.85rem;color:var(--text-2);padding:8px 0}
+.today-card-preview{margin-top:12px;padding-top:12px;border-top:1px solid var(--border)}
+.today-preview-label{font-size:.72rem;font-weight:600;color:var(--text-3);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+
+/* Weather row inside today card */
+.today-weather{display:flex;align-items:center;gap:8px;font-size:.8rem;color:var(--text-2);margin-bottom:10px;padding:6px 10px;background:var(--accent-bg);border-radius:var(--r-sm);flex-wrap:wrap}
+.today-weather-icon{font-size:1.2rem}
+.today-weather-temp{font-weight:600;color:var(--text)}
+.today-weather-desc{color:var(--text-2)}
+.today-weather-sun{font-size:.72rem;color:var(--text-3);margin-left:auto}
+
+
+/* Events timeline inside today card */
+.today-events-timeline{display:flex;flex-direction:column;gap:2px;margin-top:12px;padding-top:10px;border-top:1px solid var(--border)}
+.today-ev{display:flex;align-items:center;gap:8px;padding:4px 0;font-size:.78rem;transition:opacity .3s}
+.today-ev.past{opacity:.4}
+.today-ev.current{font-weight:600;opacity:1}
+.today-ev-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.today-ev-time{font-size:.7rem;color:var(--text-3);width:40px;flex-shrink:0;font-variant-numeric:tabular-nums}
+.today-ev-name{color:var(--text)}
+.today-ev.current .today-ev-dot{width:8px;height:8px;box-shadow:0 0 0 3px rgba(0,0,0,.08)}
+
+/* ===== WEATHER FORECAST STRIP ===== */
+.weather-forecast-strip{background:var(--surface);border-radius:var(--r);padding:20px;border:1px solid var(--border);margin:0 0 20px}
+.weather-strip-title{font-size:.82rem;font-weight:600;color:var(--text);margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.weather-strip-scroll{display:flex;gap:8px;overflow-x:auto;padding:4px 0 4px;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+.weather-strip-scroll::-webkit-scrollbar{height:4px}
+.weather-strip-scroll::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
+.weather-day{flex-shrink:0;width:80px;padding:10px 8px;border-radius:var(--r-sm);border:1px solid var(--border);background:var(--surface);text-align:center;transition:all .3s;position:relative}
+.weather-day.today{border-color:var(--text);box-shadow:0 0 0 1px var(--text)}
+.wd-daynum{font-size:.65rem;font-weight:700;color:var(--text-3);letter-spacing:.5px;text-transform:uppercase}
+.wd-date{font-size:.72rem;color:var(--text-2);margin:2px 0}
+.wd-icon{font-size:1.5rem;margin:4px 0;color:var(--text-2)}
+.wd-icon .mi{font-size:24px}
+.wd-temp{font-size:.85rem;font-weight:600;color:var(--text)}
+.wd-lo{font-weight:400;color:var(--text-3)}
+.wd-desc{font-size:.65rem;color:var(--text-2);margin:3px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wd-sun{display:flex;justify-content:center;gap:4px;font-size:.6rem;color:var(--text-3);margin:4px 0 2px}
+.wd-sun-rise,.wd-sun-set{white-space:nowrap}
+.wd-golden{font-size:.58rem;color:var(--text-2);white-space:nowrap}
+.wd-city-dot{width:6px;height:6px;border-radius:50%;background:var(--text-3);margin:6px auto 0}
+
+/* ===== RESPONSIVE: MOBILE ===== */
+@media(max-width:640px){
+  .today-card-inner{padding:14px}
+  .today-weather{flex-direction:column;align-items:flex-start;gap:4px}
+  .today-weather-sun{margin-left:0}
+  .weather-day{width:70px;padding:8px 6px}
+  .wd-icon{font-size:1.2rem}
+}
 
 /* ===== PRINT ===== */
 @media print{

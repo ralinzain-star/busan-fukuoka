@@ -90,8 +90,13 @@ function initCover() {
 const TAB_IDS = ['attractions','calendar','booking','budget','time','checklist'];
 
 function showTab(id) {
+  // If already on this tab, do nothing
+  var currentPanel = document.querySelector('.tab-panel.active');
+  if (currentPanel && currentPanel.id === 'tab-' + id) return;
+
   document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
   document.getElementById('tab-' + id).classList.add('active');
+  window.scrollTo(0, 0);
 
   document.querySelectorAll('.sb[data-tab]').forEach(b =>
     b.classList.toggle('active', b.dataset.tab === id));
@@ -104,11 +109,12 @@ function showTab(id) {
 
   // Highlight More button if a More-menu tab is active
   var moreBtn = document.getElementById('bb-more-btn');
-  var moreTabIds = ['time', 'checklist'];
+  var moreTabIds = ['budget', 'checklist'];
   if (moreBtn) moreBtn.classList.toggle('has-active', moreTabIds.indexOf(id) !== -1);
 
   if (id === 'budget') renderBudget();
-  if (id === 'attractions' && leafletMap) leafletMap.invalidateSize();
+  if (id === 'attractions') renderOverviewExtras();
+  if (id === 'time' && leafletMap) leafletMap.invalidateSize();
 }
 
 function initTabs() {
@@ -905,14 +911,14 @@ function renderTimeAllocation() {
         .filter(([_, v]) => v > 0)
         .sort((a, b) => b[1] - a[1])
         .map(([city, hrs]) =>
-          '<div class="h-bar-row"><div class="h-bar-label">' + getCityName(city) + '</div>' +
+          '<div class="h-bar-row"><div class="h-bar-label">' + getScheduleCityName(city) + '</div>' +
           '<div class="h-bar-track"><div class="h-bar-fill" style="width:' + Math.round(hrs / maxVal * 100) + '%;background:' + m.color + '"></div></div>' +
           '<div class="h-bar-val">' + hrs.toFixed(1) + ' hr</div></div>'
         ).join('') || '<div style="color:var(--text-3);font-size:.83rem;padding:8px 0">' + t('time_no_data') + '</div>';
     } else {
       const maxCity = Math.max(...Object.values(cityDays));
       cityEl.innerHTML = Object.entries(cityDays).map(([city, d]) =>
-        '<div class="h-bar-row"><div class="h-bar-label">' + getCityName(city) + '</div><div class="h-bar-track"><div class="h-bar-fill" style="width:' + Math.round(d / maxCity * 100) + '%"></div></div><div class="h-bar-val">' + d + ' ' + t('time_days') + '</div></div>'
+        '<div class="h-bar-row"><div class="h-bar-label">' + getScheduleCityName(city) + '</div><div class="h-bar-track"><div class="h-bar-fill" style="width:' + Math.round(d / maxCity * 100) + '%"></div></div><div class="h-bar-val">' + d + ' ' + t('time_days') + '</div></div>'
       ).join('');
     }
   }
@@ -927,7 +933,7 @@ function renderTimeAllocation() {
       const maxDayHrs = Math.max(...daysWithCat.map(d => d.cats[timeCatFilter] || 0), 0.1);
       dailyEl.innerHTML = daysWithCat.map(d => {
         const dt = new Date(d.date);
-        const dayLabel = (dt.getMonth()+1) + '/' + dt.getDate() + ' ' + getCityName(d.city);
+        const dayLabel = (dt.getMonth()+1) + '/' + dt.getDate() + ' ' + getScheduleCityName(d.city);
         const hrs = d.cats[timeCatFilter] || 0;
         return '<div class="h-bar-row"><div class="h-bar-label" style="min-width:100px;font-size:.78rem">' + dayLabel + '</div>' +
           '<div class="h-bar-track"><div class="h-bar-fill" style="width:' + Math.round(hrs / maxDayHrs * 100) + '%;background:' + m.color + '"></div></div>' +
@@ -962,12 +968,204 @@ function renderTimeAllocation() {
 // Update countdown every second
 function initCountdown() {
   renderTimeAllocation();
+  renderOverviewExtras();
   setInterval(() => {
     const countdownEl = document.getElementById('time-countdown');
-    if (countdownEl && document.getElementById('tab-time').classList.contains('active')) {
+    if (countdownEl && document.getElementById('tab-attractions').classList.contains('active')) {
       renderTimeAllocation();
     }
   }, 1000);
+  // Update today card every 60s
+  setInterval(() => {
+    if (document.getElementById('tab-attractions')?.classList.contains('active')) {
+      renderOverviewExtras();
+    }
+  }, 60000);
+}
+
+// ── City Theme Data ──
+const CITY_THEMES = {
+  '釜山': { icon: 'park', label: '釜山' },
+  'busan': { icon: 'park', label: 'Busan' },
+  '釜山→渡輪': { icon: 'directions_boat', label: '渡輪' },
+  '阿蘇/熊本': { icon: 'landscape', label: '阿蘇' },
+  'aso': { icon: 'landscape', label: 'Aso' },
+  '太宰府+柳川': { icon: 'temple_buddhist', label: '太宰府' },
+  '糸島': { icon: 'beach_access', label: '糸島' },
+  '福岡': { icon: 'ramen_dining', label: '福岡' },
+  'fukuoka': { icon: 'ramen_dining', label: 'Fukuoka' },
+};
+function getCityTheme(city) {
+  return CITY_THEMES[city] || CITY_THEMES['福岡'];
+}
+
+// Map schedule city names (Chinese) to i18n keys
+const SCHEDULE_CITY_I18N = {
+  '釜山': 'scity_busan', '釜山→渡輪': 'scity_ferry', '阿蘇/熊本': 'scity_aso',
+  '太宰府+柳川': 'scity_dazaifu', '糸島': 'scity_itoshima', '福岡': 'scity_fukuoka'
+};
+function getScheduleCityName(city) {
+  const key = SCHEDULE_CITY_I18N[city];
+  if (key) return t(key);
+  return city;
+}
+
+// ── Weather Data (pre-researched for 3/30–4/12) ──
+// icon = Material Symbols icon name
+const WEATHER_DATA = [
+  { date:'2026-03-30', icon:'rainy', hi:14, lo:9,  desc:{zh:'陣雨',en:'Showers',ko:'소나기',ja:'にわか雨'}, sunrise:'06:22', sunset:'18:40', city:'busan' },
+  { date:'2026-03-31', icon:'grain', hi:15, lo:10, desc:{zh:'多雲時雨',en:'Cloudy/Rain',ko:'흐리고 비',ja:'曇り時々雨'}, sunrise:'06:21', sunset:'18:41', city:'busan' },
+  { date:'2026-04-01', icon:'clear_day', hi:17, lo:10, desc:{zh:'晴朗',en:'Sunny',ko:'맑음',ja:'晴れ'}, sunrise:'06:19', sunset:'18:42', city:'busan' },
+  { date:'2026-04-02', icon:'partly_cloudy_day', hi:16, lo:11, desc:{zh:'多雲',en:'Partly Cloudy',ko:'구름 많음',ja:'曇り'}, sunrise:'06:18', sunset:'18:43', city:'busan' },
+  { date:'2026-04-03', icon:'partly_cloudy_day', hi:16, lo:10, desc:{zh:'晴時多雲',en:'Mostly Sunny',ko:'대체로 맑음',ja:'晴れ時々曇り'}, sunrise:'06:17', sunset:'18:44', city:'busan' },
+  { date:'2026-04-04', icon:'clear_day', hi:18, lo:8,  desc:{zh:'晴朗',en:'Sunny',ko:'맑음',ja:'晴れ'}, sunrise:'05:58', sunset:'18:42', city:'aso' },
+  { date:'2026-04-05', icon:'partly_cloudy_day', hi:19, lo:10, desc:{zh:'多雲',en:'Partly Cloudy',ko:'구름 많음',ja:'曇り'}, sunrise:'05:56', sunset:'18:43', city:'fukuoka' },
+  { date:'2026-04-06', icon:'partly_cloudy_day', hi:20, lo:11, desc:{zh:'晴時多雲',en:'Mostly Sunny',ko:'대체로 맑음',ja:'晴れ時々曇り'}, sunrise:'05:55', sunset:'18:44', city:'fukuoka' },
+  { date:'2026-04-07', icon:'clear_day', hi:20, lo:12, desc:{zh:'晴・櫻花滿開',en:'Sunny · Full bloom',ko:'맑음 · 만개',ja:'晴れ・満開'}, sunrise:'05:54', sunset:'18:44', city:'fukuoka' },
+  { date:'2026-04-08', icon:'partly_cloudy_day', hi:19, lo:12, desc:{zh:'多雲',en:'Partly Cloudy',ko:'구름 많음',ja:'曇り'}, sunrise:'05:52', sunset:'18:45', city:'fukuoka' },
+  { date:'2026-04-09', icon:'rainy', hi:17, lo:12, desc:{zh:'陣雨',en:'Showers',ko:'소나기',ja:'にわか雨'}, sunrise:'05:51', sunset:'18:46', city:'fukuoka' },
+  { date:'2026-04-10', icon:'partly_cloudy_day', hi:19, lo:11, desc:{zh:'晴時多雲',en:'Mostly Sunny',ko:'대체로 맑음',ja:'晴れ時々曇り'}, sunrise:'05:50', sunset:'18:46', city:'fukuoka' },
+  { date:'2026-04-11', icon:'clear_day', hi:21, lo:12, desc:{zh:'晴朗',en:'Sunny',ko:'맑음',ja:'晴れ'}, sunrise:'05:49', sunset:'18:47', city:'fukuoka' },
+  { date:'2026-04-12', icon:'partly_cloudy_day', hi:20, lo:13, desc:{zh:'多雲',en:'Partly Cloudy',ko:'구름 많음',ja:'曇り'}, sunrise:'05:47', sunset:'18:48', city:'fukuoka' },
+];
+
+// ── Today's Itinerary Card ──
+function renderTodayCard() {
+  const el = document.getElementById('today-card');
+  if (!el) return;
+
+  const now = new Date();
+  const todayStr = now.getFullYear() + '-' + String(now.getMonth()+1).padStart(2,'0') + '-' + String(now.getDate()).padStart(2,'0');
+  const tripStart = new Date(TRIP.startDate);
+  const tripEnd = new Date(TRIP.endDate);
+  const today = new Date(todayStr);
+
+  const mi = function(name, size) { return '<span class="mi material-symbols-outlined" style="font-size:' + (size||16) + 'px">' + name + '</span>'; };
+
+  // Before trip
+  if (today < tripStart) {
+    const dayIdx = TRIP.schedule.findIndex(d => d.date === TRIP.startDate);
+    const firstDay = TRIP.schedule[dayIdx >= 0 ? dayIdx : 0];
+    const theme = getCityTheme(firstDay?.city || '釜山');
+    el.innerHTML = '<div class="today-card-inner">' +
+      '<div class="today-card-header">' + mi(theme.icon, 20) + '<span class="today-card-title">' + t('time_today') + '</span></div>' +
+      '<div class="today-card-msg">' + t('time_today_before') + '</div>' +
+      '<div class="today-card-preview"><div class="today-preview-label">Day 1 · ' + TRIP.startDate.slice(5) + '</div>' + renderDayEvents(firstDay) + '</div>' +
+    '</div>';
+    return;
+  }
+
+  // After trip
+  if (today > tripEnd) {
+    el.innerHTML = '<div class="today-card-inner">' +
+      '<div class="today-card-header">' + mi('flight_takeoff', 20) + '<span class="today-card-title">' + t('time_today') + '</span></div>' +
+      '<div class="today-card-msg">' + t('time_today_after') + '</div></div>';
+    return;
+  }
+
+  // During trip
+  const dayData = TRIP.schedule.find(d => d.date === todayStr);
+  const dayNum = Math.floor((today - tripStart) / 86400000) + 1;
+  const weather = WEATHER_DATA.find(w => w.date === todayStr);
+
+  if (!dayData || dayData.events.length === 0) {
+    el.innerHTML = '<div class="today-card-inner"><div class="today-card-header">' + mi('explore', 20) + '<span class="today-card-title">' + t('time_today') + ' · Day ' + dayNum + '</span></div>' +
+      '<div class="today-card-msg">' + t('time_today_rest') + '</div></div>';
+    return;
+  }
+
+  const theme = getCityTheme(dayData.city);
+  const nowHour = now.getHours() + now.getMinutes() / 60;
+
+  // Weather bar
+  const weatherHtml = weather
+    ? '<div class="today-weather">' +
+        mi(weather.icon, 18) +
+        '<span class="today-weather-temp">' + weather.hi + '°/' + weather.lo + '°</span>' +
+        '<span class="today-weather-desc">' + (weather.desc[currentLang] || weather.desc.zh) + '</span>' +
+        '<span class="today-weather-sun">' + mi('wb_twilight', 12) + ' ' + weather.sunrise + '  ' + mi('nightlight', 12) + ' ' + weather.sunset + '</span>' +
+      '</div>'
+    : '';
+
+  el.innerHTML = '<div class="today-card-inner">' +
+    '<div class="today-card-header">' + mi(theme.icon, 20) + '<span class="today-card-title">' + t('time_today') + ' · Day ' + dayNum + ' · ' + getScheduleCityName(dayData.city) + '</span></div>' +
+    weatherHtml +
+    '<div class="today-events-timeline">' + renderDayEvents(dayData, nowHour) + '</div>' +
+  '</div>';
+
+}
+
+function formatHour(h) {
+  const hr = Math.floor(h);
+  const min = Math.round((h - hr) * 60);
+  return String(hr).padStart(2, '0') + ':' + String(min).padStart(2, '0');
+}
+
+function renderDayEvents(dayData, nowHour) {
+  if (!dayData || !dayData.events.length) return '';
+  return dayData.events.map(ev => {
+    const catColor = TIME_CAT_COLORS[ev.cat] || TIME_CAT_COLORS.other;
+    const isPast = nowHour !== undefined && nowHour > ev.eh;
+    const isCurrent = nowHour !== undefined && nowHour >= ev.sh && nowHour < ev.eh;
+    const cls = isPast ? ' past' : (isCurrent ? ' current' : '');
+    return '<div class="today-ev' + cls + '">' +
+      '<div class="today-ev-dot" style="background:' + catColor + '"></div>' +
+      '<div class="today-ev-time">' + formatHour(ev.sh) + '</div>' +
+      '<div class="today-ev-name">' + getEventName(ev) + '</div>' +
+    '</div>';
+  }).join('');
+}
+
+// ── Weather Forecast Strip ──
+function renderWeatherStrip() {
+  const el = document.getElementById('weather-strip');
+  if (!el) return;
+
+  const now = new Date();
+  const todayStr = now.getFullYear() + '-' + String(now.getMonth()+1).padStart(2,'0') + '-' + String(now.getDate()).padStart(2,'0');
+
+  el.innerHTML = '<div class="weather-strip-title"><span class="mi material-symbols-outlined" style="font-size:16px">cloud</span> ' + t('time_weather_title') + '</div>' +
+    '<div class="weather-strip-scroll">' +
+      WEATHER_DATA.map((w, i) => {
+        const dt = new Date(w.date);
+        const dayNum = i + 1;
+        const isToday = w.date === todayStr;
+        const theme = getCityTheme(w.city === 'busan' ? '釜山' : (w.city === 'aso' ? '阿蘇/熊本' : '福岡'));
+        const goldenMorning = addMinutes(w.sunrise, -30);
+        const goldenEvening = addMinutes(w.sunset, -30);
+        return '<div class="weather-day' + (isToday ? ' today' : '') + '">' +
+          '<div class="wd-daynum">D' + dayNum + '</div>' +
+          '<div class="wd-date">' + (dt.getMonth()+1) + '/' + dt.getDate() + '</div>' +
+          '<div class="wd-icon"><span class="mi material-symbols-outlined">' + w.icon + '</span></div>' +
+          '<div class="wd-temp">' + w.hi + '°<span class="wd-lo">/' + w.lo + '°</span></div>' +
+          '<div class="wd-desc">' + (w.desc[currentLang] || w.desc.zh) + '</div>' +
+          '<div class="wd-sun"><span class="wd-sun-rise"><span class="mi material-symbols-outlined" style="font-size:10px">wb_twilight</span>' + w.sunrise + '</span><span class="wd-sun-set"><span class="mi material-symbols-outlined" style="font-size:10px">nightlight</span>' + w.sunset + '</span></div>' +
+          '<div class="wd-golden" title="' + t('time_golden_hour') + '"><span class="mi material-symbols-outlined" style="font-size:10px">photo_camera</span> ' + goldenEvening + '</div>' +
+          '<div class="wd-city-dot" title="' + getCityName(w.city) + '"></div>' +
+        '</div>';
+      }).join('') +
+    '</div>';
+
+  // Scroll to today
+  requestAnimationFrame(() => {
+    const todayEl = el.querySelector('.weather-day.today');
+    if (todayEl) todayEl.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+  });
+}
+
+function addMinutes(timeStr, mins) {
+  const [h, m] = timeStr.split(':').map(Number);
+  const total = h * 60 + m + mins;
+  return String(Math.floor(total / 60)).padStart(2, '0') + ':' + String(total % 60).padStart(2, '0');
+}
+
+// ── Patch renderTimeAllocation to also render new sections ──
+const _origRenderTimeAlloc = renderTimeAllocation;
+// We'll call new renders from initCountdown instead to avoid recursion
+
+function renderOverviewExtras() {
+  renderTodayCard();
+  renderWeatherStrip();
 }
 
 // ── Nomad / Work Spots (i18n-ready) ──
@@ -1012,11 +1210,11 @@ let currentLang = 'zh';
 
 const I18N = {
   // ── Navigation & Tab labels ──
-  nav_attractions: { zh:'景點', en:'Spots', ko:'명소', ja:'スポット' },
+  nav_attractions: { zh:'概覽', en:'Overview', ko:'개요', ja:'概要' },
   nav_calendar:    { zh:'行程', en:'Itinerary', ko:'일정', ja:'日程' },
   nav_booking:     { zh:'票券', en:'Tickets', ko:'티켓', ja:'チケット' },
   nav_budget:      { zh:'預算', en:'Budget', ko:'예산', ja:'予算' },
-  nav_time:        { zh:'時間', en:'Time', ko:'시간', ja:'時間' },
+  nav_time:        { zh:'景點', en:'Spots', ko:'명소', ja:'スポット' },
   nav_checklist:   { zh:'清單', en:'List', ko:'목록', ja:'リスト' },
   nav_lang:        { zh:'語言', en:'Lang', ko:'언어', ja:'言語' },
   nav_more:        { zh:'更多', en:'More', ko:'더보기', ja:'その他' },
@@ -1031,7 +1229,7 @@ const I18N = {
   title_calendar:    { zh:'行程日曆', en:'Itinerary Calendar', ko:'일정 달력', ja:'日程カレンダー' },
   title_booking:     { zh:'票券比價', en:'Ticket Comparison', ko:'티켓 비교', ja:'チケット比較' },
   title_budget:      { zh:'旅費預算', en:'Travel Budget', ko:'여행 예산', ja:'旅費予算' },
-  title_time:        { zh:'時間分配', en:'Time Allocation', ko:'시간 배분', ja:'時間配分' },
+  title_time:        { zh:'景點地圖', en:'Attractions Map', ko:'명소 지도', ja:'スポットマップ' },
   title_checklist:   { zh:'行前清單', en:'Checklist', ko:'체크리스트', ja:'チェックリスト' },
 
   // ── Category names ──
@@ -1047,6 +1245,12 @@ const I18N = {
   city_busan:   { zh:'釜山', en:'Busan', ko:'부산', ja:'釜山' },
   city_aso:     { zh:'阿蘇/熊本', en:'Aso/Kumamoto', ko:'아소/구마모토', ja:'阿蘇/熊本' },
   city_fukuoka: { zh:'福岡', en:'Fukuoka', ko:'후쿠오카', ja:'福岡' },
+  scity_busan:    { zh:'釜山', en:'Busan', ko:'부산', ja:'釜山' },
+  scity_ferry:    { zh:'釜山→渡輪', en:'Busan→Ferry', ko:'부산→페리', ja:'釜山→フェリー' },
+  scity_aso:      { zh:'阿蘇/熊本', en:'Aso/Kumamoto', ko:'아소/구마모토', ja:'阿蘇/熊本' },
+  scity_dazaifu:  { zh:'太宰府+柳川', en:'Dazaifu+Yanagawa', ko:'다자이후+야나가와', ja:'太宰府+柳川' },
+  scity_itoshima: { zh:'糸島', en:'Itoshima', ko:'이토시마', ja:'糸島' },
+  scity_fukuoka:  { zh:'福岡', en:'Fukuoka', ko:'후쿠오카', ja:'福岡' },
 
   // ── Day names (Sun-Sat) ──
   day_names: {
@@ -1124,7 +1328,7 @@ const I18N = {
   budget_checked:     { zh:'已勾選', en:'Checked', ko:'선택', ja:'チェック済' },
 
   // ── Time Allocation ──
-  time_subtitle:      { zh:'14 天行程時間分析', en:'14-Day Time Analysis', ko:'14일 여행 시간 분석', ja:'14日間タイム分析' },
+  time_subtitle:      { zh:'24 個景點 · 3 個城市', en:'24 spots · 3 cities', ko:'24개 명소 · 3개 도시', ja:'24スポット · 3都市' },
   time_activity_chart:{ zh:'活動時間分配（點擊分類查看明細）', en:'Activity Time Distribution (click category for details)', ko:'활동 시간 배분 (카테고리 클릭시 상세)', ja:'アクティビティ時間配分（カテゴリクリックで詳細）' },
   time_city_days:     { zh:'城市停留天數', en:'Days per City', ko:'도시별 체류일', ja:'都市別滞在日数' },
   time_daily_dist:    { zh:'每日時間分佈', en:'Daily Time Distribution', ko:'일별 시간 분포', ja:'日別時間分布' },
@@ -1135,6 +1339,19 @@ const I18N = {
   time_remaining:     { zh:'旅程剩餘', en:'Time Remaining', ko:'남은 여행 시간', ja:'残り時間' },
   time_ended:         { zh:'旅程結束', en:'Trip Ended', ko:'여행 종료', ja:'旅行終了' },
   time_no_data:       { zh:'此類別無資料', en:'No data for this category', ko:'해당 카테고리 데이터 없음', ja:'このカテゴリのデータなし' },
+  time_today:         { zh:'今日行程', en:"Today's Itinerary", ko:'오늘 일정', ja:'今日の予定' },
+  time_today_before:  { zh:'旅途尚未開始', en:'Trip hasn\'t started yet', ko:'아직 여행이 시작되지 않았습니다', ja:'旅はまだ始まっていません' },
+  time_today_after:   { zh:'旅途已結束，感謝這趟旅程 ✈️', en:'Trip has ended. Thank you for this journey ✈️', ko:'여행이 끝났습니다. 이 여정에 감사합니다 ✈️', ja:'旅が終わりました。この旅に感謝 ✈️' },
+  time_today_rest:    { zh:'今天沒有安排，自由探索吧！', en:'Nothing planned today — explore freely!', ko:'오늘은 일정이 없어요 — 자유롭게 탐험하세요!', ja:'今日は予定なし — 自由に探検しよう！' },
+  time_transport_est: { zh:'交通時間', en:'Transport', ko:'이동 시간', ja:'移動時間' },
+  time_walk_est:      { zh:'步行時間', en:'Walking', ko:'도보 시간', ja:'徒歩時間' },
+  time_sunrise:       { zh:'日出', en:'Sunrise', ko:'일출', ja:'日の出' },
+  time_sunset:        { zh:'日落', en:'Sunset', ko:'일몰', ja:'日の入り' },
+  time_golden_hour:   { zh:'Golden Hour', en:'Golden Hour', ko:'골든아워', ja:'ゴールデンアワー' },
+  time_weather_title: { zh:'14天天氣預報', en:'14-Day Weather Forecast', ko:'14일 날씨 예보', ja:'14日間天気予報' },
+  time_next:          { zh:'接下來', en:'Next', ko:'다음', ja:'次' },
+  time_now:           { zh:'現在進行', en:'Now', ko:'현재', ja:'進行中' },
+  time_day_prefix:    { zh:'Day', en:'Day', ko:'Day', ja:'Day' },
 
   // ── Time category labels (for time allocation charts) ──
   tcat_attraction:    { zh:'景點觀光', en:'Sightseeing', ko:'관광', ja:'観光' },
@@ -1296,6 +1513,7 @@ function applyLang() {
   safe('renderCalendar', () => renderCalendar(currentWeek));
   safe('renderBudget', renderBudget);
   safe('timeAlloc', renderTimeAllocation);
+  safe('overviewExtras', renderOverviewExtras);
   safe('renderNomadSpots', renderNomadSpots);
   safe('updateClocks', updateClocks);
   safe('renderChecklist', renderChecklist);

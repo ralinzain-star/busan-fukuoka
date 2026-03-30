@@ -15,11 +15,11 @@
 
 <!-- ===== SIDEBAR ===== -->
 <nav class="sidebar">
-  <button class="sb active" data-tab="attractions" title="景點地圖"><span class="mi material-symbols-outlined">map</span></button>
+  <button class="sb active" data-tab="attractions" title="概覽"><span class="mi material-symbols-outlined">travel_explore</span></button>
   <button class="sb" data-tab="calendar" title="行程日曆"><span class="mi material-symbols-outlined">calendar_month</span></button>
   <button class="sb" data-tab="booking" title="票券比價"><span class="mi material-symbols-outlined">sell</span></button>
   <button class="sb" data-tab="budget" title="預算"><span class="mi material-symbols-outlined">wallet</span></button>
-  <button class="sb" data-tab="time" title="時間分配"><span class="mi material-symbols-outlined">schedule</span></button>
+  <button class="sb" data-tab="time" title="景點地圖"><span class="mi material-symbols-outlined">map</span></button>
   <button class="sb" data-tab="checklist" title="行前清單"><span class="mi material-symbols-outlined">checklist</span></button>
   <div class="sb-spacer"></div>
   <button class="sb btn-icon" id="lang-toggle-sb" title="切換語言"><span class="mi material-symbols-outlined">translate</span></button>
@@ -29,14 +29,14 @@
 <!-- ===== BOTTOM BAR (mobile) ===== -->
 <div class="bottom-bar">
   <div class="bottom-bar-inner">
-    <button class="bb active" data-tab="attractions"><span class="mi material-symbols-outlined">map</span><span data-i18n="nav_attractions">景點</span></button>
+    <button class="bb active" data-tab="attractions"><span class="mi material-symbols-outlined">travel_explore</span><span data-i18n="nav_attractions">概覽</span></button>
     <button class="bb" data-tab="calendar"><span class="mi material-symbols-outlined">calendar_month</span><span data-i18n="nav_calendar">行程</span></button>
     <button class="bb" data-tab="booking"><span class="mi material-symbols-outlined">sell</span><span data-i18n="nav_booking">票券</span></button>
-    <button class="bb" data-tab="budget"><span class="mi material-symbols-outlined">wallet</span><span data-i18n="nav_budget">預算</span></button>
+    <button class="bb" data-tab="time"><span class="mi material-symbols-outlined">map</span><span data-i18n="nav_time">景點</span></button>
     <button class="bb" id="bb-more-btn"><span class="mi material-symbols-outlined">more_horiz</span><span data-i18n="nav_more">More</span></button>
   </div>
   <div class="bb-more-menu" id="bb-more-menu">
-    <button class="bb-more-item" data-tab="time"><span class="mi material-symbols-outlined">schedule</span><span data-i18n="nav_time">時間</span></button>
+    <button class="bb-more-item" data-tab="budget"><span class="mi material-symbols-outlined">wallet</span><span data-i18n="nav_budget">預算</span></button>
     <button class="bb-more-item" data-tab="checklist"><span class="mi material-symbols-outlined">checklist</span><span data-i18n="nav_checklist">清單</span></button>
     <button class="bb-more-item" id="lang-toggle-bb"><span class="mi material-symbols-outlined">translate</span><span class="bb-label" data-i18n="nav_lang">語言</span></button>
   </div>
@@ -47,7 +47,7 @@
 
 <div class="main">
 
-<!-- ===== TAB 1: ATTRACTIONS ===== -->
+<!-- ===== TAB 1: OVERVIEW (was attractions) ===== -->
 <div class="tab-panel active" id="tab-attractions">
   <div class="hdr">
     <div class="hdr-left">
@@ -69,26 +69,9 @@
 
   <div class="info-box"><span class="mi material-symbols-outlined" style="font-size:16px">park</span> <span data-i18n="info_cherry">3/30–4/12 賞櫻最佳時段！釜山櫻花 3月底盛開、福岡西公園百大櫻花名所到 4/10。匯率：1 TWD ≈ 42 KRW / 5 JPY</span></div>
 
-  <div class="filters" id="poi-filters">
-    <button class="chip on" data-filter="all" data-i18n="btn_all">全部</button>
-    <button class="chip" data-filter="busan" data-i18n="city_busan">釜山</button>
-    <button class="chip" data-filter="aso" data-i18n="city_aso">阿蘇/熊本</button>
-    <button class="chip" data-filter="fukuoka" data-i18n="city_fukuoka">福岡</button>
-    <button class="chip" data-filter="attraction" data-i18n="cat_attraction">景點</button>
-    <button class="chip" data-filter="food" data-i18n="cat_food">美食</button>
-    <button class="chip" data-filter="cafe" data-i18n="btn_workspace">工作空間</button>
-  </div>
-
-  <div class="attr-layout">
-    <div class="map-wrap">
-      <div id="map"></div>
-      <button class="map-import-btn" id="btn-import-gmaps">
-        <span class="mi material-symbols-outlined" style="font-size:16px">map</span>
-        <span data-i18n="btn_export_gm">匯出 Google Maps</span>
-      </button>
-    </div>
-    <div class="poi-list" id="poi-list"></div>
-  </div>
+  <div class="time-countdown-wrap" id="time-countdown"></div>
+  <div class="today-card" id="today-card"></div>
+  <div class="weather-forecast-strip" id="weather-strip"></div>
 </div>
 
 <!-- ===== TAB 2: CALENDAR ===== -->
@@ -318,24 +301,27 @@
   </div>
 </div>
 
-<!-- ===== TAB 5: TIME ALLOCATION ===== -->
+<!-- ===== TAB 5: SPOTS (was time) ===== -->
 <div class="tab-panel" id="tab-time">
-  <div class="hdr"><div class="hdr-left"><h1 data-i18n="title_time">時間分配</h1><div class="hdr-meta" data-i18n="time_subtitle">14 天行程時間分析</div></div></div>
-  <div class="time-countdown-wrap" id="time-countdown"></div>
-  <div id="time-filter-label" class="budget-filter-label" style="display:none;margin:0 0 12px;font-size:.85rem;color:var(--text-2);padding:6px 12px;background:var(--accent-bg);border-radius:var(--r-sm)"></div>
-  <div class="charts-grid">
-    <div class="chart-panel full">
-      <div class="chart-title" data-i18n="time_activity_chart">活動時間分配（點擊分類查看明細）</div>
-      <div class="bar-chart" id="time-alloc-chart"></div>
+  <div class="filters" id="poi-filters" style="margin-top:0">
+    <button class="chip on" data-filter="all" data-i18n="btn_all">全部</button>
+    <button class="chip" data-filter="busan" data-i18n="city_busan">釜山</button>
+    <button class="chip" data-filter="aso" data-i18n="city_aso">阿蘇/熊本</button>
+    <button class="chip" data-filter="fukuoka" data-i18n="city_fukuoka">福岡</button>
+    <button class="chip" data-filter="attraction" data-i18n="cat_attraction">景點</button>
+    <button class="chip" data-filter="food" data-i18n="cat_food">美食</button>
+    <button class="chip" data-filter="cafe" data-i18n="btn_workspace">工作空間</button>
+  </div>
+
+  <div class="attr-layout">
+    <div class="map-wrap">
+      <div id="map"></div>
+      <button class="map-import-btn" id="btn-import-gmaps">
+        <span class="mi material-symbols-outlined" style="font-size:16px">map</span>
+        <span data-i18n="btn_export_gm">匯出 Google Maps</span>
+      </button>
     </div>
-    <div class="chart-panel">
-      <div class="chart-title" id="time-city-title" data-i18n="time_city_days">城市停留天數</div>
-      <div class="h-bars" id="time-city-bars"></div>
-    </div>
-    <div class="chart-panel">
-      <div class="chart-title" id="time-daily-title" data-i18n="time_daily_dist">每日時間分佈</div>
-      <div class="h-bars" id="time-daily-bars"></div>
-    </div>
+    <div class="poi-list" id="poi-list"></div>
   </div>
 </div>
 
