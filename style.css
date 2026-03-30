@@ -51,7 +51,7 @@ a{color:inherit;text-decoration:none}
 .lang-option.active{background:var(--accent-bg);color:var(--accent);font-weight:600}
 
 /* ===== BOTTOM BAR ===== */
-.bottom-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-top:.5px solid rgba(0,0,0,.08);padding:4px 0 calc(env(safe-area-inset-bottom,0px) + 16px)}
+.bottom-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-top:.5px solid rgba(0,0,0,.08);padding:4px 0 calc(env(safe-area-inset-bottom,0px) + 4px)}
 .bottom-bar-inner{display:flex;justify-content:space-around;max-width:440px;margin:0 auto}
 .bb{display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px 8px;background:none;border:none;cursor:pointer;color:var(--text-3);font-size:.7rem;font-family:var(--font);border-radius:10px;transition:all .2s;flex:1}
 .bb.active{color:var(--accent);font-weight:600}
