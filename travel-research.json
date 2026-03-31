@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "trip_name": "釜山→阿蘇→福岡",
+    "last_updated": "2026-03-31T00:00:00+08:00",
+    "total_items": 2
+  },
+  "items": [
+    {
+      "id": "r1",
+      "type": "shopping",
+      "name": "廣安里擴香瓶店",
+      "name_local": "광안리 디퓨저 숍",
+      "location": {
+        "city": "Busan",
+        "area": "廣安里 / 광안리 Gwangalli",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "外觀質感高級但價格親民的擴香瓶專賣店，兩瓶禮盒組只要 ₩40,000",
+        "price": "₩40,000（兩瓶組）",
+        "price_value": 40000,
+        "price_currency": "KRW",
+        "hours": null,
+        "duration": "15-30 min",
+        "tags": ["fragrance", "home-decor", "gift", "affordable", "local-shop"],
+        "must_order": ["Black Cherry 黑櫻桃香味擴香"],
+        "tips": ["外觀看起來很貴但其實很便宜", "適合當伴手禮"],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {
+          "needed": false,
+          "confirmed": false,
+          "time": null,
+          "party_size": null,
+          "reference": null
+        },
+        "meal_slot": "none",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=%EA%B4%91%EC%95%88%EB%A6%AC+%EB%94%94%ED%93%A8%EC%A0%80+Busan"
+      },
+      "source": {
+        "type": "url",
+        "url": "https://www.threads.com/@peter_hair_peter/post/DWjDXQGD7VP",
+        "title": "Threads @peter_hair_peter — 廣安里擴香瓶推薦",
+        "collected_at": "2026-03-31T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": "甜甜的水果香味，適合房間使用"
+    },
+    {
+      "id": "r2",
+      "type": "food",
+      "name": "青山1954 廣安里本店",
+      "name_local": "청산1954 광안리본점",
+      "location": {
+        "city": "Busan",
+        "area": "廣安里 / 수영구 Suyeong-gu",
+        "address": "부산 수영구 황령산로 29",
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "由1968年美軍官邸改建的韓式餐廳，招牌辣炒章魚和編柏章魚菜包超有名，上過韓國美食節目",
+        "price": null,
+        "price_value": null,
+        "price_currency": "KRW",
+        "hours": "11:00–20:50（休息時間 15:30–17:00）",
+        "duration": "1-1.5 hours",
+        "tags": ["korean-food", "octopus", "tv-featured", "heritage-building", "local-favorite"],
+        "must_order": ["오독낙지볶음 辣炒章魚", "편백낙지보쌈 編柏章魚菜包"],
+        "tips": ["從金蓮山站步行約7分鐘", "每月最後一個週三公休", "有午休時間 15:30-17:00 注意別撲空"],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {
+          "needed": false,
+          "confirmed": false,
+          "time": null,
+          "party_size": null,
+          "reference": null
+        },
+        "meal_slot": "lunch",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=%EC%B2%AD%EC%82%B01954+%EA%B4%91%EC%95%88%EB%A6%AC%EB%B3%B8%EC%A0%90+Busan"
+      },
+      "source": {
+        "type": "url",
+        "url": "https://www.threads.com/@lisa83627/post/DWiL90_k20r",
+        "title": "Threads @lisa83627 — 青山1954 廣安里",
+        "collected_at": "2026-03-31T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": "改建自1968年美軍官邸，環境復古有質感"
+    }
+  ],
+  "transport": [],
+  "accommodations": [],
+  "general_tips": [],
+  "passes_and_deals": []
+}

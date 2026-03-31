@@ -372,9 +372,8 @@ function initWeekPills() {
 }
 
 // ── Budget ──
-// FLIPPED LOGIC: checked = done/strikethrough, NOT counted in total
-// Total = sum of UNCHECKED items
-let budgetCityFilter = null; // null = all, 'busan'/'aso'/'fukuoka' = filtered
+let budgetCityFilter = null;
+let budgetMode = 'estimated'; // 'estimated' | 'actual'
 
 function getBudgetItemName(item) {
   if (currentLang === 'en' && item.name_en) return item.name_en;
@@ -383,127 +382,173 @@ function getBudgetItemName(item) {
   return item.name;
 }
 
+const budgetCatColorMap = {
+  hotel:  { icon:'<span class="mi" style="font-size:14px">hotel</span>', color:'var(--cat-hotel)' },
+  food:   { icon:'<span class="mi" style="font-size:14px">restaurant</span>', color:'var(--cat-food)' },
+  transport:{ icon:'<span class="mi" style="font-size:14px">train</span>', color:'var(--cat-transport)' },
+  attraction:{ icon:'<span class="mi" style="font-size:14px">confirmation_number</span>', color:'var(--cat-attraction)' },
+  shopping:{ icon:'<span class="mi" style="font-size:14px">shopping_bag</span>', color:'var(--cat-shopping)' },
+  other:  { icon:'<span class="mi" style="font-size:14px">inventory_2</span>', color:'var(--cat-other)' }
+};
+
+function getAllActualItems() {
+  var expenses = TRIP.budget.actual_expenses || [];
+  var all = [];
+  expenses.forEach(function(day) { day.items.forEach(function(item) { all.push(item); }); });
+  return all;
+}
+
 function renderBudget() {
-  const allItems = TRIP.budget.items;
-  const items = budgetCityFilter
-    ? allItems.filter(i => i.city === budgetCityFilter)
-    : allItems;
-  const fullTotal = allItems.reduce((s, i) => s + i.cost_twd, 0);
-  const filteredTotal = items.reduce((s, i) => s + i.cost_twd, 0);
-  const checkedTotal = items.filter(i => i.checked).reduce((s, i) => s + i.cost_twd, 0);
+  var isActual = budgetMode === 'actual';
 
-  // City chart (always shows all items, highlight selected)
-  const cities = { busan: 0, aso: 0, fukuoka: 0 };
-  allItems.forEach(i => cities[i.city] = (cities[i.city] || 0) + i.cost_twd);
-  const maxC = Math.max(...Object.values(cities), 1);
-  document.getElementById('city-chart').innerHTML = [
-    'busan', 'aso', 'fukuoka'
-  ].map(k => {
-    const label = getCityName(k);
-    const active = budgetCityFilter === k;
-    const dimmed = budgetCityFilter && !active;
-    return '<div class="bar-col budget-city-bar' + (active ? ' active' : '') + (dimmed ? ' dimmed' : '') + '" data-city="' + k + '" style="cursor:pointer">' +
-      '<div class="bar-fill" style="height:' + Math.round(cities[k] / maxC * 120) + 'px"></div>' +
-      '<div class="bar-label">' + label + '</div>' +
-      '<div class="bar-sub">' + fmtCurr(cities[k]) + '</div>' +
-    '</div>';
-  }).join('');
+  // Update mode toggle
+  document.querySelectorAll('.budget-mode-btn').forEach(function(btn) {
+    btn.classList.toggle('on', btn.dataset.mode === budgetMode);
+  });
 
-  // City horizontal bars (always all, highlight selected)
-  document.getElementById('city-hbars').innerHTML = [
-    'busan', 'aso', 'fukuoka'
-  ].map(k => {
-    const label = getCityName(k);
-    const active = budgetCityFilter === k;
-    const dimmed = budgetCityFilter && !active;
+  // Update total label
+  document.getElementById('budget-total-label').textContent = isActual ? t('budget_actual_total') : t('stat_total');
+
+  if (isActual) {
+    renderBudgetActual();
+  } else {
+    renderBudgetEstimated();
+  }
+}
+
+function renderBudgetEstimated() {
+  var allItems = TRIP.budget.items;
+  var items = budgetCityFilter ? allItems.filter(function(i) { return i.city === budgetCityFilter; }) : allItems;
+  var fullTotal = allItems.reduce(function(s, i) { return s + i.cost_twd; }, 0);
+  var filteredTotal = items.reduce(function(s, i) { return s + i.cost_twd; }, 0);
+
+  // City horizontal bars
+  var cities = { busan: 0, aso: 0, fukuoka: 0 };
+  allItems.forEach(function(i) { cities[i.city] = (cities[i.city] || 0) + i.cost_twd; });
+  document.getElementById('city-hbars').innerHTML = ['busan', 'aso', 'fukuoka'].map(function(k) {
+    var label = getCityName(k);
+    var active = budgetCityFilter === k;
+    var dimmed = budgetCityFilter && !active;
     return '<div class="h-bar-row budget-city-hbar' + (active ? ' active' : '') + (dimmed ? ' dimmed' : '') + '" data-city="' + k + '" style="cursor:pointer">' +
       '<div class="h-bar-label">' + label + '</div>' +
       '<div class="h-bar-track"><div class="h-bar-fill" style="width:' + (fullTotal > 0 ? Math.round(cities[k] / fullTotal * 100) : 0) + '%"></div></div>' +
-      '<div class="h-bar-val">' + fmtCurr(cities[k]) + '</div>' +
-    '</div>';
+      '<div class="h-bar-val">' + fmtCurr(cities[k]) + '</div></div>';
   }).join('');
 
   // Filter indicator
-  const filterLabelEl = document.getElementById('budget-filter-label');
+  var filterLabelEl = document.getElementById('budget-filter-label');
   if (filterLabelEl) {
     if (budgetCityFilter) {
       filterLabelEl.innerHTML = t('filter_label') + '：<strong>' + getCityName(budgetCityFilter) + '</strong> <span class="budget-clear-filter" style="cursor:pointer;color:var(--text-3);font-size:.78rem;margin-left:8px;text-decoration:underline">' + t('filter_clear') + '</span>';
       filterLabelEl.style.display = '';
-      filterLabelEl.querySelector('.budget-clear-filter')?.addEventListener('click', () => {
-        budgetCityFilter = null;
-        renderBudget();
-      });
+      var clearBtn = filterLabelEl.querySelector('.budget-clear-filter');
+      if (clearBtn) clearBtn.addEventListener('click', function() { budgetCityFilter = null; renderBudget(); });
     } else {
       filterLabelEl.style.display = 'none';
     }
   }
 
-  // Total display
+  // Total
   document.getElementById('budget-total-val').textContent = fmtCurr(budgetCityFilter ? filteredTotal : fullTotal);
-  const checkedCount = items.filter(i => i.checked).length;
-  document.getElementById('budget-total-sub').textContent =
-    budgetCityFilter
-      ? getCityName(budgetCityFilter) + ' · ' + items.length + ' ' + t('budget_items')
-      : (checkedCount > 0
-        ? t('budget_checked') + ' ' + checkedCount + '/' + items.length + ' ' + t('budget_items') + '（' + fmtCurr(checkedTotal) + '）'
-        : items.length + ' ' + t('budget_items'));
+  document.getElementById('budget-total-sub').textContent = budgetCityFilter
+    ? getCityName(budgetCityFilter) + ' · ' + items.length + ' ' + t('budget_items')
+    : items.length + ' ' + t('budget_items');
 
-  // Category horizontal bars (filtered by city if active)
-  const cats = {};
-  const catColorMap = {
-    hotel:  { icon:'<span class="mi" style="font-size:14px">hotel</span>', color:'var(--cat-hotel)' },
-    food:   { icon:'<span class="mi" style="font-size:14px">restaurant</span>', color:'var(--cat-food)' },
-    transport:{ icon:'<span class="mi" style="font-size:14px">train</span>', color:'var(--cat-transport)' },
-    attraction:{ icon:'<span class="mi" style="font-size:14px">confirmation_number</span>', color:'var(--cat-attraction)' },
-    shopping:{ icon:'<span class="mi" style="font-size:14px">shopping_bag</span>', color:'var(--cat-shopping)' },
-    other:  { icon:'<span class="mi" style="font-size:14px">inventory_2</span>', color:'var(--cat-other)' }
-  };
-  items.forEach(i => cats[i.cat] = (cats[i.cat] || 0) + i.cost_twd);
-  const maxCat = Math.max(...Object.values(cats), 1);
-  const catTotal = items.reduce((s, i) => s + i.cost_twd, 0);
-
-  document.getElementById('cat-hbars').innerHTML = Object.entries(cats)
-    .sort((a, b) => b[1] - a[1])
-    .map(([k, v]) => {
-      const info = catColorMap[k] || { icon:'📌', color:'var(--chart-bar)' };
-      return '<div class="h-bar-row">' +
-        '<div class="h-bar-label">' + info.icon + ' ' + getCatName(k) + '</div>' +
-        '<div class="h-bar-track"><div class="h-bar-fill" style="width:' + Math.round(v / maxCat * 100) + '%;background:' + info.color + '"></div></div>' +
-        '<div class="h-bar-val">' + fmtCurr(v) + ' (' + (catTotal > 0 ? Math.round(v / catTotal * 100) : 0) + '%)</div>' +
-      '</div>';
-    }).join('');
-
-  // Items list (filtered by city if active)
-  document.getElementById('items-list').innerHTML = allItems.map((item, i) => {
-    const hidden = budgetCityFilter && item.city !== budgetCityFilter;
-    return '<div class="item-row ' + (item.checked ? 'checked' : '') + (hidden ? ' hidden' : '') + '">' +
-      '<input type="checkbox" ' + (item.checked ? 'checked' : '') +
-      ' style="accent-color:var(--text);width:15px;height:15px;cursor:pointer" data-idx="' + i + '">' +
-      '<div><div class="item-name">' + getBudgetItemName(item) + '</div></div>' +
-      '<div class="item-city">' + getCityName(item.city) + '</div>' +
-      '<div class="item-cost">' + fmtCurr(item.cost_twd) + '</div>' +
-    '</div>';
+  // Category bars
+  var cats = {};
+  items.forEach(function(i) { cats[i.cat] = (cats[i.cat] || 0) + i.cost_twd; });
+  var maxCat = Math.max.apply(null, Object.values(cats).concat([1]));
+  var catTotal = items.reduce(function(s, i) { return s + i.cost_twd; }, 0);
+  document.getElementById('cat-hbars').innerHTML = Object.entries(cats).sort(function(a, b) { return b[1] - a[1]; }).map(function(entry) {
+    var k = entry[0], v = entry[1];
+    var info = budgetCatColorMap[k] || { icon:'📌', color:'var(--chart-bar)' };
+    return '<div class="h-bar-row"><div class="h-bar-label">' + info.icon + ' ' + getCatName(k) + '</div>' +
+      '<div class="h-bar-track"><div class="h-bar-fill" style="width:' + Math.round(v / maxCat * 100) + '%;background:' + info.color + '"></div></div>' +
+      '<div class="h-bar-val">' + fmtCurr(v) + ' (' + (catTotal > 0 ? Math.round(v / catTotal * 100) : 0) + '%)</div></div>';
   }).join('');
 
-  // Item checkbox events
-  document.querySelectorAll('#items-list input[type="checkbox"]').forEach(cb => {
-    cb.addEventListener('change', function() {
-      TRIP.budget.items[parseInt(this.dataset.idx)].checked = this.checked;
-      renderBudget();
-    });
-  });
+  // Items list
+  document.getElementById('items-list-wrap').innerHTML = '<div class="items-table-wrap"><div class="items-table-head"><span>' + t('budget_th_item') + '</span><span>' + t('budget_th_city') + '</span><span style="text-align:right">' + t('budget_th_amount') + '</span></div><div id="items-list">' +
+    allItems.map(function(item) {
+      var hidden = budgetCityFilter && item.city !== budgetCityFilter;
+      return '<div class="item-row' + (hidden ? ' hidden' : '') + '"><div><div class="item-name">' + getBudgetItemName(item) + '</div></div><div class="item-city">' + getCityName(item.city) + '</div><div class="item-cost">' + fmtCurr(item.cost_twd) + '</div></div>';
+    }).join('') + '</div></div>';
 
-  document.getElementById('items-total-val').textContent = fmtCurr(checkedTotal);
   document.getElementById('stat-total').textContent = fmtCurr(fullTotal);
 
-  // Click handlers for city bars → drill down
-  document.querySelectorAll('.budget-city-bar, .budget-city-hbar').forEach(el => {
-    el.addEventListener('click', () => {
-      const city = el.dataset.city;
-      budgetCityFilter = (budgetCityFilter === city) ? null : city;
+  // City bar click handlers
+  document.querySelectorAll('.budget-city-bar, .budget-city-hbar').forEach(function(el) {
+    el.addEventListener('click', function() {
+      budgetCityFilter = (budgetCityFilter === el.dataset.city) ? null : el.dataset.city;
       renderBudget();
     });
   });
+}
+
+function renderBudgetActual() {
+  var expenses = TRIP.budget.actual_expenses || [];
+  var purchasedItems = TRIP.budget.items.filter(function(i) { return i.purchased; });
+  var dailyItems = getAllActualItems();
+  var allItems = purchasedItems.concat(dailyItems);
+  var fullTotal = allItems.reduce(function(s, i) { return s + i.cost_twd; }, 0);
+  var purchasedTotal = purchasedItems.reduce(function(s, i) { return s + i.cost_twd; }, 0);
+
+  // Total
+  document.getElementById('budget-total-val').textContent = fmtCurr(fullTotal);
+  var dayCount = expenses.length;
+  document.getElementById('budget-total-sub').textContent = allItems.length + ' ' + t('budget_items');
+
+  // City horizontal bars (from all items that have city data)
+  var cities = {};
+  allItems.forEach(function(i) { if (i.city) cities[i.city] = (cities[i.city] || 0) + i.cost_twd; });
+  var cityHbarsEl = document.getElementById('city-hbars');
+  if (cityHbarsEl) {
+    cityHbarsEl.innerHTML = Object.entries(cities).sort(function(a, b) { return b[1] - a[1]; }).map(function(entry) {
+      var k = entry[0], v = entry[1];
+      return '<div class="h-bar-row"><div class="h-bar-label">' + getCityName(k) + '</div>' +
+        '<div class="h-bar-track"><div class="h-bar-fill" style="width:' + (fullTotal > 0 ? Math.round(v / fullTotal * 100) : 0) + '%"></div></div>' +
+        '<div class="h-bar-val">' + fmtCurr(v) + '</div></div>';
+    }).join('');
+  }
+
+  // Category bars
+  var cats = {};
+  allItems.forEach(function(i) { cats[i.cat] = (cats[i.cat] || 0) + i.cost_twd; });
+  var maxCat = Math.max.apply(null, Object.values(cats).concat([1]));
+  document.getElementById('cat-hbars').innerHTML = Object.entries(cats).sort(function(a, b) { return b[1] - a[1]; }).map(function(entry) {
+    var k = entry[0], v = entry[1];
+    var info = budgetCatColorMap[k] || { icon:'📌', color:'var(--chart-bar)' };
+    return '<div class="h-bar-row"><div class="h-bar-label">' + info.icon + ' ' + getCatName(k) + '</div>' +
+      '<div class="h-bar-track"><div class="h-bar-fill" style="width:' + Math.round(v / maxCat * 100) + '%;background:' + info.color + '"></div></div>' +
+      '<div class="h-bar-val">' + fmtCurr(v) + ' (' + (fullTotal > 0 ? Math.round(v / fullTotal * 100) : 0) + '%)</div></div>';
+  }).join('');
+
+  // Items: pre-purchased group + daily groups
+  var catIconMap = { hotel:'hotel', food:'restaurant', transport:'train', attraction:'confirmation_number', shopping:'shopping_bag', other:'inventory_2' };
+
+  function renderItemRow(item) {
+    var icon = catIconMap[item.cat] || 'receipt';
+    var color = (budgetCatColorMap[item.cat] || {}).color || 'var(--text-3)';
+    return '<div class="item-row" style="grid-template-columns:1fr auto"><div><div class="item-name"><span class="mi" style="font-size:14px;color:' + color + ';vertical-align:middle;margin-right:4px">' + icon + '</span>' + getBudgetItemName(item) + '</div></div><div class="item-cost">' + fmtCurr(item.cost_twd) + '</div></div>';
+  }
+
+  var html = '';
+
+  // Pre-purchased group
+  if (purchasedItems.length > 0) {
+    html += '<div class="items-table-wrap" style="margin-bottom:16px"><div class="items-table-head" style="grid-template-columns:1fr auto"><span>' + t('budget_prepurchased') + '</span><span style="text-align:right">' + fmtCurr(purchasedTotal) + '</span></div>' +
+      purchasedItems.map(renderItemRow).join('') + '</div>';
+  }
+
+  // Daily groups
+  html += expenses.map(function(day) {
+    var dayTotal = day.items.reduce(function(s, i) { return s + i.cost_twd; }, 0);
+    return '<div class="items-table-wrap" style="margin-bottom:16px"><div class="items-table-head" style="grid-template-columns:1fr auto"><span>' + day.date + '</span><span style="text-align:right">' + fmtCurr(dayTotal) + '</span></div>' +
+      day.items.map(renderItemRow).join('') + '</div>';
+  }).join('');
+
+  document.getElementById('items-list-wrap').innerHTML = html;
+  document.getElementById('stat-total').textContent = fmtCurr(TRIP.budget.items.reduce(function(s, i) { return s + i.cost_twd; }, 0));
 }
 
 function initCurrency() {
@@ -513,6 +558,12 @@ function initCurrency() {
     currentCurr = btn.dataset.curr;
     document.querySelectorAll('.curr-btn').forEach(b => b.classList.remove('on'));
     btn.classList.add('on');
+    renderBudget();
+  });
+  document.getElementById('budget-mode-switcher').addEventListener('click', function(e) {
+    var btn = e.target.closest('.budget-mode-btn');
+    if (!btn || btn.dataset.mode === budgetMode) return;
+    budgetMode = btn.dataset.mode;
     renderBudget();
   });
 }
@@ -1213,7 +1264,7 @@ const I18N = {
   nav_attractions: { zh:'概覽', en:'Overview', ko:'개요', ja:'概要' },
   nav_calendar:    { zh:'行程', en:'Itinerary', ko:'일정', ja:'日程' },
   nav_booking:     { zh:'票券', en:'Tickets', ko:'티켓', ja:'チケット' },
-  nav_budget:      { zh:'預算', en:'Budget', ko:'예산', ja:'予算' },
+  nav_budget:      { zh:'旅費', en:'Expenses', ko:'경비', ja:'旅費' },
   nav_time:        { zh:'景點', en:'Spots', ko:'명소', ja:'スポット' },
   nav_checklist:   { zh:'清單', en:'List', ko:'목록', ja:'リスト' },
   nav_lang:        { zh:'語言', en:'Lang', ko:'언어', ja:'言語' },
@@ -1228,7 +1279,7 @@ const I18N = {
   title_attractions: { zh:'景點地圖', en:'Attractions Map', ko:'명소 지도', ja:'スポットマップ' },
   title_calendar:    { zh:'行程日曆', en:'Itinerary Calendar', ko:'일정 달력', ja:'日程カレンダー' },
   title_booking:     { zh:'票券比價', en:'Ticket Comparison', ko:'티켓 비교', ja:'チケット比較' },
-  title_budget:      { zh:'旅費預算', en:'Travel Budget', ko:'여행 예산', ja:'旅費予算' },
+  title_budget:      { zh:'旅費', en:'Expenses', ko:'여행 경비', ja:'旅費' },
   title_time:        { zh:'景點地圖', en:'Attractions Map', ko:'명소 지도', ja:'スポットマップ' },
   title_checklist:   { zh:'行前清單', en:'Checklist', ko:'체크리스트', ja:'チェックリスト' },
 
@@ -1320,6 +1371,12 @@ const I18N = {
   budget_city_ratio:  { zh:'城市花費比例', en:'City Cost Ratio', ko:'도시별 비용 비율', ja:'都市別費用割合' },
   budget_chart_cat:   { zh:'花費類別', en:'Cost by Category', ko:'카테고리별 비용', ja:'カテゴリ別費用' },
   budget_detail_list: { zh:'明細清單', en:'Detail List', ko:'상세 목록', ja:'明細一覧' },
+  budget_actual_expenses: { zh:'實際花費', en:'Actual Expenses', ko:'실제 지출', ja:'実際の支出' },
+  budget_mode_estimated: { zh:'預估', en:'Estimated', ko:'예상', ja:'予定' },
+  budget_mode_actual:    { zh:'實際花費', en:'Actual', ko:'실제', ja:'実際' },
+  budget_actual_total:   { zh:'實際總花費', en:'Actual Total', ko:'실제 총 지출', ja:'実際の合計' },
+  budget_days:           { zh:'天', en:'days', ko:'일', ja:'日' },
+  budget_prepurchased:   { zh:'已預購', en:'Pre-purchased', ko:'사전 구매', ja:'事前購入済' },
   budget_th_item:     { zh:'項目', en:'Item', ko:'항목', ja:'項目' },
   budget_th_city:     { zh:'城市', en:'City', ko:'도시', ja:'都市' },
   budget_th_amount:   { zh:'金額', en:'Amount', ko:'금액', ja:'金額' },

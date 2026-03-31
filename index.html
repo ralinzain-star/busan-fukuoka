@@ -18,7 +18,7 @@
   <button class="sb active" data-tab="attractions" title="概覽"><span class="mi material-symbols-outlined">travel_explore</span></button>
   <button class="sb" data-tab="calendar" title="行程日曆"><span class="mi material-symbols-outlined">calendar_month</span></button>
   <button class="sb" data-tab="booking" title="票券比價"><span class="mi material-symbols-outlined">sell</span></button>
-  <button class="sb" data-tab="budget" title="預算"><span class="mi material-symbols-outlined">wallet</span></button>
+  <button class="sb" data-tab="budget" title="旅費"><span class="mi material-symbols-outlined">wallet</span></button>
   <button class="sb" data-tab="time" title="景點地圖"><span class="mi material-symbols-outlined">map</span></button>
   <button class="sb" data-tab="checklist" title="行前清單"><span class="mi material-symbols-outlined">checklist</span></button>
   <div class="sb-spacer"></div>
@@ -36,7 +36,7 @@
     <button class="bb" id="bb-more-btn"><span class="mi material-symbols-outlined">more_horiz</span><span data-i18n="nav_more">More</span></button>
   </div>
   <div class="bb-more-menu" id="bb-more-menu">
-    <button class="bb-more-item" data-tab="budget"><span class="mi material-symbols-outlined">wallet</span><span data-i18n="nav_budget">預算</span></button>
+    <button class="bb-more-item" data-tab="budget"><span class="mi material-symbols-outlined">wallet</span><span data-i18n="nav_budget">旅費</span></button>
     <button class="bb-more-item" data-tab="checklist"><span class="mi material-symbols-outlined">checklist</span><span data-i18n="nav_checklist">清單</span></button>
     <button class="bb-more-item" id="lang-toggle-bb"><span class="mi material-symbols-outlined">translate</span><span class="bb-label" data-i18n="nav_lang">語言</span></button>
   </div>
@@ -260,17 +260,17 @@
 <div class="tab-panel" id="tab-budget">
   <div class="hdr">
     <div class="hdr-left">
-      <h1 data-i18n="title_budget">旅費預算</h1>
+      <h1 data-i18n="title_budget">旅費</h1>
       <div class="hdr-meta" data-i18n="budget_subtitle">預估總額（含機酒） · 匯率 1 TWD ≈ 42 KRW / 5 JPY / 0.031 USD</div>
     </div>
   </div>
-  <div class="budget-top">
-    <div class="budget-chart-panel">
-      <div style="font-weight:700;margin-bottom:16px;font-size:.9rem" data-i18n="budget_chart_city">城市花費分布</div>
-      <div class="bar-chart" id="city-chart"></div>
-    </div>
+  <div class="budget-mode-switcher" id="budget-mode-switcher">
+    <button class="budget-mode-btn on" data-mode="estimated" data-i18n="budget_mode_estimated">預估</button>
+    <button class="budget-mode-btn" data-mode="actual" data-i18n="budget_mode_actual">實際花費</button>
+  </div>
+  <div class="budget-top" style="grid-template-columns:1fr">
     <div class="budget-total-panel">
-      <div class="budget-total-label" data-i18n="stat_total">預估總費用</div>
+      <div class="budget-total-label" id="budget-total-label" data-i18n="stat_total">預估總費用</div>
       <div class="budget-total-val" id="budget-total-val">NT$43,600</div>
       <div class="budget-total-sub" id="budget-total-sub"></div>
       <div class="curr-switcher" id="curr-switcher">
@@ -282,9 +282,8 @@
     </div>
   </div>
 
-  <div id="budget-filter-label" class="budget-filter-label" style="display:none;margin:0 0 12px;font-size:.85rem;color:var(--text-2);padding:6px 12px;background:var(--accent-bg);border-radius:var(--r-sm)"></div>
-  <div class="section-label" data-i18n="budget_city_ratio">城市花費比例</div>
-  <div class="chart-panel" style="margin-bottom:20px">
+  <div class="section-label" id="city-ratio-label" data-i18n="budget_city_ratio">城市花費比例</div>
+  <div class="chart-panel" id="city-ratio-panel" style="margin-bottom:20px">
     <div class="h-bars" id="city-hbars"></div>
   </div>
 
@@ -294,11 +293,7 @@
   </div>
 
   <div class="section-label" data-i18n="budget_detail_list">明細清單</div>
-  <div class="items-table-wrap">
-    <div class="items-table-head"><span></span><span data-i18n="budget_th_item">項目</span><span data-i18n="budget_th_city">城市</span><span style="text-align:right" data-i18n="budget_th_amount">金額</span></div>
-    <div id="items-list"></div>
-    <div class="items-total"><span data-i18n="budget_checked_total">勾選項目合計</span><span id="items-total-val">NT$0</span></div>
-  </div>
+  <div id="items-list-wrap"></div>
 </div>
 
 <!-- ===== TAB 5: SPOTS (was time) ===== -->
@@ -353,6 +348,6 @@
 </script>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="app.js?v=8"></script>
+<script src="app.js?v=9"></script>
 </body>
 </html>
