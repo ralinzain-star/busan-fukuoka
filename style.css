@@ -6,7 +6,7 @@
   --ease:.2s ease;--sidebar-w:60px;
   --cat-attraction:#e8664a;--cat-hotel:#4a7ce8;--cat-food:#4aad5b;
   --cat-cafe:#9b6ad4;--cat-shopping:#e8964a;--cat-transport:#4ab8c9;
-  --cat-work:#6a6ad4;--cat-other:#888;
+  --cat-work:#6a6ad4;--cat-other:#888;--cat-personal:#c9b99a;
   --chart-bar:#888;--chart-bar-hover:#666;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -178,6 +178,7 @@ a{color:inherit;text-decoration:none}
 .cal-ev[data-cat="transport"]{background:#e0f2f5;color:#2a7a8a;border-color:#b5dde5}
 .cal-ev[data-cat="shopping"]{background:#fef3e0;color:#9a6a1a;border-color:#ebd8b0}
 .cal-ev[data-cat="hotel"]{background:#e3ecf8;color:#2a5a9b;border-color:#c5d5e8}
+.cal-ev[data-cat="personal"]{background:#f5ede0;color:#8a6a3a;border-color:#e8d5b8}
 
 /* ===== LIVE CLOCKS (countdown digit style) ===== */
 .live-clocks{display:flex;gap:12px;align-items:stretch}

@@ -100,6 +100,7 @@
       <span class="cal-legend-item" data-cat="cafe"><span class="cal-legend-dot" style="background:#ede3f5;border-color:#d8c5e8"></span><span data-i18n="cat_cafe">咖啡</span></span>
       <span class="cal-legend-item" data-cat="hotel"><span class="cal-legend-dot" style="background:#e3ecf8;border-color:#c5d5e8"></span><span data-i18n="cat_hotel">住宿</span></span>
       <span class="cal-legend-item" data-cat="shopping"><span class="cal-legend-dot" style="background:#fef3e0;border-color:#ebd8b0"></span><span data-i18n="cat_shopping">購物</span></span>
+      <span class="cal-legend-item" data-cat="personal"><span class="cal-legend-dot" style="background:#f5ede0;border-color:#e8d5b8"></span><span data-i18n="cat_personal">個人</span></span>
     </div>
   </div>
   <div class="cal-wrap">
@@ -119,140 +120,17 @@
 
   <div class="booking-section">
     <div class="booking-section-title"><span class="mi material-symbols-outlined">checklist</span> <span data-i18n="booking_booked">已預訂項目</span></div>
-    <div class="booked-grid">
-      <div class="booked-card booked-card-wide flight-card">
-        <div class="booked-card-head"><div class="booked-card-name"><span class="mi material-symbols-outlined" style="font-size:16px">flight</span> 台灣虎航 來回機票</div><span class="booked-badge done"><span class="mi material-symbols-outlined" style="font-size:14px">check_circle</span> <span data-i18n="lbl_booked">已購</span></span></div>
-        <div class="flight-segments">
-          <div class="flight-seg">
-            <div class="flight-seg-badge"><span data-i18n="booking_outbound">去程</span></div>
-            <div class="flight-seg-body">
-              <div class="flight-seg-route">
-                <div class="flight-seg-point">
-                  <div class="flight-seg-time">16:40</div>
-                  <div class="flight-seg-city">桃園T1</div>
-                </div>
-                <div class="flight-seg-arrow">
-                  <div class="flight-seg-line"></div>
-                  <div class="flight-seg-code">IT606 · 2h15m</div>
-                </div>
-                <div class="flight-seg-point">
-                  <div class="flight-seg-time">19:55</div>
-                  <div class="flight-seg-city">金海T1</div>
-                </div>
-              </div>
-              <div class="flight-seg-detail">3/30（一）· <a href="https://www.google.com/maps/search/?api=1&query=桃園國際機場第一航廈" target="_blank">桃園機場</a> → <a href="https://www.google.com/maps/search/?api=1&query=금해국제공항+국제선" target="_blank">金海機場</a>（국제선）</div>
-            </div>
-          </div>
-          <div class="flight-seg">
-            <div class="flight-seg-badge return"><span data-i18n="booking_return">回程</span></div>
-            <div class="flight-seg-body">
-              <div class="flight-seg-route">
-                <div class="flight-seg-point">
-                  <div class="flight-seg-time">10:25</div>
-                  <div class="flight-seg-city">福岡T1</div>
-                </div>
-                <div class="flight-seg-arrow">
-                  <div class="flight-seg-line"></div>
-                  <div class="flight-seg-code">IT241 · 2h30m</div>
-                </div>
-                <div class="flight-seg-point">
-                  <div class="flight-seg-time">11:55</div>
-                  <div class="flight-seg-city">桃園T1</div>
-                </div>
-              </div>
-              <div class="flight-seg-detail">4/12（日）· <a href="https://www.google.com/maps/search/?api=1&query=福岡空港国際線ターミナル" target="_blank">福岡機場</a>（国際線）→ <a href="https://www.google.com/maps/search/?api=1&query=桃園國際機場第一航廈" target="_blank">桃園機場</a></div>
-            </div>
-          </div>
-        </div>
-        <div class="flight-footer">
-          <div>
-            <div class="booked-card-cost" data-cost="19600" style="margin:0">NT$19,600</div>
-            <div class="booked-card-verdict" id="flight-verdict-inline"></div>
-          </div>
-        </div>
-        <div class="flight-checkin-note"><a href="https://booking.tigerairtw.com/CheckIn/CheckIn" target="_blank">線上報到 Web Check-in</a>（起飛前 48hr – 1hr 開放）</div>
-      </div>
-      <div class="booked-card">
-        <div class="booked-card-head"><div class="booked-card-name"><span class="mi material-symbols-outlined" style="font-size:16px">hotel</span> Onjeong Stay 釜山4晚</div><span class="booked-badge done"><span class="mi material-symbols-outlined" style="font-size:14px">check_circle</span> <span data-i18n="lbl_booked">已購</span></span></div>
-        <div class="booked-card-meta">3/30–4/3 · NT$706/晚</div>
-        <div class="booked-card-cost" data-cost="2822">NT$2,822</div>
-        <div class="booked-card-links"><a href="https://www.google.com/maps/search/?api=1&query=Onjeong+Stay+부산" target="_blank" class="booked-card-link"><span class="mi material-symbols-outlined" style="font-size:14px">location_on</span><span data-i18n="booking_map">地圖</span></a></div>
-      </div>
-      <div class="booked-card">
-        <div class="booked-card-head"><div class="booked-card-name"><span class="mi material-symbols-outlined" style="font-size:16px">directions_boat</span> 新山茶花號渡輪</div><span class="booked-badge done"><span class="mi material-symbols-outlined" style="font-size:14px">check_circle</span> <span data-i18n="lbl_booked">已購</span></span></div>
-        <div class="booked-card-meta">4/3 20:00 釜山港→4/4 07:30 博多港</div>
-        <div class="booked-card-meta">釜山國際旅客碼頭 → 博多港國際碼頭</div>
-        <div class="booked-card-cost" data-cost="2755">NT$2,755</div>
-        <div class="booked-card-links"><a href="https://www.google.com/maps/search/?api=1&query=부산항국제여객터미널" target="_blank" class="booked-card-link"><span class="mi material-symbols-outlined" style="font-size:14px">location_on</span>釜山港</a><a href="https://www.google.com/maps/search/?api=1&query=博多港国際ターミナル" target="_blank" class="booked-card-link"><span class="mi material-symbols-outlined" style="font-size:14px">location_on</span>博多港</a></div>
-      </div>
-      <div class="booked-card">
-        <div class="booked-card-head"><div class="booked-card-name"><span class="mi material-symbols-outlined" style="font-size:16px">confirmation_number</span> 4/2 釜山精華一日遊 (Klook)</div><span class="booked-badge done"><span class="mi material-symbols-outlined" style="font-size:14px">check_circle</span> <span data-i18n="lbl_booked">已購</span></span></div>
-        <div class="booked-card-meta">藍線公園+櫻花+海東龍宮寺+甘川文化村</div>
-        <div class="booked-card-meta">集合：釜山站2號出口 08:20</div>
-        <div class="booked-card-cost" data-cost="1694">NT$1,694</div>
-        <div class="booked-card-links"><a href="https://www.google.com/maps/search/?api=1&query=부산역+2번출구" target="_blank" class="booked-card-link"><span class="mi material-symbols-outlined" style="font-size:14px">location_on</span><span data-i18n="booking_meetpoint">集合點</span></a></div>
-      </div>
-      <div class="booked-card">
-        <div class="booked-card-head"><div class="booked-card-name"><span class="mi material-symbols-outlined" style="font-size:16px">hotel</span> 福岡住宿 ~7晚</div><span class="booked-badge pending"><span class="mi material-symbols-outlined" style="font-size:14px">schedule</span> <span data-i18n="lbl_pending">待訂</span></span></div>
-        <div class="booked-card-meta">4/5–4/12 · 預估 ~NT$8,000</div>
-        <div class="booked-card-cost" data-cost="8000">~NT$8,000</div>
-      </div>
-    </div>
+    <div class="booked-grid" id="booking-confirmed"><!-- rendered by renderBooking() --></div>
   </div>
 
   <div class="booking-section">
     <div class="booking-section-title"><span class="mi material-symbols-outlined">sell</span> <span data-i18n="booking_compare">票券比價（未購）</span></div>
-    <div class="booking-table-wrap">
-      <table class="booking-table">
-        <thead><tr><th data-i18n="booking_th_item">項目</th><th data-i18n="booking_th_official">官網</th><th data-i18n="booking_th_klook">Klook</th><th data-i18n="booking_th_kkday">KKday</th><th data-i18n="booking_th_suggest">建議</th></tr></thead>
-        <tbody>
-          <tr>
-            <td><strong>釜山塔</strong><br><span style="font-size:.72rem;color:var(--text-3)">龍頭山公園展望台</span></td>
-            <td>₩12,000</td><td>₩12,000</td>
-            <td><span class="best-price">₩7,200 <span class="star-mark">★</span></span></td>
-            <td><span data-i18n="booking_kkday_save">★ KKday 省40%</span></td>
-          </tr>
-          <tr>
-            <td><strong>Busan X the Sky</strong><br><span style="font-size:.72rem;color:var(--text-3)">海雲台展望台</span></td>
-            <td>₩27,000</td><td>₩27,000</td><td>₩27,000</td>
-            <td><span data-i18n="booking_same_price">都一樣，現場買即可</span></td>
-          </tr>
-          <tr>
-            <td><strong>熊本城</strong><br><span style="font-size:.72rem;color:var(--text-3)">夜間櫻花照明 春季限定</span></td>
-            <td>¥800</td><td>—</td><td>—</td>
-            <td><span data-i18n="booking_buy_onsite">現場買即可</span></td>
-          </tr>
-          <tr>
-            <td><strong>高千穗峽 Klook一日遊</strong><br><span style="font-size:.72rem;color:var(--text-3)">4/11 含上色見熊野+天岩戶神社</span></td>
-            <td>—</td>
-            <td><span class="best-price">NT$1,877 <span class="star-mark">★</span></span></td>
-            <td>—</td>
-            <td><span data-i18n="booking_klook_excl">★ Klook 獨家</span></td>
-          </tr>
-          <tr>
-            <td><strong>太宰府+柳川 西鐵套票</strong><br><span style="font-size:.72rem;color:var(--text-3)">含電車+遊船 省¥1,700</span></td>
-            <td><span class="best-price">¥3,340 <span class="star-mark">★</span></span></td>
-            <td>—</td><td>—</td>
-            <td><span data-i18n="booking_official_best">★ 官方最便宜</span></td>
-          </tr>
-          <tr>
-            <td><strong>Visit Busan Pass 24hr</strong><br><span style="font-size:.72rem;color:var(--text-3)">₩55,000 含多景點</span></td>
-            <td>₩55,000</td><td>₩55,000</td><td>₩55,000</td>
-            <td><span data-i18n="booking_pass_not_worth">只去塔+X the Sky 不划算</span></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <div id="booking-comparison"><!-- rendered by renderBooking() --></div>
   </div>
 
   <div class="booking-section">
     <div class="booking-section-title"><span data-i18n="booking_recommend_title">⏳ 建議購買</span></div>
-    <div class="recommend-grid">
-      <div class="recommend-item"><strong data-i18n="booking_rec_esim">韓日 eSIM 卡</strong><div class="rec-note" data-i18n="booking_rec_esim_note">Holafly ~NT$1,500/14天無限 or KKday 韓+日 combo。出發前購買啟用。</div></div>
-      <div class="recommend-item"><strong data-i18n="booking_rec_tmoney">T-money 交通卡</strong><div class="rec-note" data-i18n="booking_rec_tmoney_note">機場便利商店購買 ₩3,000–5,000（卡費+儲值），釜山地鐵公車通用</div></div>
-      <div class="recommend-item"><strong data-i18n="booking_rec_icoca">ICOCA / Suica</strong><div class="rec-note" data-i18n="booking_rec_icoca_note">Apple Pay 直接加入，福岡地鐵/巴士/便利商店都可用</div></div>
-      <div class="recommend-item"><strong data-i18n="booking_rec_insurance">旅遊保險</strong><div class="rec-note" data-i18n="booking_rec_insurance_note">14天旅遊平安險 + 海外突發疾病，約 NT$500–800</div></div>
-    </div>
+    <div class="recommend-grid" id="booking-tobuy"><!-- rendered by renderBooking() --></div>
   </div>
 </div>
 
@@ -342,10 +220,7 @@
   </div>
 </div>
 
-<!-- Trip data fallback for file:// protocol -->
-<script id="trip-data" type="application/json">
-{"_note":"See data/trip.json for the canonical copy. This inline copy is a fallback for file:// protocol.","destination":"釜山→阿蘇→福岡","startDate":"2026-03-30","endDate":"2026-04-12","currency":{"home":"TWD","rates":{"KRW":42,"JPY":5,"USD":0.031}},"flightIntel":{"route":"TPE ↔ PUS/FUK","userPrice":18600,"booked":true,"monthlyPrices":[{"month":"4月","label":"Apr","avg":14500},{"month":"5月","label":"May","avg":15200},{"month":"6月","label":"Jun","avg":16800},{"month":"7月","label":"Jul","avg":24000},{"month":"8月","label":"Aug","avg":28000},{"month":"9月","label":"Sep","avg":17500},{"month":"10月","label":"Oct","avg":16000},{"month":"11月","label":"Nov","avg":14000},{"month":"12月","label":"Dec","avg":18500},{"month":"1月","label":"Jan","avg":12000},{"month":"2月","label":"Feb","avg":13500},{"month":"3月","label":"Mar","avg":21500}],"range":{"low":12000,"high":28000,"avg":21750}},"holidays":{"country":"TW","countryName":"台灣","items":[{"date":"2026-04-03","name":"清明節","days":"4/2–4/5 四天連假","tip":"請0天放4天","active":true},{"date":"2026-05-01","name":"勞動節","days":"5/1（五）","tip":"請0天放3天"},{"date":"2026-05-31","name":"端午節","days":"5/31（日）","tip":"5/29請1天放4天"},{"date":"2026-09-25","name":"中秋節","days":"9/25（五）","tip":"請0天放3天"},{"date":"2026-10-10","name":"雙十國慶","days":"10/9–10/11","tip":"請0天放3天"},{"date":"2027-01-01","name":"元旦","days":"1/1–1/3","tip":"請0天放3天"},{"date":"2027-02-06","name":"農曆春節","days":"2/6–2/14 九天","tip":"請0天放9天"}]},"pois":[{"id":"b1","name":"龍頭山公園+釜山塔","nameLocal":"용두산공원/부산타워","city":"busan","cat":"attraction","lat":35.1008,"lng":129.0325,"price_krw":7200,"price_twd":173,"hours":"09:00–22:00","desc":"⭐必去 · 4/1 09:30-11:00","addr":"南浦洞"},{"id":"b2","name":"BIFF廣場+國際市場","nameLocal":"비프광장/국제시장","city":"busan","cat":"food","lat":35.0974,"lng":129.0272,"price_krw":0,"price_twd":0,"hours":"全天","desc":"⭐必去 · 3/30 21:30 壅餅+魚板","addr":"南浦洞"},{"id":"b3","name":"札嘉其魚市場","nameLocal":"자갈치시장","city":"busan","cat":"food","lat":35.0967,"lng":129.0306,"price_krw":30000,"price_twd":714,"hours":"05:00–22:00","desc":"⭐必去 · 4/1 11:00-12:30 生魚片午餐","addr":"南浦洞"},{"id":"b4","name":"南川洞櫻花街","nameLocal":"남천동벚꽃길","city":"busan","cat":"attraction","lat":35.1425,"lng":129.1136,"price_krw":0,"price_twd":0,"hours":"全天","desc":"⭐必去 · 4/1 19:30 夜間最美","addr":"廣安里"},{"id":"b5","name":"廣安里海灘+大橋夜景","nameLocal":"광안리해수욕장","city":"busan","cat":"attraction","lat":35.1531,"lng":129.1186,"price_krw":0,"price_twd":0,"hours":"全天","desc":"⭐必去 · 3/31 18:30-20:30","addr":"廣安里"},{"id":"b6","name":"青沙浦+雙胞胎日落橋","nameLocal":"청사포","city":"busan","cat":"attraction","lat":35.162,"lng":129.187,"price_krw":0,"price_twd":0,"hours":"全天","desc":"⭐必去 · 3/31 15:00-17:30 日落最佳","addr":"海雲台"},{"id":"b7","name":"Busan X the Sky","nameLocal":"부산엑스더스카이","city":"busan","cat":"attraction","lat":35.1625,"lng":129.1635,"price_krw":27000,"price_twd":643,"hours":"10:00–21:00","desc":"⭐必去 · 4/1 17:00-18:30 日落時去","addr":"海雲台"},{"id":"b8","name":"海雲台海灘","nameLocal":"해운대해수욕장","city":"busan","cat":"attraction","lat":35.1587,"lng":129.1604,"price_krw":0,"price_twd":0,"hours":"全天","desc":"🔄有時間就去 · 3/31 10:15","addr":"海雲台"},{"id":"b9","name":"The Bay 101","nameLocal":"더베이101","city":"busan","cat":"attraction","lat":35.1619,"lng":129.1417,"price_krw":0,"price_twd":0,"hours":"全天","desc":"🔄有時間就去","addr":"海雲台"},{"id":"b10","name":"釜山精華一日遊（已訂）","nameLocal":"부산투어","city":"busan","cat":"attraction","lat":35.1141,"lng":129.041,"price_krw":0,"price_twd":1694,"hours":"08:20–18:00","desc":"📌已訂 · 4/2 藍線公園+櫻花+海東龍宮寺+甘川文化村","addr":"全區"},{"id":"k1","name":"熊本城夜間櫻花照明","nameLocal":"熊本城夜桜","city":"aso","cat":"attraction","lat":32.8064,"lng":130.706,"price_jpy":800,"price_twd":160,"hours":"19:00–22:00","desc":"⭐必去 · 4/4 19:00-21:00 春季限定到4/5","addr":"熊本市"},{"id":"k2","name":"阿蘇中岳火山口","nameLocal":"阿蘇中岳火口","city":"aso","cat":"attraction","lat":32.8842,"lng":131.0843,"price_jpy":1030,"price_twd":206,"hours":"08:30–17:00","desc":"⭐必去 · 4/4 11:00-13:00","addr":"阿蘇山"},{"id":"k3","name":"草千里濱+米塚","nameLocal":"草千里ヶ浜/米塚","city":"aso","cat":"attraction","lat":32.8898,"lng":131.0645,"price_jpy":0,"price_twd":0,"hours":"全天","desc":"⭐必去 · 4/4 13:30-15:00","addr":"阿蘇山"},{"id":"k4","name":"大觀峰","nameLocal":"大観峰","city":"aso","cat":"attraction","lat":32.953,"lng":131.0495,"price_jpy":0,"price_twd":0,"hours":"全天","desc":"⭐必去 · 4/4 10:00-10:45 早上最佳","addr":"阿蘇山"},{"id":"k5","name":"阿蘇神社","nameLocal":"阿蘇神社","city":"aso","cat":"attraction","lat":32.9475,"lng":131.1163,"price_jpy":0,"price_twd":0,"hours":"06:00–18:00","desc":"⭐必去 · 4/4 15:30-16:30 樓門2024修復","addr":"一之宮"},{"id":"k6","name":"阿蘇內牧溫泉","nameLocal":"阿蘇内牧温泉","city":"aso","cat":"attraction","lat":32.9522,"lng":131.0652,"price_jpy":500,"price_twd":100,"hours":"依各旅館","desc":"⭐必去 · 4/4 17:00-18:00","addr":"阿蘇町"},{"id":"f1","name":"太宰府天滿宮","nameLocal":"太宰府天満宮","city":"fukuoka","cat":"attraction","lat":33.5214,"lng":130.5354,"price_jpy":0,"price_twd":0,"hours":"06:00–19:00","desc":"⭐必去 · 4/5 10:00-12:00 隈研吾Starbucks+光明禪寺","addr":"太宰府"},{"id":"f2","name":"柳川遊船","nameLocal":"柳川川下り","city":"fukuoka","cat":"attraction","lat":33.1631,"lng":130.4105,"price_jpy":3340,"price_twd":668,"hours":"09:00–16:30","desc":"⭐必去 · 4/5 13:30-16:30 西鐵套票","addr":"柳川"},{"id":"f3","name":"高千穗峽 Klook一日遊","nameLocal":"高千穂峡","city":"fukuoka","cat":"attraction","lat":32.7224,"lng":131.3058,"price_jpy":0,"price_twd":1877,"hours":"07:50–18:00","desc":"⭐必去 · 4/11 上色見熊野+天岩戶神社+天安河原","addr":"宮崎"},{"id":"f4","name":"中洲屋台","nameLocal":"中洲屋台","city":"fukuoka","cat":"food","lat":33.5916,"lng":130.4056,"price_jpy":1500,"price_twd":300,"hours":"18:00–02:00","desc":"⭐必去 · 4/6 19:00 現金限定","addr":"中洲"},{"id":"f5","name":"西公園夜櫻","nameLocal":"西公園夜桜","city":"fukuoka","cat":"attraction","lat":33.596,"lng":130.3765,"price_jpy":0,"price_twd":0,"hours":"全天","desc":"⭐必去 · 4/7 19:00-20:30 百大櫻花名所到4/10","addr":"西區"},{"id":"f6","name":"大名/親不孝通居酒屋","nameLocal":"大名・親不孝通り","city":"fukuoka","cat":"food","lat":33.5893,"lng":130.3932,"price_jpy":2000,"price_twd":400,"hours":"18:00–","desc":"⭐必去 · 4/8 19:00","addr":"天神"},{"id":"f7","name":"屋台烒然拉麵+牧鍋","nameLocal":"焼きラーメン/もつ鍋","city":"fukuoka","cat":"food","lat":33.591,"lng":130.402,"price_jpy":3500,"price_twd":700,"hours":"18:00–","desc":"⭐必去 · 4/9 19:00 需預約","addr":"中洲/天神"},{"id":"fw1","name":"Engineer Cafe（工作空間）","nameLocal":"エンジニアカフェ","city":"fukuoka","cat":"cafe","lat":33.5902,"lng":130.3995,"price_jpy":0,"price_twd":0,"hours":"09:00–21:00","desc":"✅免費 · 覆蓋10:00-18:00 · 插座WiFi完備","addr":"天神"},{"id":"fw2","name":"Startup Cafe（工作空間）","nameLocal":"スタートアップカフェ","city":"fukuoka","cat":"cafe","lat":33.589,"lng":130.393,"price_jpy":0,"price_twd":0,"hours":"10:00–22:00","desc":"✅免費 · 覆蓋10:00-18:00 · 剛好10:00開","addr":"大名"}],"schedule":[{"date":"2026-03-30","city":"釜山","events":[{"sh":19.5,"eh":20,"name":"抵達金海機場","cat":"transport","note":"19:55 降落"},{"sh":20,"eh":21.25,"name":"BGL+地鐵→Onjeong Stay","cat":"transport","note":"~55min ₩1,500"},{"sh":21.25,"eh":22,"name":"BIFF廣場 壅餅+魚板","cat":"food","note":"21:30 南浦洞小吃"}]},{"date":"2026-03-31","city":"釜山","events":[{"sh":10,"eh":11.5,"name":"海雲台海灘散步","cat":"attraction","note":"10:15 出發"},{"sh":11.5,"eh":13,"name":"海雲台午餐","cat":"food","note":""},{"sh":13,"eh":14,"name":"🔄 Crashop迷你可頌","cat":"cafe","note":"西面轉車沿途"},{"sh":15,"eh":17.5,"name":"青沙浦+雙胞胎日落橋","cat":"attraction","note":"日落最佳"},{"sh":17,"eh":18,"name":"🔄 Edge 993海景咖啡","cat":"cafe","note":"沿途"},{"sh":18.5,"eh":20.5,"name":"廣安里海灘+大橋夜景","cat":"attraction","note":""},{"sh":20,"eh":21,"name":"廣安里海邊小吃","cat":"food","note":""}]},{"date":"2026-04-01","city":"釜山","events":[{"sh":9.5,"eh":11,"name":"龍頭山公園+釜山塔","cat":"attraction","note":""},{"sh":11,"eh":12.5,"name":"札嘉其魚市場（午餐生魚片）","cat":"food","note":""},{"sh":13,"eh":14.5,"name":"國際市場+豬肉湯飯","cat":"food","note":"或冷麵"},{"sh":14.5,"eh":16,"name":"回飯店休息","cat":"hotel","note":""},{"sh":17,"eh":18.5,"name":"Busan X the Sky","cat":"attraction","note":"日落18:30"},{"sh":19.5,"eh":21,"name":"南川洞櫻花街（夜間）","cat":"attraction","note":"夜間最美"}]},{"date":"2026-04-02","city":"釜山","events":[{"sh":8,"eh":18,"name":"📌一日遊：藍線+龍宮寺+甘川","cat":"attraction","note":"釜山站2號出口集合08:20"},{"sh":18.5,"eh":20,"name":"西面站冷麵(밀면)","cat":"food","note":""}]},{"date":"2026-04-03","city":"釜山→渡輪","events":[{"sh":9.5,"eh":12,"name":"🔄 草梁故事路+168階梯","cat":"attraction","note":"이바구플랫폼"},{"sh":12,"eh":13.5,"name":"BIFF廣場最後韓國小吃","cat":"food","note":""},{"sh":14,"eh":15,"name":"Check-out","cat":"hotel","note":""},{"sh":16.5,"eh":17,"name":"抵達渡輪碼頭","cat":"transport","note":"步行15-20min"},{"sh":20,"eh":22,"name":"🚢新山茶花號出發→福岡","cat":"transport","note":"夜間渡輪"}]},{"date":"2026-04-04","city":"阿蘇/熊本","events":[{"sh":7.5,"eh":8,"name":"抵達博多港","cat":"transport","note":""},{"sh":8,"eh":10,"name":"🚗朋友來博多港接","cat":"transport","note":"開車前往阿蘇"},{"sh":10,"eh":10.75,"name":"大觀峰","cat":"attraction","note":"早上最佳"},{"sh":11,"eh":13,"name":"阿蘇中岳火山口","cat":"attraction","note":"¥1,030"},{"sh":13.5,"eh":15,"name":"草千里濱+米塚","cat":"attraction","note":""},{"sh":15.5,"eh":16.5,"name":"阿蘇神社","cat":"attraction","note":"樓門2024修復"},{"sh":17,"eh":18,"name":"內牧溫泉","cat":"attraction","note":"¥500"},{"sh":19,"eh":21,"name":"🏯熊本城夜間櫻花照明","cat":"attraction","note":"春季限定最後一天"}]},{"date":"2026-04-05","city":"太宰府+柳川","events":[{"sh":8,"eh":9.5,"name":"朋友送到福岡","cat":"transport","note":""},{"sh":10,"eh":12,"name":"太宰府天滿宮+參道","cat":"attraction","note":"🔄隈研吾Starbucks+光明禪寺"},{"sh":13.5,"eh":16.5,"name":"柳川遊船","cat":"attraction","note":"西鐵套票¥3,340 · ~70min"},{"sh":16.5,"eh":17.5,"name":"🔄鰻魚飯","cat":"food","note":"六久/皿屋福龍"},{"sh":18.5,"eh":19.5,"name":"回福岡","cat":"transport","note":""},{"sh":20,"eh":21,"name":"福岡住宿check-in","cat":"hotel","note":""}]},{"date":"2026-04-06","city":"福岡","events":[{"sh":10,"eh":18,"name":"💼 Engineer Cafe工作","cat":"work","note":"台灣09:00-17:00"},{"sh":19,"eh":21,"name":"中洲屋台（博多拉麵）","cat":"food","note":"現金限定"}]},{"date":"2026-04-07","city":"福岡","events":[{"sh":10,"eh":18,"name":"💼 Engineer/Startup Cafe工作","cat":"work","note":"台灣09:00-17:00"},{"sh":19,"eh":20.5,"name":"西公園夜櫻","cat":"attraction","note":"免費 百大櫻花名所"}]},{"date":"2026-04-08","city":"福岡","events":[{"sh":10,"eh":18,"name":"💼 工作","cat":"work","note":""},{"sh":19,"eh":21,"name":"大名/親不孝通居酒屋","cat":"food","note":""}]},{"date":"2026-04-09","city":"福岡","events":[{"sh":10,"eh":18,"name":"💼 工作","cat":"work","note":""},{"sh":19,"eh":21,"name":"屋台烒然拉麵+牧鍋","cat":"food","note":"需預約"}]},{"date":"2026-04-10","city":"福岡","events":[{"sh":10,"eh":18,"name":"💼 工作","cat":"work","note":""},{"sh":19,"eh":20.5,"name":"舞鶴公園夜櫻 or 自由活動","cat":"attraction","note":""}]},{"date":"2026-04-11","city":"福岡","events":[{"sh":7.75,"eh":18,"name":"📷 Klook高千穗峽tour","cat":"attraction","note":"上色見熊野→高千穗峽→天岩戶神社→天安河原"},{"sh":19,"eh":20.5,"name":"Shin-Shin拉麵","cat":"food","note":"天神或博多站"}]},{"date":"2026-04-12","city":"福岡","events":[{"sh":7.5,"eh":8,"name":"Check-out","cat":"hotel","note":""},{"sh":8,"eh":8.5,"name":"地鐵→福岡空港","cat":"transport","note":"5min ¥260"},{"sh":8.5,"eh":9,"name":"轉接駁巴士到國際線","cat":"transport","note":""},{"sh":10,"eh":12,"name":"✈️ IT241 FUK→TPE","cat":"transport","note":"11:55 抵達桃園"}]}],"budget":{"items":[{"name":"<span class="mi material-symbols-outlined" style="font-size:16px">flight</span> 機票來回 IT606+IT241","city":"busan","cat":"transport","cost_twd":18600,"checked":false},{"name":"<span class="mi material-symbols-outlined" style="font-size:16px">hotel</span> Onjeong Stay 釜山4晚","city":"busan","cat":"hotel","cost_twd":2822,"checked":false},{"name":"<span class="mi material-symbols-outlined" style="font-size:16px">directions_boat</span> 新山茶花號渡輪","city":"busan","cat":"transport","cost_twd":2755,"checked":false},{"name":"🎫 4/2 釜山一日遊 Klook","city":"busan","cat":"attraction","cost_twd":1694,"checked":false},{"name":"釜山交通（T-money地鐵等）","city":"busan","cat":"transport","cost_twd":500,"checked":false},{"name":"釜山餐飲（4天）","city":"busan","cat":"food","cost_twd":2000,"checked":false},{"name":"釜山塔（KKday ₩7,200）","city":"busan","cat":"attraction","cost_twd":173,"checked":false},{"name":"Busan X the Sky（₩27,000）","city":"busan","cat":"attraction","cost_twd":643,"checked":false},{"name":"釜山購物+雜費","city":"busan","cat":"shopping","cost_twd":1500,"checked":false},{"name":"阿蘇中岳火山口（¥1,030）","city":"aso","cat":"attraction","cost_twd":206,"checked":false},{"name":"熊本城夜櫻（¥800）","city":"aso","cat":"attraction","cost_twd":160,"checked":false},{"name":"阿蘇內牧溫泉（¥500）","city":"aso","cat":"attraction","cost_twd":100,"checked":false},{"name":"阿蘇/熊本交通+餐飲","city":"aso","cat":"food","cost_twd":2000,"checked":false},{"name":"阿蘇雜費","city":"aso","cat":"other","cost_twd":500,"checked":false},{"name":"<span class="mi material-symbols-outlined" style="font-size:16px">hotel</span> 福岡住宿 ~7晚","city":"fukuoka","cat":"hotel","cost_twd":8000,"checked":false},{"name":"太宰府+柳川西鐵套票（¥3,340）","city":"fukuoka","cat":"attraction","cost_twd":668,"checked":false},{"name":"高千穗峽 Klook tour","city":"fukuoka","cat":"attraction","cost_twd":1877,"checked":false},{"name":"福岡交通（IC卡等）","city":"fukuoka","cat":"transport","cost_twd":2000,"checked":false},{"name":"福岡餐飲（8天 屋台+居酒屋等）","city":"fukuoka","cat":"food","cost_twd":5000,"checked":false},{"name":"福岡購物+伴手禮","city":"fukuoka","cat":"shopping","cost_twd":3000,"checked":false},{"name":"韓日eSIM 14天","city":"busan","cat":"other","cost_twd":1500,"checked":false},{"name":"旅遊保險","city":"busan","cat":"other","cost_twd":600,"checked":false}]},"checklist":[{"title":{"zh":"證件 & 簽證","en":"Documents & Visa","ko":"서류 & 비자","ja":"書類 & ビザ"},"items":[{"zh":"護照有效期 6個月以上（需有身分證字號）","en":"Passport valid 6+ months (with ID number)","ko":"여권 유효기간 6개월 이상 (주민번호 필요)","ja":"パスポート有効期限6ヶ月以上（身分証番号必要）"},{"zh":"韓國免簽90天（K-ETA豁免到2026底）","en":"Korea visa-free 90 days (K-ETA waived until end of 2026)","ko":"한국 무비자 90일 (K-ETA 면제 2026년 말까지)","ja":"韓国ノービザ90日（K-ETA免除2026年末まで）"},{"zh":"日本免簽90天（需護照有身分證字號）","en":"Japan visa-free 90 days (passport with ID number required)","ko":"일본 무비자 90일 (여권에 주민번호 필요)","ja":"日本ノービザ90日（パスポートに身分証番号必要）"},{"zh":"Visit Japan Web 提前註冊","en":"Register Visit Japan Web in advance","ko":"Visit Japan Web 사전 등록","ja":"Visit Japan Web 事前登録"},{"zh":"購買旅遊保險 ~NT$500-800","en":"Buy travel insurance ~NT$500-800","ko":"여행 보험 구매 ~NT$500-800","ja":"旅行保険購入 ~NT$500-800"},{"zh":"電子機票備份（IT606+IT241）","en":"Save e-tickets (IT606+IT241)","ko":"전자 항공권 백업 (IT606+IT241)","ja":"eチケット保存（IT606+IT241）"},{"zh":"渡輪船票備份（新山茶花號）","en":"Save ferry ticket (New Camellia)","ko":"페리 티켓 백업 (뉴카멜리아)","ja":"フェリーチケット保存（ニューかめりあ）"},{"zh":"Klook 一日遊訂單截圖","en":"Screenshot Klook day tour booking","ko":"클룩 일일투어 예약 캡처","ja":"Klookデイツアー予約スクショ"}]},{"title":{"zh":"金融 & 換匯","en":"Finance & Currency","ko":"금융 & 환전","ja":"金融 & 両替"},"items":[{"zh":"韓國幾乎全刷卡（信用卡為主）","en":"Korea is mostly card payment (credit card)","ko":"한국은 거의 카드 결제 (신용카드 위주)","ja":"韓国はほぼカード決済（クレジットカード主）"},{"zh":"日本屋台只收現金，帶¥10,000–20,000","en":"Japan yatai cash only, bring ¥10,000–20,000","ko":"일본 야타이는 현금만, ¥10,000–20,000 준비","ja":"日本の屋台は現金のみ、¥10,000〜20,000持参"},{"zh":"確認信用卡海外免手續費","en":"Confirm credit card has no foreign transaction fee","ko":"신용카드 해외 수수료 면제 확인","ja":"クレジットカード海外手数料無料確認"},{"zh":"T-money 交通卡（機場便利商店 ₩3,000-5,000）","en":"T-money transit card (airport convenience store ₩3,000-5,000)","ko":"T-money 교통카드 (공항 편의점 ₩3,000-5,000)","ja":"T-money交通カード（空港コンビニ ₩3,000-5,000）"},{"zh":"ICOCA / Suica（Apple Pay加入）","en":"ICOCA / Suica (add to Apple Pay)","ko":"ICOCA / Suica (Apple Pay 등록)","ja":"ICOCA / Suica（Apple Pay登録）"}]},{"title":{"zh":"必裝 App（韓國）","en":"Essential Apps (Korea)","ko":"필수 앱 (한국)","ja":"必須アプリ（韓国）"},"items":[{"zh":"Naver Maps（韓國導航必備）","en":"Naver Maps (essential for Korea navigation)","ko":"네이버 지도 (한국 내비 필수)","ja":"Naver Maps（韓国ナビ必須）"},{"zh":"Kakao T（計程車）","en":"Kakao T (taxi)","ko":"카카오 T (택시)","ja":"Kakao T（タクシー）"},{"zh":"Papago（翻譯）","en":"Papago (translation)","ko":"파파고 (번역)","ja":"Papago（翻訳）"},{"zh":"T-money App（儲值查餘額）","en":"T-money App (top up & check balance)","ko":"T-money 앱 (충전 및 잔액 확인)","ja":"T-moneyアプリ（チャージ＆残高確認）"}]},{"title":{"zh":"必裝 App（日本）","en":"Essential Apps (Japan)","ko":"필수 앱 (일본)","ja":"必須アプリ（日本）"},"items":[{"zh":"Google Maps（日本導航）","en":"Google Maps (Japan navigation)","ko":"Google Maps (일본 내비)","ja":"Google Maps（日本ナビ）"},{"zh":"Yahoo! 乗換案内（電車換乘）","en":"Yahoo! Transit (train transfers)","ko":"Yahoo! 乗換案内 (전철 환승)","ja":"Yahoo!乗換案内（電車乗り換え）"},{"zh":"食べログ / Google Maps（餐廳）","en":"Tabelog / Google Maps (restaurants)","ko":"타베로그 / Google Maps (맛집)","ja":"食べログ / Google Maps（レストラン）"},{"zh":"PayPay（部分店家可用）","en":"PayPay (accepted at some shops)","ko":"PayPay (일부 매장 사용 가능)","ja":"PayPay（一部店舗で利用可）"}]},{"title":{"zh":"網路 & 電力","en":"Internet & Power","ko":"인터넷 & 전원","ja":"ネット & 電源"},"items":[{"zh":"韓日 eSIM（Holafly ~NT$1,500/14天無限 or KKday combo）","en":"Korea/Japan eSIM (Holafly ~NT$1,500/14 days unlimited or KKday combo)","ko":"한일 eSIM (Holafly ~NT$1,500/14일 무제한 or KKday 콤보)","ja":"韓日eSIM（Holafly ~NT$1,500/14日間無制限 or KKdayコンボ）"},{"zh":"韓國插頭（C型 / 220V）","en":"Korea plug adapter (Type C / 220V)","ko":"한국 플러그 (C타입 / 220V)","ja":"韓国プラグ（Cタイプ / 220V）"},{"zh":"日本插頭（A型 / 110V，台灣可直插）","en":"Japan plug (Type A / 110V, same as Taiwan)","ko":"일본 플러그 (A타입 / 110V, 대만과 동일)","ja":"日本プラグ（Aタイプ / 110V、台湾と同じ）"},{"zh":"行動電源","en":"Portable charger / power bank","ko":"보조 배터리","ja":"モバイルバッテリー"},{"zh":"多孔 USB 充電器","en":"Multi-port USB charger","ko":"멀티포트 USB 충전기","ja":"マルチポートUSB充電器"}]},{"title":{"zh":"行李 & 穿搭","en":"Luggage & Clothing","ko":"짐 & 옷차림","ja":"荷物 & 服装"},"items":[{"zh":"白天18-20°C，帶輕薄外套","en":"Daytime 18-20°C, bring a light jacket","ko":"낮 18-20°C, 가벼운 겉옷 준비","ja":"日中18-20°C、薄手のジャケット持参"},{"zh":"晚上9-11°C，帶保暖層","en":"Evening 9-11°C, bring warm layers","ko":"저녁 9-11°C, 보온 레이어 준비","ja":"夜間9-11°C、防寒レイヤー持参"},{"zh":"阿蘇山頂再冷5-8°C，帶防風外套","en":"Aso summit 5-8°C colder, bring windbreaker","ko":"아소산 정상 5-8°C 더 추움, 방풍 재킷 준비","ja":"阿蘇山頂はさらに5-8°C低い、ウインドブレーカー持参"},{"zh":"舒適步行鞋","en":"Comfortable walking shoes","ko":"편안한 워킹화","ja":"歩きやすい靴"},{"zh":"折疊傘（春雨期）","en":"Folding umbrella (spring rain season)","ko":"접이식 우산 (봄 장마기)","ja":"折りたたみ傘（春の雨季）"},{"zh":"防曬乳","en":"Sunscreen","ko":"선크림","ja":"日焼け止め"}]}]}
-</script>
+<!-- NOTE: Trip data is loaded from data/trip.json via fetch() in app.js -->
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="app.js?v=9"></script>

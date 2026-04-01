@@ -97,19 +97,17 @@
       {"sh":20,"eh":22,"name":"回旅館休息＆洗澡","name_en":"Back to hotel, shower","name_ko":"숙소 복귀 & 샤워","name_ja":"宿に戻る＆シャワー","cat":"hotel","note":"⚠️ 22:00後不能洗澡吹頭髮","note_en":"⚠️ No shower/dryer after 22:00","note_ko":"⚠️ 22:00 이후 샤워/드라이어 금지","note_ja":"⚠️ 22:00以降シャワー・ドライヤー禁止"}
     ]},
     {"date":"2026-04-01","city":"釜山","events":[
-      {"sh":8,"eh":8.25,"name":"⏰ 起床+梳洗","name_en":"⏰ Wake up+freshen up","name_ko":"⏰ 기상+세면","name_ja":"⏰ 起床+身支度","cat":"personal","note":"","note_en":"","note_ko":"","note_ja":""},
-      {"sh":8.25,"eh":9,"name":"🍳 早餐","name_en":"🍳 Breakfast","name_ko":"🍳 아침식사","name_ja":"🍳 朝食","cat":"food","note":"旅館附近便利商店或咖啡廳 · ~₩5,000","note_en":"Convenience store or café near hotel · ~₩5,000","note_ko":"숙소 근처 편의점 또는 카페 · ~₩5,000","note_ja":"宿近くのコンビニまたはカフェ · ~₩5,000"},
-      {"sh":9,"eh":10,"name":"搭地鐵+公車→機張","name_en":"Subway+Bus→Gijang","name_ko":"지하철+버스→기장","name_ja":"地下鉄+バス→機張","cat":"transport","note":"約50-60min","note_en":"~50-60min","note_ko":"약 50-60분","note_ja":"約50-60分"},
-      {"sh":10,"eh":11.5,"name":"🎫 Skyline Luge（VBP啟用！）","name_en":"🎫 Skyline Luge (Activate VBP!)","name_ko":"🎫 스카이라인 루지 (VBP 활성화!)","name_ja":"🎫 スカイラインリュージュ（VBP開始!）","cat":"attraction","note":"⚡10:00 啟用Pass→4/2 10:00到期 · 免費×2（原價~₩17,000）","note_en":"⚡Activate at 10:00→Expires 4/2 10:00 · Free x2 (orig ~₩17,000)","note_ko":"⚡10:00 활성화→4/2 10:00 만료 · 무료 2회 (₩17,000)","note_ja":"⚡10:00開始→4/2 10:00期限 · 無料2回(₩17,000)"},
-      {"sh":11.5,"eh":13.5,"name":"釜山樂天世界","name_en":"Lotte World Adventure Busan","name_ko":"롯데월드 어드벤처 부산","name_ja":"ロッテワールド釜山","cat":"attraction","note":"VBP免費（原價₩47,000）· 隔壁走路到","note_en":"VBP Free (orig ₩47,000) · Walk from Luge","note_ko":"VBP 무료 (₩47,000) · 루지에서 도보","note_ja":"VBP無料(₩47,000) · リュージュから徒歩"},
-      {"sh":13.5,"eh":14.5,"name":"午餐（樂天世界/機張）","name_en":"Lunch (Lotte World/Gijang)","name_ko":"점심 (롯데월드/기장)","name_ja":"ランチ（ロッテワールド/機張）","cat":"food","note":"~₩12,000","note_en":"~₩12,000","note_ko":"~₩12,000","note_ja":"~₩12,000","restaurant":"롯데월드 내 식당 or 기장시장","map":"https://www.google.com/maps/search/?api=1&query=롯데월드+부산+맛집","reservation":false},
-      {"sh":14.5,"eh":15,"name":"搭181公車→松亭站","name_en":"Bus 181→Songjung Stn","name_ko":"181번 버스→송정역","name_ja":"181番バス→松亭駅","cat":"transport","note":"~15-20min · ₩1,400","note_en":"~15-20min · ₩1,400","note_ko":"~15-20분 · ₩1,400","note_ja":"~15-20分 · ₩1,400"},
-      {"sh":15,"eh":16,"name":"Blue Line Park 海岸列車","name_en":"Blue Line Park Beach Train","name_ko":"블루라인파크 해변열차","name_ja":"ブルーラインパーク海岸列車","cat":"attraction","note":"VBP免費（原價~₩7,000）· 松亭→尾浦 30min ☀️","note_en":"VBP Free (~₩7,000) · Songjung→Mipo 30min ☀️","note_ko":"VBP 무료 (~₩7,000) · 송정→미포 30분 ☀️","note_ja":"VBP無料(~₩7,000) · 松亭→尾浦30分 ☀️"},
-      {"sh":16,"eh":17,"name":"海雲台散步+咖啡","name_en":"Haeundae Walk+Coffee","name_ko":"해운대 산책+카페","name_ja":"海雲台散歩+カフェ","cat":"attraction","note":"免費","note_en":"Free","note_ko":"무료","note_ja":"無料"},
-      {"sh":17,"eh":18.5,"name":"Busan X the Sky","name_en":"Busan X the Sky","name_ko":"부산 엑스더스카이","name_ja":"Busan X the Sky","cat":"attraction","note":"VBP免費（原價₩27,000）· ☀️日落18:35！","note_en":"VBP Free (₩27,000) · ☀️Sunset 18:35!","note_ko":"VBP 무료 (₩27,000) · ☀️일몰 18:35!","note_ja":"VBP無料(₩27,000) · ☀️日没18:35!"},
-      {"sh":18.5,"eh":19.5,"name":"海雲台晚餐","name_en":"Haeundae Dinner","name_ko":"해운대 저녁","name_ja":"海雲台ディナー","cat":"food","note":"~₩15,000","note_en":"~₩15,000","note_ko":"~₩15,000","note_ja":"~₩15,000","restaurant":"해운대 맛집","map":"https://www.google.com/maps/search/?api=1&query=해운대+맛집+부산","reservation":false},
-      {"sh":19.5,"eh":20.5,"name":"地鐵→Centum City","name_en":"Subway→Centum City","name_ko":"지하철→센텀시티","name_ja":"地下鉄→センタムシティ","cat":"transport","note":"1站 · ₩1,400","note_en":"1 stop · ₩1,400","note_ko":"1정거장 · ₩1,400","note_ja":"1駅 · ₩1,400"},
-      {"sh":20.5,"eh":22,"name":"新世界 Spa Land 汗蒸幕","name_en":"Shinsegae Spa Land","name_ko":"신세계 스파랜드","name_ja":"新世界スパランド","cat":"attraction","note":"VBP免費（原價₩23,000）· ⚠️21:00前入場！","note_en":"VBP Free (₩23,000) · ⚠️Enter before 21:00!","note_ko":"VBP 무료 (₩23,000) · ⚠️21:00 전 입장!","note_ja":"VBP無料(₩23,000) · ⚠️21:00前入場!"}
+      {"sh":9,"eh":9.25,"name":"⏰ 起床+梳洗","name_en":"⏰ Wake up+freshen up","name_ko":"⏰ 기상+세면","name_ja":"⏰ 起床+身支度","cat":"personal","note":"","note_en":"","note_ko":"","note_ja":""},
+      {"sh":9.25,"eh":10,"name":"🍳 早餐","name_en":"🍳 Breakfast","name_ko":"🍳 아침식사","name_ja":"🍳 朝食","cat":"food","note":"旅館附近便利商店或咖啡廳 · ~₩5,000","note_en":"Convenience store or café near hotel · ~₩5,000","note_ko":"숙소 근처 편의점 또는 카페 · ~₩5,000","note_ja":"宿近くのコンビニまたはカフェ · ~₩5,000"},
+      {"sh":10,"eh":11,"name":"搭地鐵+公車→機張","name_en":"Subway+Bus→Gijang","name_ko":"지하철+버스→기장","name_ja":"地下鉄+バス→機張","cat":"transport","note":"約50-60min","note_en":"~50-60min","note_ko":"약 50-60분","note_ja":"約50-60分"},
+      {"sh":11,"eh":12.5,"name":"🎫 Skyline Luge（VBP啟用！）","name_en":"🎫 Skyline Luge (Activate VBP!)","name_ko":"🎫 스카이라인 루지 (VBP 활성화!)","name_ja":"🎫 スカイラインリュージュ（VBP開始!）","cat":"attraction","note":"⚡11:00 啟用Pass→4/2 11:00到期 · 免費×2（原價~₩17,000）","note_en":"⚡Activate at 11:00→Expires 4/2 11:00 · Free x2 (orig ~₩17,000)","note_ko":"⚡11:00 활성화→4/2 11:00 만료 · 무료 2회 (₩17,000)","note_ja":"⚡11:00開始→4/2 11:00期限 · 無料2回(₩17,000)"},
+      {"sh":12.5,"eh":13,"name":"搭181公車→松亭站","name_en":"Bus 181→Songjung Stn","name_ko":"181번 버스→송정역","name_ja":"181番バス→松亭駅","cat":"transport","note":"~15-20min · ₩1,400","note_en":"~15-20min · ₩1,400","note_ko":"~15-20분 · ₩1,400","note_ja":"~15-20分 · ₩1,400"},
+      {"sh":13,"eh":14,"name":"Blue Line Park 海岸列車","name_en":"Blue Line Park Beach Train","name_ko":"블루라인파크 해변열차","name_ja":"ブルーラインパーク海岸列車","cat":"attraction","note":"VBP免費（原價~₩7,000）· 松亭→尾浦 30min ☀️","note_en":"VBP Free (~₩7,000) · Songjung→Mipo 30min ☀️","note_ko":"VBP 무료 (~₩7,000) · 송정→미포 30분 ☀️","note_ja":"VBP無料(~₩7,000) · 松亭→尾浦30分 ☀️"},
+      {"sh":14,"eh":15,"name":"🍜 水邊最高豬肉湯飯","name_en":"🍜 Subyeon Choego Pork Soup Rice","name_ko":"🍜 수변최고돼지국밥","name_ja":"🍜 水辺最高豚クッパ","cat":"food","note":"海雲台尾浦附近","note_en":"Near Haeundae Mipo","note_ko":"해운대 미포 근처","note_ja":"海雲台尾浦付近","restaurant":"수변최고돼지국밥","map":"https://www.google.com/maps/search/?api=1&query=수변최고돼지국밥+해운대+부산","reservation":false},
+      {"sh":15,"eh":15.5,"name":"搭地鐵→Centum City","name_en":"Subway→Centum City","name_ko":"지하철→센텀시티","name_ja":"地下鉄→センタムシティ","cat":"transport","note":"~10min","note_en":"~10min","note_ko":"~10분","note_ja":"~10分"},
+      {"sh":15.5,"eh":18,"name":"新世界 Spa Land 汗蒸幕","name_en":"Shinsegae Spa Land","name_ko":"신세계 스파랜드","name_ja":"新世界スパランド","cat":"attraction","note":"VBP免費（原價₩23,000）","note_en":"VBP Free (₩23,000)","note_ko":"VBP 무료 (₩23,000)","note_ja":"VBP無料(₩23,000)"},
+      {"sh":18,"eh":18.5,"name":"搭地鐵→廣安里","name_en":"Subway→Gwangalli","name_ko":"지하철→광안리","name_ja":"地下鉄→広安里","cat":"transport","note":"~15min","note_en":"~15min","note_ko":"~15분","note_ja":"~15分"},
+      {"sh":18.5,"eh":20,"name":"🌙 廣安里海灘夜景","name_en":"🌙 Gwangalli Beach Night View","name_ko":"🌙 광안리 해변 야경","name_ja":"🌙 広安里ビーチ夜景","cat":"attraction","note":"廣安大橋燈光 · ☀️日落18:35 · 免費","note_en":"Gwangan Bridge lights · ☀️Sunset 18:35 · Free","note_ko":"광안대교 조명 · ☀️일몰 18:35 · 무료","note_ja":"広安大橋ライトアップ · ☀️日没18:35 · 無料"}
     ]},
     {"date":"2026-04-02","city":"釜山","events":[
       {"sh":6.5,"eh":6.75,"name":"⏰ 起床+梳洗","name_en":"⏰ Wake up+freshen up","name_ko":"⏰ 기상+세면","name_ja":"⏰ 起床+身支度","cat":"personal","note":"一日遊08:20集合，要早起！","note_en":"Day tour meets 08:20, early wake up!","note_ko":"일일투어 08:20 집합, 일찍 기상!","note_ja":"デイツアー08:20集合、早起き!"},
@@ -223,7 +221,7 @@
       {"name":"高千穗峽 Klook tour","name_en":"Takachiho Gorge Klook Tour","name_ko":"다카치호 협곡 클룩 투어","name_ja":"高千穂峡 Klookツアー","city":"fukuoka","cat":"attraction","cost_twd":1877,"checked":false,"purchased":true},
       {"name":"福岡交通（IC卡等）","name_en":"Fukuoka Transport (IC card etc.)","name_ko":"후쿠오카 교통 (IC카드 등)","name_ja":"福岡交通（ICカード等）","city":"fukuoka","cat":"transport","cost_twd":1500,"checked":false},
       {"name":"福岡餐飲（8天 屋台+居酒屋等）","name_en":"Fukuoka Dining (8 days, yatai+izakaya)","name_ko":"후쿠오카 식비 (8일, 야타이+이자카야)","name_ja":"福岡食費（8日間 屋台+居酒屋等）","city":"fukuoka","cat":"food","cost_twd":5000,"checked":false},
-      {"name":"Visit Busan Pass 24hr","name_en":"Visit Busan Pass 24hr","name_ko":"비짓부산패스 24시간","name_ja":"Visit Busan Pass 24時間","city":"busan","cat":"attraction","cost_twd":1200,"checked":false,"purchased":true},
+      {"name":"Visit Busan Pass 24hr","name_en":"Visit Busan Pass 24hr","name_ko":"비짓부산패스 24시간","name_ja":"Visit Busan Pass 24時間","city":"busan","cat":"attraction","cost_twd":1167,"checked":false,"purchased":true},
       {"name":"eSIM 韓國（₩474）","name_en":"eSIM Korea (₩474)","name_ko":"eSIM 한국 (₩474)","name_ja":"eSIM 韓国（₩474）","city":"busan","cat":"other","cost_twd":474,"checked":false,"purchased":true},
       {"name":"eSIM 日本（¥183）","name_en":"eSIM Japan (¥183)","name_ko":"eSIM 일본 (¥183)","name_ja":"eSIM 日本（¥183）","city":"fukuoka","cat":"other","cost_twd":183,"checked":false}
     ],
@@ -241,6 +239,13 @@
         {"name":"咖啡廳 (P.ARK)","cat":"food","cost_twd":310,"city":"busan"},
         {"name":"晚餐 (BIFF)","cat":"food","cost_twd":310,"city":"busan"},
         {"name":"超商","cat":"food","cost_twd":89,"city":"busan"}
+      ]},
+      {"date":"2026-04-01","items":[
+        {"name":"咖啡","cat":"food","cost_twd":122,"city":"busan"},
+        {"name":"午餐","cat":"food","cost_twd":455,"city":"busan"},
+        {"name":"晚餐","cat":"food","cost_twd":399,"city":"busan"},
+        {"name":"汗蒸幕飲料","cat":"food","cost_twd":120,"city":"busan"},
+        {"name":"便利超商","cat":"food","cost_twd":202,"city":"busan"}
       ]}
     ]
   },
@@ -340,5 +345,100 @@
         {"label":{"zh":"離境航班","en":"Departure Flight","ko":"출국 편명","ja":"出国便"}, "value":"IT241 (FUK→TPE)"}
       ]
     }
-  ]
+  ],
+  "booking": {
+    "confirmed": [
+      {
+        "id": "bk1",
+        "type": "flight",
+        "title": "台灣虎航 來回機票",
+        "carrier": "台灣虎航 TigerAir Taiwan",
+        "carrier_code": "IT",
+        "segments": [
+          {
+            "label_i18n": "booking_outbound",
+            "flight": "IT606",
+            "date": "2026-03-30",
+            "departure": {"airport": "TPE", "terminal": "T1", "city_zh": "桃園", "time": "16:40"},
+            "arrival":   {"airport": "PUS", "terminal": "T1", "city_zh": "金海", "time": "19:55"},
+            "duration": "2h15m",
+            "maps_dep": "https://www.google.com/maps/search/?api=1&query=桃園國際機場第一航廈",
+            "maps_arr": "https://www.google.com/maps/search/?api=1&query=금해국제공항+국제선"
+          },
+          {
+            "label_i18n": "booking_return",
+            "flight": "IT241",
+            "date": "2026-04-12",
+            "departure": {"airport": "FUK", "terminal": "T1", "city_zh": "福岡", "time": "10:25"},
+            "arrival":   {"airport": "TPE", "terminal": "T1", "city_zh": "桃園", "time": "11:55"},
+            "duration": "2h30m",
+            "maps_dep": "https://www.google.com/maps/search/?api=1&query=福岡空港国際線ターミナル",
+            "maps_arr": "https://www.google.com/maps/search/?api=1&query=桃園國際機場第一航廈"
+          }
+        ],
+        "price": "NT$19,600",
+        "price_twd": 19600,
+        "status": "confirmed",
+        "checkin_url": "https://booking.tigerairtw.com/CheckIn/CheckIn",
+        "checkin_note_i18n": "booking_checkin_note"
+      },
+      {
+        "id": "bk2",
+        "type": "hotel",
+        "title": "Onjeong Stay 釜山4晚",
+        "dates": "3/30–4/3",
+        "price": "NT$2,822",
+        "price_per_night": "NT$706/晚",
+        "price_twd": 2822,
+        "status": "confirmed",
+        "maps_url": "https://www.google.com/maps/search/?api=1&query=Onjeong+Stay+부산"
+      },
+      {
+        "id": "bk3",
+        "type": "ferry",
+        "title": "新山茶花號渡輪",
+        "date": "2026-04-03",
+        "departure": {"city": "釜山", "terminal": "釜山國際旅客碼頭", "time": "20:00", "maps": "https://www.google.com/maps/search/?api=1&query=부산항국제여객터미널"},
+        "arrival":   {"city": "福岡", "terminal": "博多港國際碼頭",   "time": "07:30+1", "maps": "https://www.google.com/maps/search/?api=1&query=博多港国際ターミナル"},
+        "price": "NT$2,755",
+        "price_twd": 2755,
+        "status": "confirmed"
+      },
+      {
+        "id": "bk4",
+        "type": "activity",
+        "title": "4/2 釜山精華一日遊 (Klook)",
+        "date": "2026-04-02",
+        "desc": "藍線公園+櫻花+海東龍宮寺+甘川文化村",
+        "meetup": "釜山站2號出口 08:20",
+        "price": "NT$1,694",
+        "price_twd": 1694,
+        "status": "confirmed",
+        "maps_url": "https://www.google.com/maps/search/?api=1&query=부산역+2번출구"
+      },
+      {
+        "id": "bk5",
+        "type": "hotel",
+        "title": "福岡住宿 ~7晚",
+        "dates": "4/5–4/12",
+        "price": "~NT$8,000",
+        "price_twd": 8000,
+        "status": "pending"
+      }
+    ],
+    "comparison": [
+      {"id":"cmp1","name":"釜山塔","name_note":"龍頭山公園展望台","prices":{"official":"₩12,000","klook":"₩12,000","kkday":"₩7,200"},"best":"kkday","verdict_i18n":"booking_kkday_save"},
+      {"id":"cmp2","name":"Busan X the Sky","name_note":"海雲台展望台","prices":{"official":"₩27,000","klook":"₩27,000","kkday":"₩27,000"},"best":null,"verdict_i18n":"booking_same_price"},
+      {"id":"cmp3","name":"熊本城","name_note":"夜間櫻花照明 春季限定","prices":{"official":"¥800","klook":null,"kkday":null},"best":"official","verdict_i18n":"booking_buy_onsite"},
+      {"id":"cmp4","name":"高千穗峽 Klook一日遊","name_note":"4/11 含上色見熊野+天岩戶神社","prices":{"official":null,"klook":"NT$1,877","kkday":null},"best":"klook","verdict_i18n":"booking_klook_excl"},
+      {"id":"cmp5","name":"太宰府+柳川 西鐵套票","name_note":"含電車+遊船 省¥1,700","prices":{"official":"¥3,340","klook":null,"kkday":null},"best":"official","verdict_i18n":"booking_official_best"},
+      {"id":"cmp6","name":"Visit Busan Pass 24hr","name_note":"₩55,000 含多景點","prices":{"official":"₩55,000","klook":"₩55,000","kkday":"₩55,000"},"best":null,"verdict_i18n":"booking_pass_not_worth"}
+    ],
+    "to_buy": [
+      {"id":"tb1","name_i18n":"booking_rec_esim",      "note_i18n":"booking_rec_esim_note"},
+      {"id":"tb2","name_i18n":"booking_rec_tmoney",    "note_i18n":"booking_rec_tmoney_note"},
+      {"id":"tb3","name_i18n":"booking_rec_icoca",     "note_i18n":"booking_rec_icoca_note"},
+      {"id":"tb4","name_i18n":"booking_rec_insurance", "note_i18n":"booking_rec_insurance_note"}
+    ]
+  }
 }

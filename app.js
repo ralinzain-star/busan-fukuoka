@@ -295,7 +295,8 @@ const CAT_COLORS_CAL = {
   attraction:{bg:'#fde8e3',text:'#a33'}, food:{bg:'#e3f5e6',text:'#2a7a36'},
   cafe:{bg:'#ede3f5',text:'#6a3a9b'}, work:{bg:'#e3e3f5',text:'#4a4a9b'},
   transport:{bg:'#e0f2f5',text:'#2a7a8a'}, shopping:{bg:'#fef3e0',text:'#9a6a1a'},
-  hotel:{bg:'#e3ecf8',text:'#2a5a9b'}, other:{bg:'#f5f5f5',text:'#666'}
+  hotel:{bg:'#e3ecf8',text:'#2a5a9b'}, other:{bg:'#f5f5f5',text:'#666'},
+  personal:{bg:'#f5ede0',text:'#8a6a3a'}
 };
 // DAY_NAMES now via getDayNames()
 const HOUR_START = 7, HOUR_END = 22;
@@ -388,7 +389,8 @@ const budgetCatColorMap = {
   transport:{ icon:'<span class="mi" style="font-size:14px">train</span>', color:'var(--cat-transport)' },
   attraction:{ icon:'<span class="mi" style="font-size:14px">confirmation_number</span>', color:'var(--cat-attraction)' },
   shopping:{ icon:'<span class="mi" style="font-size:14px">shopping_bag</span>', color:'var(--cat-shopping)' },
-  other:  { icon:'<span class="mi" style="font-size:14px">inventory_2</span>', color:'var(--cat-other)' }
+  other:  { icon:'<span class="mi" style="font-size:14px">inventory_2</span>', color:'var(--cat-other)' },
+  personal:{ icon:'<span class="mi" style="font-size:14px">bedtime</span>', color:'var(--cat-personal)' }
 };
 
 function getAllActualItems() {
@@ -658,6 +660,144 @@ function renderFlightIntel() {
 }
 
 function renderHolidays() {}
+
+// ── Booking Tab ──
+function renderBooking() {
+  const bk = TRIP.booking;
+  if (!bk) return;
+
+  // Section 1: Confirmed bookings
+  const confirmedEl = document.getElementById('booking-confirmed');
+  if (confirmedEl && bk.confirmed) {
+    confirmedEl.innerHTML = bk.confirmed.map(item => {
+      const badgeClass = item.status === 'confirmed' ? 'done' : 'pending';
+      const badgeText = item.status === 'confirmed' ? t('lbl_booked') : t('lbl_pending');
+      const badgeIcon = item.status === 'confirmed' ? 'check_circle' : 'schedule';
+
+      if (item.type === 'flight') {
+        const segs = (item.segments || []).map(seg => `
+          <div class="flight-seg">
+            <div class="flight-seg-badge${seg.label_i18n === 'booking_return' ? ' return' : ''}">${t(seg.label_i18n)}</div>
+            <div class="flight-seg-body">
+              <div class="flight-seg-route">
+                <div class="flight-seg-point">
+                  <div class="flight-seg-time">${seg.departure.time}</div>
+                  <div class="flight-seg-city">${seg.departure.city_zh}${seg.departure.terminal}</div>
+                </div>
+                <div class="flight-seg-arrow">
+                  <div class="flight-seg-line"></div>
+                  <div class="flight-seg-code">${seg.flight} · ${seg.duration}</div>
+                </div>
+                <div class="flight-seg-point">
+                  <div class="flight-seg-time">${seg.arrival.time}</div>
+                  <div class="flight-seg-city">${seg.arrival.city_zh}${seg.arrival.terminal}</div>
+                </div>
+              </div>
+              <div class="flight-seg-detail">${seg.date} · <a href="${seg.maps_dep}" target="_blank">${seg.departure.city_zh}機場</a> → <a href="${seg.maps_arr}" target="_blank">${seg.arrival.city_zh}機場</a></div>
+            </div>
+          </div>`).join('');
+
+        return `<div class="booked-card booked-card-wide flight-card">
+          <div class="booked-card-head">
+            <div class="booked-card-name"><span class="mi material-symbols-outlined" style="font-size:16px">flight</span> ${item.title}</div>
+            <span class="booked-badge ${badgeClass}"><span class="mi material-symbols-outlined" style="font-size:14px">${badgeIcon}</span> ${badgeText}</span>
+          </div>
+          <div class="flight-segments">${segs}</div>
+          <div class="flight-footer">
+            <div>
+              <div class="booked-card-cost" style="margin:0">${item.price}</div>
+              <div class="booked-card-verdict" id="flight-verdict-inline"></div>
+            </div>
+          </div>
+          ${item.checkin_url ? `<div class="flight-checkin-note"><a href="${item.checkin_url}" target="_blank">${t(item.checkin_note_i18n)}</a></div>` : ''}
+        </div>`;
+      }
+
+      if (item.type === 'ferry') {
+        return `<div class="booked-card">
+          <div class="booked-card-head">
+            <div class="booked-card-name"><span class="mi material-symbols-outlined" style="font-size:16px">directions_boat</span> ${item.title}</div>
+            <span class="booked-badge ${badgeClass}"><span class="mi material-symbols-outlined" style="font-size:14px">${badgeIcon}</span> ${badgeText}</span>
+          </div>
+          <div class="booked-card-meta">${item.date} ${item.departure.time} ${item.departure.city}→${item.arrival.time}+1 ${item.arrival.city}</div>
+          <div class="booked-card-meta">${item.departure.terminal} → ${item.arrival.terminal}</div>
+          <div class="booked-card-cost" style="margin-top:6px">${item.price}</div>
+          <div class="booked-card-links">
+            <a href="${item.departure.maps}" target="_blank" class="booked-card-link"><span class="mi material-symbols-outlined" style="font-size:14px">location_on</span>${item.departure.city}港</a>
+            <a href="${item.arrival.maps}" target="_blank" class="booked-card-link"><span class="mi material-symbols-outlined" style="font-size:14px">location_on</span>${item.arrival.city}港</a>
+          </div>
+        </div>`;
+      }
+
+      if (item.type === 'hotel') {
+        return `<div class="booked-card">
+          <div class="booked-card-head">
+            <div class="booked-card-name"><span class="mi material-symbols-outlined" style="font-size:16px">hotel</span> ${item.title}</div>
+            <span class="booked-badge ${badgeClass}"><span class="mi material-symbols-outlined" style="font-size:14px">${badgeIcon}</span> ${badgeText}</span>
+          </div>
+          ${item.dates ? `<div class="booked-card-meta">${item.dates}${item.price_per_night ? ' · ' + item.price_per_night : ''}</div>` : ''}
+          <div class="booked-card-cost">${item.price}</div>
+          ${item.maps_url ? `<div class="booked-card-links"><a href="${item.maps_url}" target="_blank" class="booked-card-link"><span class="mi material-symbols-outlined" style="font-size:14px">location_on</span>${t('booking_map')}</a></div>` : ''}
+        </div>`;
+      }
+
+      // activity / default
+      return `<div class="booked-card">
+        <div class="booked-card-head">
+          <div class="booked-card-name"><span class="mi material-symbols-outlined" style="font-size:16px">confirmation_number</span> ${item.title}</div>
+          <span class="booked-badge ${badgeClass}"><span class="mi material-symbols-outlined" style="font-size:14px">${badgeIcon}</span> ${badgeText}</span>
+        </div>
+        ${item.desc ? `<div class="booked-card-meta">${item.desc}</div>` : ''}
+        ${item.meetup ? `<div class="booked-card-meta">${t('booking_meetpoint')}：${item.meetup}</div>` : ''}
+        <div class="booked-card-cost">${item.price}</div>
+        ${item.maps_url ? `<div class="booked-card-links"><a href="${item.maps_url}" target="_blank" class="booked-card-link"><span class="mi material-symbols-outlined" style="font-size:14px">location_on</span>${t('booking_meetpoint')}</a></div>` : ''}
+      </div>`;
+    }).join('');
+
+    // Re-run flight intel badge after DOM update
+    renderFlightIntel();
+  }
+
+  // Section 2: Comparison table
+  const cmpEl = document.getElementById('booking-comparison');
+  if (cmpEl && bk.comparison) {
+    cmpEl.innerHTML = `
+      <div class="booking-table-wrap">
+        <table class="booking-table">
+          <thead><tr>
+            <th data-i18n="booking_th_item">${t('booking_th_item')}</th>
+            <th data-i18n="booking_th_official">${t('booking_th_official')}</th>
+            <th data-i18n="booking_th_klook">${t('booking_th_klook')}</th>
+            <th data-i18n="booking_th_kkday">${t('booking_th_kkday')}</th>
+            <th data-i18n="booking_th_suggest">${t('booking_th_suggest')}</th>
+          </tr></thead>
+          <tbody>${bk.comparison.map(row => {
+            const p = row.prices;
+            const bestCell = (key, val) => val
+              ? (row.best === key ? `<span class="best-price">${val} <span class="star-mark">★</span></span>` : val)
+              : '—';
+            return `<tr>
+              <td><strong>${row.name}</strong>${row.name_note ? `<br><span style="font-size:.72rem;color:var(--text-3)">${row.name_note}</span>` : ''}</td>
+              <td>${bestCell('official', p.official)}</td>
+              <td>${bestCell('klook', p.klook)}</td>
+              <td>${bestCell('kkday', p.kkday)}</td>
+              <td>${row.verdict_i18n ? `<span>${t(row.verdict_i18n)}</span>` : '—'}</td>
+            </tr>`;
+          }).join('')}</tbody>
+        </table>
+      </div>`;
+  }
+
+  // Section 3: Recommended to buy
+  const toBuyEl = document.getElementById('booking-tobuy');
+  if (toBuyEl && bk.to_buy) {
+    toBuyEl.innerHTML = bk.to_buy.map(item => `
+      <div class="recommend-item">
+        <strong>${t(item.name_i18n)}</strong>
+        <div class="rec-note">${t(item.note_i18n)}</div>
+      </div>`).join('');
+  }
+}
 
 // ── POI Detail Popup ──
 function openPOIModal(id) {
@@ -1291,6 +1431,7 @@ const I18N = {
   cat_work:       { zh:'工作', en:'Work', ko:'업무', ja:'仕事' },
   cat_hotel:      { zh:'住宿', en:'Hotel', ko:'숙소', ja:'宿泊' },
   cat_shopping:   { zh:'購物', en:'Shopping', ko:'쇼핑', ja:'ショッピング' },
+  cat_personal:   { zh:'個人', en:'Personal', ko:'개인', ja:'個人' },
 
   // ── City labels ──
   city_busan:   { zh:'釜山', en:'Busan', ko:'부산', ja:'釜山' },
@@ -1351,6 +1492,7 @@ const I18N = {
   booking_official_best:{ zh:'★ 官方最便宜', en:'★ Official cheapest', ko:'★ 공식 최저가', ja:'★ 公式が最安' },
   booking_pass_not_worth:{ zh:'只去塔+X the Sky 不划算', en:'Tower + X the Sky only — not worth it', ko:'타워+X the Sky만 방문 시 비추', ja:'タワー+X the Skyだけなら割高' },
   booking_recommend_title:{ zh:'⏳ 建議購買', en:'⏳ Recommended to Buy', ko:'⏳ 구매 추천', ja:'⏳ 購入おすすめ' },
+  booking_checkin_note: { zh:'線上報到 Web Check-in（起飛前 48hr – 1hr 開放）', en:'Web Check-in (opens 48hr – 1hr before departure)', ko:'웹 체크인 (출발 48시간 ~ 1시간 전)', ja:'ウェブチェックイン（出発48時間〜1時間前）' },
   booking_outbound:  { zh:'去程', en:'Outbound', ko:'출국편', ja:'往路' },
   booking_return:    { zh:'回程', en:'Return', ko:'귀국편', ja:'復路' },
   booking_total:     { zh:'來回合計', en:'Round-trip Total', ko:'왕복 합계', ja:'往復合計' },
@@ -1768,7 +1910,7 @@ function renderToday() {
     var getEvIcon = function(ev) {
       var name = (ev.name || '').toLowerCase() + ' ' + (ev.name_en || '').toLowerCase();
       if (name.match(/機場|airport|飛機|flight|降落|起飛|空港|공항/)) return 'flight';
-      var CAT_ICONS = {attraction:'attractions',food:'restaurant',cafe:'coffee',transport:'directions_transit',work:'laptop_mac',hotel:'hotel',shopping:'shopping_bag'};
+      var CAT_ICONS = {attraction:'attractions',food:'restaurant',cafe:'coffee',transport:'directions_transit',work:'laptop_mac',hotel:'hotel',shopping:'shopping_bag',personal:'bedtime'};
       return CAT_ICONS[ev.cat] || 'event';
     };
 
@@ -1951,7 +2093,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   safe('renderPOIs', () => renderPOIs('all'));
   safe('renderCalendar', () => renderCalendar(1));
   safe('renderBudget', renderBudget);
-  safe('flightIntel', renderFlightIntel);
+  safe('renderBooking', renderBooking);
   safe('timeAlloc', initCountdown);
   safe('renderNomadSpots', renderNomadSpots);
   safe('clocks', initClocks);
