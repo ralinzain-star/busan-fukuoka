@@ -582,7 +582,12 @@ details[open] .entry-form-summary::before{transform:rotate(90deg)}
 .wd-sun{display:flex;justify-content:center;gap:4px;font-size:.6rem;color:var(--text-3);margin:4px 0 2px}
 .wd-sun-rise,.wd-sun-set{white-space:nowrap}
 .wd-golden{font-size:.58rem;color:var(--text-2);white-space:nowrap}
-.wd-city-dot{width:6px;height:6px;border-radius:50%;background:var(--text-3);margin:6px auto 0}
+.wd-city-dot{width:6px;height:6px;border-radius:50%;background:var(--text-3);flex-shrink:0}
+.wd-city-row{display:flex;align-items:center;justify-content:center;gap:4px;margin-top:6px}
+.wd-city-label{font-size:.58rem;font-weight:600;letter-spacing:.2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:52px}
+.wd-city-label.wd-city-busan{color:#3a7bd5}.wd-city-row:has(.wd-city-busan) .wd-city-dot{background:#3a7bd5}
+.wd-city-label.wd-city-aso{color:#2e7d32}.wd-city-row:has(.wd-city-aso) .wd-city-dot{background:#2e7d32}
+.wd-city-label.wd-city-fukuoka{color:#c0392b}.wd-city-row:has(.wd-city-fukuoka) .wd-city-dot{background:#c0392b}
 
 /* ===== RESPONSIVE: MOBILE ===== */
 @media(max-width:640px){

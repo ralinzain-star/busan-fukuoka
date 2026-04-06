@@ -1332,7 +1332,7 @@ function renderWeatherStrip() {
           '<div class="wd-desc">' + (w.desc[currentLang] || w.desc.zh) + '</div>' +
           '<div class="wd-sun"><span class="wd-sun-rise"><span class="mi material-symbols-outlined" style="font-size:10px">wb_twilight</span>' + w.sunrise + '</span><span class="wd-sun-set"><span class="mi material-symbols-outlined" style="font-size:10px">nightlight</span>' + w.sunset + '</span></div>' +
           '<div class="wd-golden" title="' + t('time_golden_hour') + '"><span class="mi material-symbols-outlined" style="font-size:10px">photo_camera</span> ' + goldenEvening + '</div>' +
-          '<div class="wd-city-dot" title="' + getCityName(w.city) + '"></div>' +
+          '<div class="wd-city-row"><div class="wd-city-dot" title="' + getCityName(w.city) + '"></div><span class="wd-city-label wd-city-' + w.city + '">' + getCityName(w.city) + '</span></div>' +
         '</div>';
       }).join('') +
     '</div>';

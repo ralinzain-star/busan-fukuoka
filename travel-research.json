@@ -1,8 +1,8 @@
 {
   "meta": {
     "trip_name": "釜山→阿蘇→福岡",
-    "last_updated": "2026-03-31T00:00:00+08:00",
-    "total_items": 2
+    "last_updated": "2026-04-06T00:00:00+08:00",
+    "total_items": 102
   },
   "items": [
     {
@@ -90,10 +90,3741 @@
       },
       "priority": "recommended",
       "notes": "改建自1968年美軍官邸，環境復古有質感"
+    },
+    {
+      "id": "r3",
+      "type": "cafe",
+      "name": "FILTER SUPPLY",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "天神、大名、藥院",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "極簡主義手沖咖啡",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["coffee", "minimalist", "hand-drip"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "none",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=FILTER%20SUPPLY+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r4",
+      "type": "cafe",
+      "name": "COFFEE COUNTY Fukuoka",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "天神、大名、藥院",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "職人感咖啡空間",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["coffee", "specialty-coffee"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "none",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=COFFEE%20COUNTY%20Fukuoka+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r5",
+      "type": "cafe",
+      "name": "Okashi TUGI",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "天神、大名、藥院",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "現代和菓子設計店",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["sweets", "wagashi", "modern-japanese"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "snack",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Okashi%20TUGI+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r6",
+      "type": "cafe",
+      "name": "NO COFFEE",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "天神、大名、藥院",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "福岡街頭潮流咖啡代表",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["coffee", "streetwear", "trendy"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "none",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=NO%20COFFEE+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r7",
+      "type": "cafe",
+      "name": "ON SUGAR",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "天神、大名、藥院",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "超人氣甜甜圈與雜貨",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["donuts", "sweets", "zakka"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "snack",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=ON%20SUGAR+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r8",
+      "type": "cafe",
+      "name": "Stereo Coffee",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "天神、大名、藥院",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "黑膠音樂立飲空間",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["coffee", "vinyl", "music", "standing-bar"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "none",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Stereo%20Coffee+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r9",
+      "type": "cafe",
+      "name": "ABEKi",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "天神、大名、藥院",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "修道院風起司蛋糕店",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["cheesecake", "sweets", "bakery"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "snack",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=ABEKi+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r10",
+      "type": "shopping",
+      "name": "HIGHTIDE STORE",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "天神、大名、藥院",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "文具品牌附設咖啡空間",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["stationery", "design", "cafe"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "none",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=HIGHTIDE%20STORE+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r11",
+      "type": "cafe",
+      "name": "Manu Coffee Roasters",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "天神、大名、藥院",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "福岡自烘豆老牌名店",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["coffee", "roaster", "specialty-coffee"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "none",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Manu%20Coffee%20Roasters+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r12",
+      "type": "cafe",
+      "name": "REC COFFEE",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "天神、大名、藥院",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "世界拉花冠軍店",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["coffee", "latte-art", "champion"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "none",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=REC%20COFFEE+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r13",
+      "type": "cafe",
+      "name": "I don't know",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "天神、大名、藥院",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "隱密感十足的極簡咖啡",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["coffee", "minimalist", "hidden"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "none",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=I%20don%27t%20know+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r14",
+      "type": "shopping",
+      "name": "Saturday's NYC Fukuoka",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "天神、大名、藥院",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "衝浪選物與咖啡",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["surf", "lifestyle", "coffee", "select-shop"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "none",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Saturday%27s%20NYC%20Fukuoka+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r15",
+      "type": "cafe",
+      "name": "White Glass Coffee",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "天神、大名、藥院",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "綠意昂然的早午餐",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["coffee", "brunch", "greenery"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "breakfast",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=White%20Glass%20Coffee+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r16",
+      "type": "cafe",
+      "name": "Connect Coffee",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "天神、大名、藥院",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "拉花藝術大師店",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["coffee", "latte-art"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "none",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Connect%20Coffee+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r17",
+      "type": "cafe",
+      "name": "Good Up Coffee",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "天神、大名、藥院",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "必吃紅豆奶油厚片",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["coffee", "toast", "snack"],
+        "must_order": ["紅豆奶油厚片"],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "snack",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Good%20Up%20Coffee+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r18",
+      "type": "shopping",
+      "name": "Taine",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "天神、大名、藥院",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "花藝、咖啡與服飾選物",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["flowers", "fashion", "select-shop", "cafe"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "none",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Taine+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r19",
+      "type": "cafe",
+      "name": "The Local Coffee Stand",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "天神、大名、藥院",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "匯集全日名豆的站點",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["coffee", "specialty-coffee"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "none",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=The%20Local%20Coffee%20Stand+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r20",
+      "type": "cafe",
+      "name": "Gomaya Kuki",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "天神、大名、藥院",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "極致濃郁黑芝麻系列",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["sweets", "sesame", "dessert"],
+        "must_order": ["黑芝麻甜點"],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "snack",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Gomaya%20Kuki+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r21",
+      "type": "food",
+      "name": "Ivorish",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "天神、大名、藥院",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "法式吐司專賣店",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["french-toast", "brunch"],
+        "must_order": ["法式吐司"],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "breakfast",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Ivorish+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r22",
+      "type": "cafe",
+      "name": "Daimyo Softcream",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "天神、大名、藥院",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "絲滑設計感冰淇淋",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["ice-cream", "soft-serve", "design"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "snack",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Daimyo%20Softcream+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r23",
+      "type": "food",
+      "name": "L'Antica Pizzeria da Michele",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "天神、大名、藥院",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "拿坡里正統披薩",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["pizza", "italian", "neapolitan"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "lunch",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=L%27Antica%20Pizzeria%20da%20Michele+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r24",
+      "type": "food",
+      "name": "Yorgo",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "天神、大名、藥院",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "時尚法式小酒館",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["french", "bistro"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "dinner",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Yorgo+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r25",
+      "type": "food",
+      "name": "Meat Meat Meet",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "天神、大名、藥院",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "質感肉食餐廳",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["meat", "restaurant"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "dinner",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Meat%20Meat%20Meet+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r26",
+      "type": "nightlife",
+      "name": "Gomandou",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "天神、大名、藥院",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "隱藏版高品質餐酒",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["wine-bar", "hidden", "dining-bar"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "dinner",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Gomandou+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r27",
+      "type": "nightlife",
+      "name": "Bar Oscar",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "天神、大名、藥院",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "福岡傳奇級酒吧",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["bar", "classic", "legendary"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "none",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Bar%20Oscar+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r28",
+      "type": "cafe",
+      "name": "FUK COFFEE",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "博多、春吉、西中洲",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "航空主題咖啡",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["coffee", "aviation-themed"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "none",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=FUK%20COFFEE+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r29",
+      "type": "cafe",
+      "name": "Stock",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "博多、春吉、西中洲",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "絕美麵包與咖啡結合",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["bakery", "coffee", "breakfast"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "breakfast",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Stock%20Bakery%20Coffee+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r30",
+      "type": "cafe",
+      "name": "Coffee House Grape",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "博多、春吉、西中洲",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "復古喫茶風情",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["coffee", "retro", "kissaten"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "none",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Coffee%20House%20Grape+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r31",
+      "type": "cafe",
+      "name": "Mitsuyasu Seika",
+      "name_local": "光安青霞",
+      "location": {
+        "city": "Fukuoka",
+        "area": "博多、春吉、西中洲",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "文藝氣息的和菓子",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["wagashi", "sweets", "traditional"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "snack",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Mitsuyasu%20Seika+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r32",
+      "type": "accommodation",
+      "name": "Hotel Meigetsu",
+      "name_local": "ホテル明月",
+      "location": {
+        "city": "Fukuoka",
+        "area": "博多、春吉、西中洲",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "設計感精品旅宿",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["hotel", "design", "boutique"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "none",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Hotel%20Meigetsu+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r33",
+      "type": "accommodation",
+      "name": "The OneFive Villa Fukuoka",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "博多、春吉、西中洲",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "河畔景觀飯店",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["hotel", "riverside", "view"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "none",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=The%20OneFive%20Villa%20Fukuoka+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r34",
+      "type": "cafe",
+      "name": "9 Borden Coffee",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "博多、春吉、西中洲",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "美式街頭風格",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["coffee", "american", "street-style"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "none",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=9%20Borden%20Coffee+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r35",
+      "type": "nightlife",
+      "name": "I.N.U. wines",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "博多、春吉、西中洲",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "自然酒選物店",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["natural-wine", "wine-bar"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "none",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=I.N.U.%20wines+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r36",
+      "type": "food",
+      "name": "Tsudoi",
+      "name_local": "つどい",
+      "location": {
+        "city": "Fukuoka",
+        "area": "博多、春吉、西中洲",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "深夜食堂風格小店",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["izakaya", "late-night", "cozy"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "dinner",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Tsudoi+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r37",
+      "type": "food",
+      "name": "Meshi-suke",
+      "name_local": "飯すけ",
+      "location": {
+        "city": "Fukuoka",
+        "area": "博多、春吉、西中洲",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "極致新鮮魚料理",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["seafood", "fish", "japanese"],
+        "must_order": ["新鮮魚料理"],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "dinner",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Meshi-suke+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r38",
+      "type": "cafe",
+      "name": "ECRU.",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "博多、春吉、西中洲",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "咖啡與葡萄酒的站立吧",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["coffee", "wine", "standing-bar"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "none",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=ECRU.+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r39",
+      "type": "nightlife",
+      "name": "Amber",
+      "name_local": "魔燈路場",
+      "location": {
+        "city": "Fukuoka",
+        "area": "博多、春吉、西中洲",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "充滿氣氛的隱密酒吧",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["bar", "hidden", "atmospheric"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "none",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Amber+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r40",
+      "type": "nightlife",
+      "name": "Hobo Beer Store",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "博多、春吉、西中洲",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "精釀啤酒愛好者基地",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["craft-beer", "beer"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "none",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Hobo%20Beer%20Store+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r41",
+      "type": "nightlife",
+      "name": "Yorozu",
+      "name_local": "万",
+      "location": {
+        "city": "Fukuoka",
+        "area": "博多、春吉、西中洲",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "現代茶藝與調酒",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["tea", "cocktail", "modern"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "none",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Yorozu+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r42",
+      "type": "food",
+      "name": "Mon an",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "博多、春吉、西中洲",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "亞洲融合創意料理",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["asian-fusion", "creative"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "dinner",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Mon%20an+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r43",
+      "type": "cafe",
+      "name": "Coffee Bimi",
+      "name_local": "珈琲美美",
+      "location": {
+        "city": "Fukuoka",
+        "area": "博多、春吉、西中洲",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "傳奇手沖老店",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["coffee", "hand-drip", "classic", "legendary"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "none",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Coffee%20Bimi+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r44",
+      "type": "cafe",
+      "name": "Artless Craft Tea",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "博多、春吉、西中洲",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "東京來的極簡茶屋",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["tea", "minimalist"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "none",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Artless%20Craft%20Tea+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r45",
+      "type": "food",
+      "name": "Bills Fukuoka",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "博多、春吉、西中洲",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "經典的世界第一早餐",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["brunch", "pancakes", "australian"],
+        "must_order": ["Ricotta Pancakes"],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "breakfast",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Bills%20Fukuoka+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r46",
+      "type": "food",
+      "name": "Mitsubachi",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "博多、春吉、西中洲",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "那珂川旁的最美景觀餐廳",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["riverside", "view", "restaurant"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "dinner",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Mitsubachi+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r47",
+      "type": "food",
+      "name": "Seimonbarai",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "博多、春吉、西中洲",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "博多頂級海鮮居酒屋",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["seafood", "izakaya", "premium"],
+        "must_order": ["海鮮"],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "dinner",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Seimonbarai+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r48",
+      "type": "cafe",
+      "name": "cassette",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "赤坂、大手門、唐人町",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "舊 Pin Coffee 遷移的藝廊咖啡",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["coffee", "gallery", "art"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "none",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=cassette+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r49",
+      "type": "cafe",
+      "name": "Mumu Coffee",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "赤坂、大手門、唐人町",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "純白明亮的小店",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["coffee", "minimalist", "white"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "none",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Mumu%20Coffee+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r50",
+      "type": "cafe",
+      "name": "Bakery Kitchen Ragazza",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "赤坂、大手門、唐人町",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "麵包控的口袋名單",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["bakery", "bread"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "breakfast",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Bakery%20Kitchen%20Ragazza+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r51",
+      "type": "cafe",
+      "name": "Siro Coffee",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "赤坂、大手門、唐人町",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "西新地區的極簡咖啡代表",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["coffee", "minimalist"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "none",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Siro%20Coffee+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r52",
+      "type": "cafe",
+      "name": "Coffee & Cake Stand LULU",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "赤坂、大手門、唐人町",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "藥院附近的質感角落",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["coffee", "cake", "cozy"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "snack",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Coffee%20%26%20Cake%20Stand%20LULU+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r53",
+      "type": "food",
+      "name": "Kyomachi Kitchen",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "赤坂、大手門、唐人町",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "健康美味的定食",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["teishoku", "healthy", "japanese"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "lunch",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Kyomachi%20Kitchen+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r54",
+      "type": "cafe",
+      "name": "Ohori Terrace",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "赤坂、大手門、唐人町",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "大濠公園旁的日式空間",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["coffee", "park", "japanese-style"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "none",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Ohori%20Terrace+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r55",
+      "type": "cafe",
+      "name": "La Brioche",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "赤坂、大手門、唐人町",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "公園旁的經典麵包店",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["bakery", "bread", "park"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "breakfast",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=La%20Brioche+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r56",
+      "type": "food",
+      "name": "& LOCALS",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "赤坂、大手門、唐人町",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "大濠公園內推廣在地食材",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["local-ingredients", "park", "healthy"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "lunch",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=%26%20LOCALS+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r57",
+      "type": "cafe",
+      "name": "Jacques",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "赤坂、大手門、唐人町",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "福岡頂級法式甜點",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["french-pastry", "dessert", "premium"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "snack",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Jacques+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r58",
+      "type": "cafe",
+      "name": "Papparayray",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "赤坂、大手門、唐人町",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "充滿植物的絕美老屋咖啡",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["coffee", "plants", "renovated", "photogenic"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "none",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Papparayray+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r59",
+      "type": "food",
+      "name": "Goh",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "赤坂、大手門、唐人町",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "亞洲 50 最佳餐廳主廚之店",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["fine-dining", "asia-50-best"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": true,
+        "booking_url": null,
+        "reservation": {"needed": true, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "dinner",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Goh+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "must-visit",
+      "notes": null
+    },
+    {
+      "id": "r60",
+      "type": "shopping",
+      "name": "010 Building",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "赤坂、大手門、唐人町",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "結合藝術、餐飲與劇院的新地標",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["complex", "art", "dining", "theater"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "none",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=010%20Building+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r61",
+      "type": "shopping",
+      "name": "Ritmus",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "赤坂、大手門、唐人町",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "(近郊) 極簡生活選物",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["lifestyle", "minimalist", "select-shop"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "none",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Ritmus+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r62",
+      "type": "cafe",
+      "name": "The Roots Neighborhood Bakery",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "赤坂、大手門、唐人町",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "硬派好吃的麵包",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["bakery", "bread", "artisan"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "breakfast",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=The%20Roots%20Neighborhood%20Bakery+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r63",
+      "type": "cafe",
+      "name": "Graph",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "福岡其他",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "Graph",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["coffee"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "none",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Graph+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r64",
+      "type": "cafe",
+      "name": "Carbon Coffee",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "福岡其他",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "Carbon Coffee",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["coffee"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "none",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Carbon%20Coffee+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r65",
+      "type": "nightlife",
+      "name": "Gueze",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "福岡其他",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "Gueze",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["beer-bar", "craft-beer"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "none",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Gueze+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r66",
+      "type": "cafe",
+      "name": "The Company",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "福岡其他",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "The Company",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["coffee"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "none",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=The%20Company+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r67",
+      "type": "accommodation",
+      "name": "Lyf Fukuoka",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "福岡其他",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "Lyf Fukuoka",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["hotel", "coliving"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "none",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Lyf%20Fukuoka+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r68",
+      "type": "cafe",
+      "name": "The Garden",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "福岡其他",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "The Garden",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["coffee"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "none",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=The%20Garden+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r69",
+      "type": "accommodation",
+      "name": "Mizuka Hotel",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "福岡其他",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "Mizuka Hotel",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["hotel"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "none",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Mizuka%20Hotel+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r70",
+      "type": "accommodation",
+      "name": "With The Style",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "福岡其他",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "With The Style",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["hotel", "design"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "none",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=With%20The%20Style+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r71",
+      "type": "food",
+      "name": "Luigi",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "福岡其他",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "Luigi",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["restaurant"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "dinner",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Luigi+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r72",
+      "type": "nightlife",
+      "name": "Bar Cavalier",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "福岡其他",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "Bar Cavalier",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["bar"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "none",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Bar%20Cavalier+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r73",
+      "type": "cafe",
+      "name": "Tsubame Coffee",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "福岡其他",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "Tsubame Coffee",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["coffee"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "none",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Tsubame%20Coffee+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r74",
+      "type": "cafe",
+      "name": "Cafe No.",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "福岡其他",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "Cafe No.",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["coffee"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "none",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Cafe%20No.+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r75",
+      "type": "cafe",
+      "name": "Saturday Dot",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "福岡其他",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "Saturday Dot",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["coffee"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "none",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Saturday%20Dot+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r76",
+      "type": "cafe",
+      "name": "Mignonne",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "福岡其他",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "Mignonne",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["coffee"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "none",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Mignonne+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r77",
+      "type": "cafe",
+      "name": "A bientot",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "福岡其他",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "A bientot",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["coffee"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "none",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=A%20bientot+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r78",
+      "type": "food",
+      "name": "Uonuma Rice",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "福岡其他",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "Uonuma Rice",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["rice", "japanese"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "lunch",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Uonuma%20Rice+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r79",
+      "type": "cafe",
+      "name": "Doughnut Glace",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "福岡其他",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "Doughnut Glace",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["donuts", "sweets"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "snack",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Doughnut%20Glace+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r80",
+      "type": "cafe",
+      "name": "Cafe de Sol",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "福岡其他",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "Cafe de Sol",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["coffee"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "none",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Cafe%20de%20Sol+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r81",
+      "type": "food",
+      "name": "Hishaku",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "福岡其他",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "Hishaku",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["restaurant"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "dinner",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Hishaku+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r82",
+      "type": "food",
+      "name": "Kikuchiya",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "福岡其他",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "Kikuchiya",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["restaurant"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "dinner",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Kikuchiya+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r83",
+      "type": "food",
+      "name": "Saison",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "福岡其他",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "Saison",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["restaurant"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "dinner",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Saison+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r84",
+      "type": "cafe",
+      "name": "The Vibe",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "福岡其他",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "The Vibe",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["coffee"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "none",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=The%20Vibe+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r85",
+      "type": "cafe",
+      "name": "Unipresso",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "福岡其他",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "Unipresso",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["coffee", "espresso"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "none",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Unipresso+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r86",
+      "type": "cafe",
+      "name": "Bloom Coffee",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "福岡其他",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "Bloom Coffee",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["coffee"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "none",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Bloom%20Coffee+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r87",
+      "type": "cafe",
+      "name": "Slow Coffee",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "福岡其他",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "Slow Coffee",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["coffee"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "none",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Slow%20Coffee+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r88",
+      "type": "nightlife",
+      "name": "Underground",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "福岡其他",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "Underground",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["bar", "nightlife"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "none",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Underground+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r89",
+      "type": "food",
+      "name": "Bistro O",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "福岡其他",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "Bistro O",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["bistro", "french"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "dinner",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Bistro%20O+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r90",
+      "type": "food",
+      "name": "Yakiniku Sudou",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "福岡其他",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "Yakiniku Sudou",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["yakiniku", "bbq"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "dinner",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Yakiniku%20Sudou+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r91",
+      "type": "food",
+      "name": "Sushi Sakai",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "福岡其他",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "Sushi Sakai",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["sushi"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "dinner",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Sushi%20Sakai+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r92",
+      "type": "food",
+      "name": "Yamanokuchi",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "福岡其他",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "Yamanokuchi",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["restaurant"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "dinner",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Yamanokuchi+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r93",
+      "type": "food",
+      "name": "Hyotan Sushi",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "福岡其他",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "Hyotan Sushi",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["sushi"],
+        "must_order": ["壽司"],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "lunch",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Hyotan%20Sushi+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r94",
+      "type": "food",
+      "name": "Kame Yakiniku",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "福岡其他",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "Kame Yakiniku",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["yakiniku", "bbq"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "dinner",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Kame%20Yakiniku+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r95",
+      "type": "cafe",
+      "name": "Nuwara Eliya",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "福岡其他",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "Nuwara Eliya",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["tea", "sri-lankan-tea"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "none",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Nuwara%20Eliya+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r96",
+      "type": "cafe",
+      "name": "Meek",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "福岡其他",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "Meek",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["coffee"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "none",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Meek+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r97",
+      "type": "food",
+      "name": "Choku Meat",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "福岡其他",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "Choku Meat",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["meat"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "dinner",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Choku%20Meat+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r98",
+      "type": "food",
+      "name": "Ono no Hanare",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "福岡其他",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "Ono no Hanare",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["izakaya"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "dinner",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Ono%20no%20Hanare+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r99",
+      "type": "food",
+      "name": "Tatsumi Sushi",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "福岡其他",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "Tatsumi Sushi",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["sushi"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "dinner",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Tatsumi%20Sushi+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r100",
+      "type": "food",
+      "name": "Kawaya",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "福岡其他",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "Kawaya",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["restaurant"],
+        "must_order": [],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "dinner",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Kawaya+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r101",
+      "type": "food",
+      "name": "Motsunabe Rakutenchi",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "福岡其他",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "Motsunabe Rakutenchi",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["motsunabe", "hot-pot"],
+        "must_order": ["牛腸鍋"],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "dinner",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Motsunabe%20Rakutenchi+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
+    },
+    {
+      "id": "r102",
+      "type": "food",
+      "name": "Ramen ShinShin",
+      "name_local": null,
+      "location": {
+        "city": "Fukuoka",
+        "area": "福岡其他",
+        "address": null,
+        "lat": null,
+        "lng": null
+      },
+      "details": {
+        "description": "Ramen ShinShin",
+        "price": null,
+        "price_value": null,
+        "price_currency": "JPY",
+        "hours": null,
+        "duration": null,
+        "tags": ["ramen"],
+        "must_order": ["博多拉麵"],
+        "tips": [],
+        "booking_required": false,
+        "booking_url": null,
+        "reservation": {"needed": false, "confirmed": false, "time": null, "party_size": null, "reference": null},
+        "meal_slot": "dinner",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Ramen%20ShinShin+Fukuoka"
+      },
+      "source": {
+        "type": "note",
+        "url": null,
+        "title": "@boku_magazine 福岡咖啡美食清單",
+        "collected_at": "2026-04-06T00:00:00+08:00"
+      },
+      "priority": "recommended",
+      "notes": null
     }
   ],
   "transport": [],
-  "accommodations": [],
+  "accommodations": [
+    {
+      "id": "r32",
+      "name": "Hotel Meigetsu",
+      "name_local": "ホテル明月",
+      "area": "博多、春吉、西中洲"
+    },
+    {
+      "id": "r33",
+      "name": "The OneFive Villa Fukuoka",
+      "name_local": null,
+      "area": "博多、春吉、西中洲"
+    },
+    {
+      "id": "r67",
+      "name": "Lyf Fukuoka",
+      "name_local": null,
+      "area": "福岡其他"
+    },
+    {
+      "id": "r69",
+      "name": "Mizuka Hotel",
+      "name_local": null,
+      "area": "福岡其他"
+    },
+    {
+      "id": "r70",
+      "name": "With The Style",
+      "name_local": null,
+      "area": "福岡其他"
+    }
+  ],
   "general_tips": [],
   "passes_and_deals": []
 }

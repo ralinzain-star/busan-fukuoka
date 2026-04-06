@@ -72,15 +72,29 @@
     {"id":"k6","name":"阿蘇內牧溫泉","nameLocal":"阿蘇内牧温泉","city":"aso","cat":"attraction","lat":32.9522,"lng":131.0652,"price_jpy":500,"price_twd":100,"hours":"依各旅館","desc":"⭐必去 · 4/4 17:00-18:00","addr":"阿蘇町"},
     {"id":"f1","name":"太宰府天滿宮","nameLocal":"太宰府天満宮","city":"fukuoka","cat":"attraction","lat":33.5214,"lng":130.5354,"price_jpy":0,"price_twd":0,"hours":"06:00–19:00","desc":"⭐必去 · 4/5 10:00-12:00 隈研吾Starbucks+光明禪寺","addr":"太宰府"},
     {"id":"f2","name":"柳川遊船","nameLocal":"柳川川下り","city":"fukuoka","cat":"attraction","lat":33.1631,"lng":130.4105,"price_jpy":3340,"price_twd":668,"hours":"09:00–16:30","desc":"⭐必去 · 4/5 13:30-16:30 西鐵套票","addr":"柳川"},
-    {"id":"f3","name":"高千穗峽 Klook一日遊","nameLocal":"高千穂峡","city":"fukuoka","cat":"attraction","lat":32.7224,"lng":131.3058,"price_jpy":0,"price_twd":1877,"hours":"07:50–18:00","desc":"⭐必去 · 4/11 上色見熊野+天岩戶神社+天安河原","addr":"宮崎"},
     {"id":"f4","name":"中洲屋台","nameLocal":"中洲屋台","city":"fukuoka","cat":"food","lat":33.5916,"lng":130.4056,"price_jpy":1500,"price_twd":300,"hours":"18:00–02:00","desc":"⭐必去 · 4/6 19:00 現金限定","addr":"中洲"},
     {"id":"f5","name":"西公園夜櫻","nameLocal":"西公園夜桜","city":"fukuoka","cat":"attraction","lat":33.5960,"lng":130.3765,"price_jpy":0,"price_twd":0,"hours":"全天","desc":"⭐必去 · 4/7 19:00-20:30 百大櫻花名所到4/10","addr":"西區"},
     {"id":"f6","name":"大名/親不孝通居酒屋","nameLocal":"大名・親不孝通り","city":"fukuoka","cat":"food","lat":33.5893,"lng":130.3932,"price_jpy":2000,"price_twd":400,"hours":"18:00–","desc":"⭐必去 · 4/8 19:00","addr":"天神"},
     {"id":"f7","name":"屋台烒然拉麵+牧鍋","nameLocal":"焼きラーメン/もつ鍋","city":"fukuoka","cat":"food","lat":33.5910,"lng":130.4020,"price_jpy":3500,"price_twd":700,"hours":"18:00–","desc":"⭐必去 · 4/9 19:00 需預約","addr":"中洲/天神"},
     {"id":"fw1","name":"Engineer Cafe（工作空間）","nameLocal":"エンジニアカフェ","city":"fukuoka","cat":"cafe","lat":33.5902,"lng":130.3995,"price_jpy":0,"price_twd":0,"hours":"09:00–21:00","desc":"✅免費 · 覆蓋10:00-18:00 · 插座WiFi完備","addr":"天神"},
     {"id":"fw2","name":"Startup Cafe（工作空間）","nameLocal":"スタートアップカフェ","city":"fukuoka","cat":"cafe","lat":33.5890,"lng":130.3930,"price_jpy":0,"price_twd":0,"hours":"10:00–22:00","desc":"✅免費 · 覆蓋10:00-18:00 · 剛好10:00開","addr":"大名"},
+    {"id":"fh1","name":"🏨 福岡住宿","nameLocal":"福岡宿泊","city":"fukuoka","cat":"hotel","lat":33.5970,"lng":130.4215,"price_jpy":0,"price_twd":0,"hours":"check-in 15:00","desc":"🏠 博多区千代2-21-29 · 4/5–4/12 (7晚)","addr":"博多区千代"},
     {"id":"b17","name":"廣安里擴香瓶店","nameLocal":"광안리 디퓨저 숍","city":"busan","cat":"shopping","lat":35.1531,"lng":129.1186,"price_krw":40000,"price_twd":952,"hours":"未確認","desc":"🛍️ 兩瓶禮盒₩40,000 · Black Cherry推薦 · 外觀高級但平價","addr":"廣安里"},
-    {"id":"b18","name":"青山1954 廣安里本店","nameLocal":"청산1954 광안리본점","city":"busan","cat":"food","lat":35.1425,"lng":129.1136,"price_krw":15000,"price_twd":357,"hours":"11:00–20:50（休15:30–17:00）","desc":"🍜 推薦 · 1968美軍官邸改建 · 招牌辣炒章魚＆編柏章魚菜包 · 金蓮山站步行7min","addr":"廣安里/水營區"}
+    {"id":"b18","name":"青山1954 廣安里本店","nameLocal":"청산1954 광안리본점","city":"busan","cat":"food","lat":35.1425,"lng":129.1136,"price_krw":15000,"price_twd":357,"hours":"11:00–20:50（休15:30–17:00）","desc":"🍜 推薦 · 1968美軍官邸改建 · 招牌辣炒章魚＆編柏章魚菜包 · 金蓮山站步行7min","addr":"廣安里/水營區"},
+    {"id":"j1","name":"日輪寺","nameLocal":"日輪寺","city":"aso","cat":"attraction","lat":32.8427,"lng":130.9840,"price_jpy":0,"price_twd":0,"hours":"全天","desc":"4/4 行程 · 高森町木造古寺","addr":"高森町"},
+    {"id":"j2","name":"高森田樂之禮","nameLocal":"高森田楽の里","city":"aso","cat":"food","lat":32.8460,"lng":130.9768,"price_jpy":1500,"price_twd":300,"hours":"11:00–15:00","desc":"4/4 午餐 · 地爐烤田樂 · 山間古民家","addr":"高森町"},
+    {"id":"j3","name":"上色見熊野座神社","nameLocal":"上色見熊野座神社","city":"aso","cat":"attraction","lat":32.8385,"lng":131.0024,"price_jpy":0,"price_twd":0,"hours":"全天","desc":"4/4 行程 · 108段苔蘚石階 · 穿戶岩","addr":"高森町"},
+    {"id":"j4","name":"長部田海床路","nameLocal":"長部田海床路","city":"aso","cat":"attraction","lat":32.6575,"lng":130.5781,"price_jpy":0,"price_twd":0,"hours":"全天（退潮時最佳）","desc":"4/4 傍晚 · 退潮時電線杆延伸入海","addr":"宇土市"},
+    {"id":"j5","name":"みのる食堂","nameLocal":"みのる食堂 アミュプラザくまもと店","city":"aso","cat":"food","lat":32.7996,"lng":130.7059,"price_jpy":1000,"price_twd":200,"hours":"11:00–22:00","desc":"4/4 晚餐 · アミュプラザくまもと","addr":"熊本市"},
+    {"id":"f8","name":"本吉屋 鰻魚飯","nameLocal":"元祖本吉屋","city":"fukuoka","cat":"food","lat":33.1619,"lng":130.4104,"price_jpy":3500,"price_twd":700,"hours":"11:00–15:00","desc":"4/5 午餐 · 柳川名物鰻魚飯 · 需預約","addr":"柳川"},
+    {"id":"fc1","name":"White Glass Coffee","nameLocal":"White Glass Coffee","city":"fukuoka","cat":"cafe","lat":33.5893,"lng":130.3934,"price_jpy":1500,"price_twd":300,"hours":"09:00–18:00","desc":"4/6 早午餐 · 大名 · 綠意盎然空間 · 早午餐招牌","addr":"大名"},
+    {"id":"fc2","name":"大名逛街（HIGHTIDE+Saturday's NYC+ON SUGAR）","nameLocal":"大名セレクトショップ","city":"fukuoka","cat":"shopping","lat":33.5888,"lng":130.3928,"price_jpy":0,"price_twd":0,"hours":"11:00–20:00","desc":"4/6 逛街 · 文具選物・衝浪潮牌・超人氣甜甜圈","addr":"大名"},
+    {"id":"fc3","name":"NO COFFEE","nameLocal":"NO COFFEE","city":"fukuoka","cat":"cafe","lat":33.5876,"lng":130.3918,"price_jpy":700,"price_twd":140,"hours":"09:00–19:00","desc":"4/6 下午 · 大名 · 福岡街頭潮流咖啡代表","addr":"大名"},
+    {"id":"fc4","name":"Taine","nameLocal":"Taine","city":"fukuoka","cat":"shopping","lat":33.5850,"lng":130.3941,"price_jpy":0,"price_twd":0,"hours":"12:00–19:00","desc":"4/6 薬院 · 花藝・咖啡・服飾選物","addr":"薬院"},
+    {"id":"fc5","name":"REC COFFEE（薬院）","nameLocal":"REC COFFEE","city":"fukuoka","cat":"cafe","lat":33.5847,"lng":130.3944,"price_jpy":700,"price_twd":140,"hours":"08:00–20:00","desc":"4/6 薬院 · 世界拉花冠軍店","addr":"薬院"},
+    {"id":"fc6","name":"L'Antica Pizzeria da Michele","nameLocal":"L'Antica Pizzeria da Michele","city":"fukuoka","cat":"food","lat":33.5898,"lng":130.3935,"price_jpy":1500,"price_twd":300,"hours":"11:30–21:00","desc":"4/6 晚餐 · 大名 · 拿坡里正統披薩 · 不需預約","addr":"大名"},
+    {"id":"f9","name":"舞鶴公園夜櫻","nameLocal":"舞鶴公園夜桜","city":"fukuoka","cat":"attraction","lat":33.5857,"lng":130.3882,"price_jpy":0,"price_twd":0,"hours":"全天","desc":"4/10 夜後 · 天神旁 · 百大櫻花名所","addr":"中央區"},
+    {"id":"f10","name":"Shin-Shin 拉麵","nameLocal":"博多らーめん ShinShin 天神本店","city":"fukuoka","cat":"food","lat":33.5902,"lng":130.3977,"price_jpy":900,"price_twd":180,"hours":"11:00–03:00（週日至24:00）","desc":"4/11 晚餐 · 天神 · 博多豚骨拉麵","addr":"天神"}
   ],
   "schedule":[
     {"date":"2026-03-30","city":"釜山","events":[
@@ -135,39 +149,37 @@
       {"sh":6.75,"eh":7.5,"name":"🍳 早餐（便利商店速食）","name_en":"🍳 Breakfast (convenience store)","name_ko":"🍳 아침 (편의점)","name_ja":"🍳 朝食（コンビニ）","cat":"food","note":"下船後博多港附近便利商店 · 或船上自備","note_en":"Convenience store near Hakata Port, or packed on ferry","note_ko":"하카타항 근처 편의점 또는 선내 준비","note_ja":"博多港近くのコンビニ、または船内で準備"},
       {"sh":7.5,"eh":8,"name":"抵達博多港","name_en":"Arrive Hakata Port","name_ko":"하카타항 도착","name_ja":"博多港到着","cat":"transport","note":""},
       {"sh":8,"eh":10,"name":"🚗朋友從熊本來接","name_en":"🚗Friend drives from Kumamoto to pick up","name_ko":"🚗친구가 구마모토에서 픽업","name_ja":"🚗友人が熊本から迎え","cat":"transport","note":"博多港→阿蘇 · 朋友住熊本","note_en":"Hakata Port→Aso · Friend lives in Kumamoto","note_ko":"하카타항→아소 · 친구 구마모토 거주","note_ja":"博多港→阿蘇・友人は熊本在住"},
-      {"sh":10,"eh":10.75,"name":"大觀峰","name_en":"Daikanbo Viewpoint","name_ko":"다이칸보","name_ja":"大観峰","cat":"attraction","note":"早上最佳 · 阿蘇五岳全景","note_en":"Best in morning · Aso 5 peaks panorama","note_ko":"오전 최적 · 아소 5봉 전경","note_ja":"朝がベスト・阿蘇五岳パノラマ"},
-      {"sh":11,"eh":13,"name":"阿蘇中岳火山口","name_en":"Aso Nakadake Crater","name_ko":"아소 나카다케 분화구","name_ja":"阿蘇中岳火口","cat":"attraction","note":"¥1,030 · 活火山口","note_en":"¥1,030 · Active volcano crater","note_ko":"¥1,030 · 활화산 분화구","note_ja":"¥1,030・活火山火口"},
-      {"sh":13.5,"eh":15,"name":"草千里濱+米塚","name_en":"Kusasenri+Komezuka","name_ko":"쿠사센리+코메즈카","name_ja":"草千里ヶ浜+米塚","cat":"attraction","note":"大草原","note_en":"Vast grassland","note_ko":"대초원","note_ja":"大草原"},
-      {"sh":15.5,"eh":16.5,"name":"阿蘇神社","name_en":"Aso Shrine","name_ko":"아소신사","name_ja":"阿蘇神社","cat":"attraction","note":"樓門2024修復","note_en":"Gate restored 2024","note_ko":"누문 2024 복원","note_ja":"楼門2024修復"},
-      {"sh":17,"eh":18,"name":"內牧溫泉","name_en":"Uchinomaki Onsen","name_ko":"우치노마키 온천","name_ja":"内牧温泉","cat":"attraction","note":"¥500 · 泡完溫泉再出發","note_en":"¥500 · Relax before heading out","note_ko":"¥500 · 온천 후 출발","note_ja":"¥500・温泉後出発"},
-      {"sh":19,"eh":21,"name":"🏯熊本城夜間櫻花照明","name_en":"🏯Kumamoto Castle Night Cherry Blossom","name_ko":"🏯구마모토성 야간 벚꽃 조명","name_ja":"🏯熊本城夜桜ライトアップ","cat":"attraction","note":"春季限定最後一天 · 回熊本順路","note_en":"Last day of spring event · On the way to Kumamoto","note_ko":"봄 한정 마지막 날 · 구마모토 가는 길","note_ja":"春季限定最終日・熊本への帰路"}
+      {"sh":10,"eh":11,"name":"日輪寺","name_en":"Nichirinji Temple","name_ko":"니치린지","name_ja":"日輪寺","cat":"attraction","note":"南小國 · 復古梯田風景","note_en":"Minamioguni · Scenic terraced fields","note_ko":"미나미오구니 · 다랑논 풍경","note_ja":"南小国・棚田風景"},
+      {"sh":11,"eh":13,"name":"高森田樂之禮","name_en":"Takamori Dengaku no Sato","name_ko":"다카모리 덴가쿠노사토","name_ja":"高森田楽の里","cat":"food","note":"傳統田樂串料理 · 炭火烤豆腐/里芋/山菜","note_en":"Traditional dengaku skewers · Charcoal-grilled tofu/taro/mountain veg","note_ko":"전통 덴가쿠 꼬치 · 숯불 두부/토란/산나물","note_ja":"伝統田楽串・炭火焼き豆腐/里芋/山菜","restaurant":"高森田楽の里","map":"https://www.google.com/maps/search/?api=1&query=高森田楽の里","reservation":false},
+      {"sh":13.5,"eh":15,"name":"上色見熊野座神社","name_en":"Kamishikimi Kumano-iza Shrine","name_ko":"카미시키미 구마노이마스 신사","name_ja":"上色見熊野座神社","cat":"attraction","note":"石階梯+苔蘚鳥居 · 上山到一半遇大霧折返","note_en":"Stone steps + mossy torii · Turned back halfway due to heavy fog","note_ko":"돌계단+이끼 토리이 · 짙은 안개로 중턱에서 하산","note_ja":"石段+苔の鳥居・大霧のため途中で引き返し"},
+      {"sh":15.5,"eh":17,"name":"長部田海床路","name_en":"Nagabutaden Kaiyuka-ro","name_ko":"나가부타덴 해중도로","name_ja":"長部田海床路","cat":"attraction","note":"熊本宇土 · 電線杆延伸入海 · 退潮時最壯觀","note_en":"Uto, Kumamoto · Iconic poles stretching into the sea · Best at low tide","note_ko":"우토, 구마모토 · 전봇대가 바다로 뻗어나감 · 간조 때 최고","note_ja":"宇土市・電柱が海に続く絶景・干潮時が最も壮観"},
+      {"sh":19,"eh":20.5,"name":"みのる食堂 アミュプラザくまもと店","name_en":"Minoru Shokudo Amu Plaza Kumamoto","name_ko":"미노루 식당 아뮤플라자 구마모토점","name_ja":"みのる食堂 アミュプラザくまもと店","cat":"food","note":"熊本駅 · 熊本縣産食材定食","note_en":"Kumamoto Stn · Set meal with Kumamoto-grown produce","note_ko":"구마모토역 · 구마모토 현산 식재료 정식","note_ja":"熊本駅・熊本県産食材定食","restaurant":"みのる食堂 アミュプラザくまもと店","map":"https://www.google.com/maps/search/?api=1&query=みのる食堂+アミュプラザくまもと","reservation":false}
     ]},
     {"date":"2026-04-05","city":"太宰府+柳川","events":[
       {"sh":7,"eh":7.25,"name":"⏰ 起床+梳洗","name_en":"⏰ Wake up+freshen up","name_ko":"⏰ 기상+세면","name_ja":"⏰ 起床+身支度","cat":"personal","note":"朋友8:00來接","note_en":"Friend picks up at 8:00","note_ko":"친구 8:00 픽업","note_ja":"友人8:00迎え"},
       {"sh":7.25,"eh":8,"name":"🍳 早餐","name_en":"🍳 Breakfast","name_ko":"🍳 아침식사","name_ja":"🍳 朝食","cat":"food","note":"熊本旅館附近或便利商店 · 車上吃","note_en":"Near Kumamoto hotel or convenience store · Eat in car","note_ko":"구마모토 숙소 근처 또는 편의점 · 차에서","note_ja":"熊本宿近くまたはコンビニ・車内で"},
-      {"sh":8,"eh":9.5,"name":"朋友從熊本送到福岡","name_en":"Friend drives from Kumamoto to Fukuoka","name_ko":"친구가 구마모토에서 후쿠오카로","name_ja":"友人が熊本から福岡まで送迎","cat":"transport","note":"熊本→福岡 約1.5hr","note_en":"Kumamoto→Fukuoka ~1.5hr","note_ko":"구마모토→후쿠오카 약 1.5시간","note_ja":"熊本→福岡 約1.5時間"},
-      {"sh":10,"eh":12,"name":"太宰府天滿宮+參道","name_en":"Dazaifu Tenmangu+Approach","name_ko":"다자이후 텐만구+참배길","name_ja":"太宰府天満宮+参道","cat":"attraction","note":"🔄隈研吾Starbucks+光明禪寺","note_en":"🔄Kengo Kuma Starbucks+Komyozenji","note_ko":"🔄쿠마 켄고 스타벅스+고묘젠지","note_ja":"🔄隈研吾スタバ+光明禅寺"},
-      {"sh":13.5,"eh":16.5,"name":"柳川遊船","name_en":"Yanagawa River Cruise","name_ko":"야나가와 뱃놀이","name_ja":"柳川川下り","cat":"attraction","note":"西鐵套票¥3,340 · ~70min","note_en":"Nishitetsu pass ¥3,340 · ~70min","note_ko":"니시테츠 패스 ¥3,340 · ~70분","note_ja":"西鉄きっぷ¥3,340 · ~70分"},
-      {"sh":16.5,"eh":17.5,"name":"🔄鰻魚飯","name_en":"🔄Unagi Rice","name_ko":"🔄장어덮밥","name_ja":"🔄うなぎ丼","cat":"food","note":"六久/皿屋福龍","note_en":"Rokkyu/Saraya Fukuryu","note_ko":"로쿠/사라야 후쿠류","note_ja":"六久/皿屋福龍","restaurant":"六久（ろっきゅう）or 皿屋福龍","map":"https://www.google.com/maps/search/?api=1&query=柳川+うなぎ+六久","reservation":false},
-      {"sh":18.5,"eh":19.5,"name":"回福岡","name_en":"Return to Fukuoka","name_ko":"후쿠오카 복귀","name_ja":"福岡へ戻る","cat":"transport","note":""},
-      {"sh":20,"eh":21,"name":"福岡住宿check-in","name_en":"Fukuoka Hotel Check-in","name_ko":"후쿠오카 숙소 체크인","name_ja":"福岡ホテルチェックイン","cat":"hotel","note":""}
+      {"sh":11,"eh":12,"name":"出發→柳川","name_en":"Depart→Yanagawa","name_ko":"출발→야나가와","name_ja":"出発→柳川","cat":"transport","note":"從熊本出發 · 西鐵電車約1hr","note_en":"Depart from Kumamoto · Nishitetsu ~1hr","note_ko":"구마모토 출발 · 니시테츠 약 1시간","note_ja":"熊本から出発・西鉄電車約1時間"},
+      {"sh":12,"eh":13.5,"name":"🍱 本吉屋 柳川鰻魚飯","name_en":"🍱 Motoyoshiya Yanagawa Unaju","name_ko":"🍱 모토요시야 야나가와 장어덮밥","name_ja":"🍱 本吉屋 柳川うな重","cat":"food","note":"創業1681年老舖 · 蒸籠鰻魚飯 · 需預約","note_en":"Est. 1681 · Steamed unagi rice · Reservation recommended","note_ko":"1681년 창업 노포 · 찜통 장어덮밥 · 예약 권장","note_ja":"創業1681年老舗・せいろ蒸し・要予約","restaurant":"本吉屋（もとよしや）","map":"https://www.google.com/maps/search/?api=1&query=本吉屋+柳川","reservation":"needed"},
+      {"sh":14,"eh":16,"name":"柳川賞船（川下り）","name_en":"Yanagawa River Cruise","name_ko":"야나가와 배 유람","name_ja":"柳川川下り","cat":"attraction","note":"~70min · ¥1,800 · 船頭撐篙穿越水門","note_en":"~70min · ¥1,800 · Punter through water gates","note_ko":"~70분 · ¥1,800 · 사공이 수문 통과","note_ja":"~70分・¥1,800・船頭が水門をくぐる"},
+      {"sh":16.5,"eh":17.5,"name":"前往太宰府","name_en":"Travel to Dazaifu","name_ko":"다자이후로 이동","name_ja":"太宰府へ移動","cat":"transport","note":"西鐵 柳川→二日市→太宰府","note_en":"Nishitetsu Yanagawa→Futsukaichi→Dazaifu","note_ko":"니시테츠 야나가와→후쓰카이치→다자이후","note_ja":"西鉄 柳川→二日市→太宰府"},
+      {"sh":17.5,"eh":19,"name":"太宰府天滿宮+參道","name_en":"Dazaifu Tenmangu+Approach","name_ko":"다자이후 텐만구+참배길","name_ja":"太宰府天満宮+参道","cat":"attraction","note":"隈研吾Starbucks+光明禪寺+梅ヶ枝餅","note_en":"Kengo Kuma Starbucks+Komyozenji+Umegaemochi","note_ko":"쿠마 켄고 스타벅스+고묘젠지+우메가에모치","note_ja":"隈研吾スタバ+光明禅寺+梅ヶ枝餅"},
+      {"sh":19.5,"eh":20.5,"name":"回福岡","name_en":"Return to Fukuoka","name_ko":"후쿠오카 복귀","name_ja":"福岡へ戻る","cat":"transport","note":"太宰府→天神 西鐵 ~30min","note_en":"Dazaifu→Tenjin Nishitetsu ~30min","note_ko":"다자이후→텐진 니시테츠 ~30분","note_ja":"太宰府→天神 西鉄 ~30分"},
+      {"sh":21,"eh":22,"name":"福岡住宿check-in","name_en":"Fukuoka Hotel Check-in","name_ko":"후쿠오카 숙소 체크인","name_ja":"福岡ホテルチェックイン","cat":"hotel","note":"博多区千代２丁目２１−２９","note_en":"2-21-29 Chiyo, Hakata-ku, Fukuoka","note_ko":"후쿠오카시 하카타구 치요 2-21-29","note_ja":"福岡市博多区千代2丁目21-29","map":"https://www.google.com/maps/search/?api=1&query=福岡市博多区千代2丁目21-29"}
     ]},
-    {"date":"2026-04-06","city":"糸島","events":[
-      {"sh":7.5,"eh":7.75,"name":"⏰ 起床+梳洗","name_en":"⏰ Wake up+freshen up","name_ko":"⏰ 기상+세면","name_ja":"⏰ 起床+身支度","cat":"personal","note":"","note_en":"","note_ko":"","note_ja":""},
-      {"sh":7.75,"eh":8.5,"name":"🍳 早餐","name_en":"🍳 Breakfast","name_ko":"🍳 아침식사","name_ja":"🍳 朝食","cat":"food","note":"天神附近咖啡廳或便利商店 · ~¥500","note_en":"Café or convenience store near Tenjin · ~¥500","note_ko":"텐진 근처 카페 또는 편의점 · ~¥500","note_ja":"天神近くのカフェまたはコンビニ · ~¥500"},
-      {"sh":9,"eh":10,"name":"JR筑前前原站→糸島","name_en":"JR to Maebaru Stn→Itoshima","name_ko":"JR 치쿠젠마에바루역→이토시마","name_ja":"JR筑前前原駅→糸島","cat":"transport","note":"天神→筑前前原 JR ~35min ¥580","note_en":"Tenjin→Maebaru JR ~35min ¥580","note_ko":"텐진→마에바루 JR ~35분 ¥580","note_ja":"天神→筑前前原 JR ~35分 ¥580"},
-      {"sh":10,"eh":11.5,"name":"櫻井二見浦 夫婦岩","name_en":"Sakurai Futamigaura Meoto-Iwa","name_ko":"사쿠라이 후타미가우라 부부바위","name_ja":"桜井二見ヶ浦 夫婦岩","cat":"attraction","note":"白色鳥居+海上夫婦岩 · IG打卡聖地","note_en":"White torii+seaside twin rocks · IG famous","note_ko":"흰색 도리이+바다 부부바위 · 인스타 명소","note_ja":"白い鳥居+海上夫婦岩・インスタ映え"},
-      {"sh":11.5,"eh":13,"name":"糸島海岸咖啡 PALM BEACH","name_en":"Itoshima Coast Cafe PALM BEACH","name_ko":"이토시마 해안 카페 PALM BEACH","name_ja":"糸島海岸カフェ PALM BEACH","cat":"cafe","note":"海景露台座位 · 鬆餅+咖啡","note_en":"Ocean view terrace · Pancakes+coffee","note_ko":"오션뷰 테라스 · 팬케이크+커피","note_ja":"海のテラス席・パンケーキ+コーヒー"},
-      {"sh":13,"eh":14.5,"name":"糸島午餐：牡蠣小屋","name_en":"Itoshima Lunch: Oyster Hut","name_ko":"이토시마 점심: 굴 오두막","name_ja":"糸島ランチ：牡蠣小屋","cat":"food","note":"冬春限定 · 炭烤牡蠣吃到飽","note_en":"Winter-spring only · Grilled oyster buffet","note_ko":"겨울-봄 한정 · 숯불 굴 무한리필","note_ja":"冬春限定・炭火焼き牡蠣食べ放題","restaurant":"糸島 牡蠣小屋","map":"https://www.google.com/maps/search/?api=1&query=糸島+牡蠣小屋","reservation":false},
-      {"sh":15,"eh":16.5,"name":"#ジハングン+天使の羽","name_en":"#Jihangun+Angel Wings","name_ko":"#지항군+천사의 날개","name_ja":"#ジハングン+天使の羽","cat":"attraction","note":"海邊藝術裝置 · 拍照景點","note_en":"Seaside art installations · Photo spots","note_ko":"해변 예술 조형물 · 사진 명소","note_ja":"海辺アートオブジェ・撮影スポット"},
-      {"sh":16.5,"eh":17.5,"name":"糸島夕陽+回程","name_en":"Itoshima Sunset+Return","name_ko":"이토시마 석양+귀환","name_ja":"糸島夕日+帰路","cat":"attraction","note":"海岸線夕陽 → JR回天神","note_en":"Coastline sunset → JR back to Tenjin","note_ko":"해안선 석양 → JR로 텐진 복귀","note_ja":"海岸線の夕日→JRで天神へ"},
-      {"sh":19,"eh":21,"name":"中洲屋台（博多拉麵）","name_en":"Nakasu Yatai (Hakata Ramen)","name_ko":"나카스 야타이 (하카타 라멘)","name_ja":"中洲屋台（博多ラーメン）","cat":"food","note":"現金限定","note_en":"Cash only","note_ko":"현금만 가능","note_ja":"現金のみ","restaurant":"中洲屋台（なかす屋台）","map":"https://www.google.com/maps/search/?api=1&query=中洲屋台+福岡","reservation":false}
+    {"date":"2026-04-06","city":"福岡","events":[
+      {"sh":10,"eh":10.25,"name":"⏰ 起床+梳洗","name_en":"⏰ Wake up+freshen up","name_ko":"⏰ 기상+세면","name_ja":"⏰ 起床+身支度","cat":"personal","note":"","note_en":"","note_ko":"","note_ja":""},
+      {"sh":10.5,"eh":12,"name":"🥞 White Glass Coffee 早午餐","name_en":"🥞 White Glass Coffee Brunch","name_ko":"🥞 White Glass Coffee 브런치","name_ja":"🥞 White Glass Coffee ブランチ","cat":"cafe","note":"大名 · 綠意盎然空間 · 早午餐招牌 · ~¥1,500","note_en":"Daimyo · Lush botanical interior · Brunch specialty · ~¥1,500","note_ko":"다이묘 · 녹음이 우거진 공간 · 브런치 명소 · ~¥1,500","note_ja":"大名・緑豊かな空間・ブランチ専門・~¥1,500","restaurant":"White Glass Coffee","map":"https://www.google.com/maps/search/?api=1&query=White+Glass+Coffee+福岡大名","reservation":false},
+      {"sh":12,"eh":13.5,"name":"大名逛街：HIGHTIDE + Saturday's NYC + ON SUGAR","name_en":"Daimyo stroll: HIGHTIDE + Saturday's NYC + ON SUGAR","name_ko":"다이묘 쇼핑: HIGHTIDE + Saturday's NYC + ON SUGAR","name_ja":"大名散策：HIGHTIDE + Saturday's NYC + ON SUGAR","cat":"shopping","note":"HIGHTIDE STORE 文具選物 · Saturday's NYC 衝浪潮牌 · ON SUGAR 超人氣甜甜圈","note_en":"HIGHTIDE STORE stationery · Saturday's NYC surf select · ON SUGAR famous donuts","note_ko":"HIGHTIDE STORE 문구 · Saturday's NYC 서핑 셀렉트 · ON SUGAR 인기 도넛","note_ja":"HIGHTIDE STORE文具セレクト・Saturday's NYC サーフセレクト・ON SUGAR人気ドーナツ","map":"https://www.google.com/maps/search/?api=1&query=大名+福岡+セレクトショップ"},
+      {"sh":13.5,"eh":14.5,"name":"☕ NO COFFEE","name_en":"☕ NO COFFEE","name_ko":"☕ NO COFFEE","name_ja":"☕ NO COFFEE","cat":"cafe","note":"大名 · 福岡街頭潮流咖啡代表 · 必拍打卡點 · 帽子/Tee周邊","note_en":"Daimyo · Fukuoka's iconic street coffee · Must-shoot photo spot · Merch hats & tees","note_ko":"다이묘 · 후쿠오카 스트리트 커피 대표 · 필수 포토 스팟 · 굿즈 모자/티셔츠","note_ja":"大名・福岡ストリートコーヒーの代表格・撮影スポット・グッズ帽子/Tシャツ","restaurant":"NO COFFEE","map":"https://www.google.com/maps/search/?api=1&query=NO+COFFEE+福岡大名","reservation":false},
+      {"sh":14.5,"eh":16,"name":"薬院散步：Taine + REC COFFEE","name_en":"Yakuin stroll: Taine + REC COFFEE","name_ko":"야쿠인 산책: Taine + REC COFFEE","name_ja":"薬院散策：Taine + REC COFFEE","cat":"shopping","note":"Taine 花藝・咖啡・服飾選物 · REC COFFEE 世界拉花冠軍 · 天神→薬院步行15min","note_en":"Taine flowers + coffee + fashion select · REC COFFEE world latte art champion · Tenjin→Yakuin 15min walk","note_ko":"Taine 꽃+커피+패션 셀렉트 · REC COFFEE 세계 라떼아트 챔피언 · 텐진→야쿠인 도보 15분","note_ja":"Taine花+コーヒー+ファッションセレクト・REC COFFEE世界ラテアートチャンピオン・天神→薬院徒歩15分","map":"https://www.google.com/maps/search/?api=1&query=REC+COFFEE+福岡薬院"},
+      {"sh":16,"eh":18.5,"name":"💻 咖啡廳工作時間","name_en":"💻 Work at café","name_ko":"💻 카페 근무 시간","name_ja":"💻 カフェ作業タイム","cat":"work","note":"薬院/天神 · REC COFFEE 或 FILTER SUPPLY · 插座+WiFi","note_en":"Yakuin/Tenjin · REC COFFEE or FILTER SUPPLY · outlet+WiFi","note_ko":"야쿠인/텐진 · REC COFFEE 또는 FILTER SUPPLY · 콘센트+WiFi","note_ja":"薬院/天神・REC COFFEEまたはFILTER SUPPLY・コンセント+WiFi"},
+      {"sh":19,"eh":20.5,"name":"🍕 L'Antica Pizzeria da Michele","name_en":"🍕 L'Antica Pizzeria da Michele","name_ko":"🍕 란티카 피체리아 다 미켈레","name_ja":"🍕 ランティカ ピッツェリア ダ ミケーレ","cat":"food","note":"大名 · 拿坡里正統披薩 · 不需預約 · ~¥1,500","note_en":"Daimyo · Authentic Neapolitan pizza · No reservation · ~¥1,500","note_ko":"다이묘 · 정통 나폴리 피자 · 예약 불필요 · ~¥1,500","note_ja":"大名・本格ナポリピッツァ・予約不要・~¥1,500","restaurant":"L'Antica Pizzeria da Michele","map":"https://www.google.com/maps/search/?api=1&query=L'Antica+Pizzeria+da+Michele+福岡大名","reservation":false}
     ]},
     {"date":"2026-04-07","city":"福岡","events":[
       {"sh":8.5,"eh":8.75,"name":"⏰ 起床+梳洗","name_en":"⏰ Wake up+freshen up","name_ko":"⏰ 기상+세면","name_ja":"⏰ 起床+身支度","cat":"personal","note":"","note_en":"","note_ko":"","note_ja":""},
       {"sh":8.75,"eh":9.5,"name":"🍳 早餐","name_en":"🍳 Breakfast","name_ko":"🍳 아침식사","name_ja":"🍳 朝食","cat":"food","note":"天神咖啡廳 · ~¥500","note_en":"Tenjin café · ~¥500","note_ko":"텐진 카페 · ~¥500","note_ja":"天神カフェ · ~¥500"},
-      {"sh":10,"eh":18,"name":"💼 Engineer/Startup Cafe工作","name_en":"💼 Work at Engineer/Startup Cafe","name_ko":"💼 엔지니어/스타트업 카페 근무","name_ja":"💼 エンジニア/スタートアップカフェで仕事","cat":"work","note":"台灣09:00-17:00","note_en":"Taiwan 09:00-17:00","note_ko":"대만 09:00-17:00","note_ja":"台湾 09:00-17:00"},
-      {"sh":19,"eh":20.5,"name":"西公園夜櫻","name_en":"Nishi Park Night Cherry Blossom","name_ko":"니시공원 야간 벚꽃","name_ja":"西公園夜桜","cat":"attraction","note":"免費 百大櫻花名所","note_en":"Free, Top 100 Cherry Blossom Spot","note_ko":"무료 100대 벚꽃 명소","note_ja":"無料 桜百選"}
+      {"sh":10,"eh":18,"name":"💼 工作","name_en":"💼 Work","name_ko":"💼 근무","name_ja":"💼 仕事","cat":"work","note":""},
+      {"sh":19,"eh":21,"name":"晚餐（未定）","name_en":"Dinner (TBD)","name_ko":"저녁식사 (미정)","name_ja":"夕食（未定）","cat":"food","note":"天神/大名 · 未定","note_en":"Tenjin/Daimyo · TBD","note_ko":"텐진/다이묘 · 미정","note_ja":"天神/大名・未定"}
     ]},
     {"date":"2026-04-08","city":"福岡","events":[
       {"sh":8.5,"eh":8.75,"name":"⏰ 起床+梳洗","name_en":"⏰ Wake up+freshen up","name_ko":"⏰ 기상+세면","name_ja":"⏰ 起床+身支度","cat":"personal","note":"","note_en":"","note_ko":"","note_ja":""},
@@ -196,7 +208,7 @@
     {"date":"2026-04-12","city":"福岡","events":[
       {"sh":6.5,"eh":6.75,"name":"⏰ 起床+梳洗","name_en":"⏰ Wake up+freshen up","name_ko":"⏰ 기상+세면","name_ja":"⏰ 起床+身支度","cat":"personal","note":"回家日！飛機10:25","note_en":"Going home! Flight 10:25","note_ko":"귀국일! 비행기 10:25","note_ja":"帰国日！フライト10:25"},
       {"sh":6.75,"eh":7.5,"name":"🍳 早餐","name_en":"🍳 Breakfast","name_ko":"🍳 아침식사","name_ja":"🍳 朝食","cat":"food","note":"旅館附近或機場吃 · ~¥500","note_en":"Near hotel or at airport · ~¥500","note_ko":"숙소 근처 또는 공항 · ~¥500","note_ja":"宿近くまたは空港 · ~¥500"},
-      {"sh":7.5,"eh":8,"name":"Check-out","name_en":"Check-out","name_ko":"체크아웃","name_ja":"チェックアウト","cat":"hotel","note":""},
+      {"sh":7.5,"eh":8,"name":"Check-out","name_en":"Check-out","name_ko":"체크아웃","name_ja":"チェックアウト","cat":"hotel","note":"博多区千代２丁目２１−２９","note_en":"2-21-29 Chiyo, Hakata-ku","note_ko":"하카타구 치요 2-21-29","note_ja":"博多区千代2-21-29"},
       {"sh":8,"eh":8.5,"name":"地鐵→福岡空港","name_en":"Subway→Fukuoka Airport","name_ko":"지하철→후쿠오카 공항","name_ja":"地下鉄→福岡空港","cat":"transport","note":"5min ¥260"},
       {"sh":8.5,"eh":9,"name":"轉接駁巴士到國際線","name_en":"Shuttle Bus to Int'l Terminal","name_ko":"국제선 셔틀버스 환승","name_ja":"国際線シャトルバスに乗換","cat":"transport","note":""},
       {"sh":10.42,"eh":12.92,"name":"✈️ IT241 FUK→TPE","name_en":"✈️ IT241 FUK→TPE","name_ko":"✈️ IT241 FUK→TPE","name_ja":"✈️ IT241 FUK→TPE","cat":"transport","note":"10:25起飛(JP) · 11:55抵達桃園(TW) · 實飛2h30m","note_en":"10:25 depart (JP) · 11:55 arrive TPE (TW) · 2h30m flight","note_ko":"10:25 출발(JP) · 11:55 타오위안 도착(TW) · 2시간30분","note_ja":"10:25出発(JP) · 11:55桃園着(TW) · 2h30m"}
@@ -218,7 +230,6 @@
       {"name":"阿蘇/熊本餐飲（朋友開車免交通）","name_en":"Aso/Kumamoto Dining (friend drives, no transport)","name_ko":"아소/구마모토 식비 (친구 운전, 교통비 없음)","name_ja":"阿蘇/熊本食費（友人運転、交通費なし）","city":"aso","cat":"food","cost_twd":800,"checked":false},
       {"name":"🏨 福岡住宿 ~7晚","name_en":"🏨 Fukuoka Hotel ~7 nights","name_ko":"🏨 후쿠오카 숙소 ~7박","name_ja":"🏨 福岡宿泊 ~7泊","city":"fukuoka","cat":"hotel","cost_twd":8490,"checked":false},
       {"name":"太宰府+柳川西鐵套票（¥3,340）","name_en":"Dazaifu+Yanagawa Nishitetsu Pass (¥3,340)","name_ko":"다자이후+야나가와 니시테츠 패스 (¥3,340)","name_ja":"太宰府+柳川西鉄きっぷ（¥3,340）","city":"fukuoka","cat":"attraction","cost_twd":668,"checked":false},
-      {"name":"高千穗峽 Klook tour","name_en":"Takachiho Gorge Klook Tour","name_ko":"다카치호 협곡 클룩 투어","name_ja":"高千穂峡 Klookツアー","city":"fukuoka","cat":"attraction","cost_twd":1877,"checked":false,"purchased":true},
       {"name":"福岡交通（IC卡等）","name_en":"Fukuoka Transport (IC card etc.)","name_ko":"후쿠오카 교통 (IC카드 등)","name_ja":"福岡交通（ICカード等）","city":"fukuoka","cat":"transport","cost_twd":1500,"checked":false},
       {"name":"福岡餐飲（8天 屋台+居酒屋等）","name_en":"Fukuoka Dining (8 days, yatai+izakaya)","name_ko":"후쿠오카 식비 (8일, 야타이+이자카야)","name_ja":"福岡食費（8日間 屋台+居酒屋等）","city":"fukuoka","cat":"food","cost_twd":5000,"checked":false},
       {"name":"Visit Busan Pass 24hr","name_en":"Visit Busan Pass 24hr","name_ko":"비짓부산패스 24시간","name_ja":"Visit Busan Pass 24時間","city":"busan","cat":"attraction","cost_twd":1167,"checked":false,"purchased":true},
@@ -246,6 +257,35 @@
         {"name":"晚餐","cat":"food","cost_twd":399,"city":"busan"},
         {"name":"汗蒸幕飲料","cat":"food","cost_twd":120,"city":"busan"},
         {"name":"便利超商","cat":"food","cost_twd":202,"city":"busan"}
+      ]},
+      {"date":"2026-04-02","items":[
+        {"name":"早餐","cat":"food","cost_twd":146,"city":"busan"},
+        {"name":"海帶布偶","cat":"shopping","cost_twd":404,"city":"busan"},
+        {"name":"似顏繪","cat":"attraction","cost_twd":180,"city":"busan"},
+        {"name":"咖啡廳","cat":"cafe","cost_twd":120,"city":"busan"},
+        {"name":"伴手禮 Busan bada","cat":"shopping","cost_twd":415,"city":"busan"},
+        {"name":"晚餐","cat":"food","cost_twd":220,"city":"busan"},
+        {"name":"沐浴乳洗髮精牙膏","cat":"shopping","cost_twd":451,"city":"busan"},
+        {"name":"超商","cat":"food","cost_twd":106,"city":"busan"}
+      ]},
+      {"date":"2026-04-03","items":[
+        {"name":"咖啡","cat":"cafe","cost_twd":45,"city":"busan"},
+        {"name":"餐廳","cat":"food","cost_twd":212,"city":"busan"},
+        {"name":"Locker（行李寄放）","cat":"transport","cost_twd":63,"city":"busan"},
+        {"name":"吊飾","cat":"shopping","cost_twd":310,"city":"busan"},
+        {"name":"外套","cat":"shopping","cost_twd":1985,"city":"busan"},
+        {"name":"便利超商","cat":"food","cost_twd":357,"city":"busan"},
+        {"name":"晚餐（渡輪上）","cat":"food","cost_twd":275,"city":"busan"},
+        {"name":"雜貨店","cat":"shopping","cost_twd":830,"city":"busan"}
+      ]},
+      {"date":"2026-04-04","items":[
+        {"name":"午餐","cat":"food","cost_twd":850,"city":"aso"},
+        {"name":"晚餐","cat":"food","cost_twd":450,"city":"aso"}
+      ]},
+      {"date":"2026-04-05","items":[
+        {"name":"午餐","cat":"food","cost_twd":1270,"city":"fukuoka"},
+        {"name":"御守（太宰府天滿宮）","cat":"attraction","cost_twd":1000,"city":"fukuoka"},
+        {"name":"晚餐","cat":"food","cost_twd":320,"city":"fukuoka"}
       ]}
     ]
   },
@@ -423,14 +463,16 @@
         "dates": "4/5–4/12",
         "price": "~NT$8,000",
         "price_twd": 8000,
-        "status": "pending"
+        "status": "confirmed",
+        "address": "〒812-0044 福岡県福岡市博多区千代２丁目２１−２９",
+        "maps": "https://www.google.com/maps/search/?api=1&query=福岡市博多区千代2丁目21-29",
+        "note": "博多区千代 · 近中洲川端/千代県庁口"
       }
     ],
     "comparison": [
       {"id":"cmp1","name":"釜山塔","name_note":"龍頭山公園展望台","prices":{"official":"₩12,000","klook":"₩12,000","kkday":"₩7,200"},"best":"kkday","verdict_i18n":"booking_kkday_save"},
       {"id":"cmp2","name":"Busan X the Sky","name_note":"海雲台展望台","prices":{"official":"₩27,000","klook":"₩27,000","kkday":"₩27,000"},"best":null,"verdict_i18n":"booking_same_price"},
       {"id":"cmp3","name":"熊本城","name_note":"夜間櫻花照明 春季限定","prices":{"official":"¥800","klook":null,"kkday":null},"best":"official","verdict_i18n":"booking_buy_onsite"},
-      {"id":"cmp4","name":"高千穗峽 Klook一日遊","name_note":"4/11 含上色見熊野+天岩戶神社","prices":{"official":null,"klook":"NT$1,877","kkday":null},"best":"klook","verdict_i18n":"booking_klook_excl"},
       {"id":"cmp5","name":"太宰府+柳川 西鐵套票","name_note":"含電車+遊船 省¥1,700","prices":{"official":"¥3,340","klook":null,"kkday":null},"best":"official","verdict_i18n":"booking_official_best"},
       {"id":"cmp6","name":"Visit Busan Pass 24hr","name_note":"₩55,000 含多景點","prices":{"official":"₩55,000","klook":"₩55,000","kkday":"₩55,000"},"best":null,"verdict_i18n":"booking_pass_not_worth"}
     ],
