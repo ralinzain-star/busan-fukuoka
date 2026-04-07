@@ -87,7 +87,7 @@ function initCover() {
 }
 
 // ── Tab switching ──
-const TAB_IDS = ['attractions','calendar','booking','budget','time','checklist'];
+const TAB_IDS = ['attractions','calendar','booking','budget','time','checklist','retro'];
 
 function showTab(id) {
   // If already on this tab, do nothing
@@ -109,12 +109,13 @@ function showTab(id) {
 
   // Highlight More button if a More-menu tab is active
   var moreBtn = document.getElementById('bb-more-btn');
-  var moreTabIds = ['budget', 'checklist'];
+  var moreTabIds = ['budget', 'checklist', 'retro'];
   if (moreBtn) moreBtn.classList.toggle('has-active', moreTabIds.indexOf(id) !== -1);
 
   if (id === 'budget') renderBudget();
   if (id === 'attractions') renderOverviewExtras();
   if (id === 'time' && leafletMap) leafletMap.invalidateSize();
+  if (id === 'retro') { renderRetro(); setTimeout(function() { if (retroMap) retroMap.invalidateSize(); }, 200); }
 }
 
 function initTabs() {
@@ -133,10 +134,9 @@ function initTabs() {
     });
     // More menu item clicks (tab switches)
     moreMenu.querySelectorAll('.bb-more-item[data-tab]').forEach(function(btn) {
-      btn.addEventListener('click', function(e) {
-        e.stopPropagation();
-        showTab(btn.dataset.tab);
+      btn.addEventListener('click', function() {
         moreMenu.classList.remove('open');
+        showTab(btn.dataset.tab);
       });
     });
   }
@@ -267,6 +267,7 @@ function renderPOIs(filter) {
         '<div class="poi-meta"><span class="mi" style="font-size:13px">location_on</span> ' + getCityLabel(p.city) + ' · ' + p.addr + '</div>' +
         '<div class="poi-meta"><span class="mi" style="font-size:13px">schedule</span> ' + p.hours + ' · <span class="mi" style="font-size:13px">payments</span> ' + price + '</div>' +
         '<div class="poi-meta">' + p.desc + '</div>' +
+        (p.dining && p.dining.party_label ? '<span class="poi-dining-badge ' + (p.dining.solo_friendly ? 'solo-ok' : 'warning') + '">' + p.dining.party_label + '</span>' : '') +
       '</div>' +
     '</div>';
   }).join('');
@@ -550,7 +551,19 @@ function renderBudgetActual() {
   }).join('');
 
   document.getElementById('items-list-wrap').innerHTML = html;
-  document.getElementById('stat-total').textContent = fmtCurr(TRIP.budget.items.reduce(function(s, i) { return s + i.cost_twd; }, 0));
+  // Stats bar: show actual spending, or "–" if no actual data
+  var actualTotal = getActualTotal();
+  document.getElementById('stat-total').textContent = actualTotal > 0 ? fmtCurr(actualTotal) : '–';
+  var dailyAvg = document.querySelector('.st:nth-child(3) .st-val');
+  if (dailyAvg) {
+    if (actualTotal > 0) {
+      var flightHotel = TRIP.budget.items.filter(function(i) { return i.cat === 'transport' || i.cat === 'hotel'; }).reduce(function(s, i) { return s + (i.purchased ? i.cost_twd : 0); }, 0);
+      var days = TRIP.schedule.length || 14;
+      dailyAvg.textContent = '~' + fmtCurr(Math.round((actualTotal - flightHotel) / days));
+    } else {
+      dailyAvg.textContent = '–';
+    }
+  }
 }
 
 function initCurrency() {
@@ -1407,6 +1420,13 @@ const I18N = {
   nav_budget:      { zh:'旅費', en:'Expenses', ko:'경비', ja:'旅費' },
   nav_time:        { zh:'景點', en:'Spots', ko:'명소', ja:'スポット' },
   nav_checklist:   { zh:'清單', en:'List', ko:'목록', ja:'リスト' },
+  nav_retro:       { zh:'回顧', en:'Retro', ko:'회고', ja:'振り返り' },
+  title_retro:     { zh:'旅後回顧', en:'Trip Retrospective', ko:'여행 회고', ja:'旅の振り返り' },
+  retro_subtitle:  { zh:'Trip Retrospective', en:'Trip Retrospective', ko:'Trip Retrospective', ja:'Trip Retrospective' },
+  retro_map_title: { zh:'足跡地圖', en:'Footprint Map', ko:'발자국 지도', ja:'足跡マップ' },
+  retro_budget_title: { zh:'預算回顧', en:'Budget Review', ko:'예산 리뷰', ja:'予算レビュー' },
+  retro_review_title: { zh:'旅程回顧', en:'Trip Review', ko:'여행 리뷰', ja:'旅の振り返り' },
+  retro_next_title: { zh:'下次旅行', en:'Next Trip', ko:'다음 여행', ja:'次の旅' },
   nav_lang:        { zh:'語言', en:'Lang', ko:'언어', ja:'言語' },
   nav_more:        { zh:'更多', en:'More', ko:'더보기', ja:'その他' },
 
@@ -1453,7 +1473,7 @@ const I18N = {
   },
 
   // ── Stats labels ──
-  stat_total:     { zh:'預估總費用', en:'Est. Total', ko:'총 예상 비용', ja:'総費用（税込）' },
+  stat_total:     { zh:'實際花費', en:'Total Spent', ko:'총 지출', ja:'実際の費用' },
   stat_total_sub: { zh:'含機酒', en:'incl. flights & hotel', ko:'항공+숙박 포함', ja:'航空券・宿泊込' },
   stat_pois:      { zh:'景點數量', en:'Spots', ko:'명소 수', ja:'スポット数' },
   stat_pois_sub:  { zh:'3 個城市', en:'3 cities', ko:'3개 도시', ja:'3都市' },
@@ -1717,6 +1737,7 @@ function applyLang() {
   safe('updateClocks', updateClocks);
   safe('renderChecklist', renderChecklist);
   safe('renderEntryForms', renderEntryForms);
+  safe('renderRetro', renderRetro);
 }
 
 function createLangMenu(anchor, position) {
@@ -1767,8 +1788,10 @@ function initLangToggle() {
 function renderToday() {
   const overlay = document.getElementById('today-overlay');
   if (!overlay || !TRIP) return;
-  // Lock body scroll while overlay is visible
-  document.body.classList.add('overlay-open');
+  // Lock body scroll only if overlay is actually visible (not dismissed)
+  if (!overlay.classList.contains('hidden')) {
+    document.body.classList.add('overlay-open');
+  }
 
   const now = new Date();
   const today = now.getFullYear() + '-' + String(now.getMonth()+1).padStart(2,'0') + '-' + String(now.getDate()).padStart(2,'0');
@@ -2044,6 +2067,262 @@ function uploadTodayPhoto(input) {
   reader.readAsDataURL(file);
 }
 
+// ── Actual spending helper ──
+function getActualTotal() {
+  if (!TRIP || !TRIP.budget) return 0;
+  var purchased = TRIP.budget.items.filter(function(i) { return i.purchased; }).reduce(function(s, i) { return s + i.cost_twd; }, 0);
+  var daily = (TRIP.budget.actual_expenses || []).reduce(function(s, day) {
+    return s + day.items.reduce(function(ss, i) { return ss + i.cost_twd; }, 0);
+  }, 0);
+  return purchased + daily;
+}
+
+// ── Retro tab ──
+var retroMap;
+function renderRetro() {
+  if (!TRIP || !TRIP.retro) return;
+  var R = TRIP.retro;
+  var currentCity = R.cities[0].id;
+
+  // City pills
+  var pillsEl = document.getElementById('retro-city-pills');
+  if (pillsEl) {
+    pillsEl.innerHTML = R.cities.map(function(c, i) {
+      var label = c.name[currentLang] || c.name.zh;
+      return '<button class="retro-city-pill' + (i === 0 ? ' on' : '') + '" data-city="' + c.id + '">' + label + ' (' + c.date_range + ')</button>';
+    }).join('');
+    if (!pillsEl._hasListener) {
+      pillsEl._hasListener = true;
+      pillsEl.addEventListener('click', function(e) {
+        var btn = e.target.closest('.retro-city-pill');
+        if (!btn) return;
+        pillsEl.querySelectorAll('.retro-city-pill').forEach(function(b) { b.classList.remove('on'); });
+        btn.classList.add('on');
+        renderRetroMap(btn.dataset.city);
+      });
+    }
+  }
+
+  // Map — only create if not already rendered (avoid re-creating on lang switch)
+  if (!retroMap) renderRetroMap(currentCity);
+
+  // Budget verdict — compute from real budget data
+  var verdictEl = document.getElementById('retro-budget-verdict');
+  var cardsEl = document.getElementById('retro-budget-cards');
+  if (verdictEl && TRIP.budget) {
+    var B = TRIP.budget;
+    var estimatedTotal = B.items.reduce(function(s,i){ return s + i.cost_twd; }, 0);
+    var actualTotal = getActualTotal();
+    var diff = actualTotal - estimatedTotal;
+    var isUnder = diff <= 0;
+    var diffLabel = isUnder ? ((currentLang==='zh'?'省了 ':'Saved ') + fmtCurr(Math.abs(diff))) : ((currentLang==='zh'?'超支 ':'Over by ') + fmtCurr(Math.abs(diff)));
+    var hasActual = actualTotal > 0;
+
+    verdictEl.innerHTML =
+      '<div class="retro-verdict-label">' + t('retro_budget_title') + '</div>' +
+      '<div class="retro-verdict-amount">' + (hasActual ? fmtCurr(actualTotal) : '–') + '</div>' +
+      (hasActual ? '<div class="retro-verdict-badge ' + (isUnder?'under':'over') + '">' + diffLabel + '</div>' : '') +
+      '<div class="retro-verdict-detail">' + (currentLang==='zh'?'實際':'Actual') + ': ' + (hasActual?fmtCurr(actualTotal):'–') + ' / ' + (currentLang==='zh'?'預估':'Est.') + ': ' + fmtCurr(estimatedTotal) + '</div>';
+
+    // Budget table — per-category estimated vs actual
+    if (cardsEl) {
+      var estByCat = {}, actByCat = {};
+      B.items.forEach(function(i) { estByCat[i.cat] = (estByCat[i.cat]||0) + i.cost_twd; });
+      B.items.forEach(function(i) { if (i.purchased) actByCat[i.cat] = (actByCat[i.cat]||0) + i.cost_twd; });
+      (B.actual_expenses||[]).forEach(function(day) {
+        day.items.forEach(function(i) { actByCat[i.cat] = (actByCat[i.cat]||0) + i.cost_twd; });
+      });
+
+      // Merge all categories from both estimated and actual
+      var allCats = {};
+      Object.keys(estByCat).forEach(function(c) { allCats[c] = true; });
+      Object.keys(actByCat).forEach(function(c) { allCats[c] = true; });
+      var catOrder = ['transport','hotel','attraction','food','shopping','cafe','other'];
+      var sortedCats = catOrder.filter(function(c) { return allCats[c]; });
+
+      var lbl = currentLang === 'zh';
+      var rows = sortedCats.map(function(cat) {
+        var est = estByCat[cat] || 0;
+        var act = actByCat[cat] || 0;
+        var diff = act - est;
+        var diffClass = diff <= 0 ? 'retro-diff-under' : 'retro-diff-over';
+        var pct = est > 0 ? Math.round(Math.abs(diff) / est * 100) : 0;
+        var diffText = diff === 0 ? '' : (diff < 0
+          ? '-' + pct + '%'
+          : '+' + (est > 0 ? pct + '%' : fmtCurr(diff)));
+        var actCell = act > 0 ? fmtCurr(act) : (hasActual ? '—' : '–');
+        if (hasActual && diffText && (est > 0 || act > 0)) {
+          actCell += '<div class="retro-diff-inline ' + diffClass + '">' + diffText + '</div>';
+        }
+        return '<tr>' +
+          '<td>' + getCatName(cat) + '</td>' +
+          '<td>' + (est > 0 ? fmtCurr(est) : '—') + '</td>' +
+          '<td>' + actCell + '</td>' +
+        '</tr>';
+      }).join('');
+
+      // Total row
+      var totalDiff = actualTotal - estimatedTotal;
+      var totalDiffClass = totalDiff <= 0 ? 'retro-diff-under' : 'retro-diff-over';
+      var totalPct = estimatedTotal > 0 ? Math.round(Math.abs(totalDiff) / estimatedTotal * 100) : 0;
+      var totalDiffText = totalDiff <= 0
+        ? '-' + totalPct + '% (' + fmtCurr(Math.abs(totalDiff)) + ')'
+        : '+' + totalPct + '% (' + fmtCurr(totalDiff) + ')';
+      var totalActCell = hasActual
+        ? '<strong>' + fmtCurr(actualTotal) + '</strong><div class="retro-diff-inline ' + totalDiffClass + '"><strong>' + totalDiffText + '</strong></div>'
+        : '<strong>–</strong>';
+
+      cardsEl.innerHTML = '<table class="retro-budget-table">' +
+        '<thead><tr>' +
+          '<th>' + (lbl ? '類別' : 'Category') + '</th>' +
+          '<th>' + (lbl ? '預估' : 'Estimated') + '</th>' +
+          '<th>' + (lbl ? '實際' : 'Actual') + '</th>' +
+        '</tr></thead><tbody>' + rows +
+        '<tr class="retro-total-row">' +
+          '<td><strong>' + (lbl ? '合計' : 'Total') + '</strong></td>' +
+          '<td><strong>' + fmtCurr(estimatedTotal) + '</strong></td>' +
+          '<td>' + totalActCell + '</td>' +
+        '</tr></tbody></table>';
+    }
+  }
+
+  // ── Section A: Trip Review (changelog table + lesson tags) ──
+  var reviewEl = document.getElementById('retro-review-changes');
+  var lessonsEl = document.getElementById('retro-review-lessons');
+
+  if (reviewEl && R.changelog) {
+    var isZh = currentLang === 'zh';
+    reviewEl.innerHTML = '<table class="retro-changes-table">' +
+      '<thead><tr>' +
+        '<th>' + (isZh ? '天' : 'Day') + '</th>' +
+        '<th>' + (isZh ? '修改內容' : 'Change') + '</th>' +
+        '<th>' + (isZh ? '原因' : 'Reason') + '</th>' +
+        '<th>' + (isZh ? '學到的' : 'Lesson') + '</th>' +
+      '</tr></thead><tbody>' +
+      R.changelog.map(function(c) {
+        var desc = isZh ? c.description : (c.description_en || c.description);
+        return '<tr>' +
+          '<td><div class="retro-change-day">Day ' + c.day + '</div><div class="retro-change-day">' + c.date.slice(5) + '</div></td>' +
+          '<td><span class="retro-change-dot ' + c.impact + '"></span><span class="retro-change-desc">' + desc + '</span></td>' +
+          '<td><span class="retro-change-reason">' + (isZh ? c.reason : (c.reason_en || c.reason)) + '</span></td>' +
+          '<td><span class="retro-change-lesson">' + (isZh ? c.lesson : (c.lesson_en || c.lesson)) + '</span></td>' +
+        '</tr>';
+      }).join('') +
+      '</tbody></table>';
+  }
+
+  if (lessonsEl && R.planning_lessons) {
+    var isZh = currentLang === 'zh';
+    lessonsEl.innerHTML = '<div style="font-size:.72rem;color:var(--text-3);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px">' +
+      (isZh ? '下次記得' : 'Remember next time') + '</div>' +
+      R.planning_lessons.map(function(l) {
+        var text = isZh ? l.zh : l.en;
+        return '<span class="retro-lesson-tag"><span class="mi material-symbols-outlined">lightbulb</span>' + text + '</span>';
+      }).join('');
+  }
+
+  // ── Section B: Next Trip — POIs in pois[] but NOT in any visited_pois ──
+  var nextEl = document.getElementById('retro-next');
+  if (nextEl) {
+    var isZh = currentLang === 'zh';
+    var catColors = { attraction:'var(--cat-attraction)', food:'var(--cat-food)', cafe:'var(--cat-cafe)', shopping:'var(--cat-shopping)' };
+
+    // Build set of all visited POI IDs
+    var visitedIds = new Set();
+    R.cities.forEach(function(c) { (c.visited_pois || []).forEach(function(id) { visitedIds.add(id); }); });
+
+    // Find POIs that exist in pois[] but were NOT visited
+    var skipCats = { hotel:1, transport:1 };
+    var missedPois = TRIP.pois.filter(function(p) {
+      if (skipCats[p.cat]) return false;
+      return !visitedIds.has(p.id);
+    });
+
+    // Enrich with suggestion from retro.missed_pois if available
+    var missedData = {};
+    (R.missed_pois || []).forEach(function(m) { missedData[m.id] = m; });
+
+    if (missedPois.length > 0) {
+      nextEl.innerHTML = '<div class="retro-next-header">' +
+        (isZh ? missedPois.length + ' 個景點下次可以去' : missedPois.length + ' spots for next time') + '</div>' +
+        missedPois.map(function(p) {
+          var extra = missedData[p.id];
+          var reason = extra ? (isZh ? extra.reason : (extra.reason_en || extra.reason)) : '';
+          var suggestion = extra ? extra.suggestion : '';
+          var mapUrl = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent((p.nameLocal || p.name) + ' ' + p.addr);
+          return '<div class="retro-next-card">' +
+            '<div class="retro-next-dot" style="background:' + (catColors[p.cat] || 'var(--text-3)') + '"></div>' +
+            '<div class="retro-next-body">' +
+              '<div class="retro-next-name">' + p.name +
+                (p.nameLocal ? '<span class="retro-next-name-local">' + p.nameLocal + '</span>' : '') +
+              '</div>' +
+              '<div class="retro-next-meta">' + getCityLabel(p.city) + (reason ? ' · ' + reason : '') + '</div>' +
+              (suggestion ? '<div class="retro-next-meta" style="color:var(--text-3);font-style:italic;margin-top:2px">' + suggestion + '</div>' : '') +
+            '</div>' +
+            '<div class="retro-next-link"><a href="' + mapUrl + '" target="_blank" title="Google Maps"><span class="mi material-symbols-outlined">location_on</span></a></div>' +
+          '</div>';
+        }).join('');
+    } else {
+      nextEl.innerHTML = '<div class="retro-next-empty">' +
+        (isZh ? '所有景點都去到了！' : 'You visited everything!') + '</div>';
+    }
+  }
+}
+
+function renderRetroMap(cityId) {
+  if (typeof L === 'undefined') return;
+  var R = TRIP.retro;
+  var city = R.cities.find(function(c) { return c.id === cityId; });
+  if (!city) return;
+
+  var container = document.getElementById('retro-map');
+  if (retroMap) { retroMap.remove(); retroMap = null; }
+
+  retroMap = L.map('retro-map', { scrollWheelZoom: false });
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap'
+  }).addTo(retroMap);
+
+  var visitedPois = city.visited_pois.map(function(id) {
+    return TRIP.pois.find(function(p) { return p.id === id; });
+  }).filter(Boolean);
+
+  var coords = [];
+  var colors = { attraction:'#e8664a', food:'#4aad5b', cafe:'#9b6ad4', shopping:'#e8964a', transport:'#4ab8c9', hotel:'#4a7ce8', work:'#6a6ad4' };
+
+  visitedPois.forEach(function(p) {
+    var col = colors[p.cat] || '#888';
+    var latlng = [p.lat, p.lng];
+    coords.push(latlng);
+    L.circleMarker(latlng, { radius:7, fillColor:col, color:'#fff', weight:2, fillOpacity:0.9 })
+      .bindTooltip(p.name, { permanent: false })
+      .addTo(retroMap);
+  });
+
+  // Draw route line
+  if (coords.length > 1) {
+    L.polyline(coords, { color:'#444', weight:2, dashArray:'6,8', opacity:0.6 }).addTo(retroMap);
+  }
+
+  if (coords.length > 0) {
+    retroMap.fitBounds(L.latLngBounds(coords).pad(0.15));
+  }
+
+  // Stats below map
+  var statsEl = document.getElementById('retro-map-stats');
+  if (statsEl) {
+    var catCounts = {};
+    visitedPois.forEach(function(p) {
+      catCounts[p.cat] = (catCounts[p.cat] || 0) + 1;
+    });
+    statsEl.innerHTML =
+      '<div class="retro-map-stat"><div class="retro-map-stat-label">' + (currentLang === 'zh' ? '造訪地點' : 'Places Visited') + '</div><div class="retro-map-stat-val">' + visitedPois.length + '</div></div>' +
+      '<div class="retro-map-stat"><div class="retro-map-stat-label">' + (currentLang === 'zh' ? '天數' : 'Days') + '</div><div class="retro-map-stat-val">' + city.days.length + '</div></div>' +
+      '<div class="retro-map-stat"><div class="retro-map-stat-label">' + (currentLang === 'zh' ? '景點' : 'Attractions') + '</div><div class="retro-map-stat-val">' + (catCounts.attraction || 0) + '</div></div>' +
+      '<div class="retro-map-stat"><div class="retro-map-stat-label">' + (currentLang === 'zh' ? '美食' : 'Food') + '</div><div class="retro-map-stat-val">' + ((catCounts.food || 0) + (catCounts.cafe || 0)) + '</div></div>';
+  }
+}
+
 // ── Safe runner ──
 function safe(name, fn) {
   try { fn(); } catch(e) { console.error('[' + name + ']', e); }
@@ -2099,4 +2378,5 @@ document.addEventListener('DOMContentLoaded', async () => {
   safe('clocks', initClocks);
   safe('poiModal', initPOIModal);
   safe('langToggle', initLangToggle);
+  safe('renderRetro', renderRetro);
 });

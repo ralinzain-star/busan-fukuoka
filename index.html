@@ -21,6 +21,7 @@
   <button class="sb" data-tab="budget" title="旅費"><span class="mi material-symbols-outlined">wallet</span></button>
   <button class="sb" data-tab="time" title="景點地圖"><span class="mi material-symbols-outlined">map</span></button>
   <button class="sb" data-tab="checklist" title="行前清單"><span class="mi material-symbols-outlined">checklist</span></button>
+  <button class="sb" data-tab="retro" title="旅後回顧"><span class="mi material-symbols-outlined">auto_stories</span></button>
   <div class="sb-spacer"></div>
   <button class="sb btn-icon" id="lang-toggle-sb" title="切換語言"><span class="mi material-symbols-outlined">translate</span></button>
   <button class="sb btn-icon" onclick="window.print()" title="列印"><span class="mi material-symbols-outlined">print</span></button>
@@ -38,6 +39,7 @@
   <div class="bb-more-menu" id="bb-more-menu">
     <button class="bb-more-item" data-tab="budget"><span class="mi material-symbols-outlined">wallet</span><span data-i18n="nav_budget">旅費</span></button>
     <button class="bb-more-item" data-tab="checklist"><span class="mi material-symbols-outlined">checklist</span><span data-i18n="nav_checklist">清單</span></button>
+    <button class="bb-more-item" data-tab="retro"><span class="mi material-symbols-outlined">auto_stories</span><span data-i18n="nav_retro">回顧</span></button>
     <button class="bb-more-item" id="lang-toggle-bb"><span class="mi material-symbols-outlined">translate</span><span class="bb-label" data-i18n="nav_lang">語言</span></button>
   </div>
 </div>
@@ -61,9 +63,9 @@
   </div>
 
   <div class="stats">
-    <div class="st"><div class="st-label" data-i18n="stat_total">預估總費用</div><div class="st-val" id="stat-total">NT$43,600</div><div class="st-sub" data-i18n="stat_total_sub">含機酒</div></div>
+    <div class="st"><div class="st-label" data-i18n="stat_total">實際花費</div><div class="st-val" id="stat-total">–</div><div class="st-sub" data-i18n="stat_total_sub">含機酒</div></div>
     <div class="st"><div class="st-label" data-i18n="stat_pois">景點數量</div><div class="st-val">24</div><div class="st-sub" data-i18n="stat_pois_sub">3 個城市</div></div>
-    <div class="st"><div class="st-label" data-i18n="stat_daily">每日均消</div><div class="st-val">~NT$1,800</div><div class="st-sub" data-i18n="stat_daily_sub">不含機酒</div></div>
+    <div class="st"><div class="st-label" data-i18n="stat_daily">每日均消</div><div class="st-val" id="stat-daily">–</div><div class="st-sub" data-i18n="stat_daily_sub">不含機酒</div></div>
     <div class="st"><div class="st-label" data-i18n="stat_work">工作天數</div><div class="st-val">4 天</div><div class="st-sub" data-i18n="stat_work_sub">福岡 4/7–4/10</div></div>
   </div>
 
@@ -207,6 +209,51 @@
   <div class="nomad-section">
     <div class="nomad-title"><span class="mi material-symbols-outlined">work</span> <span data-i18n="nomad_title">福岡 Work Mode 推薦工作地點</span><span class="nomad-title-meta">（4/6–4/10）· UTC+8→UTC+9</span> <span data-i18n="nomad_local_hours">當地10:00-18:00</span></div>
     <div class="nomad-spots" id="nomad-spots"></div>
+  </div>
+</div>
+
+
+<!-- ===== TAB 7: RETRO ===== -->
+<div class="tab-panel" id="tab-retro">
+  <div class="hdr">
+    <div class="hdr-left">
+      <h1 data-i18n="title_retro">旅後回顧</h1>
+      <div class="hdr-meta" data-i18n="retro_subtitle">Trip Retrospective</div>
+    </div>
+  </div>
+
+  <!-- City Map Section -->
+  <div class="retro-section">
+    <div class="section-label" data-i18n="retro_map_title">足跡地圖</div>
+    <div class="retro-city-pills" id="retro-city-pills"></div>
+    <div class="retro-map-container" id="retro-map-container">
+      <div id="retro-map" style="width:100%;height:480px;border-radius:var(--r);border:1px solid var(--border)"></div>
+      <div class="retro-map-stats" id="retro-map-stats"></div>
+    </div>
+  </div>
+
+  <!-- Budget Review -->
+  <div class="retro-section">
+    <div class="section-label" data-i18n="retro_budget_title">預算回顧</div>
+    <div class="retro-budget-verdict" id="retro-budget-verdict"></div>
+    <div class="retro-budget-cards" id="retro-budget-cards"></div>
+  </div>
+
+  <!-- Trip Review: changelog + lessons merged -->
+  <div class="retro-section">
+    <div class="section-label" data-i18n="retro_review_title">旅程回顧</div>
+    <div class="retro-review" id="retro-review">
+      <!-- Compact changelog table -->
+      <div class="retro-review-changes" id="retro-review-changes"></div>
+      <!-- Lessons as horizontal tags -->
+      <div class="retro-review-lessons" id="retro-review-lessons"></div>
+    </div>
+  </div>
+
+  <!-- Next Trip: missed POIs + suggestions merged -->
+  <div class="retro-section">
+    <div class="section-label" data-i18n="retro_next_title">下次旅行</div>
+    <div class="retro-next" id="retro-next"></div>
   </div>
 </div>
 
