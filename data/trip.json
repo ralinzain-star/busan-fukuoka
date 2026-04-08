@@ -224,7 +224,13 @@
       "price_twd": 173,
       "hours": "09:00–22:00",
       "desc": "⭐必去 · 3/31 09:30-10:30 · ₩7,200",
-      "addr": "南浦洞"
+      "desc_en": "Must-visit - 3/31 09:30-10:30 - KRW 7,200",
+      "desc_ko": "필수 - 3/31 09:30-10:30 - 7,200원",
+      "desc_ja": "必見 - 3/31 09:30-10:30 - 7,200ウォン",
+      "addr": "南浦洞",
+      "addr_en": "Nampo-dong",
+      "addr_ko": "남포동",
+      "addr_ja": "南浦洞"
     },
     {
       "id": "b2",
@@ -237,15 +243,39 @@
       "price_krw": 0,
       "price_twd": 0,
       "hours": "全天",
+      "hours_en": "All day",
+      "hours_ko": "종일",
+      "hours_ja": "終日",
       "desc": "⭐必去 · 3/30 21:30 壅餅+魚板",
+      "desc_en": "Must-visit - 3/30 21:30 Hotteok + Fish cake",
+      "desc_ko": "필수 - 3/30 21:30 씨앗호떡+어묵",
+      "desc_ja": "必見 - 3/30 21:30 ホットク+おでん",
       "addr": "南浦洞",
+      "addr_en": "Nampo-dong",
+      "addr_ko": "남포동",
+      "addr_ja": "南浦洞",
       "dining": {
         "solo_friendly": true,
         "group_friendly": true,
         "seating": "street food stalls, open seating",
+        "seating_en": "street food stalls, open seating",
+        "seating_ko": "길거리 노점, 자유석",
+        "seating_ja": "屋台、自由席",
         "party_label": "Solo OK",
+        "party_label_en": "Solo OK",
+        "party_label_ko": "혼자 OK",
+        "party_label_ja": "一人OK",
         "tips_solo": [
           "Street food, perfect for solo — buy and walk"
+        ],
+        "tips_solo_en": [
+          "Street food, perfect for solo -- buy and walk"
+        ],
+        "tips_solo_ko": [
+          "길거리 음식, 혼자 딱 좋음 -- 사서 걸으면서 먹기"
+        ],
+        "tips_solo_ja": [
+          "屋台フード、一人にぴったり -- 買って歩きながら食べる"
         ]
       }
     },
@@ -261,14 +291,35 @@
       "price_twd": 714,
       "hours": "05:00–22:00",
       "desc": "⭐必去 · 3/31 12:00-13:30 生魚片午餐",
+      "desc_en": "Must-visit - 3/31 12:00-13:30 Sashimi lunch",
+      "desc_ko": "필수 - 3/31 12:00-13:30 회 점심",
+      "desc_ja": "必見 - 3/31 12:00-13:30 刺身ランチ",
       "addr": "南浦洞",
+      "addr_en": "Nampo-dong",
+      "addr_ko": "남포동",
+      "addr_ja": "南浦洞",
       "dining": {
         "solo_friendly": false,
         "group_friendly": true,
         "seating": "2F restaurant tables, min 2 portions",
+        "seating_en": "2F restaurant tables, min 2 portions",
+        "seating_ko": "2층 식당 테이블, 최소 2인분",
+        "seating_ja": "2F レストランテーブル、最低2人前",
         "party_label": "⚠️ Solo: 生魚片拼盤 2 人份起跳",
+        "party_label_en": "Solo caution: Sashimi platters start at 2 servings",
+        "party_label_ko": "혼자 주의: 모듬회 2인분부터",
+        "party_label_ja": "一人注意：刺身盛り合わせは2人前から",
         "tips_solo": [
           "Ask for 1-person sashimi set (모듬회 1인분) at counter shops on 1F instead"
+        ],
+        "tips_solo_en": [
+          "Ask for 1-person sashimi set at counter shops on 1F instead"
+        ],
+        "tips_solo_ko": [
+          "1층 카운터 가게에서 모듬회 1인분 주문 가능"
+        ],
+        "tips_solo_ja": [
+          "1Fカウンター店で1人前の刺身セットを注文可能"
         ]
       }
     },
@@ -283,8 +334,17 @@
       "price_krw": 0,
       "price_twd": 0,
       "hours": "全天",
+      "hours_en": "All day",
+      "hours_ko": "종일",
+      "hours_ja": "終日",
       "desc": "⭐必去 · 3/31 20:00 雨後夜櫻",
-      "addr": "廣安里"
+      "desc_en": "Must-visit - 3/31 20:00 Night cherry blossoms after rain",
+      "desc_ko": "필수 - 3/31 20:00 비 온 후 야간 벚꽃",
+      "desc_ja": "必見 - 3/31 20:00 雨上がりの夜桜",
+      "addr": "廣安里",
+      "addr_en": "Gwangalli",
+      "addr_ko": "광안리",
+      "addr_ja": "広安里"
     },
     {
       "id": "b5",
@@ -297,8 +357,17 @@
       "price_krw": 0,
       "price_twd": 0,
       "hours": "全天",
+      "hours_en": "All day",
+      "hours_ko": "종일",
+      "hours_ja": "終日",
       "desc": "⭐必去 · 3/31 19:00-20:30 橋燈不怕雨",
-      "addr": "廣安里"
+      "desc_en": "Must-visit - 3/31 19:00-20:30 Bridge lights, rain-proof",
+      "desc_ko": "필수 - 3/31 19:00-20:30 다리 조명, 비와도 OK",
+      "desc_ja": "必見 - 3/31 19:00-20:30 橋のライトアップ、雨でもOK",
+      "addr": "廣安里",
+      "addr_en": "Gwangalli",
+      "addr_ko": "광안리",
+      "addr_ja": "広安里"
     },
     {
       "id": "b6",
@@ -311,8 +380,17 @@
       "price_krw": 0,
       "price_twd": 0,
       "hours": "全天",
+      "hours_en": "All day",
+      "hours_ko": "종일",
+      "hours_ja": "終日",
       "desc": "🔄有時間就去 · 已從主行程移除",
-      "addr": "海雲台"
+      "desc_en": "If time allows - Removed from itinerary",
+      "desc_ko": "시간 되면 - 일정에서 제외",
+      "desc_ja": "時間があれば - 日程から削除",
+      "addr": "海雲台",
+      "addr_en": "Haeundae",
+      "addr_ko": "해운대",
+      "addr_ja": "海雲台"
     },
     {
       "id": "b7",
@@ -326,7 +404,13 @@
       "price_twd": 0,
       "hours": "10:00–21:00",
       "desc": "⭐必去 · 4/1 17:00-18:30 VBP免費（原價₩27,000）日落",
-      "addr": "海雲台"
+      "desc_en": "Must-visit - 4/1 17:00-18:30 VBP free (orig. KRW 27,000) Sunset",
+      "desc_ko": "필수 - 4/1 17:00-18:30 VBP 무료 (정가 27,000원) 일몰",
+      "desc_ja": "必見 - 4/1 17:00-18:30 VBP無料（定価27,000ウォン）日没",
+      "addr": "海雲台",
+      "addr_en": "Haeundae",
+      "addr_ko": "해운대",
+      "addr_ja": "海雲台"
     },
     {
       "id": "b8",
@@ -339,8 +423,17 @@
       "price_krw": 0,
       "price_twd": 0,
       "hours": "全天",
+      "hours_en": "All day",
+      "hours_ko": "종일",
+      "hours_ja": "終日",
       "desc": "🔄有時間就去 · 4/1 16:00",
-      "addr": "海雲台"
+      "desc_en": "If time allows - 4/1 16:00",
+      "desc_ko": "시간 되면 - 4/1 16:00",
+      "desc_ja": "時間があれば - 4/1 16:00",
+      "addr": "海雲台",
+      "addr_en": "Haeundae",
+      "addr_ko": "해운대",
+      "addr_ja": "海雲台"
     },
     {
       "id": "b9",
@@ -353,8 +446,17 @@
       "price_krw": 0,
       "price_twd": 0,
       "hours": "全天",
+      "hours_en": "All day",
+      "hours_ko": "종일",
+      "hours_ja": "終日",
       "desc": "🔄有時間就去",
-      "addr": "海雲台"
+      "desc_en": "If time allows",
+      "desc_ko": "시간 되면",
+      "desc_ja": "時間があれば",
+      "addr": "海雲台",
+      "addr_en": "Haeundae",
+      "addr_ko": "해운대",
+      "addr_ja": "海雲台"
     },
     {
       "id": "b10",
@@ -368,7 +470,13 @@
       "price_twd": 1694,
       "hours": "08:20–18:00",
       "desc": "📌已訂 · 4/2 藍線公園+櫻花+海東龍宮寺+甘川文化村",
-      "addr": "全區"
+      "desc_en": "Booked - 4/2 Blue Line Park + Cherry blossoms + Haedong Yonggungsa + Gamcheon Culture Village",
+      "desc_ko": "예약 완료 - 4/2 블루라인파크+벚꽃+해동용궁사+감천문화마을",
+      "desc_ja": "予約済み - 4/2 ブルーラインパーク+桜+海東龍宮寺+甘川文化村",
+      "addr": "全區",
+      "addr_en": "Citywide",
+      "addr_ko": "전 지역",
+      "addr_ja": "全域"
     },
     {
       "id": "bt1",
@@ -382,7 +490,13 @@
       "price_twd": 0,
       "hours": "05:00-19:00",
       "desc": "4/2 一日遊 · 海岸斷崖上的寺廟",
-      "addr": "機張"
+      "desc_en": "4/2 Day tour - Temple on a seaside cliff",
+      "desc_ko": "4/2 일일투어 - 해안 절벽 위의 사찰",
+      "desc_ja": "4/2 日帰りツアー - 海岸断崖上の寺院",
+      "addr": "機張",
+      "addr_en": "Gijang",
+      "addr_ko": "기장",
+      "addr_ja": "機張"
     },
     {
       "id": "bt2",
@@ -395,8 +509,17 @@
       "price_krw": 0,
       "price_twd": 0,
       "hours": "全天",
+      "hours_en": "All day",
+      "hours_ko": "종일",
+      "hours_ja": "終日",
       "desc": "4/2 一日遊 · 影島彩色房屋+海景步道",
-      "addr": "影島"
+      "desc_en": "4/2 Day tour - Colorful houses + ocean walkway on Yeongdo",
+      "desc_ko": "4/2 일일투어 - 영도 컬러풀 마을+해안 산책로",
+      "desc_ja": "4/2 日帰りツアー - 影島カラフル家屋+海辺の遊歩道",
+      "addr": "影島",
+      "addr_en": "Yeongdo",
+      "addr_ko": "영도",
+      "addr_ja": "影島"
     },
     {
       "id": "bt3",
@@ -409,8 +532,17 @@
       "price_krw": 0,
       "price_twd": 0,
       "hours": "全天",
+      "hours_en": "All day",
+      "hours_ko": "종일",
+      "hours_ja": "終日",
       "desc": "4/2 一日遊 · 玻璃天空步道",
-      "addr": "海雲台"
+      "desc_en": "4/2 Day tour - Glass skywalk",
+      "desc_ko": "4/2 일일투어 - 유리 스카이워크",
+      "desc_ja": "4/2 日帰りツアー - ガラスの空中歩道",
+      "addr": "海雲台",
+      "addr_en": "Haeundae",
+      "addr_ko": "해운대",
+      "addr_ja": "海雲台"
     },
     {
       "id": "bt4",
@@ -424,7 +556,13 @@
       "price_twd": 0,
       "hours": "09:00-18:00",
       "desc": "4/2 一日遊 · 彩色階梯村落+小王子雕像",
-      "addr": "沙下區"
+      "desc_en": "4/2 Day tour - Colorful hillside village + Little Prince statue",
+      "desc_ko": "4/2 일일투어 - 알록달록 계단 마을+어린왕자 조형물",
+      "desc_ja": "4/2 日帰りツアー - カラフル階段村+星の王子さま像",
+      "addr": "沙下區",
+      "addr_en": "Saha-gu",
+      "addr_ko": "사하구",
+      "addr_ja": "沙下区"
     },
     {
       "id": "bt5",
@@ -438,7 +576,13 @@
       "price_twd": 0,
       "hours": "09:00-18:00",
       "desc": "4/2 一日遊 · 海岸天空膠囊列車",
-      "addr": "海雲台"
+      "desc_en": "4/2 Day tour - Coastal sky capsule train",
+      "desc_ko": "4/2 일일투어 - 해안 스카이캡슐 열차",
+      "desc_ja": "4/2 日帰りツアー - 海岸スカイカプセル列車",
+      "addr": "海雲台",
+      "addr_en": "Haeundae",
+      "addr_ko": "해운대",
+      "addr_ja": "海雲台"
     },
     {
       "id": "b11",
@@ -452,7 +596,13 @@
       "price_twd": 238,
       "hours": "10:00–18:00（週一休）",
       "desc": "⭐必去 · 3/31 10:30-12:00 · 龍頭山旁 · 自費₩10,000",
-      "addr": "南浦洞"
+      "desc_en": "Must-visit - 3/31 10:30-12:00 - Next to Yongdusan - KRW 10,000",
+      "desc_ko": "필수 - 3/31 10:30-12:00 - 용두산 옆 - 10,000원",
+      "desc_ja": "必見 - 3/31 10:30-12:00 - 龍頭山横 - 10,000ウォン",
+      "addr": "南浦洞",
+      "addr_en": "Nampo-dong",
+      "addr_ko": "남포동",
+      "addr_ja": "南浦洞"
     },
     {
       "id": "b12",
@@ -466,7 +616,13 @@
       "price_twd": 524,
       "hours": "10:00–21:00（最後入場20:00）",
       "desc": "⭐必去 · 3/31 15:00-17:00 · 沉浸式美術館 · 自費₩22,000",
-      "addr": "影島"
+      "desc_en": "Must-visit - 3/31 15:00-17:00 - Immersive art museum - KRW 22,000",
+      "desc_ko": "필수 - 3/31 15:00-17:00 - 몰입형 미술관 - 22,000원",
+      "desc_ja": "必見 - 3/31 15:00-17:00 - 没入型美術館 - 22,000ウォン",
+      "addr": "影島",
+      "addr_en": "Yeongdo",
+      "addr_ko": "영도",
+      "addr_ja": "影島"
     },
     {
       "id": "b13",
@@ -480,7 +636,13 @@
       "price_twd": 0,
       "hours": "平日10:00–18:00",
       "desc": "⭐必去 · 4/1 10:00 🎫VBP啟用點！免費×2次（原價~₩17,000）",
-      "addr": "機張"
+      "desc_en": "Must-visit - 4/1 10:00 VBP activation point! Free x2 rides (orig. ~KRW 17,000)",
+      "desc_ko": "필수 - 4/1 10:00 VBP 활성화 포인트! 무료 2회 (정가 ~17,000원)",
+      "desc_ja": "必見 - 4/1 10:00 VBP起動ポイント！無料2回（定価~17,000ウォン）",
+      "addr": "機張",
+      "addr_en": "Gijang",
+      "addr_ko": "기장",
+      "addr_ja": "機張"
     },
     {
       "id": "b14",
@@ -494,7 +656,13 @@
       "price_twd": 0,
       "hours": "平日10:00–20:00",
       "desc": "⭐必去 · 4/1 11:30-13:30 · VBP免費（原價₩47,000）",
-      "addr": "機張"
+      "desc_en": "Must-visit - 4/1 11:30-13:30 - VBP free (orig. KRW 47,000)",
+      "desc_ko": "필수 - 4/1 11:30-13:30 - VBP 무료 (정가 47,000원)",
+      "desc_ja": "必見 - 4/1 11:30-13:30 - VBP無料（定価47,000ウォン）",
+      "addr": "機張",
+      "addr_en": "Gijang",
+      "addr_ko": "기장",
+      "addr_ja": "機張"
     },
     {
       "id": "b15",
@@ -508,7 +676,13 @@
       "price_twd": 0,
       "hours": "淡季09:30–18:00",
       "desc": "⭐必去 · 4/1 15:00 松亭→尾浦 30min · VBP免費（原價~₩7,000）",
-      "addr": "海雲台"
+      "desc_en": "Must-visit - 4/1 15:00 Songjung to Mipo 30min - VBP free (orig. ~KRW 7,000)",
+      "desc_ko": "필수 - 4/1 15:00 송정→미포 30분 - VBP 무료 (정가 ~7,000원)",
+      "desc_ja": "必見 - 4/1 15:00 松亭→尾浦 30分 - VBP無料（定価~7,000ウォン）",
+      "addr": "海雲台",
+      "addr_en": "Haeundae",
+      "addr_ko": "해운대",
+      "addr_ja": "海雲台"
     },
     {
       "id": "b16",
@@ -522,7 +696,13 @@
       "price_twd": 0,
       "hours": "淡季09:00–22:00（最後入場21:00）",
       "desc": "⭐必去 · 4/1 20:30 · VBP免費（原價₩23,000）· 4hr限時",
-      "addr": "Centum City"
+      "desc_en": "Must-visit - 4/1 20:30 - VBP free (orig. KRW 23,000) - 4hr time limit",
+      "desc_ko": "필수 - 4/1 20:30 - VBP 무료 (정가 23,000원) - 4시간 제한",
+      "desc_ja": "必見 - 4/1 20:30 - VBP無料（定価23,000ウォン）- 4時間制限",
+      "addr": "Centum City",
+      "addr_en": "Centum City",
+      "addr_ko": "센텀시티",
+      "addr_ja": "センタムシティ"
     },
     {
       "id": "k1",
@@ -536,7 +716,13 @@
       "price_twd": 160,
       "hours": "19:00–22:00",
       "desc": "⭐必去 · 4/4 19:00-21:00 春季限定到4/5",
-      "addr": "熊本市"
+      "desc_en": "Must-visit - 4/4 19:00-21:00 Spring limited until 4/5",
+      "desc_ko": "필수 - 4/4 19:00-21:00 봄 한정 4/5까지",
+      "desc_ja": "必見 - 4/4 19:00-21:00 春季限定4/5まで",
+      "addr": "熊本市",
+      "addr_en": "Kumamoto City",
+      "addr_ko": "구마모토시",
+      "addr_ja": "熊本市"
     },
     {
       "id": "k2",
@@ -550,7 +736,13 @@
       "price_twd": 206,
       "hours": "08:30–17:00",
       "desc": "⭐必去 · 4/4 11:00-13:00",
-      "addr": "阿蘇山"
+      "desc_en": "Must-visit - 4/4 11:00-13:00",
+      "desc_ko": "필수 - 4/4 11:00-13:00",
+      "desc_ja": "必見 - 4/4 11:00-13:00",
+      "addr": "阿蘇山",
+      "addr_en": "Mt. Aso",
+      "addr_ko": "아소산",
+      "addr_ja": "阿蘇山"
     },
     {
       "id": "k3",
@@ -563,8 +755,17 @@
       "price_jpy": 0,
       "price_twd": 0,
       "hours": "全天",
+      "hours_en": "All day",
+      "hours_ko": "종일",
+      "hours_ja": "終日",
       "desc": "⭐必去 · 4/4 13:30-15:00",
-      "addr": "阿蘇山"
+      "desc_en": "Must-visit - 4/4 13:30-15:00",
+      "desc_ko": "필수 - 4/4 13:30-15:00",
+      "desc_ja": "必見 - 4/4 13:30-15:00",
+      "addr": "阿蘇山",
+      "addr_en": "Mt. Aso",
+      "addr_ko": "아소산",
+      "addr_ja": "阿蘇山"
     },
     {
       "id": "k4",
@@ -577,8 +778,17 @@
       "price_jpy": 0,
       "price_twd": 0,
       "hours": "全天",
+      "hours_en": "All day",
+      "hours_ko": "종일",
+      "hours_ja": "終日",
       "desc": "⭐必去 · 4/4 10:00-10:45 早上最佳",
-      "addr": "阿蘇山"
+      "desc_en": "Must-visit - 4/4 10:00-10:45 Best in the morning",
+      "desc_ko": "필수 - 4/4 10:00-10:45 오전이 가장 좋음",
+      "desc_ja": "必見 - 4/4 10:00-10:45 午前中がベスト",
+      "addr": "阿蘇山",
+      "addr_en": "Mt. Aso",
+      "addr_ko": "아소산",
+      "addr_ja": "阿蘇山"
     },
     {
       "id": "k5",
@@ -592,7 +802,13 @@
       "price_twd": 0,
       "hours": "06:00–18:00",
       "desc": "⭐必去 · 4/4 15:30-16:30 樓門2024修復",
-      "addr": "一之宮"
+      "desc_en": "Must-visit - 4/4 15:30-16:30 Gate tower restored in 2024",
+      "desc_ko": "필수 - 4/4 15:30-16:30 누문 2024 복원 완료",
+      "desc_ja": "必見 - 4/4 15:30-16:30 楼門2024年修復完了",
+      "addr": "一之宮",
+      "addr_en": "Ichinomiya",
+      "addr_ko": "이치노미야",
+      "addr_ja": "一の宮"
     },
     {
       "id": "k6",
@@ -606,7 +822,13 @@
       "price_twd": 100,
       "hours": "依各旅館",
       "desc": "⭐必去 · 4/4 17:00-18:00",
-      "addr": "阿蘇町"
+      "desc_en": "Must-visit - 4/4 17:00-18:00",
+      "desc_ko": "필수 - 4/4 17:00-18:00",
+      "desc_ja": "必見 - 4/4 17:00-18:00",
+      "addr": "阿蘇町",
+      "addr_en": "Aso Town",
+      "addr_ko": "아소마치",
+      "addr_ja": "阿蘇町"
     },
     {
       "id": "f1",
@@ -620,7 +842,13 @@
       "price_twd": 0,
       "hours": "06:00–19:00",
       "desc": "⭐必去 · 4/5 10:00-12:00 隈研吾Starbucks+光明禪寺",
-      "addr": "太宰府"
+      "desc_en": "Must-visit - 4/5 10:00-12:00 Kengo Kuma Starbucks + Komyozenji Temple",
+      "desc_ko": "필수 - 4/5 10:00-12:00 쿠마 켄고 스타벅스+고묘젠지",
+      "desc_ja": "必見 - 4/5 10:00-12:00 隈研吾スタバ+光明禅寺",
+      "addr": "太宰府",
+      "addr_en": "Dazaifu",
+      "addr_ko": "다자이후",
+      "addr_ja": "太宰府"
     },
     {
       "id": "f2",
@@ -634,7 +862,13 @@
       "price_twd": 668,
       "hours": "09:00–16:30",
       "desc": "⭐必去 · 4/5 13:30-16:30 西鐵套票",
-      "addr": "柳川"
+      "desc_en": "Must-visit - 4/5 13:30-16:30 Nishitetsu combo ticket",
+      "desc_ko": "필수 - 4/5 13:30-16:30 니시테쓰 세트 티켓",
+      "desc_ja": "必見 - 4/5 13:30-16:30 西鉄セット券",
+      "addr": "柳川",
+      "addr_en": "Yanagawa",
+      "addr_ko": "야나가와",
+      "addr_ja": "柳川"
     },
     {
       "id": "f4",
@@ -648,14 +882,35 @@
       "price_twd": 300,
       "hours": "18:00–02:00",
       "desc": "⭐必去 · 4/6 19:00 現金限定",
+      "desc_en": "Must-visit - 4/6 19:00 Cash only",
+      "desc_ko": "필수 - 4/6 19:00 현금만 가능",
+      "desc_ja": "必見 - 4/6 19:00 現金のみ",
       "addr": "中洲",
+      "addr_en": "Nakasu",
+      "addr_ko": "나카스",
+      "addr_ja": "中洲",
       "dining": {
         "solo_friendly": true,
         "group_friendly": false,
         "seating": "counter 8-10 seats per stall",
+        "seating_en": "counter 8-10 seats per stall",
+        "seating_ko": "카운터 포장마차당 8-10석",
+        "seating_ja": "カウンター 屋台あたり8-10席",
         "party_label": "Solo OK",
+        "party_label_en": "Solo OK",
+        "party_label_ko": "혼자 OK",
+        "party_label_ja": "一人OK",
         "tips_solo": [
           "Counter seating only — perfect for solo. Hop between stalls."
+        ],
+        "tips_solo_en": [
+          "Counter seating only -- perfect for solo. Hop between stalls."
+        ],
+        "tips_solo_ko": [
+          "카운터석만 -- 혼자 딱 좋음. 여러 포장마차 돌아보기."
+        ],
+        "tips_solo_ja": [
+          "カウンター席のみ -- 一人にぴったり。屋台をはしごしよう。"
         ]
       }
     },
@@ -670,8 +925,17 @@
       "price_jpy": 0,
       "price_twd": 0,
       "hours": "全天",
+      "hours_en": "All day",
+      "hours_ko": "종일",
+      "hours_ja": "終日",
       "desc": "⭐必去 · 4/7 19:00-20:30 百大櫻花名所到4/10",
-      "addr": "西區"
+      "desc_en": "Must-visit - 4/7 19:00-20:30 Top 100 cherry blossom spot, until 4/10",
+      "desc_ko": "필수 - 4/7 19:00-20:30 벚꽃 명소 100선, 4/10까지",
+      "desc_ja": "必見 - 4/7 19:00-20:30 桜名所百選、4/10まで",
+      "addr": "西區",
+      "addr_en": "Nishi-ku",
+      "addr_ko": "니시구",
+      "addr_ja": "西区"
     },
     {
       "id": "f6",
@@ -685,14 +949,35 @@
       "price_twd": 400,
       "hours": "18:00–",
       "desc": "⭐必去 · 4/8 19:00",
+      "desc_en": "Must-visit - 4/8 19:00",
+      "desc_ko": "필수 - 4/8 19:00",
+      "desc_ja": "必見 - 4/8 19:00",
       "addr": "天神",
+      "addr_en": "Tenjin",
+      "addr_ko": "텐진",
+      "addr_ja": "天神",
       "dining": {
         "solo_friendly": true,
         "group_friendly": true,
         "seating": "counter + tables",
+        "seating_en": "counter + tables",
+        "seating_ko": "카운터 + 테이블",
+        "seating_ja": "カウンター + テーブル",
         "party_label": "Solo OK",
+        "party_label_en": "Solo OK",
+        "party_label_ko": "혼자 OK",
+        "party_label_ja": "一人OK",
         "tips_solo": [
           "Many izakayas have counter seats, great for solo"
+        ],
+        "tips_solo_en": [
+          "Many izakayas have counter seats, great for solo"
+        ],
+        "tips_solo_ko": [
+          "카운터석 있는 이자카야 많아서 혼자 좋음"
+        ],
+        "tips_solo_ja": [
+          "カウンター席のある居酒屋が多く、一人でも快適"
         ]
       }
     },
@@ -708,14 +993,35 @@
       "price_twd": 700,
       "hours": "18:00–",
       "desc": "⭐必去 · 4/9 19:00 需預約",
+      "desc_en": "Must-visit - 4/9 19:00 Reservation required",
+      "desc_ko": "필수 - 4/9 19:00 예약 필수",
+      "desc_ja": "必見 - 4/9 19:00 予約必要",
       "addr": "中洲/天神",
+      "addr_en": "Nakasu/Tenjin",
+      "addr_ko": "나카스/텐진",
+      "addr_ja": "中洲/天神",
       "dining": {
         "solo_friendly": true,
         "group_friendly": false,
         "seating": "counter 10 seats",
+        "seating_en": "counter 10 seats",
+        "seating_ko": "카운터 10석",
+        "seating_ja": "カウンター10席",
         "party_label": "Solo OK",
+        "party_label_en": "Solo OK",
+        "party_label_ko": "혼자 OK",
+        "party_label_ja": "一人OK",
         "tips_solo": [
           "Counter ramen shop, ideal for solo diners"
+        ],
+        "tips_solo_en": [
+          "Counter ramen shop, ideal for solo diners"
+        ],
+        "tips_solo_ko": [
+          "카운터 라멘집, 혼자 먹기 최적"
+        ],
+        "tips_solo_ja": [
+          "カウンターラーメン店、一人に最適"
         ]
       }
     },
@@ -731,7 +1037,13 @@
       "price_twd": 0,
       "hours": "09:00–21:00",
       "desc": "✅免費 · 覆蓋10:00-18:00 · 插座WiFi完備",
-      "addr": "天神"
+      "desc_en": "Free - 10:00-18:00 coverage - Power outlets & WiFi",
+      "desc_ko": "무료 - 10:00-18:00 이용 가능 - 콘센트 & 와이파이 완비",
+      "desc_ja": "無料 - 10:00-18:00カバー - コンセント&WiFi完備",
+      "addr": "天神",
+      "addr_en": "Tenjin",
+      "addr_ko": "텐진",
+      "addr_ja": "天神"
     },
     {
       "id": "fw2",
@@ -745,7 +1057,13 @@
       "price_twd": 0,
       "hours": "10:00–22:00",
       "desc": "✅免費 · 覆蓋10:00-18:00 · 剛好10:00開",
-      "addr": "大名"
+      "desc_en": "Free - 10:00-18:00 coverage - Opens right at 10:00",
+      "desc_ko": "무료 - 10:00-18:00 이용 가능 - 딱 10:00 오픈",
+      "desc_ja": "無料 - 10:00-18:00カバー - ちょうど10:00オープン",
+      "addr": "大名",
+      "addr_en": "Daimyo",
+      "addr_ko": "다이묘",
+      "addr_ja": "大名"
     },
     {
       "id": "fh1",
@@ -759,7 +1077,13 @@
       "price_twd": 0,
       "hours": "check-in 15:00",
       "desc": "🏠 博多区千代2-21-29 · 4/5–4/12 (7晚)",
-      "addr": "博多区千代"
+      "desc_en": "Hakata-ku Chiyo 2-21-29 - 4/5-4/12 (7 nights)",
+      "desc_ko": "하카타구 치요 2-21-29 - 4/5-4/12 (7박)",
+      "desc_ja": "博多区千代2-21-29 - 4/5-4/12（7泊）",
+      "addr": "博多区千代",
+      "addr_en": "Hakata-ku Chiyo",
+      "addr_ko": "하카타구 치요",
+      "addr_ja": "博多区千代"
     },
     {
       "id": "b17",
@@ -773,7 +1097,13 @@
       "price_twd": 952,
       "hours": "未確認",
       "desc": "🛍️ 兩瓶禮盒₩40,000 · Black Cherry推薦 · 外觀高級但平價",
-      "addr": "廣安里"
+      "desc_en": "2 bottles gift set KRW 40,000 - Black Cherry recommended - Upscale look at affordable price",
+      "desc_ko": "2병 선물세트 40,000원 - 블랙체리 추천 - 고급스러운데 저렴",
+      "desc_ja": "2本ギフトセット40,000ウォン - ブラックチェリーおすすめ - 高級感あるのにお手頃",
+      "addr": "廣安里",
+      "addr_en": "Gwangalli",
+      "addr_ko": "광안리",
+      "addr_ja": "広安里"
     },
     {
       "id": "b18",
@@ -787,14 +1117,35 @@
       "price_twd": 357,
       "hours": "11:00–20:50（休15:30–17:00）",
       "desc": "🍜 推薦 · 1968美軍官邸改建 · 招牌辣炒章魚＆編柏章魚菜包 · 金蓮山站步行7min",
+      "desc_en": "Recommended - 1968 US military residence converted - Signature spicy octopus & ssam - 7min walk from Geumnyeonsan Stn",
+      "desc_ko": "추천 - 1968년 미군 관사 개조 - 시그니처 낙지볶음 & 쌈 - 금련산역 도보 7분",
+      "desc_ja": "おすすめ - 1968年米軍官舎リノベ - 名物タコ炒め&サム - 金蓮山駅徒歩7分",
       "addr": "廣安里/水營區",
+      "addr_en": "Gwangalli/Suyeong-gu",
+      "addr_ko": "광안리/수영구",
+      "addr_ja": "広安里/水営区",
       "dining": {
         "solo_friendly": false,
         "group_friendly": true,
         "seating": "tables only, portions for 2+",
+        "seating_en": "tables only, portions for 2+",
+        "seating_ko": "테이블석만, 2인 이상 분량",
+        "seating_ja": "テーブル席のみ、2人前以上",
         "party_label": "⚠️ Solo: 菜色設計 2 人以上共食",
+        "party_label_en": "Solo caution: Dishes designed for 2+ people sharing",
+        "party_label_ko": "혼자 주의: 2인 이상 공유 메뉴 위주",
+        "party_label_ja": "一人注意：2人以上シェア向けメニュー",
         "tips_solo": [
           "Consider ordering 낙지볶음 (small) only, or find a solo-friendly spot nearby"
+        ],
+        "tips_solo_en": [
+          "Consider ordering small nakji-bokkeum only, or find a solo-friendly spot nearby"
+        ],
+        "tips_solo_ko": [
+          "낙지볶음(소) 단품만 주문하거나, 근처 혼밥 가능한 곳 찾기"
+        ],
+        "tips_solo_ja": [
+          "ナクチポックム(小)のみ注文するか、近くの一人向けの店を探す"
         ]
       }
     },
@@ -809,8 +1160,17 @@
       "price_jpy": 0,
       "price_twd": 0,
       "hours": "全天",
+      "hours_en": "All day",
+      "hours_ko": "종일",
+      "hours_ja": "終日",
       "desc": "4/4 行程 · 高森町木造古寺",
-      "addr": "高森町"
+      "desc_en": "4/4 itinerary - Wooden temple in Takamori",
+      "desc_ko": "4/4 일정 - 다카모리 목조 고찰",
+      "desc_ja": "4/4 行程 - 高森町の木造古寺",
+      "addr": "高森町",
+      "addr_en": "Takamori",
+      "addr_ko": "다카모리",
+      "addr_ja": "高森町"
     },
     {
       "id": "j2",
@@ -824,14 +1184,35 @@
       "price_twd": 300,
       "hours": "11:00–15:00",
       "desc": "4/4 午餐 · 地爐烤田樂 · 山間古民家",
+      "desc_en": "4/4 lunch - Hearth-grilled dengaku - Mountain farmhouse",
+      "desc_ko": "4/4 점심 - 이로리 구이 덴가쿠 - 산간 고민가",
+      "desc_ja": "4/4 昼食 - 地炉焼き田楽 - 山間の古民家",
       "addr": "高森町",
+      "addr_en": "Takamori",
+      "addr_ko": "다카모리",
+      "addr_ja": "高森町",
       "dining": {
         "solo_friendly": true,
         "group_friendly": true,
         "seating": "traditional irori hearth tables",
+        "seating_en": "traditional irori hearth tables",
+        "seating_ko": "전통 이로리(화로) 테이블",
+        "seating_ja": "伝統的な囲炉裏テーブル",
         "party_label": "Solo OK",
+        "party_label_en": "Solo OK",
+        "party_label_ko": "혼자 OK",
+        "party_label_ja": "一人OK",
         "tips_solo": [
           "Set meals around the hearth, solo-friendly atmosphere"
+        ],
+        "tips_solo_en": [
+          "Set meals around the hearth, solo-friendly atmosphere"
+        ],
+        "tips_solo_ko": [
+          "이로리 주변 정식, 혼자 와도 편한 분위기"
+        ],
+        "tips_solo_ja": [
+          "囲炉裏を囲む定食、一人でも居心地の良い雰囲気"
         ]
       }
     },
@@ -846,8 +1227,17 @@
       "price_jpy": 0,
       "price_twd": 0,
       "hours": "全天",
+      "hours_en": "All day",
+      "hours_ko": "종일",
+      "hours_ja": "終日",
       "desc": "4/4 行程 · 108段苔蘚石階 · 穿戶岩",
-      "addr": "高森町"
+      "desc_en": "4/4 itinerary - 108 moss-covered stone steps - Ugetsu Rock",
+      "desc_ko": "4/4 일정 - 이끼 낀 돌계단 108단 - 우게쓰 바위",
+      "desc_ja": "4/4 行程 - 108段の苔むした石段 - 穿戸岩",
+      "addr": "高森町",
+      "addr_en": "Takamori",
+      "addr_ko": "다카모리",
+      "addr_ja": "高森町"
     },
     {
       "id": "j4",
@@ -860,8 +1250,17 @@
       "price_jpy": 0,
       "price_twd": 0,
       "hours": "全天（退潮時最佳）",
+      "hours_en": "All day (best at low tide)",
+      "hours_ko": "종일 (썰물 때 최적)",
+      "hours_ja": "終日（干潮時がベスト）",
       "desc": "4/4 傍晚 · 退潮時電線杆延伸入海",
-      "addr": "宇土市"
+      "desc_en": "4/4 evening - Utility poles extending into the sea at low tide",
+      "desc_ko": "4/4 저녁 - 썰물 때 바다로 뻗어가는 전신주",
+      "desc_ja": "4/4 夕方 - 干潮時に海へ延びる電柱",
+      "addr": "宇土市",
+      "addr_en": "Uto City",
+      "addr_ko": "우토시",
+      "addr_ja": "宇土市"
     },
     {
       "id": "j5",
@@ -875,14 +1274,35 @@
       "price_twd": 200,
       "hours": "11:00–22:00",
       "desc": "4/4 晚餐 · アミュプラザくまもと",
+      "desc_en": "4/4 dinner - Amu Plaza Kumamoto",
+      "desc_ko": "4/4 저녁식사 - 아뮤플라자 구마모토",
+      "desc_ja": "4/4 夕食 - アミュプラザくまもと",
       "addr": "熊本市",
+      "addr_en": "Kumamoto City",
+      "addr_ko": "구마모토시",
+      "addr_ja": "熊本市",
       "dining": {
         "solo_friendly": true,
         "group_friendly": true,
         "seating": "regular restaurant tables",
+        "seating_en": "regular restaurant tables",
+        "seating_ko": "일반 레스토랑 테이블",
+        "seating_ja": "一般的なレストランテーブル",
         "party_label": "Solo OK",
+        "party_label_en": "Solo OK",
+        "party_label_ko": "혼자 OK",
+        "party_label_ja": "一人OK",
         "tips_solo": [
           "Standard family restaurant, solo is fine"
+        ],
+        "tips_solo_en": [
+          "Standard family restaurant, solo is fine"
+        ],
+        "tips_solo_ko": [
+          "일반 패밀리 레스토랑, 혼자 OK"
+        ],
+        "tips_solo_ja": [
+          "一般的なファミリーレストラン、一人でもOK"
         ]
       }
     },
@@ -898,14 +1318,35 @@
       "price_twd": 700,
       "hours": "11:00–15:00",
       "desc": "4/5 午餐 · 柳川名物鰻魚飯 · 需預約",
+      "desc_en": "4/5 lunch - Yanagawa signature eel rice - Reservation required",
+      "desc_ko": "4/5 점심 - 야나가와 명물 장어덮밥 - 예약 필수",
+      "desc_ja": "4/5 昼食 - 柳川名物うなぎ飯 - 要予約",
       "addr": "柳川",
+      "addr_en": "Yanagawa",
+      "addr_ko": "야나가와",
+      "addr_ja": "柳川",
       "dining": {
         "solo_friendly": true,
         "group_friendly": true,
         "seating": "traditional tatami + tables",
+        "seating_en": "traditional tatami + tables",
+        "seating_ko": "전통 다다미 + 테이블",
+        "seating_ja": "伝統的な畳 + テーブル",
         "party_label": "Solo OK",
+        "party_label_en": "Solo OK",
+        "party_label_ko": "혼자 OK",
+        "party_label_ja": "一人OK",
         "tips_solo": [
           "Set meals (定食) perfect for one person"
+        ],
+        "tips_solo_en": [
+          "Set meals (teishoku) perfect for one person"
+        ],
+        "tips_solo_ko": [
+          "정식(데이쇼쿠) 1인 식사에 딱"
+        ],
+        "tips_solo_ja": [
+          "定食が一人にぴったり"
         ]
       }
     },
@@ -921,14 +1362,35 @@
       "price_twd": 300,
       "hours": "09:00–18:00",
       "desc": "4/6 早午餐 · 大名 · 綠意盎然空間 · 早午餐招牌",
+      "desc_en": "4/6 brunch - Daimyo - Lush green space - Signature brunch",
+      "desc_ko": "4/6 브런치 - 다이묘 - 초록 가득한 공간 - 시그니처 브런치",
+      "desc_ja": "4/6 ブランチ - 大名 - 緑あふれる空間 - 看板ブランチ",
       "addr": "大名",
+      "addr_en": "Daimyo",
+      "addr_ko": "다이묘",
+      "addr_ja": "大名",
       "dining": {
         "solo_friendly": true,
         "group_friendly": true,
         "seating": "tables + counter",
+        "seating_en": "tables + counter",
+        "seating_ko": "테이블 + 카운터",
+        "seating_ja": "テーブル + カウンター",
         "party_label": "Solo OK",
+        "party_label_en": "Solo OK",
+        "party_label_ko": "혼자 OK",
+        "party_label_ja": "一人OK",
         "tips_solo": [
           "Spacious café, comfortable for solo work/dining"
+        ],
+        "tips_solo_en": [
+          "Spacious cafe, comfortable for solo work/dining"
+        ],
+        "tips_solo_ko": [
+          "넓은 카페, 혼자 작업/식사하기 편함"
+        ],
+        "tips_solo_ja": [
+          "広々としたカフェ、一人での作業・食事に快適"
         ]
       }
     },
@@ -944,7 +1406,13 @@
       "price_twd": 0,
       "hours": "11:00–20:00",
       "desc": "4/6 逛街 · 文具選物・衝浪潮牌・超人氣甜甜圈",
-      "addr": "大名"
+      "desc_en": "4/6 shopping - Stationery select shop, surf brand, popular donuts",
+      "desc_ko": "4/6 쇼핑 - 문구 셀렉트숍, 서핑 브랜드, 인기 도넛",
+      "desc_ja": "4/6 ショッピング - 文具セレクト・サーフブランド・人気ドーナツ",
+      "addr": "大名",
+      "addr_en": "Daimyo",
+      "addr_ko": "다이묘",
+      "addr_ja": "大名"
     },
     {
       "id": "fc3",
@@ -958,14 +1426,35 @@
       "price_twd": 140,
       "hours": "09:00–19:00",
       "desc": "4/6 下午 · 大名 · 福岡街頭潮流咖啡代表",
+      "desc_en": "4/6 afternoon - Daimyo - Iconic Fukuoka street culture coffee",
+      "desc_ko": "4/6 오후 - 다이묘 - 후쿠오카 스트리트 커피 대표",
+      "desc_ja": "4/6 午後 - 大名 - 福岡ストリートカルチャーコーヒーの代表",
       "addr": "大名",
+      "addr_en": "Daimyo",
+      "addr_ko": "다이묘",
+      "addr_ja": "大名",
       "dining": {
         "solo_friendly": true,
         "group_friendly": false,
         "seating": "small standing + few seats",
+        "seating_en": "small standing + few seats",
+        "seating_ko": "소규모 스탠딩 + 좌석 약간",
+        "seating_ja": "少数のスタンディング + 若干の席",
         "party_label": "Solo OK",
+        "party_label_en": "Solo OK",
+        "party_label_ko": "혼자 OK",
+        "party_label_ja": "一人OK",
         "tips_solo": [
           "Tiny shop, grab coffee and go"
+        ],
+        "tips_solo_en": [
+          "Tiny shop, grab coffee and go"
+        ],
+        "tips_solo_ko": [
+          "작은 가게, 커피 사서 가기"
+        ],
+        "tips_solo_ja": [
+          "小さな店、コーヒーをテイクアウト"
         ]
       }
     },
@@ -981,7 +1470,13 @@
       "price_twd": 0,
       "hours": "12:00–19:00",
       "desc": "4/6 薬院 · 花藝・咖啡・服飾選物",
-      "addr": "薬院"
+      "desc_en": "4/6 Yakuin - Flowers, coffee & fashion select shop",
+      "desc_ko": "4/6 야쿠인 - 꽃, 커피 & 패션 셀렉트숍",
+      "desc_ja": "4/6 薬院 - 花・コーヒー・ファッションセレクト",
+      "addr": "薬院",
+      "addr_en": "Yakuin",
+      "addr_ko": "야쿠인",
+      "addr_ja": "薬院"
     },
     {
       "id": "fc5",
@@ -995,14 +1490,35 @@
       "price_twd": 140,
       "hours": "08:00–20:00",
       "desc": "4/6 薬院 · 世界拉花冠軍店",
+      "desc_en": "4/6 Yakuin - World Latte Art Champion shop",
+      "desc_ko": "4/6 야쿠인 - 세계 라떼아트 챔피언 매장",
+      "desc_ja": "4/6 薬院 - 世界ラテアートチャンピオン店",
       "addr": "薬院",
+      "addr_en": "Yakuin",
+      "addr_ko": "야쿠인",
+      "addr_ja": "薬院",
       "dining": {
         "solo_friendly": true,
         "group_friendly": true,
         "seating": "counter + tables",
+        "seating_en": "counter + tables",
+        "seating_ko": "카운터 + 테이블",
+        "seating_ja": "カウンター + テーブル",
         "party_label": "Solo OK",
+        "party_label_en": "Solo OK",
+        "party_label_ko": "혼자 OK",
+        "party_label_ja": "一人OK",
         "tips_solo": [
           "Good for solo work sessions"
+        ],
+        "tips_solo_en": [
+          "Good for solo work sessions"
+        ],
+        "tips_solo_ko": [
+          "혼자 작업하기 좋음"
+        ],
+        "tips_solo_ja": [
+          "一人作業に最適"
         ]
       }
     },
@@ -1018,14 +1534,35 @@
       "price_twd": 300,
       "hours": "11:30–21:00",
       "desc": "4/6 晚餐 · 大名 · 拿坡里正統披薩 · 不需預約",
+      "desc_en": "4/6 dinner - Daimyo - Authentic Neapolitan pizza - No reservation needed",
+      "desc_ko": "4/6 저녁 - 다이묘 - 정통 나폴리 피자 - 예약 불필요",
+      "desc_ja": "4/6 夕食 - 大名 - 本場ナポリピッツァ - 予約不要",
       "addr": "大名",
+      "addr_en": "Daimyo",
+      "addr_ko": "다이묘",
+      "addr_ja": "大名",
       "dining": {
         "solo_friendly": true,
         "group_friendly": true,
         "seating": "tables 40+ seats",
+        "seating_en": "tables 40+ seats",
+        "seating_ko": "테이블 40석 이상",
+        "seating_ja": "テーブル40席以上",
         "party_label": "Solo OK",
+        "party_label_en": "Solo OK",
+        "party_label_ko": "혼자 OK",
+        "party_label_ja": "一人OK",
         "tips_solo": [
           "Individual pizzas, comfortable for solo dining"
+        ],
+        "tips_solo_en": [
+          "Individual pizzas, comfortable for solo dining"
+        ],
+        "tips_solo_ko": [
+          "1인 피자, 혼자 먹기 편함"
+        ],
+        "tips_solo_ja": [
+          "個人サイズのピザ、一人でも快適"
         ]
       }
     },
@@ -1040,8 +1577,17 @@
       "price_jpy": 0,
       "price_twd": 0,
       "hours": "全天",
+      "hours_en": "All day",
+      "hours_ko": "종일",
+      "hours_ja": "終日",
       "desc": "4/10 夜後 · 天神旁 · 百大櫻花名所",
-      "addr": "中央區"
+      "desc_en": "After 4/10 evening - Next to Tenjin - Top 100 cherry blossom spot",
+      "desc_ko": "4/10 야간 이후 - 텐진 옆 - 벚꽃 명소 100선",
+      "desc_ja": "4/10 夜後 - 天神横 - 桜名所百選",
+      "addr": "中央區",
+      "addr_en": "Chuo-ku",
+      "addr_ko": "주오구",
+      "addr_ja": "中央区"
     },
     {
       "id": "f10",
@@ -1055,14 +1601,35 @@
       "price_twd": 180,
       "hours": "11:00–03:00（週日至24:00）",
       "desc": "4/11 晚餐 · 天神 · 博多豚骨拉麵",
+      "desc_en": "4/11 dinner - Tenjin - Hakata tonkotsu ramen",
+      "desc_ko": "4/11 저녁 - 텐진 - 하카타 돈코쓰 라멘",
+      "desc_ja": "4/11 夕食 - 天神 - 博多豚骨ラーメン",
       "addr": "天神",
+      "addr_en": "Tenjin",
+      "addr_ko": "텐진",
+      "addr_ja": "天神",
       "dining": {
         "solo_friendly": true,
         "group_friendly": false,
         "seating": "counter 15 + tables",
+        "seating_en": "counter 15 + tables",
+        "seating_ko": "카운터 15석 + 테이블",
+        "seating_ja": "カウンター15席 + テーブル",
         "party_label": "Solo OK",
+        "party_label_en": "Solo OK",
+        "party_label_ko": "혼자 OK",
+        "party_label_ja": "一人OK",
         "tips_solo": [
           "Counter ramen, ideal for solo. Peak wait 20-30min."
+        ],
+        "tips_solo_en": [
+          "Counter ramen, ideal for solo. Peak wait 20-30min."
+        ],
+        "tips_solo_ko": [
+          "카운터 라멘, 혼자 딱. 피크 시간 대기 20-30분."
+        ],
+        "tips_solo_ja": [
+          "カウンターラーメン、一人に最適。ピーク時20-30分待ち。"
         ]
       }
     }
@@ -3237,6 +3804,9 @@
         "id": "bk1",
         "type": "flight",
         "title": "台灣虎航 來回機票",
+        "title_en": "TigerAir Taiwan Round-trip",
+        "title_ko": "타이거에어 대만 왕복 항공권",
+        "title_ja": "タイガーエア台湾 往復航空券",
         "carrier": "台灣虎航 TigerAir Taiwan",
         "carrier_code": "IT",
         "segments": [
@@ -3248,12 +3818,18 @@
               "airport": "TPE",
               "terminal": "T1",
               "city_zh": "桃園",
+              "city_en": "Taoyuan",
+              "city_ko": "타오위안",
+              "city_ja": "桃園",
               "time": "16:40"
             },
             "arrival": {
               "airport": "PUS",
               "terminal": "T1",
               "city_zh": "金海",
+              "city_en": "Gimhae",
+              "city_ko": "김해",
+              "city_ja": "金海",
               "time": "19:55"
             },
             "duration": "2h15m",
@@ -3268,12 +3844,18 @@
               "airport": "FUK",
               "terminal": "T1",
               "city_zh": "福岡",
+              "city_en": "Fukuoka",
+              "city_ko": "후쿠오카",
+              "city_ja": "福岡",
               "time": "10:25"
             },
             "arrival": {
               "airport": "TPE",
               "terminal": "T1",
               "city_zh": "桃園",
+              "city_en": "Taoyuan",
+              "city_ko": "타오위안",
+              "city_ja": "桃園",
               "time": "11:55"
             },
             "duration": "2h30m",
@@ -3291,9 +3873,15 @@
         "id": "bk2",
         "type": "hotel",
         "title": "Onjeong Stay 釜山4晚",
+        "title_en": "Onjeong Stay Busan 4 nights",
+        "title_ko": "온정스테이 부산 4박",
+        "title_ja": "Onjeong Stay 釜山4泊",
         "dates": "3/30–4/3",
         "price": "NT$2,822",
         "price_per_night": "NT$706/晚",
+        "price_per_night_en": "NT$706/night",
+        "price_per_night_ko": "NT$706/박",
+        "price_per_night_ja": "NT$706/泊",
         "price_twd": 2822,
         "status": "confirmed",
         "maps_url": "https://www.google.com/maps/search/?api=1&query=Onjeong+Stay+부산"
@@ -3302,16 +3890,31 @@
         "id": "bk3",
         "type": "ferry",
         "title": "新山茶花號渡輪",
+        "title_en": "New Camellia Ferry",
+        "title_ko": "뉴카멜리아호 페리",
+        "title_ja": "ニューかめりあフェリー",
         "date": "2026-04-03",
         "departure": {
           "city": "釜山",
+          "city_en": "Busan",
+          "city_ko": "부산",
+          "city_ja": "釜山",
           "terminal": "釜山國際旅客碼頭",
+          "terminal_en": "Busan Int'l Passenger Terminal",
+          "terminal_ko": "부산항 국제여객터미널",
+          "terminal_ja": "釜山国際旅客ターミナル",
           "time": "20:00",
           "maps": "https://www.google.com/maps/search/?api=1&query=부산항국제여객터미널"
         },
         "arrival": {
           "city": "福岡",
+          "city_en": "Fukuoka",
+          "city_ko": "후쿠오카",
+          "city_ja": "福岡",
           "terminal": "博多港國際碼頭",
+          "terminal_en": "Hakata Port Int'l Terminal",
+          "terminal_ko": "하카타항 국제터미널",
+          "terminal_ja": "博多港国際ターミナル",
           "time": "07:30+1",
           "maps": "https://www.google.com/maps/search/?api=1&query=博多港国際ターミナル"
         },
@@ -3323,9 +3926,18 @@
         "id": "bk4",
         "type": "activity",
         "title": "4/2 釜山精華一日遊 (Klook)",
+        "title_en": "4/2 Busan Day Tour (Klook)",
+        "title_ko": "4/2 부산 하이라이트 일일투어 (Klook)",
+        "title_ja": "4/2 釜山ハイライトデイツアー (Klook)",
         "date": "2026-04-02",
         "desc": "藍線公園+櫻花+海東龍宮寺+甘川文化村",
+        "desc_en": "Blue Line Park + Cherry Blossoms + Haedong Yonggungsa + Gamcheon",
+        "desc_ko": "블루라인파크+벚꽃+해동용궁사+감천문화마을",
+        "desc_ja": "ブルーラインパーク+桜+海東龍宮寺+甘川文化村",
         "meetup": "釜山站2號出口 08:20",
+        "meetup_en": "Busan Station Exit 2, 08:20",
+        "meetup_ko": "부산역 2번 출구 08:20",
+        "meetup_ja": "釜山駅2番出口 08:20",
         "price": "NT$1,694",
         "price_twd": 1694,
         "status": "confirmed",
@@ -3335,20 +3947,32 @@
         "id": "bk5",
         "type": "hotel",
         "title": "福岡住宿 ~7晚",
+        "title_en": "Fukuoka Hotel ~7 nights",
+        "title_ko": "후쿠오카 숙소 ~7박",
+        "title_ja": "福岡宿泊 ~7泊",
         "dates": "4/5–4/12",
         "price": "~NT$8,000",
         "price_twd": 8000,
         "status": "confirmed",
         "address": "〒812-0044 福岡県福岡市博多区千代２丁目２１−２９",
         "maps": "https://www.google.com/maps/search/?api=1&query=福岡市博多区千代2丁目21-29",
-        "note": "博多区千代 · 近中洲川端/千代県庁口"
+        "note": "博多区千代 · 近中洲川端/千代県庁口",
+        "note_en": "Hakata Chiyo · Near Nakasu-Kawabata/Chiyo-Kencho",
+        "note_ko": "하카타 치요 · 나카스카와바타/치요켄초 인근",
+        "note_ja": "博多区千代 · 中洲川端/千代県庁口近く"
       }
     ],
     "comparison": [
       {
         "id": "cmp1",
         "name": "釜山塔",
+        "name_en": "Busan Tower",
+        "name_ko": "부산타워",
+        "name_ja": "釜山タワー",
         "name_note": "龍頭山公園展望台",
+        "name_note_en": "Yongdusan Park Observatory",
+        "name_note_ko": "용두산공원 전망대",
+        "name_note_ja": "龍頭山公園展望台",
         "prices": {
           "official": "₩12,000",
           "klook": "₩12,000",
@@ -3360,7 +3984,13 @@
       {
         "id": "cmp2",
         "name": "Busan X the Sky",
+        "name_en": "Busan X the Sky",
+        "name_ko": "Busan X the Sky",
+        "name_ja": "Busan X the Sky",
         "name_note": "海雲台展望台",
+        "name_note_en": "Haeundae Observatory",
+        "name_note_ko": "해운대 전망대",
+        "name_note_ja": "海雲台展望台",
         "prices": {
           "official": "₩27,000",
           "klook": "₩27,000",
@@ -3372,7 +4002,13 @@
       {
         "id": "cmp3",
         "name": "熊本城",
+        "name_en": "Kumamoto Castle",
+        "name_ko": "구마모토성",
+        "name_ja": "熊本城",
         "name_note": "夜間櫻花照明 春季限定",
+        "name_note_en": "Night Cherry Blossom Illumination (Spring Limited)",
+        "name_note_ko": "야간 벚꽃 조명 봄 한정",
+        "name_note_ja": "夜間桜ライトアップ 春季限定",
         "prices": {
           "official": "¥800",
           "klook": null,
@@ -3384,7 +4020,13 @@
       {
         "id": "cmp5",
         "name": "太宰府+柳川 西鐵套票",
+        "name_en": "Dazaifu + Yanagawa Nishitetsu Pass",
+        "name_ko": "다자이후+야나가와 니시테츠 패스",
+        "name_ja": "太宰府+柳川 西鉄きっぷ",
         "name_note": "含電車+遊船 省¥1,700",
+        "name_note_en": "Incl. train + boat cruise, saves ¥1,700",
+        "name_note_ko": "전철+유람선 포함, ¥1,700 절약",
+        "name_note_ja": "電車+遊船含む ¥1,700お得",
         "prices": {
           "official": "¥3,340",
           "klook": null,
@@ -3396,7 +4038,13 @@
       {
         "id": "cmp6",
         "name": "Visit Busan Pass 24hr",
+        "name_en": "Visit Busan Pass 24hr",
+        "name_ko": "Visit Busan Pass 24시간",
+        "name_ja": "Visit Busan Pass 24時間",
         "name_note": "₩55,000 含多景點",
+        "name_note_en": "₩55,000 incl. multiple attractions",
+        "name_note_ko": "₩55,000 다수 관광지 포함",
+        "name_note_ja": "₩55,000 複数スポット含む",
         "prices": {
           "official": "₩55,000",
           "klook": "₩55,000",
@@ -3540,11 +4188,17 @@
         "type": "weather",
         "description": "下雨天改室內行程",
         "description_en": "Rain — switched to indoor itinerary",
+        "description_ko": "비 오는 날 실내 일정으로 변경",
+        "description_ja": "雨天のため室内プランに変更",
         "reason": "rain",
         "reason_en": "rain",
+        "reason_ko": "비",
+        "reason_ja": "雨",
         "impact": "positive",
         "lesson": "永遠要有室內備案",
-        "lesson_en": "Always have indoor backup for outdoor days"
+        "lesson_en": "Always have indoor backup for outdoor days",
+        "lesson_ko": "항상 실내 대안을 준비해 둘 것",
+        "lesson_ja": "常に室内の代替案を用意しておくこと"
       },
       {
         "date": "2026-04-01",
@@ -3552,11 +4206,17 @@
         "type": "swap",
         "description": "Spa Land 提前到下午（原排晚上）",
         "description_en": "Moved Spa Land to afternoon (was evening)",
+        "description_ko": "Spa Land를 오후로 앞당김 (원래 저녁)",
+        "description_ja": "Spa Landを午後に前倒し（元は夜）",
         "reason": "體力分配",
         "reason_en": "Energy management",
+        "reason_ko": "체력 배분",
+        "reason_ja": "体力配分",
         "impact": "positive",
         "lesson": "耗體力行程之後排放鬆的",
-        "lesson_en": "Put relaxing activities after physically demanding ones"
+        "lesson_en": "Put relaxing activities after physically demanding ones",
+        "lesson_ko": "체력 소모 일정 뒤에 릴랙스 일정 배치",
+        "lesson_ja": "体力消耗後にリラックス系を配置"
       },
       {
         "date": "2026-04-03",
@@ -3564,11 +4224,17 @@
         "type": "skip",
         "description": "青沙浦日落橋取消",
         "description_en": "Skipped Cheongsapo Sunset Bridge",
+        "description_ko": "청사포 일몰 다리 취소",
+        "description_ja": "青沙浦サンセットブリッジをスキップ",
         "reason": "行程太滿",
         "reason_en": "Over-scheduled",
+        "reason_ko": "일정 과다",
+        "reason_ja": "スケジュール過密",
         "impact": "neutral",
         "lesson": "每天最多 4 個主要景點",
-        "lesson_en": "Don't over-schedule — 4 main spots per day max"
+        "lesson_en": "Don't over-schedule — 4 main spots per day max",
+        "lesson_ko": "하루 최대 4개 주요 스팟",
+        "lesson_ja": "1日最大4つのメインスポット"
       },
       {
         "date": "2026-04-06",
@@ -3576,11 +4242,17 @@
         "type": "add",
         "description": "臨時加了 Taine 花店",
         "description_en": "Spontaneously added Taine flower shop",
+        "description_ko": "Taine 꽃집 즉흥 추가",
+        "description_ja": "Taine花屋を即興で追加",
         "reason": "路上發現",
         "reason_en": "Found along the way",
+        "reason_ko": "길에서 발견",
+        "reason_ja": "道中で発見",
         "impact": "positive",
         "lesson": "留 2-3 小時彈性給臨時發現",
-        "lesson_en": "Leave buffer time for spontaneous discoveries"
+        "lesson_en": "Leave buffer time for spontaneous discoveries",
+        "lesson_ko": "즉흥 발견을 위해 2-3시간 여유 두기",
+        "lesson_ja": "即興の発見のために2-3時間の余裕を残す"
       },
       {
         "date": "2026-04-10",
@@ -3588,11 +4260,17 @@
         "type": "swap",
         "description": "舞鶴公園夜櫻改到工作日晚上",
         "description_en": "Moved Maizuru Park night cherry blossoms to work evening",
+        "description_ko": "마이즈루 공원 야간 벚꽃을 평일 저녁으로 변경",
+        "description_ja": "舞鶴公園夜桜を平日の夜に変更",
         "reason": "週末太擁擠",
         "reason_en": "Weekend too crowded",
+        "reason_ko": "주말 너무 혼잡",
+        "reason_ja": "週末は混雑しすぎ",
         "impact": "positive",
         "lesson": "夜景排工作日晚上，人少很多",
-        "lesson_en": "Night spots work great on workday evenings — fewer crowds"
+        "lesson_en": "Night spots work great on workday evenings — fewer crowds",
+        "lesson_ko": "야경은 평일 저녁에 가면 사람 훨씬 적음",
+        "lesson_ja": "夜景は平日の夜が人が少なくてベスト"
       }
     ],
     "missed_pois": [
@@ -3601,71 +4279,116 @@
         "name": "The Bay 101",
         "reason": "時間不夠",
         "reason_en": "Ran out of time",
-        "suggestion": "海雲台夜景替代方案，下次可排在 X the Sky 同一天晚上"
+        "reason_ko": "시간 부족",
+        "reason_ja": "時間不足",
+        "suggestion": "海雲台夜景替代方案，下次可排在 X the Sky 同一天晚上",
+        "suggestion_en": "Night view alternative to Haeundae, next time schedule same evening as X the Sky",
+        "suggestion_ko": "해운대 야경 대안, 다음에는 X the Sky와 같은 날 저녁에 배치",
+        "suggestion_ja": "海雲台の夜景代替案、次回はX the Skyと同じ日の夜に配置"
       },
       {
         "id": "k2",
         "name": "阿蘇中岳火山口",
         "reason": "火山活動關閉/天氣不佳",
         "reason_en": "Closed due to volcanic activity/weather",
-        "suggestion": "火山口開放狀態不穩定，下次出發前先查 阿蘇火山防災会議所 網站"
+        "reason_ko": "화산 활동으로 폐쇄/날씨 불량",
+        "reason_ja": "火山活動による閉鎖/天候不良",
+        "suggestion": "火山口開放狀態不穩定，下次出發前先查 阿蘇火山防災会議所 網站",
+        "suggestion_en": "Crater access is unstable -- check Aso Volcano Disaster Prevention Council website before departure",
+        "suggestion_ko": "화산구 개방 상태 불안정 -- 출발 전 아소 화산방재회의소 웹사이트 확인",
+        "suggestion_ja": "火口の開放状態は不安定 -- 出発前に阿蘇火山防災会議所のサイトを確認"
       },
       {
         "id": "k4",
         "name": "大觀峰",
         "reason": "時間不夠",
         "reason_en": "Ran out of time",
-        "suggestion": "阿蘇必去展望台，下次排在早上第一站（日出後最清楚）"
+        "reason_ko": "시간 부족",
+        "reason_ja": "時間不足",
+        "suggestion": "阿蘇必去展望台，下次排在早上第一站（日出後最清楚）",
+        "suggestion_en": "Must-see Aso viewpoint, schedule as first stop in the morning (clearest after sunrise)",
+        "suggestion_ko": "아소 필수 전망대, 다음에는 오전 첫 번째로 배치 (일출 후 가장 선명)",
+        "suggestion_ja": "阿蘇必見の展望台、次回は朝一番に配置（日の出後が最もクリア）"
       },
       {
         "id": "k5",
         "name": "阿蘇神社",
         "reason": "時間不夠",
         "reason_en": "Ran out of time",
-        "suggestion": "2024 樓門修復完成，值得一看。可搭配門前商店街吃烤米丸子"
+        "reason_ko": "시간 부족",
+        "reason_ja": "時間不足",
+        "suggestion": "2024 樓門修復完成，值得一看。可搭配門前商店街吃烤米丸子",
+        "suggestion_en": "Gate tower restoration completed 2024, worth visiting. Pair with grilled rice balls at the approach street",
+        "suggestion_ko": "2024 누문 복원 완료, 볼 가치 있음. 몬젠 상점가에서 구운 경단과 함께",
+        "suggestion_ja": "2024年楼門修復完了、見る価値あり。門前商店街の焼き団子と一緒に"
       },
       {
         "id": "k6",
         "name": "阿蘇內牧溫泉",
         "reason": "時間不夠",
         "reason_en": "Ran out of time",
-        "suggestion": "下次在阿蘇住一晚就能泡到，推薦阿蘇内牧温泉 蘇山郷"
+        "reason_ko": "시간 부족",
+        "reason_ja": "時間不足",
+        "suggestion": "下次在阿蘇住一晚就能泡到，推薦阿蘇内牧温泉 蘇山郷",
+        "suggestion_en": "Stay overnight in Aso next time to enjoy the onsen. Recommended: Aso Uchinomaki Onsen Sozankyo",
+        "suggestion_ko": "다음에 아소에서 1박하면 온천 가능, 추천: 아소 우치노마키 온천 소잔쿄",
+        "suggestion_ja": "次回は阿蘇で一泊すれば温泉を楽しめる。おすすめ：阿蘇内牧温泉 蘇山郷"
       },
       {
         "id": "f4",
         "name": "中洲屋台",
         "reason": "沒去到",
         "reason_en": "Didn't make it",
-        "suggestion": "福岡必體驗！建議排在非工作日晚上，現金限定要先換好"
+        "reason_ko": "가지 못함",
+        "reason_ja": "行けなかった",
+        "suggestion": "福岡必體驗！建議排在非工作日晚上，現金限定要先換好",
+        "suggestion_en": "A must in Fukuoka! Schedule on a non-work evening, cash only so exchange beforehand",
+        "suggestion_ko": "후쿠오카 필수 체험! 비업무일 저녁에 배치, 현금만 되니 미리 환전",
+        "suggestion_ja": "福岡の必須体験！仕事のない夜に配置、現金のみなので事前に両替"
       },
       {
         "id": "f7",
         "name": "屋台烒然拉麵+牧鍋",
         "reason": "沒預約到/時間衝突",
         "reason_en": "No reservation/schedule conflict",
-        "suggestion": "需提前預約，下次到福岡第一天就先訂"
+        "reason_ko": "예약 실패/일정 충돌",
+        "reason_ja": "予約不可/スケジュール衝突",
+        "suggestion": "需提前預約，下次到福岡第一天就先訂",
+        "suggestion_en": "Reservation required -- book on the first day you arrive in Fukuoka",
+        "suggestion_ko": "예약 필수 -- 후쿠오카 도착 첫날 바로 예약",
+        "suggestion_ja": "要予約 -- 福岡到着初日にすぐ予約"
       }
     ],
     "planning_lessons": [
       {
         "zh": "每天最多排 4 個主要景點，留 2-3 小時彈性時間給臨時發現",
-        "en": "Max 4 main spots per day, leave 2-3hr buffer for spontaneous finds"
+        "en": "Max 4 main spots per day, leave 2-3hr buffer for spontaneous finds",
+        "ko": "하루 최대 4개 주요 스팟, 즉흥 발견을 위해 2-3시간 여유 두기",
+        "ja": "1日最大4つのメインスポット、即興の発見のために2-3時間の余裕を残す"
       },
       {
         "zh": "雨天備案救了兩天行程 — ARTE Museum 和 Spa Land 都是完美雨天選擇",
-        "en": "Rain backup saved 2 days — ARTE Museum and Spa Land are perfect rain activities"
+        "en": "Rain backup saved 2 days — ARTE Museum and Spa Land are perfect rain activities",
+        "ko": "우천 대안이 이틀을 살렸음 -- ARTE Museum과 Spa Land는 완벽한 비 오는 날 선택",
+        "ja": "雨天の代替案が2日間を救った -- ARTEミュージアムとSpa Landは雨の日に最適"
       },
       {
         "zh": "購物日不要排晚上景點，體力會不夠",
-        "en": "Don't schedule evening attractions on shopping days — you'll be too tired"
+        "en": "Don't schedule evening attractions on shopping days — you'll be too tired",
+        "ko": "쇼핑 날에는 저녁 관광 넣지 말 것 -- 체력이 안 됨",
+        "ja": "ショッピングの日は夜の観光を入れないこと -- 体力が持たない"
       },
       {
         "zh": "人流避開策略有效：甘川文化村 08:00 幾乎沒人",
-        "en": "Crowd avoidance worked: Gamcheon Culture Village at 08:00 was nearly empty"
+        "en": "Crowd avoidance worked: Gamcheon Culture Village at 08:00 was nearly empty",
+        "ko": "인파 회피 전략 유효: 감천문화마을 08:00 거의 아무도 없음",
+        "ja": "混雑回避策が有効：甘川文化村は08:00でほぼ無人"
       },
       {
         "zh": "獨旅選餐廳要注意份量，韓式料理很多是 2 人份起跳",
-        "en": "Solo dining tip: many Korean dishes require minimum 2 servings — check before going"
+        "en": "Solo dining tip: many Korean dishes require minimum 2 servings — check before going",
+        "ko": "혼밥 팁: 한식은 2인분 이상인 경우 많으니 미리 확인",
+        "ja": "一人飯のコツ：韓国料理は最低2人前が多いので事前確認を"
       }
     ],
     "budget_review": {

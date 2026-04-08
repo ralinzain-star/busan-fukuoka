@@ -28,6 +28,17 @@ async function loadData() {
   if (!TRIP) console.error('Failed to load trip data!');
 }
 
+// ── i18n field helper ──
+function getField(obj, field) {
+  if (!obj) return '';
+  if (currentLang !== 'zh') {
+    var localized = obj[field + '_' + currentLang];
+    if (localized) return localized;
+  }
+  // Fallback: try field directly, then field_zh (some data uses city_zh instead of city)
+  return obj[field] || obj[field + '_zh'] || '';
+}
+
 // ── Currency helpers ──
 function fromTWD(val, curr) {
   const R = TRIP.currency.rates;
@@ -177,11 +188,11 @@ function renderMapMarkers(filter) {
       weight: 2, fillOpacity: 0.9
     }).addTo(markerLayer);
 
-    const mapQ = encodeURIComponent(p.nameLocal + ' ' + p.addr);
+    const mapQ = encodeURIComponent(p.nameLocal + ' ' + getField(p,'addr'));
     marker.bindPopup(
-      '<strong>' + p.name + '</strong>' +
-      '<div class="popup-meta">' + getCityLabel(p.city) + ' · ' + p.addr + ' · ' + p.hours + '</div>' +
-      '<div class="popup-meta">' + p.desc + '</div>' +
+      '<strong>' + (currentLang !== 'zh' && p.nameLocal ? p.nameLocal : p.name) + '</strong>' +
+      '<div class="popup-meta">' + getCityLabel(p.city) + ' · ' + getField(p,'addr') + ' · ' + getField(p,'hours') + '</div>' +
+      '<div class="popup-meta">' + getField(p,'desc') + '</div>' +
       '<a class="popup-link" href="https://www.google.com/maps/search/?api=1&query=' + mapQ + '" target="_blank">📍 Google Maps</a>'
     );
 
@@ -251,10 +262,10 @@ function renderPOIs(filter) {
     const price = p.price_twd > 0
       ? 'NT$' + p.price_twd + (p.price_krw ? '（₩' + p.price_krw.toLocaleString() + '）' : p.price_jpy ? '（¥' + p.price_jpy.toLocaleString() + '）' : '')
       : t('lbl_free');
-    const mapQ = encodeURIComponent(p.nameLocal + ' ' + p.addr);
+    const mapQ = encodeURIComponent(p.nameLocal + ' ' + getField(p,'addr'));
     const searchQ = encodeURIComponent(p.nameLocal || p.name);
-    const displayName = (currentLang === 'ko' || currentLang === 'ja') && p.nameLocal ? p.nameLocal : p.name;
-    const localName = (currentLang === 'ko' || currentLang === 'ja') ? p.name : (p.nameLocal || '');
+    const displayName = (currentLang !== 'zh') && p.nameLocal ? p.nameLocal : p.name;
+    const localName = (currentLang !== 'zh') ? p.name : (p.nameLocal || '');
 
     return '<div class="poi" data-id="' + p.id + '">' +
       '<div class="poi-dot" style="background:' + col + '"></div>' +
@@ -264,10 +275,10 @@ function renderPOIs(filter) {
           '<span class="poi-cat-badge" style="background:' + col + '20;color:' + col + '">' + (catNames[p.cat] || p.cat) + '</span>' +
         '</div>' +
         (localName ? '<div class="poi-local-name">' + localName + '</div>' : '') +
-        '<div class="poi-meta"><span class="mi" style="font-size:13px">location_on</span> ' + getCityLabel(p.city) + ' · ' + p.addr + '</div>' +
-        '<div class="poi-meta"><span class="mi" style="font-size:13px">schedule</span> ' + p.hours + ' · <span class="mi" style="font-size:13px">payments</span> ' + price + '</div>' +
-        '<div class="poi-meta">' + p.desc + '</div>' +
-        (p.dining && p.dining.party_label ? '<span class="poi-dining-badge ' + (p.dining.solo_friendly ? 'solo-ok' : 'warning') + '">' + p.dining.party_label + '</span>' : '') +
+        '<div class="poi-meta"><span class="mi" style="font-size:13px">location_on</span> ' + getCityLabel(p.city) + ' · ' + getField(p,'addr') + '</div>' +
+        '<div class="poi-meta"><span class="mi" style="font-size:13px">schedule</span> ' + getField(p,'hours') + ' · <span class="mi" style="font-size:13px">payments</span> ' + price + '</div>' +
+        '<div class="poi-meta">' + getField(p,'desc') + '</div>' +
+        (p.dining && getField(p.dining,'party_label') ? '<span class="poi-dining-badge ' + (p.dining.solo_friendly ? 'solo-ok' : 'warning') + '">' + getField(p.dining,'party_label') + '</span>' : '') +
       '</div>' +
     '</div>';
   }).join('');
@@ -642,7 +653,7 @@ function initExport() {
       features: TRIP.pois.map(p => ({
         type: 'Feature',
         geometry: { type: 'Point', coordinates: [p.lng, p.lat] },
-        properties: { name: p.name, nameLocal: p.nameLocal, description: p.desc, category: p.cat }
+        properties: { name: p.name, nameLocal: p.nameLocal, description: getField(p,'desc'), category: p.cat }
       }))
     };
     const blob = new Blob([JSON.stringify(geo, null, 2)], { type: 'application/json' });
@@ -660,15 +671,16 @@ function renderFlightIntel() {
   if (!fi || !el) return;
 
   const pct = Math.round((fi.userPrice - fi.range.avg) / fi.range.avg * 100);
+  var range = t('flight_range') + ' ' + fmtCurr(fi.range.low) + '–' + fmtCurr(fi.range.high);
   if (pct <= -10) {
     el.className = 'booked-card-verdict good';
-    el.textContent = '🟢 低於均價 ' + Math.abs(pct) + '% · 歷史區間 ' + fmtCurr(fi.range.low) + '–' + fmtCurr(fi.range.high);
+    el.textContent = '🟢 ' + t('flight_below_avg') + ' ' + Math.abs(pct) + '% · ' + range;
   } else if (pct <= 10) {
     el.className = 'booked-card-verdict ok';
-    el.textContent = '🟡 接近均價 · 歷史區間 ' + fmtCurr(fi.range.low) + '–' + fmtCurr(fi.range.high);
+    el.textContent = '🟡 ' + t('flight_near_avg') + ' · ' + range;
   } else {
     el.className = 'booked-card-verdict bad';
-    el.textContent = '🔴 高於均價 ' + pct + '% · 歷史區間 ' + fmtCurr(fi.range.low) + '–' + fmtCurr(fi.range.high);
+    el.textContent = '🔴 ' + t('flight_above_avg') + ' ' + pct + '% · ' + range;
   }
 }
 
@@ -695,7 +707,7 @@ function renderBooking() {
               <div class="flight-seg-route">
                 <div class="flight-seg-point">
                   <div class="flight-seg-time">${seg.departure.time}</div>
-                  <div class="flight-seg-city">${seg.departure.city_zh}${seg.departure.terminal}</div>
+                  <div class="flight-seg-city">${getField(seg.departure,'city')}${seg.departure.terminal}</div>
                 </div>
                 <div class="flight-seg-arrow">
                   <div class="flight-seg-line"></div>
@@ -703,16 +715,16 @@ function renderBooking() {
                 </div>
                 <div class="flight-seg-point">
                   <div class="flight-seg-time">${seg.arrival.time}</div>
-                  <div class="flight-seg-city">${seg.arrival.city_zh}${seg.arrival.terminal}</div>
+                  <div class="flight-seg-city">${getField(seg.arrival,'city')}${seg.arrival.terminal}</div>
                 </div>
               </div>
-              <div class="flight-seg-detail">${seg.date} · <a href="${seg.maps_dep}" target="_blank">${seg.departure.city_zh}機場</a> → <a href="${seg.maps_arr}" target="_blank">${seg.arrival.city_zh}機場</a></div>
+              <div class="flight-seg-detail">${seg.date} · <a href="${seg.maps_dep}" target="_blank">${getField(seg.departure,'city')} ${t('lbl_airport')}</a> → <a href="${seg.maps_arr}" target="_blank">${getField(seg.arrival,'city')} ${t('lbl_airport')}</a></div>
             </div>
           </div>`).join('');
 
         return `<div class="booked-card booked-card-wide flight-card">
           <div class="booked-card-head">
-            <div class="booked-card-name"><span class="mi material-symbols-outlined" style="font-size:16px">flight</span> ${item.title}</div>
+            <div class="booked-card-name"><span class="mi material-symbols-outlined" style="font-size:16px">flight</span> ${getField(item,'title')}</div>
             <span class="booked-badge ${badgeClass}"><span class="mi material-symbols-outlined" style="font-size:14px">${badgeIcon}</span> ${badgeText}</span>
           </div>
           <div class="flight-segments">${segs}</div>
@@ -729,15 +741,15 @@ function renderBooking() {
       if (item.type === 'ferry') {
         return `<div class="booked-card">
           <div class="booked-card-head">
-            <div class="booked-card-name"><span class="mi material-symbols-outlined" style="font-size:16px">directions_boat</span> ${item.title}</div>
+            <div class="booked-card-name"><span class="mi material-symbols-outlined" style="font-size:16px">directions_boat</span> ${getField(item,'title')}</div>
             <span class="booked-badge ${badgeClass}"><span class="mi material-symbols-outlined" style="font-size:14px">${badgeIcon}</span> ${badgeText}</span>
           </div>
-          <div class="booked-card-meta">${item.date} ${item.departure.time} ${item.departure.city}→${item.arrival.time}+1 ${item.arrival.city}</div>
-          <div class="booked-card-meta">${item.departure.terminal} → ${item.arrival.terminal}</div>
+          <div class="booked-card-meta">${item.date} ${item.departure.time} ${getField(item.departure,'city')}→${item.arrival.time}+1 ${getField(item.arrival,'city')}</div>
+          <div class="booked-card-meta">${getField(item.departure,'terminal')} → ${getField(item.arrival,'terminal')}</div>
           <div class="booked-card-cost" style="margin-top:6px">${item.price}</div>
           <div class="booked-card-links">
-            <a href="${item.departure.maps}" target="_blank" class="booked-card-link"><span class="mi material-symbols-outlined" style="font-size:14px">location_on</span>${item.departure.city}港</a>
-            <a href="${item.arrival.maps}" target="_blank" class="booked-card-link"><span class="mi material-symbols-outlined" style="font-size:14px">location_on</span>${item.arrival.city}港</a>
+            <a href="${item.departure.maps}" target="_blank" class="booked-card-link"><span class="mi material-symbols-outlined" style="font-size:14px">location_on</span>${getField(item.departure,'city')}</a>
+            <a href="${item.arrival.maps}" target="_blank" class="booked-card-link"><span class="mi material-symbols-outlined" style="font-size:14px">location_on</span>${getField(item.arrival,'city')}</a>
           </div>
         </div>`;
       }
@@ -745,10 +757,10 @@ function renderBooking() {
       if (item.type === 'hotel') {
         return `<div class="booked-card">
           <div class="booked-card-head">
-            <div class="booked-card-name"><span class="mi material-symbols-outlined" style="font-size:16px">hotel</span> ${item.title}</div>
+            <div class="booked-card-name"><span class="mi material-symbols-outlined" style="font-size:16px">hotel</span> ${getField(item,'title')}</div>
             <span class="booked-badge ${badgeClass}"><span class="mi material-symbols-outlined" style="font-size:14px">${badgeIcon}</span> ${badgeText}</span>
           </div>
-          ${item.dates ? `<div class="booked-card-meta">${item.dates}${item.price_per_night ? ' · ' + item.price_per_night : ''}</div>` : ''}
+          ${item.dates ? `<div class="booked-card-meta">${item.dates}${item.price_per_night ? ' · ' + getField(item,'price_per_night') : ''}</div>` : ''}
           <div class="booked-card-cost">${item.price}</div>
           ${item.maps_url ? `<div class="booked-card-links"><a href="${item.maps_url}" target="_blank" class="booked-card-link"><span class="mi material-symbols-outlined" style="font-size:14px">location_on</span>${t('booking_map')}</a></div>` : ''}
         </div>`;
@@ -757,11 +769,11 @@ function renderBooking() {
       // activity / default
       return `<div class="booked-card">
         <div class="booked-card-head">
-          <div class="booked-card-name"><span class="mi material-symbols-outlined" style="font-size:16px">confirmation_number</span> ${item.title}</div>
+          <div class="booked-card-name"><span class="mi material-symbols-outlined" style="font-size:16px">confirmation_number</span> ${getField(item,'title')}</div>
           <span class="booked-badge ${badgeClass}"><span class="mi material-symbols-outlined" style="font-size:14px">${badgeIcon}</span> ${badgeText}</span>
         </div>
-        ${item.desc ? `<div class="booked-card-meta">${item.desc}</div>` : ''}
-        ${item.meetup ? `<div class="booked-card-meta">${t('booking_meetpoint')}：${item.meetup}</div>` : ''}
+        ${item.desc ? `<div class="booked-card-meta">${getField(item,'desc')}</div>` : ''}
+        ${item.meetup ? `<div class="booked-card-meta">${t('booking_meetpoint')}: ${getField(item,'meetup')}</div>` : ''}
         <div class="booked-card-cost">${item.price}</div>
         ${item.maps_url ? `<div class="booked-card-links"><a href="${item.maps_url}" target="_blank" class="booked-card-link"><span class="mi material-symbols-outlined" style="font-size:14px">location_on</span>${t('booking_meetpoint')}</a></div>` : ''}
       </div>`;
@@ -790,7 +802,7 @@ function renderBooking() {
               ? (row.best === key ? `<span class="best-price">${val} <span class="star-mark">★</span></span>` : val)
               : '—';
             return `<tr>
-              <td><strong>${row.name}</strong>${row.name_note ? `<br><span style="font-size:.72rem;color:var(--text-3)">${row.name_note}</span>` : ''}</td>
+              <td><strong>${getField(row,'name')}</strong>${row.name_note ? `<br><span style="font-size:.72rem;color:var(--text-3)">${getField(row,'name_note')}</span>` : ''}</td>
               <td>${bestCell('official', p.official)}</td>
               <td>${bestCell('klook', p.klook)}</td>
               <td>${bestCell('kkday', p.kkday)}</td>
@@ -821,21 +833,21 @@ function openPOIModal(id) {
   const catNames = {}; ['attraction','food','cafe','shopping','transport','work','hotel'].forEach(c => catNames[c] = getCatName(c));
   const price = p.price_twd > 0
     ? 'NT$' + p.price_twd + (p.price_krw ? '（₩' + p.price_krw.toLocaleString() + '）' : p.price_jpy ? '（¥' + p.price_jpy.toLocaleString() + '）' : '')
-    : '免費';
-  const mapQ = encodeURIComponent(p.nameLocal + ' ' + p.addr);
+    : t('lbl_free');
+  const mapQ = encodeURIComponent(p.nameLocal + ' ' + getField(p,'addr'));
   const searchQ = encodeURIComponent(p.nameLocal || p.name);
 
   document.getElementById('poi-modal-content').innerHTML =
     '<div class="poi-modal-header">' +
       '<div class="poi-modal-dot" style="background:' + col + '"></div>' +
-      '<div><div class="poi-modal-title">' + p.name + '</div>' +
-      '<div class="poi-modal-local">' + (p.nameLocal || '') + '</div></div>' +
+      '<div><div class="poi-modal-title">' + (currentLang !== 'zh' && p.nameLocal ? p.nameLocal : p.name) + '</div>' +
+      '<div class="poi-modal-local">' + (currentLang !== 'zh' ? p.name : (p.nameLocal || '')) + '</div></div>' +
     '</div>' +
     '<div class="poi-modal-section">' +
-      '<div class="poi-modal-row">📍 ' + getCityLabel(p.city) + ' · ' + p.addr + '</div>' +
-      '<div class="poi-modal-row">🕐 ' + p.hours + '</div>' +
+      '<div class="poi-modal-row">📍 ' + getCityLabel(p.city) + ' · ' + getField(p,'addr') + '</div>' +
+      '<div class="poi-modal-row">🕐 ' + getField(p,'hours') + '</div>' +
       '<div class="poi-modal-row">💰 ' + price + '</div>' +
-      '<div class="poi-modal-row">📋 ' + p.desc + '</div>' +
+      '<div class="poi-modal-row">📋 ' + getField(p,'desc') + '</div>' +
       '<div class="poi-modal-row" style="margin-top:4px"><span style="display:inline-block;padding:2px 8px;border-radius:99px;font-size:.7rem;background:' + col + '20;color:' + col + ';font-weight:600">' + (catNames[p.cat] || p.cat) + '</span></div>' +
     '</div>' +
     '<div class="poi-modal-section">' +
@@ -1427,6 +1439,25 @@ const I18N = {
   retro_budget_title: { zh:'預算回顧', en:'Budget Review', ko:'예산 리뷰', ja:'予算レビュー' },
   retro_review_title: { zh:'旅程回顧', en:'Trip Review', ko:'여행 리뷰', ja:'旅の振り返り' },
   retro_next_title: { zh:'下次旅行', en:'Next Trip', ko:'다음 여행', ja:'次の旅' },
+  retro_th_cat: { zh:'類別', en:'Category', ko:'카테고리', ja:'カテゴリ' },
+  retro_th_est: { zh:'預估', en:'Estimated', ko:'예상', ja:'予想' },
+  retro_th_act: { zh:'實際', en:'Actual', ko:'실제', ja:'実際' },
+  retro_total: { zh:'合計', en:'Total', ko:'합계', ja:'合計' },
+  retro_th_day: { zh:'天', en:'Day', ko:'일', ja:'日' },
+  retro_th_change: { zh:'修改內容', en:'Change', ko:'변경 내용', ja:'変更内容' },
+  retro_th_reason: { zh:'原因', en:'Reason', ko:'이유', ja:'理由' },
+  retro_th_lesson: { zh:'學到的', en:'Lesson', ko:'교훈', ja:'学んだこと' },
+  retro_remember: { zh:'下次記得', en:'Remember next time', ko:'다음에 기억할 것', ja:'次回覚えておくこと' },
+  retro_spots_next: { zh:'個景點下次可以去', en:' spots for next time', ko:'개 명소 다음에 방문', ja:'か所 次回訪問' },
+  retro_all_visited: { zh:'所有景點都去到了！', en:'You visited everything!', ko:'모든 곳을 방문했어요!', ja:'全箇所訪問しました！' },
+  retro_places: { zh:'造訪地點', en:'Places Visited', ko:'방문 장소', ja:'訪問地点' },
+  retro_days: { zh:'天數', en:'Days', ko:'일수', ja:'日数' },
+  retro_attractions: { zh:'景點', en:'Attractions', ko:'명소', ja:'スポット' },
+  retro_food: { zh:'美食', en:'Food', ko:'맛집', ja:'グルメ' },
+  retro_over_by: { zh:'超支', en:'Over by', ko:'초과', ja:'超過' },
+  retro_saved: { zh:'省了', en:'Saved', ko:'절약', ja:'節約' },
+  retro_actual: { zh:'實際', en:'Actual', ko:'실제', ja:'実際' },
+  retro_est: { zh:'預估', en:'Est.', ko:'예상', ja:'予想' },
   nav_lang:        { zh:'語言', en:'Lang', ko:'언어', ja:'言語' },
   nav_more:        { zh:'更多', en:'More', ko:'더보기', ja:'その他' },
 
@@ -1488,6 +1519,11 @@ const I18N = {
   btn_export_geo: { zh:'匯出 GeoJSON', en:'Export GeoJSON', ko:'GeoJSON 내보내기', ja:'GeoJSON出力' },
   btn_export_gm:  { zh:'匯出 Google Maps', en:'Export Google Maps', ko:'Google Maps 내보내기', ja:'Google Maps出力' },
   lbl_free:       { zh:'免費', en:'Free', ko:'무료', ja:'無料' },
+  lbl_airport:    { zh:'機場', en:'Airport', ko:'공항', ja:'空港' },
+  flight_below_avg: { zh:'低於均價', en:'Below average', ko:'평균 이하', ja:'平均以下' },
+  flight_near_avg:  { zh:'接近均價', en:'Near average', ko:'평균 근처', ja:'平均付近' },
+  flight_above_avg: { zh:'高於均價', en:'Above average', ko:'평균 이상', ja:'平均以上' },
+  flight_range:     { zh:'歷史區間', en:'Historical range', ko:'역사적 범위', ja:'過去の範囲' },
   lbl_booked:     { zh:'已購', en:'Booked', ko:'구매완료', ja:'購入済' },
   lbl_pending:    { zh:'待訂', en:'Pending', ko:'미구매', ja:'未購入' },
 
@@ -1737,6 +1773,7 @@ function applyLang() {
   safe('updateClocks', updateClocks);
   safe('renderChecklist', renderChecklist);
   safe('renderEntryForms', renderEntryForms);
+  safe('renderBooking', renderBooking);
   safe('renderRetro', renderRetro);
 }
 
@@ -2078,7 +2115,6 @@ function getActualTotal() {
 }
 
 // ── Retro tab ──
-var retroMap;
 function renderRetro() {
   if (!TRIP || !TRIP.retro) return;
   var R = TRIP.retro;
@@ -2103,7 +2139,7 @@ function renderRetro() {
     }
   }
 
-  // Map — only create if not already rendered (avoid re-creating on lang switch)
+  // Map — only create if not already rendered
   if (!retroMap) renderRetroMap(currentCity);
 
   // Budget verdict — compute from real budget data
@@ -2115,14 +2151,14 @@ function renderRetro() {
     var actualTotal = getActualTotal();
     var diff = actualTotal - estimatedTotal;
     var isUnder = diff <= 0;
-    var diffLabel = isUnder ? ((currentLang==='zh'?'省了 ':'Saved ') + fmtCurr(Math.abs(diff))) : ((currentLang==='zh'?'超支 ':'Over by ') + fmtCurr(Math.abs(diff)));
+    var diffLabel = isUnder ? (t('retro_saved') + ' ' + fmtCurr(Math.abs(diff))) : (t('retro_over_by') + ' ' + fmtCurr(Math.abs(diff)));
     var hasActual = actualTotal > 0;
 
     verdictEl.innerHTML =
       '<div class="retro-verdict-label">' + t('retro_budget_title') + '</div>' +
       '<div class="retro-verdict-amount">' + (hasActual ? fmtCurr(actualTotal) : '–') + '</div>' +
       (hasActual ? '<div class="retro-verdict-badge ' + (isUnder?'under':'over') + '">' + diffLabel + '</div>' : '') +
-      '<div class="retro-verdict-detail">' + (currentLang==='zh'?'實際':'Actual') + ': ' + (hasActual?fmtCurr(actualTotal):'–') + ' / ' + (currentLang==='zh'?'預估':'Est.') + ': ' + fmtCurr(estimatedTotal) + '</div>';
+      '<div class="retro-verdict-detail">' + t('retro_actual') + ': ' + (hasActual?fmtCurr(actualTotal):'–') + ' / ' + t('retro_est') + ': ' + fmtCurr(estimatedTotal) + '</div>';
 
     // Budget table — per-category estimated vs actual
     if (cardsEl) {
@@ -2140,7 +2176,6 @@ function renderRetro() {
       var catOrder = ['transport','hotel','attraction','food','shopping','cafe','other'];
       var sortedCats = catOrder.filter(function(c) { return allCats[c]; });
 
-      var lbl = currentLang === 'zh';
       var rows = sortedCats.map(function(cat) {
         var est = estByCat[cat] || 0;
         var act = actByCat[cat] || 0;
@@ -2174,12 +2209,12 @@ function renderRetro() {
 
       cardsEl.innerHTML = '<table class="retro-budget-table">' +
         '<thead><tr>' +
-          '<th>' + (lbl ? '類別' : 'Category') + '</th>' +
-          '<th>' + (lbl ? '預估' : 'Estimated') + '</th>' +
-          '<th>' + (lbl ? '實際' : 'Actual') + '</th>' +
+          '<th>' + t('retro_th_cat') + '</th>' +
+          '<th>' + t('retro_th_est') + '</th>' +
+          '<th>' + t('retro_th_act') + '</th>' +
         '</tr></thead><tbody>' + rows +
         '<tr class="retro-total-row">' +
-          '<td><strong>' + (lbl ? '合計' : 'Total') + '</strong></td>' +
+          '<td><strong>' + t('retro_total') + '</strong></td>' +
           '<td><strong>' + fmtCurr(estimatedTotal) + '</strong></td>' +
           '<td>' + totalActCell + '</td>' +
         '</tr></tbody></table>';
@@ -2191,32 +2226,29 @@ function renderRetro() {
   var lessonsEl = document.getElementById('retro-review-lessons');
 
   if (reviewEl && R.changelog) {
-    var isZh = currentLang === 'zh';
     reviewEl.innerHTML = '<table class="retro-changes-table">' +
       '<thead><tr>' +
-        '<th>' + (isZh ? '天' : 'Day') + '</th>' +
-        '<th>' + (isZh ? '修改內容' : 'Change') + '</th>' +
-        '<th>' + (isZh ? '原因' : 'Reason') + '</th>' +
-        '<th>' + (isZh ? '學到的' : 'Lesson') + '</th>' +
+        '<th>' + t('retro_th_day') + '</th>' +
+        '<th>' + t('retro_th_change') + '</th>' +
+        '<th>' + t('retro_th_reason') + '</th>' +
+        '<th>' + t('retro_th_lesson') + '</th>' +
       '</tr></thead><tbody>' +
       R.changelog.map(function(c) {
-        var desc = isZh ? c.description : (c.description_en || c.description);
         return '<tr>' +
           '<td><div class="retro-change-day">Day ' + c.day + '</div><div class="retro-change-day">' + c.date.slice(5) + '</div></td>' +
-          '<td><span class="retro-change-dot ' + c.impact + '"></span><span class="retro-change-desc">' + desc + '</span></td>' +
-          '<td><span class="retro-change-reason">' + (isZh ? c.reason : (c.reason_en || c.reason)) + '</span></td>' +
-          '<td><span class="retro-change-lesson">' + (isZh ? c.lesson : (c.lesson_en || c.lesson)) + '</span></td>' +
+          '<td><span class="retro-change-dot ' + c.impact + '"></span><span class="retro-change-desc">' + getField(c,'description') + '</span></td>' +
+          '<td><span class="retro-change-reason">' + getField(c,'reason') + '</span></td>' +
+          '<td><span class="retro-change-lesson">' + getField(c,'lesson') + '</span></td>' +
         '</tr>';
       }).join('') +
       '</tbody></table>';
   }
 
   if (lessonsEl && R.planning_lessons) {
-    var isZh = currentLang === 'zh';
     lessonsEl.innerHTML = '<div style="font-size:.72rem;color:var(--text-3);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px">' +
-      (isZh ? '下次記得' : 'Remember next time') + '</div>' +
+      t('retro_remember') + '</div>' +
       R.planning_lessons.map(function(l) {
-        var text = isZh ? l.zh : l.en;
+        var text = l[currentLang] || l.zh;
         return '<span class="retro-lesson-tag"><span class="mi material-symbols-outlined">lightbulb</span>' + text + '</span>';
       }).join('');
   }
@@ -2224,7 +2256,6 @@ function renderRetro() {
   // ── Section B: Next Trip — POIs in pois[] but NOT in any visited_pois ──
   var nextEl = document.getElementById('retro-next');
   if (nextEl) {
-    var isZh = currentLang === 'zh';
     var catColors = { attraction:'var(--cat-attraction)', food:'var(--cat-food)', cafe:'var(--cat-cafe)', shopping:'var(--cat-shopping)' };
 
     // Build set of all visited POI IDs
@@ -2244,17 +2275,17 @@ function renderRetro() {
 
     if (missedPois.length > 0) {
       nextEl.innerHTML = '<div class="retro-next-header">' +
-        (isZh ? missedPois.length + ' 個景點下次可以去' : missedPois.length + ' spots for next time') + '</div>' +
+        missedPois.length + t('retro_spots_next') + '</div>' +
         missedPois.map(function(p) {
           var extra = missedData[p.id];
-          var reason = extra ? (isZh ? extra.reason : (extra.reason_en || extra.reason)) : '';
-          var suggestion = extra ? extra.suggestion : '';
-          var mapUrl = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent((p.nameLocal || p.name) + ' ' + p.addr);
+          var reason = extra ? getField(extra, 'reason') : '';
+          var suggestion = extra ? getField(extra, 'suggestion') : '';
+          var mapUrl = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent((p.nameLocal || p.name) + ' ' + getField(p,'addr'));
           return '<div class="retro-next-card">' +
             '<div class="retro-next-dot" style="background:' + (catColors[p.cat] || 'var(--text-3)') + '"></div>' +
             '<div class="retro-next-body">' +
-              '<div class="retro-next-name">' + p.name +
-                (p.nameLocal ? '<span class="retro-next-name-local">' + p.nameLocal + '</span>' : '') +
+              '<div class="retro-next-name">' + (currentLang !== 'zh' && p.nameLocal ? p.nameLocal : p.name) +
+                '<span class="retro-next-name-local">' + (currentLang !== 'zh' ? p.name : (p.nameLocal || '')) + '</span>' +
               '</div>' +
               '<div class="retro-next-meta">' + getCityLabel(p.city) + (reason ? ' · ' + reason : '') + '</div>' +
               (suggestion ? '<div class="retro-next-meta" style="color:var(--text-3);font-style:italic;margin-top:2px">' + suggestion + '</div>' : '') +
@@ -2264,20 +2295,19 @@ function renderRetro() {
         }).join('');
     } else {
       nextEl.innerHTML = '<div class="retro-next-empty">' +
-        (isZh ? '所有景點都去到了！' : 'You visited everything!') + '</div>';
+        t('retro_all_visited') + '</div>';
     }
   }
 }
 
+var retroMap;
 function renderRetroMap(cityId) {
   if (typeof L === 'undefined') return;
   var R = TRIP.retro;
   var city = R.cities.find(function(c) { return c.id === cityId; });
   if (!city) return;
 
-  var container = document.getElementById('retro-map');
   if (retroMap) { retroMap.remove(); retroMap = null; }
-
   retroMap = L.map('retro-map', { scrollWheelZoom: false });
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap'
@@ -2289,7 +2319,6 @@ function renderRetroMap(cityId) {
 
   var coords = [];
   var colors = { attraction:'#e8664a', food:'#4aad5b', cafe:'#9b6ad4', shopping:'#e8964a', transport:'#4ab8c9', hotel:'#4a7ce8', work:'#6a6ad4' };
-
   visitedPois.forEach(function(p) {
     var col = colors[p.cat] || '#888';
     var latlng = [p.lat, p.lng];
@@ -2298,17 +2327,15 @@ function renderRetroMap(cityId) {
       .bindTooltip(p.name, { permanent: false })
       .addTo(retroMap);
   });
-
-  // Draw route line
   if (coords.length > 1) {
     L.polyline(coords, { color:'#444', weight:2, dashArray:'6,8', opacity:0.6 }).addTo(retroMap);
   }
-
   if (coords.length > 0) {
-    retroMap.fitBounds(L.latLngBounds(coords).pad(0.15));
+    var bounds = L.latLngBounds(coords).pad(0.15);
+    retroMap.fitBounds(bounds);
+    setTimeout(function() { if (retroMap) { retroMap.invalidateSize(); retroMap.fitBounds(bounds); } }, 300);
   }
 
-  // Stats below map
   var statsEl = document.getElementById('retro-map-stats');
   if (statsEl) {
     var catCounts = {};
@@ -2316,10 +2343,10 @@ function renderRetroMap(cityId) {
       catCounts[p.cat] = (catCounts[p.cat] || 0) + 1;
     });
     statsEl.innerHTML =
-      '<div class="retro-map-stat"><div class="retro-map-stat-label">' + (currentLang === 'zh' ? '造訪地點' : 'Places Visited') + '</div><div class="retro-map-stat-val">' + visitedPois.length + '</div></div>' +
-      '<div class="retro-map-stat"><div class="retro-map-stat-label">' + (currentLang === 'zh' ? '天數' : 'Days') + '</div><div class="retro-map-stat-val">' + city.days.length + '</div></div>' +
-      '<div class="retro-map-stat"><div class="retro-map-stat-label">' + (currentLang === 'zh' ? '景點' : 'Attractions') + '</div><div class="retro-map-stat-val">' + (catCounts.attraction || 0) + '</div></div>' +
-      '<div class="retro-map-stat"><div class="retro-map-stat-label">' + (currentLang === 'zh' ? '美食' : 'Food') + '</div><div class="retro-map-stat-val">' + ((catCounts.food || 0) + (catCounts.cafe || 0)) + '</div></div>';
+      '<div class="retro-map-stat"><div class="retro-map-stat-label">' + t('retro_places') + '</div><div class="retro-map-stat-val">' + visitedPois.length + '</div></div>' +
+      '<div class="retro-map-stat"><div class="retro-map-stat-label">' + t('retro_days') + '</div><div class="retro-map-stat-val">' + city.days.length + '</div></div>' +
+      '<div class="retro-map-stat"><div class="retro-map-stat-label">' + t('retro_attractions') + '</div><div class="retro-map-stat-val">' + (catCounts.attraction || 0) + '</div></div>' +
+      '<div class="retro-map-stat"><div class="retro-map-stat-label">' + t('retro_food') + '</div><div class="retro-map-stat-val">' + ((catCounts.food || 0) + (catCounts.cafe || 0)) + '</div></div>';
   }
 }
 
