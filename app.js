@@ -3,7 +3,7 @@
    ============================================================ */
 
 let TRIP;
-let currentCurr = 'TWD';
+let currentCurr = 'JPY';
 let currentWeek = 1;
 let currentFilter = 'all';
 let leafletMap, markerLayer;
@@ -1422,9 +1422,9 @@ function renderNomadSpots() {
 }
 
 // ── Language Switcher (i18n) ──
-const LANGS = ['zh', 'en', 'ko', 'ja'];
+const LANGS = ['en', 'zh', 'ko', 'ja'];
 const LANG_LABELS = { zh: '中文', en: 'EN', ko: '한국어', ja: '日本語' };
-let currentLang = 'zh';
+let currentLang = 'en';
 
 const I18N = {
   // ── Navigation & Tab labels ──
@@ -1471,6 +1471,7 @@ const I18N = {
   // ── Page titles ──
   title_attractions: { zh:'景點地圖', en:'Attractions Map', ko:'명소 지도', ja:'スポットマップ' },
   title_calendar:    { zh:'行程日曆', en:'Itinerary Calendar', ko:'일정 달력', ja:'日程カレンダー' },
+  calendar_meta:     { zh:'3/30 – 4/12 · 14 天', en:'3/30 – 4/12 · 14 Days', ko:'3/30 – 4/12 · 14일', ja:'3/30 – 4/12 · 14日間' },
   title_booking:     { zh:'票券比價', en:'Ticket Comparison', ko:'티켓 비교', ja:'チケット比較' },
   title_budget:      { zh:'旅費', en:'Expenses', ko:'여행 경비', ja:'旅費' },
   title_time:        { zh:'景點地圖', en:'Attractions Map', ko:'명소 지도', ja:'スポットマップ' },
@@ -1513,6 +1514,7 @@ const I18N = {
   stat_daily:     { zh:'每日均消', en:'Daily Avg.', ko:'일일 평균', ja:'日平均' },
   stat_daily_sub: { zh:'不含機酒', en:'excl. flights & hotel', ko:'항공+숙박 제외', ja:'航空券・宿泊除く' },
   stat_work:      { zh:'工作天數', en:'Work Days', ko:'근무일', ja:'勤務日' },
+  stat_work_val:  { zh:'4 天', en:'4 Days', ko:'4일', ja:'4日間' },
   stat_work_sub:  { zh:'福岡 4/7–4/10', en:'Fukuoka 4/7–4/10', ko:'후쿠오카 4/7–4/10', ja:'福岡 4/7–4/10' },
 
   // ── Buttons & labels ──
@@ -1740,7 +1742,16 @@ function cycleLang() {
   applyLang();
 }
 
+const LANG_CURR_MAP = { zh:'TWD', en:'USD', ko:'KRW', ja:'JPY' };
+
 function applyLang() {
+  // Auto-switch currency to match language
+  var mapped = LANG_CURR_MAP[currentLang] || 'TWD';
+  if (currentCurr !== mapped) {
+    currentCurr = mapped;
+    document.querySelectorAll('.curr-btn').forEach(b => b.classList.toggle('on', b.dataset.curr === currentCurr));
+  }
+
   // Update all elements with data-i18n attribute
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.dataset.i18n;
@@ -2407,5 +2418,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   safe('clocks', initClocks);
   safe('poiModal', initPOIModal);
   safe('langToggle', initLangToggle);
+  safe('applyLang', applyLang);
   safe('renderRetro', renderRetro);
 });
