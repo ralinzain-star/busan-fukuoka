@@ -401,6 +401,7 @@ const budgetCatColorMap = {
   transport:{ icon:'<span class="mi" style="font-size:14px">train</span>', color:'var(--cat-transport)' },
   attraction:{ icon:'<span class="mi" style="font-size:14px">confirmation_number</span>', color:'var(--cat-attraction)' },
   shopping:{ icon:'<span class="mi" style="font-size:14px">shopping_bag</span>', color:'var(--cat-shopping)' },
+  cafe:   { icon:'<span class="mi" style="font-size:14px">local_cafe</span>', color:'var(--cat-cafe, #8d6e63)' },
   other:  { icon:'<span class="mi" style="font-size:14px">inventory_2</span>', color:'var(--cat-other)' },
   personal:{ icon:'<span class="mi" style="font-size:14px">bedtime</span>', color:'var(--cat-personal)' }
 };
@@ -488,7 +489,8 @@ function renderBudgetEstimated() {
       return '<div class="item-row' + (hidden ? ' hidden' : '') + '"><div><div class="item-name">' + getBudgetItemName(item) + '</div></div><div class="item-city">' + getCityName(item.city) + '</div><div class="item-cost">' + fmtCurr(item.cost_twd) + '</div></div>';
     }).join('') + '</div></div>';
 
-  document.getElementById('stat-total').textContent = fmtCurr(fullTotal);
+  var actualTotal = getActualTotal();
+  document.getElementById('stat-total').textContent = actualTotal > 0 ? fmtCurr(actualTotal) : fmtCurr(fullTotal);
 
   // City bar click handlers
   document.querySelectorAll('.budget-city-bar, .budget-city-hbar').forEach(function(el) {
@@ -538,7 +540,7 @@ function renderBudgetActual() {
   }).join('');
 
   // Items: pre-purchased group + daily groups
-  var catIconMap = { hotel:'hotel', food:'restaurant', transport:'train', attraction:'confirmation_number', shopping:'shopping_bag', other:'inventory_2' };
+  var catIconMap = { hotel:'hotel', food:'restaurant', transport:'train', attraction:'confirmation_number', shopping:'shopping_bag', cafe:'local_cafe', other:'inventory_2' };
 
   function renderItemRow(item) {
     var icon = catIconMap[item.cat] || 'receipt';

@@ -3359,6 +3359,35 @@
             "city": "fukuoka"
           }
         ]
+      },
+      {
+        "date": "2026-04-08",
+        "items": [
+          {
+            "name": "早餐",
+            "cat": "food",
+            "cost_twd": 233,
+            "city": "fukuoka"
+          },
+          {
+            "name": "藥妝",
+            "cat": "shopping",
+            "cost_twd": 175,
+            "city": "fukuoka"
+          },
+          {
+            "name": "雜物",
+            "cat": "shopping",
+            "cost_twd": 400,
+            "city": "fukuoka"
+          },
+          {
+            "name": "晚餐",
+            "cat": "food",
+            "cost_twd": 320,
+            "city": "fukuoka"
+          }
+        ]
       }
     ]
   },
