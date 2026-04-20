@@ -3627,6 +3627,53 @@
             "city": "fukuoka"
           }
         ]
+      },
+      {
+        "date": "2026-04-11",
+        "items": [
+          {
+            "name": "雜物",
+            "cat": "shopping",
+            "cost_twd": 420,
+            "city": "fukuoka"
+          },
+          {
+            "name": "午餐",
+            "cat": "food",
+            "cost_twd": 626,
+            "city": "fukuoka"
+          },
+          {
+            "name": "伴手禮・芳香掛飾・手機掛繩",
+            "cat": "shopping",
+            "cost_twd": 689,
+            "city": "fukuoka"
+          },
+          {
+            "name": "咖啡",
+            "cat": "cafe",
+            "cost_twd": 116,
+            "city": "fukuoka"
+          },
+          {
+            "name": "星巴克",
+            "cat": "cafe",
+            "cost_twd": 1011,
+            "city": "fukuoka"
+          },
+          {
+            "name": "晚餐",
+            "cat": "food",
+            "cost_twd": 288,
+            "city": "fukuoka"
+          },
+          {
+            "name": "咖啡廳",
+            "cat": "cafe",
+            "cost_twd": 305,
+            "city": "fukuoka"
+          }
+        ]
       }
     ]
   },
@@ -4150,6 +4197,7 @@
         "price_per_night_en": "NT$706/night",
         "price_per_night_ko": "NT$706/박",
         "price_per_night_ja": "NT$706/泊",
+        "price_per_night_twd": 706,
         "price_twd": 2822,
         "status": "confirmed",
         "maps_url": "https://www.google.com/maps/search/?api=1&query=Onjeong+Stay+부산"

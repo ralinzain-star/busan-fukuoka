@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design Showcase — Busan → Aso → Fukuoka Trip Planner</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap">
+<style>
+:root {
+  --bg: #fafafa;--surface: #fff;--text: #1a1a1a;--text-2: #555;--text-3: #999;
+  --accent: #e8664a;--accent-bg: rgba(232,102,74,.06);--border: #e5e5e5;
+  --r: 20px;--r-sm: 12px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter','Noto Sans TC',-apple-system,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+
+/* ===== HERO ===== */
+.hero{background:linear-gradient(135deg,#1a1a2e,#16213e 50%,#0f3460);color:#fff;padding:80px 40px 60px;text-align:center}
+.hero-badge{display:inline-block;background:rgba(255,255,255,.12);backdrop-filter:blur(8px);padding:6px 16px;border-radius:99px;font-size:.75rem;font-weight:600;letter-spacing:1px;margin-bottom:20px}
+.hero h1{font-size:2.6rem;font-weight:800;letter-spacing:-1px;margin-bottom:12px}
+.hero p{font-size:1.05rem;opacity:.7;max-width:600px;margin:0 auto}
+.hero-stats{display:flex;gap:32px;justify-content:center;margin-top:32px;flex-wrap:wrap}
+.hero-stat .val{font-size:1.8rem;font-weight:800}
+.hero-stat .label{font-size:.68rem;text-transform:uppercase;letter-spacing:1px;opacity:.45}
+
+/* ===== LAYOUT ===== */
+.container{max-width:960px;margin:0 auto;padding:0 24px}
+
+/* ===== SECTION ===== */
+section{margin-bottom:72px;scroll-margin-top:24px}
+.section-head{margin-bottom:28px}
+.section-num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--accent);color:#fff;font-size:.75rem;font-weight:800;margin-right:8px;flex-shrink:0}
+.section-head h2{font-size:1.45rem;font-weight:800;display:flex;align-items:center;letter-spacing:-.3px;margin-bottom:4px}
+.section-head h2 .en{font-size:.8rem;font-weight:500;color:var(--text-3);margin-left:8px}
+.section-head p{color:var(--text-2);font-size:.88rem;max-width:680px}
+
+/* ===== PHONE FRAME ===== */
+.phone-row{display:flex;gap:28px;justify-content:center;align-items:flex-start;margin-bottom:28px;flex-wrap:wrap}
+.phone-wrap{text-align:center}
+.phone{width:320px;border-radius:var(--r);overflow:hidden;border:1px solid var(--border);box-shadow:0 4px 24px rgba(0,0,0,.08);background:#fff}
+.phone img{width:100%;display:block}
+.phone-label{margin-top:12px;font-size:.82rem;color:var(--text-2);font-weight:600}
+.phone-sublabel{font-size:.72rem;color:var(--text-3);margin-top:2px}
+
+/* ===== FEATURE GRID ===== */
+.features{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px}
+.feat{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-sm);padding:14px 16px}
+.feat-title{font-weight:700;font-size:.85rem;margin-bottom:3px}
+.feat-desc{font-size:.76rem;color:var(--text-2);line-height:1.5}
+
+/* ===== HIGHLIGHT ===== */
+.highlight{background:var(--accent-bg);border:1px solid rgba(232,102,74,.15);border-radius:var(--r-sm);padding:16px 20px;margin-bottom:20px}
+.highlight-title{font-weight:700;font-size:.85rem;color:var(--accent);margin-bottom:6px}
+.highlight-body{font-size:.82rem;color:var(--text)}
+.highlight-body code{background:rgba(0,0,0,.06);padding:1px 5px;border-radius:4px;font-size:.78rem}
+
+/* ===== TAGS ===== */
+.tag{display:inline-block;padding:2px 8px;border-radius:6px;font-size:.65rem;font-weight:600;margin-right:4px}
+.tag-dynamic{background:#e3f5e6;color:#2a7a36}
+.tag-i18n{background:#fef3e0;color:#9a6a1a}
+
+/* ===== FOOTER ===== */
+footer{text-align:center;padding:40px;color:var(--text-3);font-size:.82rem;border-top:1px solid var(--border)}
+
+@media(max-width:768px){
+  .hero h1{font-size:1.8rem}
+  .features{grid-template-columns:1fr}
+  .phone-row{flex-direction:column;align-items:center}
+  .phone{width:280px}
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">DESIGN SHOWCASE</div>
+  <h1>Busan → Aso → Fukuoka<br>Trip Planner</h1>
+  <p>Data-driven travel planning app with real-time features, 4-language i18n, and responsive design.</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="val">7</div><div class="label">Pages</div></div>
+    <div class="hero-stat"><div class="val">4</div><div class="label">Languages</div></div>
+    <div class="hero-stat"><div class="val">14</div><div class="label">Days</div></div>
+    <div class="hero-stat"><div class="val">96</div><div class="label">Events</div></div>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- ============ 1. SPLASH + OVERVIEW ============ -->
+<section id="s1" style="margin-top:48px">
+  <div class="section-head">
+    <h2><span class="section-num">1</span>First Impression <span class="en">Splash & Overview</span></h2>
+    <p>全螢幕封面頁以高千穗峽谷為背景，點擊或上滑進入概覽儀表板。四格統計卡即時顯示旅費、景點數、每日均消與工作天數。</p>
+  </div>
+
+  <div class="phone-row">
+    <div class="phone-wrap">
+      <div class="phone"><img src="img/m-splash.png" alt="Splash"></div>
+      <div class="phone-label">Splash Cover</div>
+      <div class="phone-sublabel">自訂背景 · 上滑進入 · 當日行程預覽</div>
+    </div>
+    <div class="phone-wrap">
+      <div class="phone"><img src="img/m-overview.png" alt="Overview"></div>
+      <div class="phone-label">Overview Dashboard</div>
+      <div class="phone-sublabel">統計卡 · 倒數計時 · Today Card · 天氣預報</div>
+    </div>
+  </div>
+
+  <div class="features">
+    <div class="feat"><div class="feat-title">Custom Cover Photo</div><div class="feat-desc">FileReader API + localStorage 持久化，使用者可上傳自己的旅行照片為封面。</div></div>
+    <div class="feat"><div class="feat-title">Swipe-up Gesture</div><div class="feat-desc">手機端 touch 偵測滑動 60px 進入。封面以 cubic-bezier 動畫向上飛走。</div></div>
+    <div class="feat"><div class="feat-title">Live Countdown</div><div class="feat-desc">每秒更新。出發前倒數到航班時間，旅行中顯示剩餘時間，結束後歸零。</div></div>
+    <div class="feat"><div class="feat-title">Today's Itinerary</div><div class="feat-desc">自動判斷旅程狀態，旅行中顯示帶時間線的當日事件。已過事件變淡、進行中高亮。</div></div>
+  </div>
+</section>
+
+<!-- ============ 2. WEATHER ============ -->
+<section id="s2">
+  <div class="section-head">
+    <h2><span class="section-num">2</span>14-Day Weather <span class="en">Forecast & Golden Hour</span></h2>
+    <p>橫向滾動的天氣卡片帶，整合日出日落與攝影黃金時刻。三城市色碼一眼辨識（Busan 藍 · Aso 綠 · Fukuoka 紅）。</p>
+  </div>
+
+  <div class="highlight">
+    <div class="highlight-title">每張天氣卡片包含 <span class="tag tag-dynamic">Dynamic</span></div>
+    <div class="highlight-body">
+      Material Symbols 天氣圖示 · 高低溫 · 天氣描述（四語） · 日出/日落時間 · 攝影黃金時刻（日落前 30 分計算） · 城市色碼標籤<br>
+      頁面載入自動捲動到今天的卡片（<code>scrollIntoView({ inline: 'center' })</code>）
+    </div>
+  </div>
+
+  <div class="features">
+    <div class="feat"><div class="feat-title">City Color System</div><div class="feat-desc">Busan <span style="color:#3a7bd5;font-weight:700">#3a7bd5</span> · Aso <span style="color:#2e7d32;font-weight:700">#2e7d32</span> · Fukuoka <span style="color:#c0392b;font-weight:700">#c0392b</span></div></div>
+    <div class="feat"><div class="feat-title">Golden Hour</div><div class="feat-desc">自動從日落時間回推 30 分鐘，標示最佳攝影時刻。</div></div>
+  </div>
+</section>
+
+<!-- ============ 3. CALENDAR ============ -->
+<section id="s3">
+  <div class="section-head">
+    <h2><span class="section-num">3</span>Itinerary Calendar <span class="en">Now Line & Dual Clock</span></h2>
+    <p>週曆視圖搭配即時 Now Line 時間指示器。手機版為垂直事件列表，每個事件有色條分類、時間與餐廳訂位資訊。</p>
+  </div>
+
+  <div class="phone-row">
+    <div class="phone-wrap">
+      <div class="phone"><img src="img/m-calendar-w1.png" alt="Calendar W1"></div>
+      <div class="phone-label">Week 1 (3/30–4/5)</div>
+      <div class="phone-sublabel">Busan → Ferry → Aso → Dazaifu</div>
+    </div>
+    <div class="phone-wrap">
+      <div class="phone"><img src="img/m-calendar-w2.png" alt="Calendar W2"></div>
+      <div class="phone-label">Week 2 (4/6–4/12)</div>
+      <div class="phone-sublabel">Fukuoka · Work Mode · Itoshima · Return</div>
+    </div>
+  </div>
+
+  <div class="features">
+    <div class="feat"><div class="feat-title">Now Line</div><div class="feat-desc">紅色橫線 <code>#e8664a</code> + 圓點，每 30 秒更新。桌面版定位於日欄，手機版插入事件之間。</div></div>
+    <div class="feat"><div class="feat-title">Dual Timezone</div><div class="feat-desc">KR/JP（UTC+9）與 TW（UTC+8）即時時鐘，每 30 秒自動跳動。</div></div>
+    <div class="feat"><div class="feat-title">8-Category Colors</div><div class="feat-desc">景點、美食、交通、工作、咖啡、住宿、購物、個人 — 各有專屬粉彩底色。</div></div>
+    <div class="feat"><div class="feat-title">Restaurant Info</div><div class="feat-desc">事件卡內嵌餐廳名、Maps 連結、訂位狀態圖示（⚠️需訂 / ✅已訂）。</div></div>
+  </div>
+</section>
+
+<!-- ============ 4. BOOKING ============ -->
+<section id="s4">
+  <div class="section-head">
+    <h2><span class="section-num">4</span>Ticket Comparison <span class="en">Flight Intelligence</span></h2>
+    <p>航班卡片含路線視覺化與歷史價格分析。三平台比價表格一目了然，住宿/渡輪/行程統一卡片設計。</p>
+  </div>
+
+  <div class="phone-row">
+    <div class="phone-wrap">
+      <div class="phone"><img src="img/m-booking.png" alt="Booking"></div>
+      <div class="phone-label">Booking & Comparison</div>
+      <div class="phone-sublabel">Flight · Hotel · Ferry · Activity cards</div>
+    </div>
+  </div>
+
+  <div class="features">
+    <div class="feat"><div class="feat-title">Flight Route Card</div><div class="feat-desc">去程/回程分段，時間軸箭頭，航班代碼、飛行時間、Terminal。</div></div>
+    <div class="feat"><div class="feat-title">Price Intelligence</div><div class="feat-desc">🟢 Below avg · 🟡 Near avg · 🔴 Above avg — 含歷史價格區間。</div></div>
+    <div class="feat"><div class="feat-title">3-Platform Compare</div><div class="feat-desc">官網 vs Klook vs KKday，最低價 ★ 標記。</div></div>
+    <div class="feat"><div class="feat-title">Status Badges</div><div class="feat-desc">綠色 Booked / 橘色 Pending 徽章。</div></div>
+  </div>
+</section>
+
+<!-- ============ 5. BUDGET ============ -->
+<section id="s5">
+  <div class="section-head">
+    <h2><span class="section-num">5</span>Budget Tracker <span class="en">Dual Mode & Multi-currency</span></h2>
+    <p>預估/實際雙模式，TWD / KRW / JPY / USD 四幣別即時切換。城市與分類維度的視覺化橫條圖。</p>
+  </div>
+
+  <div class="phone-row">
+    <div class="phone-wrap">
+      <div class="phone"><img src="img/m-budget.png" alt="Budget Estimated"></div>
+      <div class="phone-label">Estimated Mode</div>
+      <div class="phone-sublabel">Total · City ratio · Category bars · Detail list</div>
+    </div>
+    <div class="phone-wrap">
+      <div class="phone"><img src="img/m-budget-actual.png" alt="Budget Actual"></div>
+      <div class="phone-label">Actual Mode</div>
+      <div class="phone-sublabel">Real expenses grouped by date</div>
+    </div>
+  </div>
+
+  <div class="features">
+    <div class="feat"><div class="feat-title">Mode Toggle</div><div class="feat-desc">Pill Button 切換預估與實際花費。實際模式按日期分群 + 已預購獨立分組。</div></div>
+    <div class="feat"><div class="feat-title">4-Currency Switch</div><div class="feat-desc">TWD / KRW / JPY / USD 一鍵切換，所有金額即時重算。</div></div>
+    <div class="feat"><div class="feat-title">City Filter</div><div class="feat-desc">點擊城市橫條篩選，圖表與明細表同步更新。再次點擊取消。</div></div>
+    <div class="feat"><div class="feat-title">Category Bars</div><div class="feat-desc">帶 Material Icon + 金額 + 百分比的彩色橫條圖。</div></div>
+  </div>
+</section>
+
+<!-- ============ 6. MAP ============ -->
+<section id="s6">
+  <div class="section-head">
+    <h2><span class="section-num">6</span>POI Map <span class="en">Leaflet + Filter</span></h2>
+    <p>24 個景點的互動 Leaflet 地圖，支援城市/分類篩選晶片。POI 列表含獨旅提示與 Google Maps 匯出。</p>
+  </div>
+
+  <div class="phone-row">
+    <div class="phone-wrap">
+      <div class="phone"><img src="img/m-map.png" alt="Map"></div>
+      <div class="phone-label">Attractions Map</div>
+      <div class="phone-sublabel">Filter chips · Color markers · Solo tips</div>
+    </div>
+  </div>
+
+  <div class="features">
+    <div class="feat"><div class="feat-title">8-Color Markers</div><div class="feat-desc">CircleMarker 與日曆同色系。自動 fitBounds 調整視野。</div></div>
+    <div class="feat"><div class="feat-title">Filter Chips</div><div class="feat-desc">All / Busan / Aso / Fukuoka / Attraction / Food / Workspace。</div></div>
+    <div class="feat"><div class="feat-title">Solo Tips</div><div class="feat-desc">「Solo OK」或「Sashimi platters start at 2 servings」等獨旅提醒。</div></div>
+    <div class="feat"><div class="feat-title">Export</div><div class="feat-desc">GeoJSON 檔案匯出 + Google Maps 路線規劃。</div></div>
+  </div>
+</section>
+
+<!-- ============ 7. CHECKLIST + RETRO ============ -->
+<section id="s7">
+  <div class="section-head">
+    <h2><span class="section-num">7</span>Checklist & Retrospective <span class="en">Before & After</span></h2>
+    <p>出發前：六大分類行前清單（勾選持久化）。旅行後：足跡地圖、預算對比、行程修改記錄。</p>
+  </div>
+
+  <div class="phone-row">
+    <div class="phone-wrap">
+      <div class="phone"><img src="img/m-checklist.png" alt="Checklist"></div>
+      <div class="phone-label">Pre-departure Checklist</div>
+      <div class="phone-sublabel">6 categories · Persistent checkboxes</div>
+    </div>
+    <div class="phone-wrap">
+      <div class="phone"><img src="img/m-retro.png" alt="Retro"></div>
+      <div class="phone-label">Trip Retrospective</div>
+      <div class="phone-sublabel">Footprint map · Budget review · Lessons</div>
+    </div>
+  </div>
+
+  <div class="features">
+    <div class="feat"><div class="feat-title">Persistent Checks</div><div class="feat-desc">勾選狀態存入 localStorage，重新開啟不遺失。</div></div>
+    <div class="feat"><div class="feat-title">Entry Form Copy</div><div class="feat-desc">折疊式入境表單，一鍵複製護照號碼等資料。</div></div>
+    <div class="feat"><div class="feat-title">Budget vs Actual</div><div class="feat-desc">按類別對比預估與實際花費，計算超支/節省。</div></div>
+    <div class="feat"><div class="feat-title">Change Log</div><div class="feat-desc">記錄旅途行程修改：Day、修改內容、原因、教訓。</div></div>
+  </div>
+</section>
+
+<!-- ============ 8. DYNAMIC FEATURES ============ -->
+<section id="s8">
+  <div class="section-head">
+    <h2><span class="section-num">8</span>Time-aware Features <span class="en">Dynamic & Contextual</span></h2>
+    <p>網站會根據「現在是什麼時候」自動調整顯示內容，從出發前的待辦清單到旅行中的即時行程進度。</p>
+  </div>
+
+  <div class="highlight">
+    <div class="highlight-title">Today Overlay — 全螢幕即時助手 <span class="tag tag-dynamic">Dynamic</span></div>
+    <div class="highlight-body">
+      <strong>&gt; 7 天前</strong>：確認機票、飯店、票券、行程<br>
+      <strong>≤ 7 天</strong>：確認票券、飯店、購買 eSIM、查天氣<br>
+      <strong>≤ 3 天</strong>：打包行李、eSIM、換現金、確認票券<br>
+      <strong>≤ 1 天</strong>：打包、護照、eSIM、換現金、充電器、線上報到連結
+    </div>
+  </div>
+
+  <div class="highlight">
+    <div class="highlight-title">Countdown Timer — 秒級三態切換</div>
+    <div class="highlight-body">
+      <code>setInterval(1000)</code> 每秒刷新。出發前倒數至 IT606 航班 16:40 TPE（<code>+08:00</code>），旅行中倒數至 4/12 23:59 JST（<code>+09:00</code>），結束後歸零。
+    </div>
+  </div>
+
+  <div class="features">
+    <div class="feat"><div class="feat-title">Today Itinerary Timeline</div><div class="feat-desc">旅行中事件時間線：已過變淡 <code>.past</code>、進行中高亮 <code>.current</code>。每 60 秒刷新。</div></div>
+    <div class="feat"><div class="feat-title">Entry Doc Reminders</div><div class="feat-desc">偵測未完成的 Visit Japan Web / K-ETA，自動顯示在 overlay。</div></div>
+    <div class="feat"><div class="feat-title">Inline Weather</div><div class="feat-desc">旅行中 overlay 嵌入當天天氣：溫度、描述、日出日落。</div></div>
+    <div class="feat"><div class="feat-title">Scroll Lock</div><div class="feat-desc">Overlay 開啟時鎖定背景捲動，關閉後恢復。</div></div>
+  </div>
+</section>
+
+<!-- ============ 9. i18n + DESIGN SYSTEM ============ -->
+<section id="s9">
+  <div class="section-head">
+    <h2><span class="section-num">9</span>i18n & Design System <span class="en">4 Languages · Responsive</span></h2>
+    <p>繁體中文 / English / 한국어 / 日本語 完整四語支持。桌面版 Sidebar、手機版 Bottom Tab Bar，響應式自適應。</p>
+  </div>
+
+  <div class="highlight">
+    <div class="highlight-title">翻譯覆蓋 <span class="tag tag-i18n">120+ keys</span></div>
+    <div class="highlight-body">
+      UI 文字 · 8 種分類名 · 6 種城市標籤 · 14 天天氣描述 · 行程事件名 · Overlay 待辦 — 全部四語翻譯，切換即時生效。
+    </div>
+  </div>
+
+  <div class="features">
+    <div class="feat"><div class="feat-title">Noto Sans TC / JP / KR</div><div class="feat-desc">三語系字體混排，中日韓文字完美顯示。</div></div>
+    <div class="feat"><div class="feat-title">Responsive Layout</div><div class="feat-desc">Desktop: 60px Sidebar。Mobile: blur Bottom Tab Bar + More 展開選單 + safe-area 支援。</div></div>
+    <div class="feat"><div class="feat-title">Design Tokens</div><div class="feat-desc">圓角 24px/12px · Material Symbols（FILL toggle） · 黑白主色 + 8 功能色。</div></div>
+    <div class="feat"><div class="feat-title">Single Source of Truth</div><div class="feat-desc">所有資料來自 <code>data/trip.json</code>，HTML + CSS + JS 純前端渲染。</div></div>
+  </div>
+</section>
+
+</div>
+
+<footer>
+  <p><strong>Busan → Aso → Fukuoka Trip Planner</strong> — Design Showcase</p>
+  <p style="margin-top:4px">Vanilla HTML + CSS + JS · data/trip.json</p>
+</footer>
+
+</body>
+</html>

@@ -492,6 +492,19 @@ function renderBudgetEstimated() {
   var actualTotal = getActualTotal();
   document.getElementById('stat-total').textContent = actualTotal > 0 ? fmtCurr(actualTotal) : fmtCurr(fullTotal);
 
+  // Daily average (excl. flights & hotel)
+  var dailyAvg = document.getElementById('stat-daily');
+  if (dailyAvg) {
+    var total = actualTotal > 0 ? actualTotal : fullTotal;
+    if (total > 0) {
+      var flightHotel = TRIP.budget.items.filter(function(i) { return i.cat === 'transport' || i.cat === 'hotel'; }).reduce(function(s, i) { return s + i.cost_twd; }, 0);
+      var days = (TRIP.budget.actual_expenses || []).length || TRIP.schedule.length || 14;
+      dailyAvg.textContent = '~' + fmtCurr(Math.round((total - flightHotel) / days));
+    } else {
+      dailyAvg.textContent = '–';
+    }
+  }
+
   // City bar click handlers
   document.querySelectorAll('.budget-city-bar, .budget-city-hbar').forEach(function(el) {
     el.addEventListener('click', function() {
@@ -567,11 +580,11 @@ function renderBudgetActual() {
   // Stats bar: show actual spending, or "–" if no actual data
   var actualTotal = getActualTotal();
   document.getElementById('stat-total').textContent = actualTotal > 0 ? fmtCurr(actualTotal) : '–';
-  var dailyAvg = document.querySelector('.st:nth-child(3) .st-val');
+  var dailyAvg = document.getElementById('stat-daily');
   if (dailyAvg) {
     if (actualTotal > 0) {
       var flightHotel = TRIP.budget.items.filter(function(i) { return i.cat === 'transport' || i.cat === 'hotel'; }).reduce(function(s, i) { return s + (i.purchased ? i.cost_twd : 0); }, 0);
-      var days = TRIP.schedule.length || 14;
+      var days = (TRIP.budget.actual_expenses || []).length || TRIP.schedule.length || 14;
       dailyAvg.textContent = '~' + fmtCurr(Math.round((actualTotal - flightHotel) / days));
     } else {
       dailyAvg.textContent = '–';
@@ -732,7 +745,7 @@ function renderBooking() {
           <div class="flight-segments">${segs}</div>
           <div class="flight-footer">
             <div>
-              <div class="booked-card-cost" style="margin:0">${item.price}</div>
+              <div class="booked-card-cost" style="margin:0">${item.price_twd ? fmtCurr(item.price_twd) : item.price}</div>
               <div class="booked-card-verdict" id="flight-verdict-inline"></div>
             </div>
           </div>
@@ -748,7 +761,7 @@ function renderBooking() {
           </div>
           <div class="booked-card-meta">${item.date} ${item.departure.time} ${getField(item.departure,'city')}→${item.arrival.time}+1 ${getField(item.arrival,'city')}</div>
           <div class="booked-card-meta">${getField(item.departure,'terminal')} → ${getField(item.arrival,'terminal')}</div>
-          <div class="booked-card-cost" style="margin-top:6px">${item.price}</div>
+          <div class="booked-card-cost" style="margin-top:6px">${item.price_twd ? fmtCurr(item.price_twd) : item.price}</div>
           <div class="booked-card-links">
             <a href="${item.departure.maps}" target="_blank" class="booked-card-link"><span class="mi material-symbols-outlined" style="font-size:14px">location_on</span>${getField(item.departure,'city')}</a>
             <a href="${item.arrival.maps}" target="_blank" class="booked-card-link"><span class="mi material-symbols-outlined" style="font-size:14px">location_on</span>${getField(item.arrival,'city')}</a>
@@ -762,8 +775,8 @@ function renderBooking() {
             <div class="booked-card-name"><span class="mi material-symbols-outlined" style="font-size:16px">hotel</span> ${getField(item,'title')}</div>
             <span class="booked-badge ${badgeClass}"><span class="mi material-symbols-outlined" style="font-size:14px">${badgeIcon}</span> ${badgeText}</span>
           </div>
-          ${item.dates ? `<div class="booked-card-meta">${item.dates}${item.price_per_night ? ' · ' + getField(item,'price_per_night') : ''}</div>` : ''}
-          <div class="booked-card-cost">${item.price}</div>
+          ${item.dates ? `<div class="booked-card-meta">${item.dates}${item.price_per_night_twd ? ' · ' + fmtCurr(item.price_per_night_twd) + '/' + t('budget_per_night') : ''}</div>` : ''}
+          <div class="booked-card-cost">${item.price_twd ? fmtCurr(item.price_twd) : item.price}</div>
           ${item.maps_url ? `<div class="booked-card-links"><a href="${item.maps_url}" target="_blank" class="booked-card-link"><span class="mi material-symbols-outlined" style="font-size:14px">location_on</span>${t('booking_map')}</a></div>` : ''}
         </div>`;
       }
@@ -776,7 +789,7 @@ function renderBooking() {
         </div>
         ${item.desc ? `<div class="booked-card-meta">${getField(item,'desc')}</div>` : ''}
         ${item.meetup ? `<div class="booked-card-meta">${t('booking_meetpoint')}: ${getField(item,'meetup')}</div>` : ''}
-        <div class="booked-card-cost">${item.price}</div>
+        <div class="booked-card-cost">${item.price_twd ? fmtCurr(item.price_twd) : item.price}</div>
         ${item.maps_url ? `<div class="booked-card-links"><a href="${item.maps_url}" target="_blank" class="booked-card-link"><span class="mi material-symbols-outlined" style="font-size:14px">location_on</span>${t('booking_meetpoint')}</a></div>` : ''}
       </div>`;
     }).join('');
@@ -1557,6 +1570,7 @@ const I18N = {
   booking_return:    { zh:'回程', en:'Return', ko:'귀국편', ja:'復路' },
   booking_total:     { zh:'來回合計', en:'Round-trip Total', ko:'왕복 합계', ja:'往復合計' },
   booking_map:       { zh:'地圖', en:'Map', ko:'지도', ja:'地図' },
+  budget_per_night:  { zh:'晚', en:'night', ko:'박', ja:'泊' },
   booking_meetpoint: { zh:'集合點', en:'Meeting Point', ko:'집합 장소', ja:'集合場所' },
   booking_rec_esim:  { zh:'韓日 eSIM 卡', en:'KR/JP eSIM Card', ko:'한일 eSIM 카드', ja:'韓日eSIMカード' },
   booking_rec_esim_note:{ zh:'Holafly ~NT$1,500/14天無限 or KKday 韓+日 combo。出發前購買啟用。', en:'Holafly ~NT$1,500/14 days unlimited or KKday KR+JP combo. Buy & activate before departure.', ko:'Holafly ~NT$1,500/14일 무제한 또는 KKday 한+일 combo. 출발 전 구매 활성화.', ja:'Holafly ~NT$1,500/14日無制限 or KKday 韓+日 combo。出発前に購入・有効化。' },
@@ -1963,6 +1977,21 @@ function renderToday() {
         '<div class="today-enter"><button class="today-enter-btn" onclick="dismissToday()">' + t('today_start') + '</button></div>' +
       '</div>';
 
+  } else if (today === TRIP.endDate && todaySchedule && todaySchedule.events.length > 0 && nowHour >= todaySchedule.events[todaySchedule.events.length - 1].eh) {
+    // AFTER TRIP — last day, after last event ends
+    var totalDays = Math.ceil((new Date(TRIP.endDate + 'T23:59:59') - new Date(TRIP.startDate + 'T00:00:00')) / 86400000) + 1;
+    var totalEvents = TRIP.schedule.reduce(function(sum, d) { return sum + d.events.length; }, 0);
+    var cities = [];
+    TRIP.schedule.forEach(function(d) { if (cities.indexOf(d.city) === -1) cities.push(d.city); });
+    overlay.innerHTML =
+      '<div class="today-countdown" style="min-height:auto;padding-top:25vh">' +
+        '<div class="today-countdown-num" style="font-size:3rem"><span class="mi material-symbols-outlined" style="font-size:48px">flight_takeoff</span></div>' +
+        '<div class="today-countdown-label">' + t('today_ended') + '</div>' +
+        '<div class="today-dest">' + TRIP.destination + '</div>' +
+        '<div class="today-status">' + totalDays + ' ' + t('budget_days') + ' · ' + totalEvents + ' events · ' + cities.length + ' cities</div>' +
+      '</div>' +
+      '<div class="today-enter"><button class="today-enter-btn" onclick="dismissToday()">' + t('today_enter') + '</button></div>';
+
   } else if (todaySchedule) {
     // DURING TRIP — left-aligned glassmorphism style, matching BEFORE trip aesthetic
     const d = new Date(today + 'T00:00:00');
@@ -2077,16 +2106,16 @@ function renderToday() {
     '</div>';
     overlay.innerHTML = html;
 
-  } else if (now > tripEnd) {
-    // AFTER TRIP
+  } else if (now > tripEnd || (today === TRIP.endDate && todaySchedule && todaySchedule.events.length > 0 && nowHour >= todaySchedule.events[todaySchedule.events.length - 1].eh)) {
+    // AFTER TRIP (past endDate, or last day after last event ends)
     var totalDays = Math.ceil((new Date(TRIP.endDate + 'T23:59:59') - new Date(TRIP.startDate + 'T00:00:00')) / 86400000) + 1;
     var totalEvents = TRIP.schedule.reduce(function(sum, d) { return sum + d.events.length; }, 0);
     var cities = [];
     TRIP.schedule.forEach(function(d) { if (cities.indexOf(d.city) === -1) cities.push(d.city); });
 
     overlay.innerHTML =
-      '<div class="today-countdown">' +
-        '<div class="today-countdown-num" style="font-size:3rem">✈️</div>' +
+      '<div class="today-countdown" style="min-height:auto;padding-top:25vh">' +
+        '<div class="today-countdown-num" style="font-size:3rem"><span class="mi material-symbols-outlined" style="font-size:48px">flight_takeoff</span></div>' +
         '<div class="today-countdown-label">' + t('today_ended') + '</div>' +
         '<div class="today-dest">' + TRIP.destination + '</div>' +
         '<div class="today-status">' + totalDays + ' days · ' + totalEvents + ' events · ' + cities.length + ' cities</div>' +
@@ -2275,10 +2304,26 @@ function renderRetro() {
     var visitedIds = new Set();
     R.cities.forEach(function(c) { (c.visited_pois || []).forEach(function(id) { visitedIds.add(id); }); });
 
-    // Find POIs that exist in pois[] but were NOT visited
+    // Build set of POI IDs that appear in the schedule (already planned)
+    var scheduledIds = new Set();
+    (TRIP.schedule || []).forEach(function(day) {
+      (day.events || []).forEach(function(ev) {
+        // Match event name against POI names
+        TRIP.pois.forEach(function(p) {
+          if (ev.name && (ev.name.indexOf(p.name) !== -1 || p.name.indexOf(ev.name) !== -1 ||
+              (p.nameLocal && (ev.name.indexOf(p.nameLocal) !== -1 || p.nameLocal.indexOf(ev.name) !== -1)) ||
+              (ev.name_en && p.name_en && ev.name_en.indexOf(p.name_en) !== -1))) {
+            scheduledIds.add(p.id);
+          }
+        });
+      });
+    });
+
+    // Find POIs that exist in pois[] but were NOT visited and NOT scheduled
     var skipCats = { hotel:1, transport:1 };
     var missedPois = TRIP.pois.filter(function(p) {
       if (skipCats[p.cat]) return false;
+      if (scheduledIds.has(p.id)) return false;
       return !visitedIds.has(p.id);
     });
 
@@ -2326,20 +2371,22 @@ function renderRetroMap(cityId) {
     attribution: '&copy; OpenStreetMap'
   }).addTo(retroMap);
 
-  var visitedPois = city.visited_pois.map(function(id) {
-    return TRIP.pois.find(function(p) { return p.id === id; });
-  }).filter(Boolean);
+  // Show all POIs for this city (visited + scheduled), not just visited_pois
+  var visitedSet = new Set(city.visited_pois || []);
+  var allCityPois = TRIP.pois.filter(function(p) { return p.city === cityId; });
 
   var coords = [];
   var colors = { attraction:'#e8664a', food:'#4aad5b', cafe:'#9b6ad4', shopping:'#e8964a', transport:'#4ab8c9', hotel:'#4a7ce8', work:'#6a6ad4' };
-  visitedPois.forEach(function(p) {
+  allCityPois.forEach(function(p) {
     var col = colors[p.cat] || '#888';
     var latlng = [p.lat, p.lng];
     coords.push(latlng);
-    L.circleMarker(latlng, { radius:7, fillColor:col, color:'#fff', weight:2, fillOpacity:0.9 })
+    var visited = visitedSet.has(p.id);
+    L.circleMarker(latlng, { radius:7, fillColor:col, color: visited ? '#fff' : '#999', weight:2, fillOpacity: visited ? 0.9 : 0.45 })
       .bindTooltip(p.name, { permanent: false })
       .addTo(retroMap);
   });
+  var visitedPois = allCityPois;
   if (coords.length > 1) {
     L.polyline(coords, { color:'#444', weight:2, dashArray:'6,8', opacity:0.6 }).addTo(retroMap);
   }
